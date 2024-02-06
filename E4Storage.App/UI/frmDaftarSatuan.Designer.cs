@@ -1,5 +1,5 @@
 ﻿
-namespace E4Storage.App.UI
+namespace Inventory.App.UI
 {
     partial class frmDaftarSatuan
     {
@@ -156,7 +156,7 @@ namespace E4Storage.App.UI
             // 
             // tUOMBindingSource
             // 
-            this.tUOMBindingSource.DataSource = typeof(E4Storage.App.Model.Entity.TUOM);
+            this.tUOMBindingSource.DataSource = typeof(Inventory.App.Model.Entity.TUOM);
             // 
             // gridView1
             // 

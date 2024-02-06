@@ -1,5 +1,5 @@
 ﻿
-namespace E4Storage.App.UI
+namespace Inventory.App.UI
 {
     partial class frmDaftarMasterItem
     {
@@ -181,7 +181,7 @@ namespace E4Storage.App.UI
             // 
             // tInventorBindingSource
             // 
-            this.tInventorBindingSource.DataSource = typeof(E4Storage.App.Model.ViewModel.ItemMaster);
+            this.tInventorBindingSource.DataSource = typeof(Inventory.App.Model.ViewModel.ItemMaster);
             // 
             // gridView1
             // 

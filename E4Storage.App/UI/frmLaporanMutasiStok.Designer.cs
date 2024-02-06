@@ -1,5 +1,5 @@
 ﻿
-namespace E4Storage.App.UI
+namespace Inventory.App.UI
 {
     partial class frmLaporanMutasiStok
     {
@@ -169,7 +169,7 @@ namespace E4Storage.App.UI
             // 
             // MutasiStokBindingSource
             // 
-            this.MutasiStokBindingSource.DataSource = typeof(E4Storage.App.Model.ViewModel.MutasiStok);
+            this.MutasiStokBindingSource.DataSource = typeof(Inventory.App.Model.ViewModel.MutasiStok);
             // 
             // gridView1
             // 

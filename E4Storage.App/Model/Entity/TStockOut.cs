@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E4Storage.App.Model.Entity
+namespace Inventory.App.Model.Entity
 {
     [Table("TStockOut")]
     public partial class TStockOut : BaseTable
@@ -23,6 +23,8 @@ namespace E4Storage.App.Model.Entity
         public Guid IDInventor { get; set; }
         [Required]
         public Guid IDUOM { get; set; }
+        [Required]
+        public Guid IDWarehouse { get; set; }
         [Required]
         [Range(0, float.MaxValue, ErrorMessage = "Qty yang diinputkan salah")]
         public float Qty { get; set; }
@@ -41,5 +43,6 @@ namespace E4Storage.App.Model.Entity
 
         public virtual TInventor Inventor { get; set; }
         public virtual TUOM UOM { get; set; }
+        public virtual TWarehouse Warehouse { get; set; }
     }
 }

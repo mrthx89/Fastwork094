@@ -1,16 +1,16 @@
-﻿using E4Storage.App.Model.Entity;
-using E4Storage.App.Utils;
-using E4Storage.App.Helper;
+﻿using Inventory.App.Model.Entity;
+using Inventory.App.Utils;
+using Inventory.App.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using E4Storage.App.Model.ViewModel;
+using Inventory.App.Model.ViewModel;
 using AutoMapper;
 using System.Data.Entity;
 
-namespace E4Storage.App.Repository
+namespace Inventory.App.Repository
 {
     public class StokMasuk
     {
@@ -19,7 +19,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, List<Model.ViewModel.StokMasuk>> getStokMasuks(DateTime tglDari, DateTime tglSampai)
         {
             Tuple<bool, List<Model.ViewModel.StokMasuk>> hasil = new Tuple<bool, List<Model.ViewModel.StokMasuk>>(false, new List<Model.ViewModel.StokMasuk>());
-            using (Data.E4StorageContext context = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext context = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
@@ -124,7 +124,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, Model.ViewModel.StokMasuk> saveStokMasuk(Model.ViewModel.StokMasuk data)
         {
             Tuple<bool, Model.ViewModel.StokMasuk> hasil = new Tuple<bool, Model.ViewModel.StokMasuk>(false, null);
-            using (Data.E4StorageContext context = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext context = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
@@ -182,7 +182,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, Model.ViewModel.StokMasuk> deleteStokMasuk(Model.ViewModel.StokMasuk data)
         {
             Tuple<bool, Model.ViewModel.StokMasuk> hasil = new Tuple<bool, Model.ViewModel.StokMasuk>(false, null);
-            using (Data.E4StorageContext context = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext context = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {

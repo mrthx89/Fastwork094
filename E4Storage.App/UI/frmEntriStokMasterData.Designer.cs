@@ -1,5 +1,5 @@
 ﻿
-namespace E4Storage.App.UI
+namespace Inventory.App.UI
 {
     partial class frmEntriStokMasterData
     {
@@ -252,7 +252,7 @@ namespace E4Storage.App.UI
             // 
             // StokMasterDataBindingSource
             // 
-            this.StokMasterDataBindingSource.DataSource = typeof(E4Storage.App.Model.ViewModel.StokMasterData);
+            this.StokMasterDataBindingSource.DataSource = typeof(Inventory.App.Model.ViewModel.StokMasterData);
             // 
             // IDInventorSearchLookUpEdit
             // 

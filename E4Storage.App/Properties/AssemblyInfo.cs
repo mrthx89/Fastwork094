@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("E4Storage.App")]
+[assembly: AssemblyTitle("Inventory.App")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("E4Storage.App")]
+[assembly: AssemblyProduct("Inventory.App")]
 [assembly: AssemblyCopyright("Copyright © YHDEV 2023")]
 [assembly: AssemblyTrademark("Copyright © YHDEV 2023")]
 [assembly: AssemblyCulture("")]

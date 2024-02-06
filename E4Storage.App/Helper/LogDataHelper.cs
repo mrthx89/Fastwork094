@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Serilog;
 
-namespace E4Storage.App.Helper
+namespace Inventory.App.Helper
 {
     public class LogDataHelper
     {

@@ -1,5 +1,5 @@
 ﻿
-namespace E4Storage.App.UI
+namespace Inventory.App.UI
 {
     partial class frmSetting
     {
@@ -78,7 +78,7 @@ namespace E4Storage.App.UI
             // 
             // appSettingBindingSource
             // 
-            this.appSettingBindingSource.DataSource = typeof(E4Storage.App.Model.AppSetting);
+            this.appSettingBindingSource.DataSource = typeof(Inventory.App.Model.AppSetting);
             // 
             // Root
             // 

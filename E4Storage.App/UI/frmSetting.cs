@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace E4Storage.App.UI
+namespace Inventory.App.UI
 {
     public partial class frmSetting : DevExpress.XtraEditors.XtraForm
     {
@@ -26,19 +26,19 @@ namespace E4Storage.App.UI
         {
             this.Validate();
 
-            using (Data.E4StorageContext context = new Data.E4StorageContext(AppSetting.KoneksiString))
+            using (Data.InventoryContext context = new Data.InventoryContext(AppSetting.KoneksiString))
             {
                 try
                 {
                     context.Database.Connection.Open();
-                    E4Storage.App.Helper.MsgBoxHelper.MsgInfo($"{this.Name}.mnSimpan_ItemClick", "Koneksi terhubung!");
+                    Inventory.App.Helper.MsgBoxHelper.MsgInfo($"{this.Name}.mnSimpan_ItemClick", "Koneksi terhubung!");
 
                     DialogResult = DialogResult.OK;
                     this.Close();
                 }
                 catch (Exception ex)
                 {
-                    E4Storage.App.Helper.MsgBoxHelper.MsgError($"{this.Name}.mnSimpan_ItemClick", ex);
+                    Inventory.App.Helper.MsgBoxHelper.MsgError($"{this.Name}.mnSimpan_ItemClick", ex);
                 }
             }
         }

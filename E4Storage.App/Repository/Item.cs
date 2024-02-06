@@ -1,15 +1,15 @@
-﻿using E4Storage.App.Model.Entity;
-using E4Storage.App.Utils;
-using E4Storage.App.Helper;
+﻿using Inventory.App.Model.Entity;
+using Inventory.App.Utils;
+using Inventory.App.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using E4Storage.App.Model.ViewModel;
+using Inventory.App.Model.ViewModel;
 using AutoMapper;
 
-namespace E4Storage.App.Repository
+namespace Inventory.App.Repository
 {
     public class Item
     {
@@ -18,7 +18,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, List<TUOM>> getUOMs()
         {
             Tuple<bool, List<TUOM>> hasil = new Tuple<bool, List<TUOM>>(false, null);
-            using (Data.E4StorageContext context = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext context = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
@@ -35,7 +35,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, List<TUOM>> saveUOMs(List<TUOM> uoms)
         {
             Tuple<bool, List<TUOM>> hasil = new Tuple<bool, List<TUOM>>(false, null);
-            using (Data.E4StorageContext dbContext = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext dbContext = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
@@ -82,7 +82,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, List<TBelt>> getBelts()
         {
             Tuple<bool, List<TBelt>> hasil = new Tuple<bool, List<TBelt>>(false, null);
-            using (Data.E4StorageContext context = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext context = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
@@ -99,7 +99,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, List<TCategory>> getCategories()
         {
             Tuple<bool, List<TCategory>> hasil = new Tuple<bool, List<TCategory>>(false, null);
-            using (Data.E4StorageContext context = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext context = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
@@ -116,7 +116,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, List<TTypeTransaction>> getTypes()
         {
             Tuple<bool, List<TTypeTransaction>> hasil = new Tuple<bool, List<TTypeTransaction>>(false, null);
-            using (Data.E4StorageContext context = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext context = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
@@ -133,7 +133,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, List<TBelt>> saveBelts(List<TBelt> belts)
         {
             Tuple<bool, List<TBelt>> hasil = new Tuple<bool, List<TBelt>>(false, null);
-            using (Data.E4StorageContext dbContext = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext dbContext = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
@@ -180,7 +180,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, List<TCategory>> saveCategories(List<TCategory> categories)
         {
             Tuple<bool, List<TCategory>> hasil = new Tuple<bool, List<TCategory>>(false, null);
-            using (Data.E4StorageContext dbContext = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext dbContext = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
@@ -227,7 +227,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, List<ItemMaster>> getInventors(Dictionary<string, dynamic> filter, DateTime? SaldoPerTanggal)
         {
             Tuple<bool, List<ItemMaster>> hasil = new Tuple<bool, List<ItemMaster>>(false, null);
-            using (Data.E4StorageContext context = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext context = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
@@ -288,7 +288,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, List<ItemLookUp>> getLookUpInventors(DateTime Tanggal, Dictionary<string, dynamic> filter)
         {
             Tuple<bool, List<ItemLookUp>> hasil = new Tuple<bool, List<ItemLookUp>>(false, null);
-            using (Data.E4StorageContext context = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext context = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
@@ -342,7 +342,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, ItemMaster> getInventor(Guid ID)
         {
             Tuple<bool, ItemMaster> hasil = new Tuple<bool, ItemMaster>(false, null);
-            using (Data.E4StorageContext context = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext context = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
@@ -377,7 +377,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, List<ItemMaster>> getInventor(Dictionary<string, dynamic> filter)
         {
             Tuple<bool, List<ItemMaster>> hasil = new Tuple<bool, List<ItemMaster>>(false, null);
-            using (Data.E4StorageContext context = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext context = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
@@ -437,7 +437,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, ItemMaster> deleteInventor(Guid ID)
         {
             Tuple<bool, ItemMaster> hasil = new Tuple<bool, ItemMaster>(false, null);
-            using (Data.E4StorageContext context = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext context = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
@@ -464,7 +464,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, ItemMaster> saveInventor(ItemMaster data)
         {
             Tuple<bool, ItemMaster> hasil = new Tuple<bool, ItemMaster>(false, null);
-            using (Data.E4StorageContext context = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext context = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
@@ -500,7 +500,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, ItemMaster> checkPLUExistsInventor(ItemMaster data)
         {
             Tuple<bool, ItemMaster> hasil = new Tuple<bool, ItemMaster>(false, null);
-            using (Data.E4StorageContext context = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext context = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
@@ -525,7 +525,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, ItemMaster> checkNamaExistsInventor(ItemMaster data)
         {
             Tuple<bool, ItemMaster> hasil = new Tuple<bool, ItemMaster>(false, null);
-            using (Data.E4StorageContext context = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext context = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {

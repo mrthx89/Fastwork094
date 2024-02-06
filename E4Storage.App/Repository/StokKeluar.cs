@@ -1,16 +1,16 @@
-﻿using E4Storage.App.Model.Entity;
-using E4Storage.App.Utils;
-using E4Storage.App.Helper;
+﻿using Inventory.App.Model.Entity;
+using Inventory.App.Utils;
+using Inventory.App.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using E4Storage.App.Model.ViewModel;
+using Inventory.App.Model.ViewModel;
 using AutoMapper;
 using System.Data.Entity;
 
-namespace E4Storage.App.Repository
+namespace Inventory.App.Repository
 {
     public class StokKeluar
     {
@@ -19,7 +19,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, List<Model.ViewModel.StokKeluar>> getStokKeluars(DateTime tglDari, DateTime tglSampai)
         {
             Tuple<bool, List<Model.ViewModel.StokKeluar>> hasil = new Tuple<bool, List<Model.ViewModel.StokKeluar>>(false, new List<Model.ViewModel.StokKeluar>());
-            using (Data.E4StorageContext context = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext context = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
@@ -90,7 +90,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, Model.ViewModel.StokKeluar> saveStokKeluar(Model.ViewModel.StokKeluar data)
         {
             Tuple<bool, Model.ViewModel.StokKeluar> hasil = new Tuple<bool, Model.ViewModel.StokKeluar>(false, null);
-            using (Data.E4StorageContext context = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext context = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
@@ -141,7 +141,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, float> getSaldoStok(Guid IDInventor, DateTime Tanggal, Guid IDTransaksi, Constant.TypeTransaction TypeTransaction)
         {
             Tuple<bool, float> hasil = new Tuple<bool, float>(false, 0f);
-            using (Data.E4StorageContext context = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext context = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
@@ -175,7 +175,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, Model.ViewModel.StokKeluar> deleteStokKeluar(Model.ViewModel.StokKeluar data)
         {
             Tuple<bool, Model.ViewModel.StokKeluar> hasil = new Tuple<bool, Model.ViewModel.StokKeluar>(false, null);
-            using (Data.E4StorageContext context = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext context = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {

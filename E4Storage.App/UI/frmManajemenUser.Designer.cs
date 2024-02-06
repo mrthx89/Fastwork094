@@ -1,5 +1,5 @@
 ﻿
-namespace E4Storage.App.UI
+namespace Inventory.App.UI
 {
     partial class frmManajemenUser
     {
@@ -164,7 +164,7 @@ namespace E4Storage.App.UI
             // 
             // tUserBindingSource
             // 
-            this.tUserBindingSource.DataSource = typeof(E4Storage.App.Model.Entity.TUser);
+            this.tUserBindingSource.DataSource = typeof(Inventory.App.Model.Entity.TUser);
             // 
             // gridView1
             // 

@@ -1,20 +1,20 @@
-﻿using E4Storage.App.Model.Entity;
-using E4Storage.App.Utils;
-using E4Storage.App.Helper;
+﻿using Inventory.App.Model.Entity;
+using Inventory.App.Utils;
+using Inventory.App.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E4Storage.App.Repository
+namespace Inventory.App.Repository
 {
     public class User
     {
         public static Tuple<bool, TUser> getLogin(string UserID, string Pwd)
         {
             Tuple<bool, TUser> hasil = new Tuple<bool, TUser>(false, null);
-            using (Data.E4StorageContext E4StorageContext = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext E4StorageContext = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
@@ -40,7 +40,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, List<TUser>> getUsers()
         {
             Tuple<bool, List<TUser>> hasil = new Tuple<bool, List<TUser>>(false, null);
-            using (Data.E4StorageContext E4StorageContext = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext E4StorageContext = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
@@ -58,7 +58,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, dynamic> getLookUp()
         {
             Tuple<bool, dynamic> hasil = new Tuple<bool, dynamic>(false, null);
-            using (Data.E4StorageContext E4StorageContext = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext E4StorageContext = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
@@ -77,7 +77,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, List<TUser>> saveUsers(List<TUser> users)
         {
             Tuple<bool, List<TUser>> hasil = new Tuple<bool, List<TUser>>(false, null);
-            using (Data.E4StorageContext dbContext = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext dbContext = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {

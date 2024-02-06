@@ -1,16 +1,16 @@
-﻿using E4Storage.App.Model.Entity;
-using E4Storage.App.Utils;
-using E4Storage.App.Helper;
+﻿using Inventory.App.Model.Entity;
+using Inventory.App.Utils;
+using Inventory.App.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using E4Storage.App.Model.ViewModel;
+using Inventory.App.Model.ViewModel;
 using AutoMapper;
 using System.Data.Entity;
 
-namespace E4Storage.App.Repository
+namespace Inventory.App.Repository
 {
     public class StokPengembalian
     {
@@ -19,7 +19,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, List<Model.ViewModel.StokPengembalian>> getStokPengembalians(DateTime tglDari, DateTime tglSampai)
         {
             Tuple<bool, List<Model.ViewModel.StokPengembalian>> hasil = new Tuple<bool, List<Model.ViewModel.StokPengembalian>>(false, new List<Model.ViewModel.StokPengembalian>());
-            using (Data.E4StorageContext context = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext context = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
@@ -61,7 +61,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, Model.ViewModel.StokPengembalian> saveStokPengembalian(Model.ViewModel.StokPengembalian data)
         {
             Tuple<bool, Model.ViewModel.StokPengembalian> hasil = new Tuple<bool, Model.ViewModel.StokPengembalian>(false, null);
-            using (Data.E4StorageContext context = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext context = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
@@ -113,7 +113,7 @@ namespace E4Storage.App.Repository
         public static Tuple<bool, Model.ViewModel.StokPengembalian> deleteStokPengembalian(Model.ViewModel.StokPengembalian data)
         {
             Tuple<bool, Model.ViewModel.StokPengembalian> hasil = new Tuple<bool, Model.ViewModel.StokPengembalian>(false, null);
-            using (Data.E4StorageContext context = new Data.E4StorageContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext context = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {

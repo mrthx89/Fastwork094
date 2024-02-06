@@ -1,5 +1,5 @@
 ﻿
-namespace E4Storage.App.UI
+namespace Inventory.App.UI
 {
     partial class frmMain
     {
@@ -46,6 +46,8 @@ namespace E4Storage.App.UI
             this.bbiLaporanKartuStok = new DevExpress.XtraBars.BarButtonItem();
             this.bbiManagementUser = new DevExpress.XtraBars.BarButtonItem();
             this.bbiLaporanMutasiStok = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiMasterSupplier = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiMasterCustomer = new DevExpress.XtraBars.BarButtonItem();
             this.imageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -57,6 +59,7 @@ namespace E4Storage.App.UI
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.bbiMasterGudang = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionSmall)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionLarge)).BeginInit();
@@ -82,10 +85,14 @@ namespace E4Storage.App.UI
             this.bbiListBarangKeluar,
             this.bbiLaporanKartuStok,
             this.bbiManagementUser,
-            this.bbiLaporanMutasiStok});
+            this.bbiLaporanMutasiStok,
+            this.bbiMasterSupplier,
+            this.bbiMasterCustomer,
+            this.bbiMasterGudang});
             this.ribbonControl1.LargeImages = this.imageCollectionLarge;
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 14;
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ribbonControl1.MaxItemId = 17;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsTouch.ShowTouchUISelectorInQAT = true;
             this.ribbonControl1.OptionsTouch.ShowTouchUISelectorVisibilityItemInQATMenu = true;
@@ -94,19 +101,19 @@ namespace E4Storage.App.UI
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
-            this.ribbonControl1.Size = new System.Drawing.Size(1146, 158);
+            this.ribbonControl1.Size = new System.Drawing.Size(1337, 193);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // imageCollectionSmall
             // 
             this.imageCollectionSmall.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollectionSmall.ImageStream")));
-            this.imageCollectionSmall.InsertImage(global::E4Storage.App.Properties.Resources.properties_16x16, "properties_16x16", typeof(global::E4Storage.App.Properties.Resources), 0);
+            this.imageCollectionSmall.InsertImage(global::Inventory.App.Properties.Resources.properties_16x16, "properties_16x16", typeof(global::Inventory.App.Properties.Resources), 0);
             this.imageCollectionSmall.Images.SetKeyName(0, "properties_16x16");
-            this.imageCollectionSmall.InsertImage(global::E4Storage.App.Properties.Resources.bouser_16x16, "bouser_16x16", typeof(global::E4Storage.App.Properties.Resources), 1);
+            this.imageCollectionSmall.InsertImage(global::Inventory.App.Properties.Resources.bouser_16x16, "bouser_16x16", typeof(global::Inventory.App.Properties.Resources), 1);
             this.imageCollectionSmall.Images.SetKeyName(1, "bouser_16x16");
-            this.imageCollectionSmall.InsertImage(global::E4Storage.App.Properties.Resources.bopermission_16x16, "bopermission_16x16", typeof(global::E4Storage.App.Properties.Resources), 2);
+            this.imageCollectionSmall.InsertImage(global::Inventory.App.Properties.Resources.bopermission_16x16, "bopermission_16x16", typeof(global::Inventory.App.Properties.Resources), 2);
             this.imageCollectionSmall.Images.SetKeyName(2, "bopermission_16x16");
-            this.imageCollectionSmall.InsertImage(global::E4Storage.App.Properties.Resources.usergroup_16x16, "usergroup_16x16", typeof(global::E4Storage.App.Properties.Resources), 3);
+            this.imageCollectionSmall.InsertImage(global::Inventory.App.Properties.Resources.usergroup_16x16, "usergroup_16x16", typeof(global::Inventory.App.Properties.Resources), 3);
             this.imageCollectionSmall.Images.SetKeyName(3, "usergroup_16x16");
             this.imageCollectionSmall.Images.SetKeyName(4, "001-products.png");
             this.imageCollectionSmall.Images.SetKeyName(5, "002-import.png");
@@ -123,7 +130,7 @@ namespace E4Storage.App.UI
             // 
             this.barStatusUser.Caption = "User : (none)";
             this.barStatusUser.Id = 1;
-            this.barStatusUser.ImageOptions.Image = global::E4Storage.App.Properties.Resources.customer_32x32;
+            this.barStatusUser.ImageOptions.Image = global::Inventory.App.Properties.Resources.customer_32x32;
             this.barStatusUser.Name = "barStatusUser";
             this.barStatusUser.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
@@ -222,17 +229,33 @@ namespace E4Storage.App.UI
             this.bbiLaporanMutasiStok.Name = "bbiLaporanMutasiStok";
             this.bbiLaporanMutasiStok.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnMutasiSaldoStok_ItemClick);
             // 
+            // bbiMasterSupplier
+            // 
+            this.bbiMasterSupplier.Caption = "Data Supplier";
+            this.bbiMasterSupplier.Id = 14;
+            this.bbiMasterSupplier.ImageOptions.LargeImage = global::Inventory.App.Properties.Resources.businessman;
+            this.bbiMasterSupplier.Name = "bbiMasterSupplier";
+            this.bbiMasterSupplier.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiMasterSupplier_ItemClick);
+            // 
+            // bbiMasterCustomer
+            // 
+            this.bbiMasterCustomer.Caption = "Daftar Customer";
+            this.bbiMasterCustomer.Id = 15;
+            this.bbiMasterCustomer.ImageOptions.LargeImage = global::Inventory.App.Properties.Resources.salesman;
+            this.bbiMasterCustomer.Name = "bbiMasterCustomer";
+            this.bbiMasterCustomer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiMasterCustomer_ItemClick);
+            // 
             // imageCollectionLarge
             // 
             this.imageCollectionLarge.ImageSize = new System.Drawing.Size(32, 32);
             this.imageCollectionLarge.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollectionLarge.ImageStream")));
-            this.imageCollectionLarge.InsertImage(global::E4Storage.App.Properties.Resources.properties_32x32, "properties_32x32", typeof(global::E4Storage.App.Properties.Resources), 0);
+            this.imageCollectionLarge.InsertImage(global::Inventory.App.Properties.Resources.properties_32x32, "properties_32x32", typeof(global::Inventory.App.Properties.Resources), 0);
             this.imageCollectionLarge.Images.SetKeyName(0, "properties_32x32");
-            this.imageCollectionLarge.InsertImage(global::E4Storage.App.Properties.Resources.bouser_32x32, "bouser_32x32", typeof(global::E4Storage.App.Properties.Resources), 1);
+            this.imageCollectionLarge.InsertImage(global::Inventory.App.Properties.Resources.bouser_32x32, "bouser_32x32", typeof(global::Inventory.App.Properties.Resources), 1);
             this.imageCollectionLarge.Images.SetKeyName(1, "bouser_32x32");
-            this.imageCollectionLarge.InsertImage(global::E4Storage.App.Properties.Resources.bopermission_32x32, "bopermission_32x32", typeof(global::E4Storage.App.Properties.Resources), 2);
+            this.imageCollectionLarge.InsertImage(global::Inventory.App.Properties.Resources.bopermission_32x32, "bopermission_32x32", typeof(global::Inventory.App.Properties.Resources), 2);
             this.imageCollectionLarge.Images.SetKeyName(2, "bopermission_32x32");
-            this.imageCollectionLarge.InsertImage(global::E4Storage.App.Properties.Resources.usergroup_32x321, "usergroup_32x321", typeof(global::E4Storage.App.Properties.Resources), 3);
+            this.imageCollectionLarge.InsertImage(global::Inventory.App.Properties.Resources.usergroup_32x321, "usergroup_32x321", typeof(global::Inventory.App.Properties.Resources), 3);
             this.imageCollectionLarge.Images.SetKeyName(3, "usergroup_32x321");
             this.imageCollectionLarge.Images.SetKeyName(4, "001-products.png");
             this.imageCollectionLarge.Images.SetKeyName(5, "002-import.png");
@@ -286,6 +309,9 @@ namespace E4Storage.App.UI
             // ribbonPageGroup5
             // 
             this.ribbonPageGroup5.ItemLinks.Add(this.bbiMasterItem);
+            this.ribbonPageGroup5.ItemLinks.Add(this.bbiMasterSupplier, true);
+            this.ribbonPageGroup5.ItemLinks.Add(this.bbiMasterCustomer);
+            this.ribbonPageGroup5.ItemLinks.Add(this.bbiMasterGudang, true);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "Master";
             // 
@@ -309,24 +335,34 @@ namespace E4Storage.App.UI
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.barStatusUser);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 633);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 779);
+            this.ribbonStatusBar1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1146, 24);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1337, 30);
             // 
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
+            // bbiMasterGudang
+            // 
+            this.bbiMasterGudang.Caption = "Gudang";
+            this.bbiMasterGudang.Id = 16;
+            this.bbiMasterGudang.ImageOptions.LargeImage = global::Inventory.App.Properties.Resources._007_stock;
+            this.bbiMasterGudang.Name = "bbiMasterGudang";
+            this.bbiMasterGudang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiMasterGudang_ItemClick);
+            // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1146, 657);
+            this.ClientSize = new System.Drawing.Size(1337, 809);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
-            this.IconOptions.Image = global::E4Storage.App.Properties.Resources.inventory;
+            this.IconOptions.Image = global::Inventory.App.Properties.Resources.inventory;
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmMain";
             this.Ribbon = this.ribbonControl1;
             this.StatusBar = this.ribbonStatusBar1;
@@ -370,6 +406,9 @@ namespace E4Storage.App.UI
         private DevExpress.XtraBars.BarButtonItem bbiLaporanKartuStok;
         private DevExpress.XtraBars.BarButtonItem bbiManagementUser;
         private DevExpress.XtraBars.BarButtonItem bbiLaporanMutasiStok;
+        private DevExpress.XtraBars.BarButtonItem bbiMasterSupplier;
+        private DevExpress.XtraBars.BarButtonItem bbiMasterCustomer;
+        private DevExpress.XtraBars.BarButtonItem bbiMasterGudang;
     }
 }
 

@@ -1,19 +1,19 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.Utils;
 using System;
-using E4Storage.App.Model.Entity;
-using E4Storage.App.Utils;
-using E4Storage.App.Helper;
+using Inventory.App.Model.Entity;
+using Inventory.App.Utils;
+using Inventory.App.Helper;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using E4Storage.App.Model.ViewModel;
+using Inventory.App.Model.ViewModel;
 using AutoMapper;
 using DevExpress.XtraGrid.Views.Grid;
 using System.Windows.Forms;
 
-namespace E4Storage.App.UI.Dialog
+namespace Inventory.App.UI.Dialog
 {
     public partial class dlgSummaryBelt : DevExpress.XtraEditors.XtraUserControl
     {

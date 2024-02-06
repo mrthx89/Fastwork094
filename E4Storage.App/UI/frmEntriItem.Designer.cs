@@ -1,5 +1,5 @@
 ﻿
-namespace E4Storage.App.UI
+namespace Inventory.App.UI
 {
     partial class frmEntriItem
     {
@@ -193,7 +193,7 @@ namespace E4Storage.App.UI
             // 
             // itemMasterBindingSource
             // 
-            this.itemMasterBindingSource.DataSource = typeof(E4Storage.App.Model.ViewModel.ItemMaster);
+            this.itemMasterBindingSource.DataSource = typeof(Inventory.App.Model.ViewModel.ItemMaster);
             // 
             // DescTextEdit
             // 

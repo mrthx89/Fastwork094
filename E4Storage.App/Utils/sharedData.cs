@@ -1,12 +1,12 @@
 ﻿using DevExpress.Data.Utils;
-using E4Storage.App.Model;
+using Inventory.App.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E4Storage.App.Utils
+namespace Inventory.App.Utils
 {
     public class sharedData
     {

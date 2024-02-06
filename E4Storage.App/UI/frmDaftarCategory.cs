@@ -1,8 +1,8 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.Utils;
-using E4Storage.App.Helper;
-using E4Storage.App.Model.Entity;
-using E4Storage.App.Utils;
+using Inventory.App.Helper;
+using Inventory.App.Model.Entity;
+using Inventory.App.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace E4Storage.App.UI
+namespace Inventory.App.UI
 {
     public partial class frmDaftarCategory : DevExpress.XtraEditors.XtraForm
     {

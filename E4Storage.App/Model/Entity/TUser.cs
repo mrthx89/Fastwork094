@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E4Storage.App.Model.Entity
+namespace Inventory.App.Model.Entity
 {
     [Table("TUser")]
     public partial class TUser : BaseTable

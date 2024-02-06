@@ -7,7 +7,7 @@ using System.Data.Entity.Spatial;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-namespace E4Storage.App.Model.Entity
+namespace Inventory.App.Model.Entity
 {
     [Table("TTypeTransaction")]
     public partial class TTypeTransaction : BaseTable

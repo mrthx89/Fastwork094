@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
-using E4Storage.App.Model.Entity;
-using E4Storage.App.Model.ViewModel;
+using Inventory.App.Model.Entity;
+using Inventory.App.Model.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E4Storage.App.Utils
+namespace Inventory.App.Utils
 {
     public class AutoMapperConfig
     {
@@ -17,7 +17,10 @@ namespace E4Storage.App.Utils
             {
                 cfg.CreateMap<TInventor, ItemMaster>();
                 cfg.CreateMap<ItemMaster, TInventor>();
-                
+
+                cfg.CreateMap<TWarehouse, WarehouseMaster>();
+                cfg.CreateMap<WarehouseMaster, TWarehouse>();
+
                 cfg.CreateMap<TStockIn, StokMasuk>();
                 cfg.CreateMap<StokMasuk, TStockIn>();
                 cfg.CreateMap<TStockCard, StokMasuk>();

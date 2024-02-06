@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using E4Storage.App.Helper;
-using E4Storage.App.Model;
-using E4Storage.App.Model.Entity;
+using Inventory.App.Helper;
+using Inventory.App.Model;
+using Inventory.App.Model.Entity;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,11 +9,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E4Storage.App.Utils
+namespace Inventory.App.Utils
 {
     public class Constant
     {
-        public static string NamaApplikasi = "E4 Storage";
+        public static string NamaApplikasi = "Inventory System";
         public static AppSetting appSetting = null;
         public static TUser UserLogin = null;
         public static LayoutsHelper layoutsHelper = new LayoutsHelper(Path.Combine(Environment.CurrentDirectory, "System", "Layouts"));
@@ -33,5 +33,8 @@ namespace E4Storage.App.Utils
         public static Guid stokMasterDataType = Guid.Parse("991D2F92-C02D-4A2A-8A5F-F19E3DAD08C5");
         public static Guid stokOutType = Guid.Parse("6652E843-6C01-4CD0-9F9C-5111565D7844");
         public static Guid stokSaldoAwal = Guid.Parse("D6022513-AFD4-4A67-9F47-594E43D5F220");
+        
+        //IDWarehouse
+        public static Guid warehouse = Guid.Parse("53EC3BB6-9249-4840-8BAB-EA8A30BFCAD1");
     }
 }

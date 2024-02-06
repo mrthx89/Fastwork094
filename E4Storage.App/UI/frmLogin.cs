@@ -1,5 +1,5 @@
 ﻿using DevExpress.XtraEditors;
-using E4Storage.App.Utils;
+using Inventory.App.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace E4Storage.App.UI
+namespace Inventory.App.UI
 {
     public partial class frmLogin : DevExpress.XtraEditors.XtraForm
     {
@@ -127,13 +127,13 @@ namespace E4Storage.App.UI
                         Application.DoEvents();
                     }
 
-                    E4Storage.App.Helper.MsgBoxHelper.MsgInfo($"{this.Name}.repairKoneksi", "Proses repair koneksi selesai!");
+                    Inventory.App.Helper.MsgBoxHelper.MsgInfo($"{this.Name}.repairKoneksi", "Proses repair koneksi selesai!");
                     DialogResult = DialogResult.Retry;
                     this.Close();
                 }
                 catch (Exception ex)
                 {
-                    E4Storage.App.Helper.MsgBoxHelper.MsgError($"{this.Name}.repairKoneksi", ex);
+                    Inventory.App.Helper.MsgBoxHelper.MsgError($"{this.Name}.repairKoneksi", ex);
                 }
             }
         }

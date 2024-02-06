@@ -1,8 +1,8 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.Utils;
-using E4Storage.App.Helper;
-using E4Storage.App.Model.Entity;
-using E4Storage.App.Utils;
+using Inventory.App.Helper;
+using Inventory.App.Model.Entity;
+using Inventory.App.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,9 +12,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using E4Storage.App.Model.ViewModel;
+using Inventory.App.Model.ViewModel;
 
-namespace E4Storage.App.UI
+namespace Inventory.App.UI
 {
     public partial class frmLaporanStokKeluar : DevExpress.XtraEditors.XtraForm
     {
@@ -189,7 +189,7 @@ namespace E4Storage.App.UI
                 }
                 catch (Exception ex)
                 {
-                    E4Storage.App.Helper.MsgBoxHelper.MsgError($"{this.Name}.bbiStokKeluar_ItemClick", ex);
+                    Inventory.App.Helper.MsgBoxHelper.MsgError($"{this.Name}.bbiStokKeluar_ItemClick", ex);
                 }
             }
         }

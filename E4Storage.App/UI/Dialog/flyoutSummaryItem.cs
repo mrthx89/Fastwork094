@@ -5,11 +5,11 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using E4Storage.App.Helper;
+using Inventory.App.Helper;
 using System.Windows.Forms;
 using System.Drawing;
 
-namespace E4Storage.App.UI.Dialog
+namespace Inventory.App.UI.Dialog
 {
     public class flyoutSummaryItem
     {

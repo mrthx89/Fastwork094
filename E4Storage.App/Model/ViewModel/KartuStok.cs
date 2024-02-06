@@ -1,4 +1,4 @@
-﻿using E4Storage.App.Model.Entity;
+﻿using Inventory.App.Model.Entity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E4Storage.App.Model.ViewModel
+namespace Inventory.App.Model.ViewModel
 {
     public class KartuStok : BaseTable
     {

@@ -1,5 +1,5 @@
 ﻿
-namespace E4Storage.App.UI
+namespace Inventory.App.UI
 {
     partial class frmDaftarCategory
     {
@@ -156,7 +156,7 @@ namespace E4Storage.App.UI
             // 
             // tCategoryBindingSource
             // 
-            this.tCategoryBindingSource.DataSource = typeof(E4Storage.App.Model.Entity.TCategory);
+            this.tCategoryBindingSource.DataSource = typeof(Inventory.App.Model.Entity.TCategory);
             // 
             // gridView1
             // 

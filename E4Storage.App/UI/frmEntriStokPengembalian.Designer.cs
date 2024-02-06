@@ -1,5 +1,5 @@
 ﻿
-namespace E4Storage.App.UI
+namespace Inventory.App.UI
 {
     partial class frmEntriStokPengembalian
     {
@@ -252,7 +252,7 @@ namespace E4Storage.App.UI
             // 
             // StokPengembalianBindingSource
             // 
-            this.StokPengembalianBindingSource.DataSource = typeof(E4Storage.App.Model.ViewModel.StokPengembalian);
+            this.StokPengembalianBindingSource.DataSource = typeof(Inventory.App.Model.ViewModel.StokPengembalian);
             // 
             // IDInventorSearchLookUpEdit
             // 

@@ -1,5 +1,5 @@
-﻿using E4Storage.App.Model;
-using E4Storage.App.Utils;
+﻿using Inventory.App.Model;
+using Inventory.App.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace E4Storage.App.UI
+namespace Inventory.App.UI
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
@@ -49,6 +49,9 @@ namespace E4Storage.App.UI
                 bbiManagementUser.Enabled = false;
 
                 bbiMasterItem.Enabled = false;
+                bbiMasterSupplier.Enabled = false;
+                bbiMasterCustomer.Enabled = false;
+                bbiMasterGudang.Enabled = false;
                 bbiStokKeluar.Enabled = false;
                 bbiStokMasuk.Enabled = false;
                 bbiLaporanSaldoStok.Enabled = false;
@@ -74,6 +77,9 @@ namespace E4Storage.App.UI
                 bbiManagementUser.Enabled = Constant.UserLogin.IsAdmin;
 
                 bbiMasterItem.Enabled = Constant.UserLogin.IsAdmin;
+                bbiMasterSupplier.Enabled = Constant.UserLogin.IsAdmin;
+                bbiMasterCustomer.Enabled = Constant.UserLogin.IsAdmin;
+                bbiMasterGudang.Enabled = Constant.UserLogin.IsAdmin;
                 bbiStokKeluar.Enabled = true;
                 bbiStokMasuk.Enabled = true;
                 bbiLaporanSaldoStok.Enabled = Constant.UserLogin.IsAdmin;
@@ -107,7 +113,7 @@ namespace E4Storage.App.UI
 
         private void bbiSetting_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            using (frmSetting frm = new frmSetting(E4Storage.App.Helper.JSONHelper.CloneObject<AppSetting>(Constant.appSetting)))
+            using (frmSetting frm = new frmSetting(Inventory.App.Helper.JSONHelper.CloneObject<AppSetting>(Constant.appSetting)))
             {
                 try
                 {
@@ -127,7 +133,7 @@ namespace E4Storage.App.UI
                 }
                 catch (Exception ex)
                 {
-                    E4Storage.App.Helper.MsgBoxHelper.MsgError($"{this.Name}.bbiSetting_ItemClick", ex);
+                    Inventory.App.Helper.MsgBoxHelper.MsgError($"{this.Name}.bbiSetting_ItemClick", ex);
                 }
             }
         }
@@ -153,7 +159,7 @@ namespace E4Storage.App.UI
                     }
                     catch (Exception ex)
                     {
-                        E4Storage.App.Helper.MsgBoxHelper.MsgError($"{this.Name}.bbiSetting_ItemClick", ex);
+                        Inventory.App.Helper.MsgBoxHelper.MsgError($"{this.Name}.bbiSetting_ItemClick", ex);
                     }
                 }
             }
@@ -230,7 +236,7 @@ namespace E4Storage.App.UI
                         }
                         catch (Exception ex)
                         {
-                            E4Storage.App.Helper.MsgBoxHelper.MsgError($"{this.Name}.bbiStokMasuk_ItemClick", ex);
+                            Inventory.App.Helper.MsgBoxHelper.MsgError($"{this.Name}.bbiStokMasuk_ItemClick", ex);
                         }
                     }
                 }
@@ -245,7 +251,7 @@ namespace E4Storage.App.UI
                         }
                         catch (Exception ex)
                         {
-                            E4Storage.App.Helper.MsgBoxHelper.MsgError($"{this.Name}.bbiStokMasuk_ItemClick", ex);
+                            Inventory.App.Helper.MsgBoxHelper.MsgError($"{this.Name}.bbiStokMasuk_ItemClick", ex);
                         }
                     }
                 }
@@ -260,7 +266,7 @@ namespace E4Storage.App.UI
                         }
                         catch (Exception ex)
                         {
-                            E4Storage.App.Helper.MsgBoxHelper.MsgError($"{this.Name}.bbiStokMasuk_ItemClick", ex);
+                            Inventory.App.Helper.MsgBoxHelper.MsgError($"{this.Name}.bbiStokMasuk_ItemClick", ex);
                         }
                     }
                 }
@@ -280,7 +286,7 @@ namespace E4Storage.App.UI
                     }
                     catch (Exception ex)
                     {
-                        E4Storage.App.Helper.MsgBoxHelper.MsgError($"{this.Name}.bbiStokKeluar_ItemClick", ex);
+                        Inventory.App.Helper.MsgBoxHelper.MsgError($"{this.Name}.bbiStokKeluar_ItemClick", ex);
                     }
                 }
             }
@@ -387,6 +393,38 @@ namespace E4Storage.App.UI
                 else
                 {
                     frmOld = new frmLaporanKartuStok
+                    {
+                        MdiParent = this
+                    };
+                    frmOld.Show();
+                    frmOld.Focus();
+                }
+            }
+        }
+
+        private void bbiMasterSupplier_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void bbiMasterCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void bbiMasterGudang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (isLogin())
+            {
+                System.Windows.Forms.Form frmOld = this.MdiChildren.ToList().FirstOrDefault(o => o.GetType() == typeof(frmDaftarWarehouse));
+                if (frmOld != null)
+                {
+                    frmOld.Show();
+                    frmOld.Focus();
+                }
+                else
+                {
+                    frmOld = new frmDaftarWarehouse
                     {
                         MdiParent = this
                     };

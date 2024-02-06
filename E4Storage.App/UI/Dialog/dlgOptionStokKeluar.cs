@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars.Docking2010.Customization;
 
-namespace E4Storage.App.UI.Dialog
+namespace Inventory.App.UI.Dialog
 {
     public partial class dlgOptionStokKeluar : DevExpress.XtraEditors.XtraUserControl
     {

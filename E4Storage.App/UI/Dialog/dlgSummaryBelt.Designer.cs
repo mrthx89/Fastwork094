@@ -1,5 +1,5 @@
 ﻿
-namespace E4Storage.App.UI.Dialog
+namespace Inventory.App.UI.Dialog
 {
     partial class dlgSummaryBelt
     {

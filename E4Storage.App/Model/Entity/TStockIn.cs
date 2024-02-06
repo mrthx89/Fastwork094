@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E4Storage.App.Model.Entity
+namespace Inventory.App.Model.Entity
 {
     [Table("TStockIn")]
     public partial class TStockIn : BaseTable
@@ -27,6 +27,8 @@ namespace E4Storage.App.Model.Entity
         public string Supplier { get; set; }
         [Required]
         public Guid IDInventor { get; set; }
+        [Required]
+        public Guid IDWarehouse { get; set; }
         [Required]
         public Guid IDUOM { get; set; }
         [Required]
@@ -47,5 +49,6 @@ namespace E4Storage.App.Model.Entity
 
         public virtual TInventor Inventor { get; set; }
         public virtual TUOM UOM { get; set; }
+        public virtual TWarehouse Warehouse { get; set; }
     }
 }

@@ -1,5 +1,5 @@
 ﻿
-namespace E4Storage.App.UI
+namespace Inventory.App.UI
 {
     partial class frmLogin
     {
@@ -103,7 +103,7 @@ namespace E4Storage.App.UI
             this.textEdit2.EnterMoveNextControl = true;
             this.textEdit2.Location = new System.Drawing.Point(13, 99);
             this.textEdit2.Name = "textEdit2";
-            editorButtonImageOptions1.Image = global::E4Storage.App.Properties.Resources.apply_16x16;
+            editorButtonImageOptions1.Image = global::Inventory.App.Properties.Resources.apply_16x16;
             this.textEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.textEdit2.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -130,7 +130,7 @@ namespace E4Storage.App.UI
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmLogin.IconOptions.Icon")));
-            this.IconOptions.Image = global::E4Storage.App.Properties.Resources.inventory;
+            this.IconOptions.Image = global::Inventory.App.Properties.Resources.inventory;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmLogin";

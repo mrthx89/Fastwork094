@@ -1,5 +1,5 @@
 ﻿using DevExpress.XtraEditors;
-using E4Storage.App.Helper;
+using Inventory.App.Helper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace E4Storage.App.UI
+namespace Inventory.App.UI
 {
     public partial class frmChangePassword : DevExpress.XtraEditors.XtraForm
     {

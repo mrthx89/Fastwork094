@@ -1,4 +1,4 @@
-namespace E4Storage.App.Migrations
+namespace Inventory.App.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

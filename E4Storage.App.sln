@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.34031.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E4Storage.App", "E4Storage.App\E4Storage.App.csproj", "{4605F209-47B8-44EF-BBAD-E61A57965001}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.App", "E4Storage.App\Inventory.App.csproj", "{4605F209-47B8-44EF-BBAD-E61A57965001}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

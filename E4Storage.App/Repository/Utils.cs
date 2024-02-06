@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E4Storage.App.Repository
+namespace Inventory.App.Repository
 {
     public class Utils
     {

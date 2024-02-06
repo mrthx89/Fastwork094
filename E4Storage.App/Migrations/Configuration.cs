@@ -1,12 +1,12 @@
-namespace E4Storage.App.Migrations
+namespace Inventory.App.Migrations
 {
-    using E4Storage.App.Model.Entity;
+    using Inventory.App.Model.Entity;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<E4Storage.App.Data.E4StorageContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Inventory.App.Data.InventoryContext>
     {
         public Configuration()
         {
@@ -14,7 +14,7 @@ namespace E4Storage.App.Migrations
             AutomaticMigrationDataLossAllowed = true; // Atur ke false untuk menghindari kehilangan data
         }
 
-        protected override void Seed(E4Storage.App.Data.E4StorageContext context)
+        protected override void Seed(Inventory.App.Data.InventoryContext context)
         {
             //  This method will be called after migrating to the latest version.
 
@@ -100,6 +100,42 @@ namespace E4Storage.App.Migrations
             if (context.TTypeTransactions.FirstOrDefault(o => o.ID.Equals(typeTransaction5.ID)) == null)
             {
                 context.TTypeTransactions.Add(typeTransaction5);
+            }
+
+            TWarehouse warehouse = new TWarehouse
+            {
+                ID = Utils.Constant.warehouse,
+                Code = "UTM",
+                Name = "Utama",
+                Active = true,
+                Address = "",
+                IDUserEntri = sysAdmin.ID,
+                TglEntri = DateTime.Now
+            };
+            if (context.TWarehouses.FirstOrDefault(o => o.ID.Equals(warehouse.ID)) == null)
+            {
+                context.TWarehouses.Add(warehouse);
+
+                foreach (var item in context.TStockCards)
+                {
+                    item.IDWarehouse = warehouse.ID;
+                }
+                foreach (var item in context.TStockIns)
+                {
+                    item.IDWarehouse = warehouse.ID;
+                }
+                foreach (var item in context.TStockMasterDatas)
+                {
+                    item.IDWarehouse = warehouse.ID;
+                }
+                foreach (var item in context.TStockOuts)
+                {
+                    item.IDWarehouse = warehouse.ID;
+                }
+                foreach (var item in context.TStockPengembalians)
+                {
+                    item.IDWarehouse = warehouse.ID;
+                }
             }
 
             context.SaveChanges();

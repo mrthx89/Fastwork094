@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace E4Storage.App.Properties {
+namespace Inventory.App.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace E4Storage.App.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("E4Storage.App.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Inventory.App.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -223,6 +223,16 @@ namespace E4Storage.App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap businessman {
+            get {
+                object obj = ResourceManager.GetObject("businessman", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap customer_16x16 {
             get {
                 object obj = ResourceManager.GetObject("customer_16x16", resourceCulture);
@@ -276,6 +286,16 @@ namespace E4Storage.App.Properties {
         internal static System.Drawing.Bitmap properties_32x32 {
             get {
                 object obj = ResourceManager.GetObject("properties_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap salesman {
+            get {
+                object obj = ResourceManager.GetObject("salesman", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

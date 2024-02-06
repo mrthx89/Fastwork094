@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E4Storage.App.Model.ViewModel
+namespace Inventory.App.Model.ViewModel
 {
     public class MutasiStok
     {

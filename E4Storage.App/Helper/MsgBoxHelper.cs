@@ -1,6 +1,6 @@
 ﻿using DevExpress.XtraEditors;
-using E4Storage.App.Model.Entity;
-using E4Storage.App.Utils;
+using Inventory.App.Model.Entity;
+using Inventory.App.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace E4Storage.App.Helper
+namespace Inventory.App.Helper
 {
     public static class MsgBoxHelper
     {

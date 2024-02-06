@@ -1,5 +1,5 @@
 ﻿
-namespace E4Storage.App.UI
+namespace Inventory.App.UI
 {
     partial class frmDaftarBelt
     {
@@ -156,7 +156,7 @@ namespace E4Storage.App.UI
             // 
             // tBeltBindingSource
             // 
-            this.tBeltBindingSource.DataSource = typeof(E4Storage.App.Model.Entity.TBelt);
+            this.tBeltBindingSource.DataSource = typeof(Inventory.App.Model.Entity.TBelt);
             // 
             // gridView1
             // 

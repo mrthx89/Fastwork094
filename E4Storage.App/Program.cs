@@ -1,8 +1,8 @@
 ﻿using DevExpress.LookAndFeel;
 using DevExpress.Skins;
 using DevExpress.UserSkins;
-using E4Storage.App.Helper;
-using E4Storage.App.Utils;
+using Inventory.App.Helper;
+using Inventory.App.Utils;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -16,7 +16,7 @@ using System.Drawing;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
 
-namespace E4Storage.App
+namespace Inventory.App
 {
     static class Program
     {
@@ -164,7 +164,7 @@ namespace E4Storage.App
                 // Buat mdf baru jika tidak ada
                 string path = AppDomain.CurrentDomain.BaseDirectory; // Direktori aplikasi
                 AppDomain.CurrentDomain.SetData("DataDirectory", path);
-                Database.SetInitializer(new CreateDatabaseIfNotExists<Data.E4StorageContext>());
+                Database.SetInitializer(new CreateDatabaseIfNotExists<Data.InventoryContext>());
 
                 // Buat instance migrator dengan konfigurasi Anda
                 var configuration = new Migrations.Configuration(); // Sesuaikan dengan konfigurasi migrasi Anda

@@ -9,13 +9,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using E4Storage.App.Helper;
-using E4Storage.App.Utils;
-using E4Storage.App.Repository;
-using E4Storage.App.Model.ViewModel;
-using E4Storage.App.Model.Entity;
+using Inventory.App.Helper;
+using Inventory.App.Utils;
+using Inventory.App.Repository;
+using Inventory.App.Model.ViewModel;
+using Inventory.App.Model.Entity;
 
-namespace E4Storage.App.UI
+namespace Inventory.App.UI
 {
     public partial class frmDaftarMasterItem : DevExpress.XtraEditors.XtraForm
     {
