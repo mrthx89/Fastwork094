@@ -25,7 +25,6 @@ namespace Inventory.App.Helper
             public dynamic Value { get; set; }
         }
 
-        [Obsolete]
         public static void ReportHandler(
             StatusCetak status,
             DataSet ds,
@@ -45,7 +44,7 @@ namespace Inventory.App.Helper
                     report = XtraReport.FromFile(System.IO.Path.Combine(Environment.CurrentDirectory, "Report", fileName), true);
 
                     report.DataSource = ds;
-                    report.DataMember = ds.Tables[0].TableName;
+                    // report.DataMember = ds.Tables[0].TableName;
 
                     if (calculates != null && calculates.Count >= 1)
                     {
@@ -85,8 +84,8 @@ namespace Inventory.App.Helper
                     report.ScriptLanguage = ScriptLanguage.VisualBasic;
                     permission.Deny = true;
                     // Add this permission to a report's list of permissions for scripts.
-                    report.ScriptSecurityPermissions.Add(permission);
-                    report.Name = title;
+                    //report.ScriptSecurityPermissions.Add(permission);
+                    report.Name = fileName;
                     report.PrintingSystem.SetCommandVisibility(PrintingSystemCommand.ClosePreview, DevExpress.XtraPrinting.CommandVisibility.None);
                     report.DisplayName = title;
                     report.ShowPrintMarginsWarning = false;
@@ -172,8 +171,8 @@ namespace Inventory.App.Helper
                         report.ScriptLanguage = ScriptLanguage.VisualBasic;
                         permission.Deny = true;
                         // Add this permission to a report's list of permissions for scripts.
-                        report.ScriptSecurityPermissions.Add(permission);
-                        report.Name = title;
+                        // report.ScriptSecurityPermissions.Add(permission);
+                        report.Name = fileName;
                         report.PrintingSystem.SetCommandVisibility(PrintingSystemCommand.ClosePreview, DevExpress.XtraPrinting.CommandVisibility.None);
                         report.DisplayName = title;
                         report.ShowPrintMarginsWarning = false;

@@ -189,7 +189,35 @@ namespace Inventory.App.UI
 
         private void mnCetakInvoice_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            try
+            {
+                var item = (Purchase)purchaseBindingSource.Current;
+                if (item != null)
+                {
+                    printData(JSONHelper.CloneObject<Purchase>(item));
+                }
+            }
+            catch (Exception ex)
+            {
+                MsgBoxHelper.MsgError($"{this.Name}.mnEdit_ItemClick", ex);
+            }
+        }
 
+        private void printData(Purchase data)
+        {
+            var print = Repository.Pembelian.getPrintData(data);
+            if (print.Item1)
+            {
+                ReportHelper.ReportHandler(Utils.Constant.EditReport ? ReportHelper.StatusCetak.Edit : ReportHelper.StatusCetak.Preview, 
+                    print.Item3, 
+                    "FakturPembelian.repx", 
+                    "Cetak Faktur Pembelian", 
+                    new List<ReportHelper.Parameter>());
+            }
+            else
+            {
+                MsgBoxHelper.MsgInfo($"{this.Name}.printData", print.Item2);
+            }
         }
     }
 }

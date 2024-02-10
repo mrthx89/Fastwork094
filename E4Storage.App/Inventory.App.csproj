@@ -494,7 +494,6 @@
     <EmbeddedResource Include="Migrations\202402100441204_StrukturJoin.resx">
       <DependentUpon>202402100441204_StrukturJoin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="UI\Dialog\dlgOptionStokMasuk.resx">
       <DependentUpon>dlgOptionStokMasuk.cs</DependentUpon>
     </EmbeddedResource>

@@ -4,6 +4,8 @@ using Inventory.App.Model.ViewModel;
 using Inventory.App.Utils;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -220,6 +222,78 @@ namespace Inventory.App.Repository
                 catch (Exception ex)
                 {
                     MsgBoxHelper.MsgError($"{Name}.getPurchases", ex);
+                }
+            }
+            return hasil;
+        }
+
+        public static Tuple<bool, string, DataSet> getPrintData(Purchase data)
+        {
+            DataSet dataSet = new DataSet();
+            Tuple<bool, string, DataSet> hasil = new Tuple<bool, string, DataSet>(false, "", null);
+            using (SqlConnection cn = new SqlConnection(Constant.appSetting.KoneksiString))
+            {
+                using (SqlCommand com = new SqlCommand())
+                {
+                    using (SqlDataAdapter oDA = new SqlDataAdapter())
+                    {
+                        try
+                        {
+                            cn.Open();
+                            com.Connection = cn;
+                            com.CommandTimeout = cn.ConnectionTimeout;
+                            oDA.SelectCommand = com;
+
+                            string query = "";
+                            if (System.IO.File.Exists(System.IO.Path.Combine(Environment.CurrentDirectory, "Report", "Script", "FakturPembelian.sql")))
+                            {
+                                query = System.IO.File.ReadAllText(System.IO.Path.Combine(Environment.CurrentDirectory, "Report", "Script", "FakturPembelian.sql"));
+                            }
+                            else
+                            {
+                                query = @"SELECT TPurchase.*,
+                                            TWarehouse.Code CodeGudang,
+                                            TWarehouse.[Name] Gudang,
+                                            TContact.Code CodeVendor,
+                                            TContact.[Name] Vendor,
+                                            TContact.[Address] AddressVendor,
+                                            UserEntri.Nama UserEntri,
+                                            UserEdit.Nama UserEdit,
+                                            UserHapus.Nama UserHapus
+                                            FROM TPurchase(NOLOCK)
+                                            LEFT JOIN TWarehouse(NOLOCK) ON TPurchase.IDWarehouse = TWarehouse.ID
+                                            LEFT JOIN TContact(NOLOCK) ON TPurchase.IDVendor = TContact.ID
+                                            LEFT JOIN TUser(NOLOCK) UserEntri ON TPurchase.IDUserEntri = UserEntri.ID
+                                            LEFT JOIN TUser(NOLOCK) UserEdit ON TPurchase.IDUserEdit = UserEdit.ID
+                                            LEFT JOIN TUser(NOLOCK) UserHapus ON TPurchase.IDUserHapus = UserHapus.ID
+                                            WHERE TPurchase.ID=@ID
+                                            ORDER BY TPurchase.ID;
+                                          SELECT TPurchaseDtl.*,
+                                            TInventor.PLU,
+                                            TInventor.[Desc],
+                                            TUOM.Satuan
+                                            FROM TPurchaseDtl(NOLOCK)
+                                            LEFT JOIN TInventor(NOLOCK) ON TPurchaseDtl.IDInventor = TInventor.ID
+                                            LEFT JOIN TUOM(NOLOCK) ON TPurchaseDtl.IDUOM = TUOM.ID
+                                            WHERE TPurchaseDtl.IDPurchase=@ID
+                                            ORDER BY TPurchaseDtl.NoUrut;";
+                                System.IO.File.WriteAllText(System.IO.Path.Combine(Environment.CurrentDirectory, "Report", "Script", "FakturPembelian.sql"), query);
+                            }
+                            com.CommandText = query;
+                            com.Parameters.Clear();
+                            com.Parameters.AddWithValue("@ID", data.ID);
+                            oDA.Fill(dataSet);
+
+                            dataSet.Tables[0].TableName = "TPurchase";
+                            dataSet.Tables[1].TableName = "TPurchaseDtl";
+                            dataSet.Relations.Add(new DataRelation("IX_PurchaseDtl", dataSet.Tables[0].Columns["ID"], dataSet.Tables[1].Columns["IDPurchase"]));
+                            hasil = new Tuple<bool, string, DataSet>(true, "Success", dataSet);
+                        }
+                        catch (Exception ex)
+                        {
+                            hasil = new Tuple<bool, string, DataSet>(false, ex.Message, null);
+                        }
+                    }
                 }
             }
             return hasil;

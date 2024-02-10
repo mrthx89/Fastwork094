@@ -151,6 +151,10 @@ namespace Inventory.App
             {
                 Directory.CreateDirectory(Path.Combine(Environment.CurrentDirectory, "Report"));
             }
+            if (!Directory.Exists(Path.Combine(Environment.CurrentDirectory, "Report", "Script")))
+            {
+                Directory.CreateDirectory(Path.Combine(Environment.CurrentDirectory, "Report", "Script"));
+            }
             if (!Directory.Exists(Path.Combine(Environment.CurrentDirectory, "Log")))
             {
                 Directory.CreateDirectory(Path.Combine(Environment.CurrentDirectory, "Log"));

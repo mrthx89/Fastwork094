@@ -1,0 +1,1886 @@
+﻿<XtraSerializer version="1.0" application="DataLayoutControl">
+  <property name="#LayoutVersion" />
+  <property name="OptionsFocus" isnull="true" iskey="true">
+    <property name="ActivateSelectedControlOnGotFocus">true</property>
+    <property name="AllowFocusControlOnLabelClick">false</property>
+    <property name="EnableAutoTabOrder">true</property>
+    <property name="AllowFocusControlOnActivatedTabPage">false</property>
+    <property name="AllowFocusGroups">true</property>
+    <property name="AllowFocusTabbedGroups">true</property>
+    <property name="AllowFocusReadonlyEditors">true</property>
+    <property name="MoveFocusRightToLeft">false</property>
+    <property name="MoveFocusDirection">AcrossThenDown</property>
+  </property>
+  <property name="LookAndFeel" isnull="true" iskey="true">
+    <property name="SkinName">Basic</property>
+    <property name="Style">Skin</property>
+    <property name="UseDefaultLookAndFeel">true</property>
+    <property name="UseWindowsXPTheme">false</property>
+  </property>
+  <property name="Items" iskey="true" value="20">
+    <property name="Item1" isnull="true" iskey="true">
+      <property name="TypeName">LayoutGroup</property>
+      <property name="TabbedGroupParentName" />
+      <property name="GroupBordersVisible">false</property>
+      <property name="AllowDrawBackground">true</property>
+      <property name="EnableIndentsWithoutBorders">True</property>
+      <property name="OptionsItemText" isnull="true" iskey="true">
+        <property name="TextToControlDistance">3</property>
+        <property name="TextAlignMode">UseParentOptions</property>
+      </property>
+      <property name="CaptionImageVisible">true</property>
+      <property name="FlowDirection">LeftToRight</property>
+      <property name="LayoutMode">Regular</property>
+      <property name="CaptionImageLocation">Default</property>
+      <property name="CaptionImageIndex">-1</property>
+      <property name="AllowBorderColorBlending">false</property>
+      <property name="Enabled">true</property>
+      <property name="ExpandOnDoubleClick">false</property>
+      <property name="Expanded">true</property>
+      <property name="DefaultLayoutType">Vertical</property>
+      <property name="ShowTabPageCloseButton">false</property>
+      <property name="AllowHtmlStringInCaption">false</property>
+      <property name="AllowGlyphSkinning">Default</property>
+      <property name="OptionsPrint" isnull="true" iskey="true">
+        <property name="AppearanceGroupCaption" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+        <property name="AllowPrintGroupCaption">true</property>
+        <property name="TextToControlDistance">-1</property>
+        <property name="AllowPrint">true</property>
+        <property name="AppearanceItemCaption" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+      </property>
+      <property name="OptionsTableLayoutGroup" isnull="true" iskey="true">
+        <property name="RowDefinitions" iskey="true" value="0" />
+        <property name="ColumnDefinitions" iskey="true" value="0" />
+      </property>
+      <property name="Size">@3,Width=489@3,Height=525</property>
+      <property name="ExpandButtonVisible">false</property>
+      <property name="ExpandButtonMode">Normal</property>
+      <property name="HeaderButtonsLocation">Default</property>
+      <property name="GroupStyle">Inherited</property>
+      <property name="TextToControlDistance">0</property>
+      <property name="TextLocation">Top</property>
+      <property name="AppearanceTabPage" isnull="true" iskey="true">
+        <property name="Header" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+        <property name="HeaderActive" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+        <property name="HeaderDisabled" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+        <property name="HeaderHotTracked" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+        <property name="PageClient" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+      </property>
+      <property name="AppearanceGroup" isnull="true" iskey="true">
+        <property name="ForeColor" />
+        <property name="BorderColor" />
+        <property name="BackColor" />
+        <property name="BackColor2" />
+        <property name="Font">Segoe UI, 9.75pt</property>
+        <property name="GradientMode">Horizontal</property>
+        <property name="FontSizeDelta">0</property>
+        <property name="FontStyleDelta">Regular</property>
+      </property>
+      <property name="TabPageWidth">0</property>
+      <property name="OptionsCustomization" isnull="true" iskey="true">
+        <property name="AllowDrag">Default</property>
+        <property name="AllowDrop">Default</property>
+      </property>
+      <property name="OptionsTableLayoutItem" isnull="true" iskey="true">
+        <property name="RowIndex">0</property>
+        <property name="RowSpan">1</property>
+        <property name="ColumnIndex">0</property>
+        <property name="ColumnSpan">1</property>
+      </property>
+      <property name="OptionsToolTip" isnull="true" iskey="true">
+        <property name="ToolTip" />
+        <property name="ToolTipTitle" />
+        <property name="ToolTipIconType">None</property>
+        <property name="ImmediateToolTip">false</property>
+        <property name="AllowHtmlString">Default</property>
+        <property name="IconToolTip" />
+        <property name="IconToolTipTitle" />
+        <property name="IconToolTipIconType">None</property>
+        <property name="EnableIconToolTip">true</property>
+        <property name="IconImmediateToolTip">false</property>
+        <property name="IconAllowHtmlString">Default</property>
+      </property>
+      <property name="Name">Root</property>
+      <property name="AppearanceItemCaption" isnull="true" iskey="true">
+        <property name="ForeColor" />
+        <property name="BorderColor" />
+        <property name="BackColor" />
+        <property name="BackColor2" />
+        <property name="Font">Segoe UI, 9.75pt</property>
+        <property name="GradientMode">Horizontal</property>
+        <property name="FontSizeDelta">0</property>
+        <property name="FontStyleDelta">Regular</property>
+      </property>
+      <property name="ParentName" />
+      <property name="TextVisible">false</property>
+      <property name="Spacing">0, 0, 0, 0</property>
+      <property name="Padding">10, 10, 10, 10</property>
+      <property name="Location">@1,X=0@1,Y=0</property>
+      <property name="ShowInCustomizationForm">true</property>
+      <property name="Text">Root</property>
+      <property name="CustomizationFormText">Root</property>
+      <property name="StartNewLine">false</property>
+      <property name="Visibility">Always</property>
+    </property>
+    <property name="Item2" isnull="true" iskey="true">
+      <property name="TypeName">LayoutGroup</property>
+      <property name="TabbedGroupParentName" />
+      <property name="GroupBordersVisible">false</property>
+      <property name="AllowDrawBackground">false</property>
+      <property name="EnableIndentsWithoutBorders">Default</property>
+      <property name="OptionsItemText" isnull="true" iskey="true">
+        <property name="TextToControlDistance">3</property>
+        <property name="TextAlignMode">UseParentOptions</property>
+      </property>
+      <property name="CaptionImageVisible">true</property>
+      <property name="FlowDirection">LeftToRight</property>
+      <property name="LayoutMode">Regular</property>
+      <property name="CaptionImageLocation">Default</property>
+      <property name="CaptionImageIndex">-1</property>
+      <property name="AllowBorderColorBlending">false</property>
+      <property name="Enabled">true</property>
+      <property name="ExpandOnDoubleClick">false</property>
+      <property name="Expanded">true</property>
+      <property name="DefaultLayoutType">Vertical</property>
+      <property name="ShowTabPageCloseButton">false</property>
+      <property name="AllowHtmlStringInCaption">false</property>
+      <property name="AllowGlyphSkinning">Default</property>
+      <property name="OptionsPrint" isnull="true" iskey="true">
+        <property name="AppearanceGroupCaption" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+        <property name="AllowPrintGroupCaption">true</property>
+        <property name="TextToControlDistance">-1</property>
+        <property name="AllowPrint">true</property>
+        <property name="AppearanceItemCaption" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+      </property>
+      <property name="OptionsTableLayoutGroup" isnull="true" iskey="true">
+        <property name="RowDefinitions" iskey="true" value="0" />
+        <property name="ColumnDefinitions" iskey="true" value="0" />
+      </property>
+      <property name="Size">@3,Width=465@3,Height=499</property>
+      <property name="ExpandButtonVisible">false</property>
+      <property name="ExpandButtonMode">Normal</property>
+      <property name="HeaderButtonsLocation">Default</property>
+      <property name="GroupStyle">Inherited</property>
+      <property name="TextToControlDistance">0</property>
+      <property name="TextLocation">Top</property>
+      <property name="AppearanceTabPage" isnull="true" iskey="true">
+        <property name="Header" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+        <property name="HeaderActive" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+        <property name="HeaderDisabled" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+        <property name="HeaderHotTracked" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+        <property name="PageClient" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+      </property>
+      <property name="AppearanceGroup" isnull="true" iskey="true">
+        <property name="ForeColor" />
+        <property name="BorderColor" />
+        <property name="BackColor" />
+        <property name="BackColor2" />
+        <property name="Font">Segoe UI, 9.75pt</property>
+        <property name="GradientMode">Horizontal</property>
+        <property name="FontSizeDelta">0</property>
+        <property name="FontStyleDelta">Regular</property>
+      </property>
+      <property name="TabPageWidth">0</property>
+      <property name="OptionsCustomization" isnull="true" iskey="true">
+        <property name="AllowDrag">Default</property>
+        <property name="AllowDrop">Default</property>
+      </property>
+      <property name="OptionsTableLayoutItem" isnull="true" iskey="true">
+        <property name="RowIndex">0</property>
+        <property name="RowSpan">1</property>
+        <property name="ColumnIndex">0</property>
+        <property name="ColumnSpan">1</property>
+      </property>
+      <property name="OptionsToolTip" isnull="true" iskey="true">
+        <property name="ToolTip" />
+        <property name="ToolTipTitle" />
+        <property name="ToolTipIconType">None</property>
+        <property name="ImmediateToolTip">false</property>
+        <property name="AllowHtmlString">Default</property>
+        <property name="IconToolTip" />
+        <property name="IconToolTipTitle" />
+        <property name="IconToolTipIconType">None</property>
+        <property name="EnableIconToolTip">true</property>
+        <property name="IconImmediateToolTip">false</property>
+        <property name="IconAllowHtmlString">Default</property>
+      </property>
+      <property name="Name">autoGeneratedGroup0</property>
+      <property name="AppearanceItemCaption" isnull="true" iskey="true">
+        <property name="ForeColor" />
+        <property name="BorderColor" />
+        <property name="BackColor" />
+        <property name="BackColor2" />
+        <property name="Font">Segoe UI, 9.75pt</property>
+        <property name="GradientMode">Horizontal</property>
+        <property name="FontSizeDelta">0</property>
+        <property name="FontStyleDelta">Regular</property>
+      </property>
+      <property name="ParentName">Root</property>
+      <property name="TextVisible">true</property>
+      <property name="Spacing">2, 2, 2, 2</property>
+      <property name="Padding">10, 10, 10, 10</property>
+      <property name="Location">@1,X=0@1,Y=0</property>
+      <property name="ShowInCustomizationForm">true</property>
+      <property name="Text">autoGeneratedGroup0</property>
+      <property name="CustomizationFormText">autoGeneratedGroup0</property>
+      <property name="StartNewLine">false</property>
+      <property name="Visibility">Always</property>
+    </property>
+    <property name="Item3" isnull="true" iskey="true">
+      <property name="TypeName">LayoutControlItem</property>
+      <property name="ControlName">TanggalDateEdit</property>
+      <property name="AllowHtmlStringInCaption">false</property>
+      <property name="TextAlignMode">UseParentOptions</property>
+      <property name="SizeConstraintsType">Default</property>
+      <property name="Image" isnull="true" />
+      <property name="ImageIndex">-1</property>
+      <property name="ImageAlignment">MiddleLeft</property>
+      <property name="ImageToTextDistance">5</property>
+      <property name="SvgImage" isnull="true" />
+      <property name="SvgImageSize">@1,Width=0@1,Height=0</property>
+      <property name="OptionsPrint" isnull="true" iskey="true">
+        <property name="TextToControlDistance">-1</property>
+        <property name="AllowPrint">true</property>
+        <property name="AppearanceItemCaption" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+      </property>
+      <property name="MaxSize">@1,Width=0@2,Height=30</property>
+      <property name="MinSize">@3,Width=137@2,Height=30</property>
+      <property name="ControlAlignment">TopLeft</property>
+      <property name="ContentVisible">true</property>
+      <property name="HighlightFocusedItem">Default</property>
+      <property name="TrimClientAreaToControl">true</property>
+      <property name="ContentVertAlignment">Default</property>
+      <property name="ContentHorzAlignment">Default</property>
+      <property name="Enabled">true</property>
+      <property name="AllowGlyphSkinning">Default</property>
+      <property name="OptionsCustomization" isnull="true" iskey="true">
+        <property name="AllowDrag">Default</property>
+        <property name="AllowDrop">Default</property>
+      </property>
+      <property name="OptionsTableLayoutItem" isnull="true" iskey="true">
+        <property name="RowIndex">0</property>
+        <property name="RowSpan">1</property>
+        <property name="ColumnIndex">0</property>
+        <property name="ColumnSpan">1</property>
+      </property>
+      <property name="OptionsToolTip" isnull="true" iskey="true">
+        <property name="ToolTip" />
+        <property name="ToolTipTitle" />
+        <property name="ToolTipIconType">None</property>
+        <property name="ImmediateToolTip">false</property>
+        <property name="AllowHtmlString">Default</property>
+        <property name="IconToolTip" />
+        <property name="IconToolTipTitle" />
+        <property name="IconToolTipIconType">None</property>
+        <property name="EnableIconToolTip">true</property>
+        <property name="IconImmediateToolTip">false</property>
+        <property name="IconAllowHtmlString">Default</property>
+      </property>
+      <property name="Name">ItemForTanggal</property>
+      <property name="AppearanceItemCaption" isnull="true" iskey="true">
+        <property name="ForeColor" />
+        <property name="BorderColor" />
+        <property name="BackColor" />
+        <property name="BackColor2" />
+        <property name="Font">Segoe UI, 9.75pt</property>
+        <property name="GradientMode">Horizontal</property>
+        <property name="FontSizeDelta">0</property>
+        <property name="FontStyleDelta">Regular</property>
+      </property>
+      <property name="ParentName">autoGeneratedGroup0</property>
+      <property name="TextVisible">true</property>
+      <property name="TextSize">@2,Width=80@2,Height=17</property>
+      <property name="TextToControlDistance">3</property>
+      <property name="Spacing">0, 0, 0, 0</property>
+      <property name="Padding">2, 2, 2, 2</property>
+      <property name="Location">@1,X=0@1,Y=0</property>
+      <property name="Size">@3,Width=465@2,Height=30</property>
+      <property name="ShowInCustomizationForm">true</property>
+      <property name="Text">Tanggal</property>
+      <property name="CustomizationFormText">Tanggal</property>
+      <property name="StartNewLine">false</property>
+      <property name="Visibility">Always</property>
+      <property name="TextLocation">Default</property>
+    </property>
+    <property name="Item4" isnull="true" iskey="true">
+      <property name="TypeName">LayoutControlItem</property>
+      <property name="ControlName">NoSJTextEdit</property>
+      <property name="AllowHtmlStringInCaption">false</property>
+      <property name="TextAlignMode">UseParentOptions</property>
+      <property name="SizeConstraintsType">Default</property>
+      <property name="Image" isnull="true" />
+      <property name="ImageIndex">-1</property>
+      <property name="ImageAlignment">MiddleLeft</property>
+      <property name="ImageToTextDistance">5</property>
+      <property name="SvgImage" isnull="true" />
+      <property name="SvgImageSize">@1,Width=0@1,Height=0</property>
+      <property name="OptionsPrint" isnull="true" iskey="true">
+        <property name="TextToControlDistance">-1</property>
+        <property name="AllowPrint">true</property>
+        <property name="AppearanceItemCaption" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+      </property>
+      <property name="MaxSize">@1,Width=0@2,Height=30</property>
+      <property name="MinSize">@3,Width=137@2,Height=30</property>
+      <property name="ControlAlignment">TopLeft</property>
+      <property name="ContentVisible">true</property>
+      <property name="HighlightFocusedItem">Default</property>
+      <property name="TrimClientAreaToControl">true</property>
+      <property name="ContentVertAlignment">Default</property>
+      <property name="ContentHorzAlignment">Default</property>
+      <property name="Enabled">true</property>
+      <property name="AllowGlyphSkinning">Default</property>
+      <property name="OptionsCustomization" isnull="true" iskey="true">
+        <property name="AllowDrag">Default</property>
+        <property name="AllowDrop">Default</property>
+      </property>
+      <property name="OptionsTableLayoutItem" isnull="true" iskey="true">
+        <property name="RowIndex">0</property>
+        <property name="RowSpan">1</property>
+        <property name="ColumnIndex">0</property>
+        <property name="ColumnSpan">1</property>
+      </property>
+      <property name="OptionsToolTip" isnull="true" iskey="true">
+        <property name="ToolTip" />
+        <property name="ToolTipTitle" />
+        <property name="ToolTipIconType">None</property>
+        <property name="ImmediateToolTip">false</property>
+        <property name="AllowHtmlString">Default</property>
+        <property name="IconToolTip" />
+        <property name="IconToolTipTitle" />
+        <property name="IconToolTipIconType">None</property>
+        <property name="EnableIconToolTip">true</property>
+        <property name="IconImmediateToolTip">false</property>
+        <property name="IconAllowHtmlString">Default</property>
+      </property>
+      <property name="Name">ItemForNoSJ</property>
+      <property name="AppearanceItemCaption" isnull="true" iskey="true">
+        <property name="ForeColor" />
+        <property name="BorderColor" />
+        <property name="BackColor" />
+        <property name="BackColor2" />
+        <property name="Font">Segoe UI, 9.75pt</property>
+        <property name="GradientMode">Horizontal</property>
+        <property name="FontSizeDelta">0</property>
+        <property name="FontStyleDelta">Regular</property>
+      </property>
+      <property name="ParentName">autoGeneratedGroup0</property>
+      <property name="TextVisible">true</property>
+      <property name="TextSize">@2,Width=80@2,Height=17</property>
+      <property name="TextToControlDistance">3</property>
+      <property name="Spacing">0, 0, 0, 0</property>
+      <property name="Padding">2, 2, 2, 2</property>
+      <property name="Location">@1,X=0@2,Y=60</property>
+      <property name="Size">@3,Width=465@2,Height=30</property>
+      <property name="ShowInCustomizationForm">true</property>
+      <property name="Text">No SJ</property>
+      <property name="CustomizationFormText">No SJ</property>
+      <property name="StartNewLine">false</property>
+      <property name="Visibility">Always</property>
+      <property name="TextLocation">Default</property>
+    </property>
+    <property name="Item5" isnull="true" iskey="true">
+      <property name="TypeName">LayoutControlItem</property>
+      <property name="ControlName">SupplierTextEdit</property>
+      <property name="AllowHtmlStringInCaption">false</property>
+      <property name="TextAlignMode">UseParentOptions</property>
+      <property name="SizeConstraintsType">Default</property>
+      <property name="Image" isnull="true" />
+      <property name="ImageIndex">-1</property>
+      <property name="ImageAlignment">MiddleLeft</property>
+      <property name="ImageToTextDistance">5</property>
+      <property name="SvgImage" isnull="true" />
+      <property name="SvgImageSize">@1,Width=0@1,Height=0</property>
+      <property name="OptionsPrint" isnull="true" iskey="true">
+        <property name="TextToControlDistance">-1</property>
+        <property name="AllowPrint">true</property>
+        <property name="AppearanceItemCaption" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+      </property>
+      <property name="MaxSize">@1,Width=0@2,Height=30</property>
+      <property name="MinSize">@3,Width=137@2,Height=30</property>
+      <property name="ControlAlignment">TopLeft</property>
+      <property name="ContentVisible">true</property>
+      <property name="HighlightFocusedItem">Default</property>
+      <property name="TrimClientAreaToControl">true</property>
+      <property name="ContentVertAlignment">Default</property>
+      <property name="ContentHorzAlignment">Default</property>
+      <property name="Enabled">true</property>
+      <property name="AllowGlyphSkinning">Default</property>
+      <property name="OptionsCustomization" isnull="true" iskey="true">
+        <property name="AllowDrag">Default</property>
+        <property name="AllowDrop">Default</property>
+      </property>
+      <property name="OptionsTableLayoutItem" isnull="true" iskey="true">
+        <property name="RowIndex">0</property>
+        <property name="RowSpan">1</property>
+        <property name="ColumnIndex">0</property>
+        <property name="ColumnSpan">1</property>
+      </property>
+      <property name="OptionsToolTip" isnull="true" iskey="true">
+        <property name="ToolTip" />
+        <property name="ToolTipTitle" />
+        <property name="ToolTipIconType">None</property>
+        <property name="ImmediateToolTip">false</property>
+        <property name="AllowHtmlString">Default</property>
+        <property name="IconToolTip" />
+        <property name="IconToolTipTitle" />
+        <property name="IconToolTipIconType">None</property>
+        <property name="EnableIconToolTip">true</property>
+        <property name="IconImmediateToolTip">false</property>
+        <property name="IconAllowHtmlString">Default</property>
+      </property>
+      <property name="Name">ItemForSupplier</property>
+      <property name="AppearanceItemCaption" isnull="true" iskey="true">
+        <property name="ForeColor" />
+        <property name="BorderColor" />
+        <property name="BackColor" />
+        <property name="BackColor2" />
+        <property name="Font">Segoe UI, 9.75pt</property>
+        <property name="GradientMode">Horizontal</property>
+        <property name="FontSizeDelta">0</property>
+        <property name="FontStyleDelta">Regular</property>
+      </property>
+      <property name="ParentName">autoGeneratedGroup0</property>
+      <property name="TextVisible">true</property>
+      <property name="TextSize">@2,Width=80@2,Height=17</property>
+      <property name="TextToControlDistance">3</property>
+      <property name="Spacing">0, 0, 0, 0</property>
+      <property name="Padding">2, 2, 2, 2</property>
+      <property name="Location">@1,X=0@2,Y=90</property>
+      <property name="Size">@3,Width=465@2,Height=30</property>
+      <property name="ShowInCustomizationForm">true</property>
+      <property name="Text">Supplier</property>
+      <property name="CustomizationFormText">Supplier</property>
+      <property name="StartNewLine">false</property>
+      <property name="Visibility">Always</property>
+      <property name="TextLocation">Default</property>
+    </property>
+    <property name="Item6" isnull="true" iskey="true">
+      <property name="TypeName">LayoutControlItem</property>
+      <property name="ControlName">IDInventorSearchLookUpEdit</property>
+      <property name="AllowHtmlStringInCaption">false</property>
+      <property name="TextAlignMode">UseParentOptions</property>
+      <property name="SizeConstraintsType">Default</property>
+      <property name="Image" isnull="true" />
+      <property name="ImageIndex">-1</property>
+      <property name="ImageAlignment">MiddleLeft</property>
+      <property name="ImageToTextDistance">5</property>
+      <property name="SvgImage" isnull="true" />
+      <property name="SvgImageSize">@1,Width=0@1,Height=0</property>
+      <property name="OptionsPrint" isnull="true" iskey="true">
+        <property name="TextToControlDistance">-1</property>
+        <property name="AllowPrint">true</property>
+        <property name="AppearanceItemCaption" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+      </property>
+      <property name="MaxSize">@1,Width=0@2,Height=30</property>
+      <property name="MinSize">@3,Width=137@2,Height=30</property>
+      <property name="ControlAlignment">TopLeft</property>
+      <property name="ContentVisible">true</property>
+      <property name="HighlightFocusedItem">Default</property>
+      <property name="TrimClientAreaToControl">true</property>
+      <property name="ContentVertAlignment">Default</property>
+      <property name="ContentHorzAlignment">Default</property>
+      <property name="Enabled">true</property>
+      <property name="AllowGlyphSkinning">Default</property>
+      <property name="OptionsCustomization" isnull="true" iskey="true">
+        <property name="AllowDrag">Default</property>
+        <property name="AllowDrop">Default</property>
+      </property>
+      <property name="OptionsTableLayoutItem" isnull="true" iskey="true">
+        <property name="RowIndex">0</property>
+        <property name="RowSpan">1</property>
+        <property name="ColumnIndex">0</property>
+        <property name="ColumnSpan">1</property>
+      </property>
+      <property name="OptionsToolTip" isnull="true" iskey="true">
+        <property name="ToolTip" />
+        <property name="ToolTipTitle" />
+        <property name="ToolTipIconType">None</property>
+        <property name="ImmediateToolTip">false</property>
+        <property name="AllowHtmlString">Default</property>
+        <property name="IconToolTip" />
+        <property name="IconToolTipTitle" />
+        <property name="IconToolTipIconType">None</property>
+        <property name="EnableIconToolTip">true</property>
+        <property name="IconImmediateToolTip">false</property>
+        <property name="IconAllowHtmlString">Default</property>
+      </property>
+      <property name="Name">ItemForIDInventor</property>
+      <property name="AppearanceItemCaption" isnull="true" iskey="true">
+        <property name="ForeColor" />
+        <property name="BorderColor" />
+        <property name="BackColor" />
+        <property name="BackColor2" />
+        <property name="Font">Segoe UI, 9.75pt</property>
+        <property name="GradientMode">Horizontal</property>
+        <property name="FontSizeDelta">0</property>
+        <property name="FontStyleDelta">Regular</property>
+      </property>
+      <property name="ParentName">autoGeneratedGroup0</property>
+      <property name="TextVisible">true</property>
+      <property name="TextSize">@2,Width=80@2,Height=17</property>
+      <property name="TextToControlDistance">3</property>
+      <property name="Spacing">0, 0, 0, 0</property>
+      <property name="Padding">2, 2, 2, 2</property>
+      <property name="Location">@1,X=0@3,Y=120</property>
+      <property name="Size">@3,Width=465@2,Height=30</property>
+      <property name="ShowInCustomizationForm">true</property>
+      <property name="Text">Item</property>
+      <property name="CustomizationFormText">Item</property>
+      <property name="StartNewLine">false</property>
+      <property name="Visibility">Always</property>
+      <property name="TextLocation">Default</property>
+    </property>
+    <property name="Item7" isnull="true" iskey="true">
+      <property name="TypeName">LayoutControlItem</property>
+      <property name="ControlName">IDUOMSearchLookUpEdit</property>
+      <property name="AllowHtmlStringInCaption">false</property>
+      <property name="TextAlignMode">UseParentOptions</property>
+      <property name="SizeConstraintsType">Default</property>
+      <property name="Image" isnull="true" />
+      <property name="ImageIndex">-1</property>
+      <property name="ImageAlignment">MiddleLeft</property>
+      <property name="ImageToTextDistance">5</property>
+      <property name="SvgImage" isnull="true" />
+      <property name="SvgImageSize">@1,Width=0@1,Height=0</property>
+      <property name="OptionsPrint" isnull="true" iskey="true">
+        <property name="TextToControlDistance">-1</property>
+        <property name="AllowPrint">true</property>
+        <property name="AppearanceItemCaption" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+      </property>
+      <property name="MaxSize">@1,Width=0@2,Height=30</property>
+      <property name="MinSize">@3,Width=137@2,Height=30</property>
+      <property name="ControlAlignment">TopLeft</property>
+      <property name="ContentVisible">true</property>
+      <property name="HighlightFocusedItem">Default</property>
+      <property name="TrimClientAreaToControl">true</property>
+      <property name="ContentVertAlignment">Default</property>
+      <property name="ContentHorzAlignment">Default</property>
+      <property name="Enabled">true</property>
+      <property name="AllowGlyphSkinning">Default</property>
+      <property name="OptionsCustomization" isnull="true" iskey="true">
+        <property name="AllowDrag">Default</property>
+        <property name="AllowDrop">Default</property>
+      </property>
+      <property name="OptionsTableLayoutItem" isnull="true" iskey="true">
+        <property name="RowIndex">0</property>
+        <property name="RowSpan">1</property>
+        <property name="ColumnIndex">0</property>
+        <property name="ColumnSpan">1</property>
+      </property>
+      <property name="OptionsToolTip" isnull="true" iskey="true">
+        <property name="ToolTip" />
+        <property name="ToolTipTitle" />
+        <property name="ToolTipIconType">None</property>
+        <property name="ImmediateToolTip">false</property>
+        <property name="AllowHtmlString">Default</property>
+        <property name="IconToolTip" />
+        <property name="IconToolTipTitle" />
+        <property name="IconToolTipIconType">None</property>
+        <property name="EnableIconToolTip">true</property>
+        <property name="IconImmediateToolTip">false</property>
+        <property name="IconAllowHtmlString">Default</property>
+      </property>
+      <property name="Name">ItemForIDUOM</property>
+      <property name="AppearanceItemCaption" isnull="true" iskey="true">
+        <property name="ForeColor" />
+        <property name="BorderColor" />
+        <property name="BackColor" />
+        <property name="BackColor2" />
+        <property name="Font">Segoe UI, 9.75pt</property>
+        <property name="GradientMode">Horizontal</property>
+        <property name="FontSizeDelta">0</property>
+        <property name="FontStyleDelta">Regular</property>
+      </property>
+      <property name="ParentName">autoGeneratedGroup0</property>
+      <property name="TextVisible">true</property>
+      <property name="TextSize">@2,Width=80@2,Height=17</property>
+      <property name="TextToControlDistance">3</property>
+      <property name="Spacing">0, 0, 0, 0</property>
+      <property name="Padding">2, 2, 2, 2</property>
+      <property name="Location">@3,X=232@3,Y=180</property>
+      <property name="Size">@3,Width=233@2,Height=30</property>
+      <property name="ShowInCustomizationForm">true</property>
+      <property name="Text">Satuan</property>
+      <property name="CustomizationFormText">Satuan</property>
+      <property name="StartNewLine">false</property>
+      <property name="Visibility">Always</property>
+      <property name="TextLocation">Default</property>
+    </property>
+    <property name="Item8" isnull="true" iskey="true">
+      <property name="TypeName">LayoutControlItem</property>
+      <property name="ControlName">KeteranganMemoEdit</property>
+      <property name="AllowHtmlStringInCaption">false</property>
+      <property name="TextAlignMode">UseParentOptions</property>
+      <property name="SizeConstraintsType">Default</property>
+      <property name="Image" isnull="true" />
+      <property name="ImageIndex">-1</property>
+      <property name="ImageAlignment">MiddleLeft</property>
+      <property name="ImageToTextDistance">5</property>
+      <property name="SvgImage" isnull="true" />
+      <property name="SvgImageSize">@1,Width=0@1,Height=0</property>
+      <property name="OptionsPrint" isnull="true" iskey="true">
+        <property name="TextToControlDistance">-1</property>
+        <property name="AllowPrint">true</property>
+        <property name="AppearanceItemCaption" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+      </property>
+      <property name="MaxSize">@1,Width=0@1,Height=0</property>
+      <property name="MinSize">@2,Width=97@2,Height=26</property>
+      <property name="ControlAlignment">TopLeft</property>
+      <property name="ContentVisible">true</property>
+      <property name="HighlightFocusedItem">Default</property>
+      <property name="TrimClientAreaToControl">true</property>
+      <property name="ContentVertAlignment">Default</property>
+      <property name="ContentHorzAlignment">Default</property>
+      <property name="Enabled">true</property>
+      <property name="AllowGlyphSkinning">Default</property>
+      <property name="OptionsCustomization" isnull="true" iskey="true">
+        <property name="AllowDrag">Default</property>
+        <property name="AllowDrop">Default</property>
+      </property>
+      <property name="OptionsTableLayoutItem" isnull="true" iskey="true">
+        <property name="RowIndex">0</property>
+        <property name="RowSpan">1</property>
+        <property name="ColumnIndex">0</property>
+        <property name="ColumnSpan">1</property>
+      </property>
+      <property name="OptionsToolTip" isnull="true" iskey="true">
+        <property name="ToolTip" />
+        <property name="ToolTipTitle" />
+        <property name="ToolTipIconType">None</property>
+        <property name="ImmediateToolTip">false</property>
+        <property name="AllowHtmlString">Default</property>
+        <property name="IconToolTip" />
+        <property name="IconToolTipTitle" />
+        <property name="IconToolTipIconType">None</property>
+        <property name="EnableIconToolTip">true</property>
+        <property name="IconImmediateToolTip">false</property>
+        <property name="IconAllowHtmlString">Default</property>
+      </property>
+      <property name="Name">ItemForKeterangan</property>
+      <property name="AppearanceItemCaption" isnull="true" iskey="true">
+        <property name="ForeColor" />
+        <property name="BorderColor" />
+        <property name="BackColor" />
+        <property name="BackColor2" />
+        <property name="Font">Segoe UI, 9.75pt</property>
+        <property name="GradientMode">Horizontal</property>
+        <property name="FontSizeDelta">0</property>
+        <property name="FontStyleDelta">Regular</property>
+      </property>
+      <property name="ParentName">autoGeneratedGroup0</property>
+      <property name="TextVisible">true</property>
+      <property name="TextSize">@2,Width=80@2,Height=17</property>
+      <property name="TextToControlDistance">3</property>
+      <property name="Spacing">0, 0, 0, 0</property>
+      <property name="Padding">2, 2, 2, 2</property>
+      <property name="Location">@1,X=0@3,Y=300</property>
+      <property name="Size">@3,Width=465@3,Height=199</property>
+      <property name="ShowInCustomizationForm">true</property>
+      <property name="Text">Keterangan</property>
+      <property name="CustomizationFormText">Keterangan</property>
+      <property name="StartNewLine">false</property>
+      <property name="Visibility">Always</property>
+      <property name="TextLocation">Default</property>
+    </property>
+    <property name="Item9" isnull="true" iskey="true">
+      <property name="TypeName">LayoutControlItem</property>
+      <property name="ControlName">NamaBarangTextEdit</property>
+      <property name="AllowHtmlStringInCaption">false</property>
+      <property name="TextAlignMode">UseParentOptions</property>
+      <property name="SizeConstraintsType">Default</property>
+      <property name="Image" isnull="true" />
+      <property name="ImageIndex">-1</property>
+      <property name="ImageAlignment">MiddleLeft</property>
+      <property name="ImageToTextDistance">5</property>
+      <property name="SvgImage" isnull="true" />
+      <property name="SvgImageSize">@1,Width=0@1,Height=0</property>
+      <property name="OptionsPrint" isnull="true" iskey="true">
+        <property name="TextToControlDistance">-1</property>
+        <property name="AllowPrint">true</property>
+        <property name="AppearanceItemCaption" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+      </property>
+      <property name="MaxSize">@1,Width=0@2,Height=30</property>
+      <property name="MinSize">@3,Width=137@2,Height=30</property>
+      <property name="ControlAlignment">TopLeft</property>
+      <property name="ContentVisible">true</property>
+      <property name="HighlightFocusedItem">Default</property>
+      <property name="TrimClientAreaToControl">true</property>
+      <property name="ContentVertAlignment">Default</property>
+      <property name="ContentHorzAlignment">Default</property>
+      <property name="Enabled">true</property>
+      <property name="AllowGlyphSkinning">Default</property>
+      <property name="OptionsCustomization" isnull="true" iskey="true">
+        <property name="AllowDrag">Default</property>
+        <property name="AllowDrop">Default</property>
+      </property>
+      <property name="OptionsTableLayoutItem" isnull="true" iskey="true">
+        <property name="RowIndex">0</property>
+        <property name="RowSpan">1</property>
+        <property name="ColumnIndex">0</property>
+        <property name="ColumnSpan">1</property>
+      </property>
+      <property name="OptionsToolTip" isnull="true" iskey="true">
+        <property name="ToolTip" />
+        <property name="ToolTipTitle" />
+        <property name="ToolTipIconType">None</property>
+        <property name="ImmediateToolTip">false</property>
+        <property name="AllowHtmlString">Default</property>
+        <property name="IconToolTip" />
+        <property name="IconToolTipTitle" />
+        <property name="IconToolTipIconType">None</property>
+        <property name="EnableIconToolTip">true</property>
+        <property name="IconImmediateToolTip">false</property>
+        <property name="IconAllowHtmlString">Default</property>
+      </property>
+      <property name="Name">ItemForNamaBarang</property>
+      <property name="AppearanceItemCaption" isnull="true" iskey="true">
+        <property name="ForeColor" />
+        <property name="BorderColor" />
+        <property name="BackColor" />
+        <property name="BackColor2" />
+        <property name="Font">Segoe UI, 9.75pt</property>
+        <property name="GradientMode">Horizontal</property>
+        <property name="FontSizeDelta">0</property>
+        <property name="FontStyleDelta">Regular</property>
+      </property>
+      <property name="ParentName">autoGeneratedGroup0</property>
+      <property name="TextVisible">true</property>
+      <property name="TextSize">@2,Width=80@2,Height=17</property>
+      <property name="TextToControlDistance">3</property>
+      <property name="Spacing">0, 0, 0, 0</property>
+      <property name="Padding">2, 2, 2, 2</property>
+      <property name="Location">@1,X=0@3,Y=150</property>
+      <property name="Size">@3,Width=465@2,Height=30</property>
+      <property name="ShowInCustomizationForm">true</property>
+      <property name="Text">Nama Barang</property>
+      <property name="CustomizationFormText">Nama Barang</property>
+      <property name="StartNewLine">false</property>
+      <property name="Visibility">Always</property>
+      <property name="TextLocation">Default</property>
+    </property>
+    <property name="Item10" isnull="true" iskey="true">
+      <property name="TypeName">LayoutControlItem</property>
+      <property name="ControlName">DocNoTextEdit</property>
+      <property name="AllowHtmlStringInCaption">false</property>
+      <property name="TextAlignMode">UseParentOptions</property>
+      <property name="SizeConstraintsType">Default</property>
+      <property name="Image" isnull="true" />
+      <property name="ImageIndex">-1</property>
+      <property name="ImageAlignment">MiddleLeft</property>
+      <property name="ImageToTextDistance">5</property>
+      <property name="SvgImage" isnull="true" />
+      <property name="SvgImageSize">@1,Width=0@1,Height=0</property>
+      <property name="OptionsPrint" isnull="true" iskey="true">
+        <property name="TextToControlDistance">-1</property>
+        <property name="AllowPrint">true</property>
+        <property name="AppearanceItemCaption" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+      </property>
+      <property name="MaxSize">@1,Width=0@2,Height=30</property>
+      <property name="MinSize">@3,Width=137@2,Height=30</property>
+      <property name="ControlAlignment">TopLeft</property>
+      <property name="ContentVisible">true</property>
+      <property name="HighlightFocusedItem">Default</property>
+      <property name="TrimClientAreaToControl">true</property>
+      <property name="ContentVertAlignment">Default</property>
+      <property name="ContentHorzAlignment">Default</property>
+      <property name="Enabled">true</property>
+      <property name="AllowGlyphSkinning">Default</property>
+      <property name="OptionsCustomization" isnull="true" iskey="true">
+        <property name="AllowDrag">Default</property>
+        <property name="AllowDrop">Default</property>
+      </property>
+      <property name="OptionsTableLayoutItem" isnull="true" iskey="true">
+        <property name="RowIndex">0</property>
+        <property name="RowSpan">1</property>
+        <property name="ColumnIndex">0</property>
+        <property name="ColumnSpan">1</property>
+      </property>
+      <property name="OptionsToolTip" isnull="true" iskey="true">
+        <property name="ToolTip" />
+        <property name="ToolTipTitle" />
+        <property name="ToolTipIconType">None</property>
+        <property name="ImmediateToolTip">false</property>
+        <property name="AllowHtmlString">Default</property>
+        <property name="IconToolTip" />
+        <property name="IconToolTipTitle" />
+        <property name="IconToolTipIconType">None</property>
+        <property name="EnableIconToolTip">true</property>
+        <property name="IconImmediateToolTip">false</property>
+        <property name="IconAllowHtmlString">Default</property>
+      </property>
+      <property name="Name">ItemForDocNo</property>
+      <property name="AppearanceItemCaption" isnull="true" iskey="true">
+        <property name="ForeColor" />
+        <property name="BorderColor" />
+        <property name="BackColor" />
+        <property name="BackColor2" />
+        <property name="Font">Segoe UI, 9.75pt</property>
+        <property name="GradientMode">Horizontal</property>
+        <property name="FontSizeDelta">0</property>
+        <property name="FontStyleDelta">Regular</property>
+      </property>
+      <property name="ParentName">autoGeneratedGroup0</property>
+      <property name="TextVisible">true</property>
+      <property name="TextSize">@2,Width=80@2,Height=17</property>
+      <property name="TextToControlDistance">3</property>
+      <property name="Spacing">0, 0, 0, 0</property>
+      <property name="Padding">2, 2, 2, 2</property>
+      <property name="Location">@1,X=0@2,Y=30</property>
+      <property name="Size">@3,Width=465@2,Height=30</property>
+      <property name="ShowInCustomizationForm">true</property>
+      <property name="Text">No PO</property>
+      <property name="CustomizationFormText">No PO</property>
+      <property name="StartNewLine">false</property>
+      <property name="Visibility">Always</property>
+      <property name="TextLocation">Default</property>
+    </property>
+    <property name="Item11" isnull="true" iskey="true">
+      <property name="TypeName">LayoutControlItem</property>
+      <property name="ControlName">QtyCalcEdit</property>
+      <property name="AllowHtmlStringInCaption">false</property>
+      <property name="TextAlignMode">UseParentOptions</property>
+      <property name="SizeConstraintsType">Default</property>
+      <property name="Image" isnull="true" />
+      <property name="ImageIndex">-1</property>
+      <property name="ImageAlignment">MiddleLeft</property>
+      <property name="ImageToTextDistance">5</property>
+      <property name="SvgImage" isnull="true" />
+      <property name="SvgImageSize">@1,Width=0@1,Height=0</property>
+      <property name="OptionsPrint" isnull="true" iskey="true">
+        <property name="TextToControlDistance">-1</property>
+        <property name="AllowPrint">true</property>
+        <property name="AppearanceItemCaption" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+      </property>
+      <property name="MaxSize">@1,Width=0@2,Height=30</property>
+      <property name="MinSize">@3,Width=137@2,Height=30</property>
+      <property name="ControlAlignment">TopLeft</property>
+      <property name="ContentVisible">true</property>
+      <property name="HighlightFocusedItem">Default</property>
+      <property name="TrimClientAreaToControl">true</property>
+      <property name="ContentVertAlignment">Default</property>
+      <property name="ContentHorzAlignment">Default</property>
+      <property name="Enabled">true</property>
+      <property name="AllowGlyphSkinning">Default</property>
+      <property name="OptionsCustomization" isnull="true" iskey="true">
+        <property name="AllowDrag">Default</property>
+        <property name="AllowDrop">Default</property>
+      </property>
+      <property name="OptionsTableLayoutItem" isnull="true" iskey="true">
+        <property name="RowIndex">0</property>
+        <property name="RowSpan">1</property>
+        <property name="ColumnIndex">0</property>
+        <property name="ColumnSpan">1</property>
+      </property>
+      <property name="OptionsToolTip" isnull="true" iskey="true">
+        <property name="ToolTip" />
+        <property name="ToolTipTitle" />
+        <property name="ToolTipIconType">None</property>
+        <property name="ImmediateToolTip">false</property>
+        <property name="AllowHtmlString">Default</property>
+        <property name="IconToolTip" />
+        <property name="IconToolTipTitle" />
+        <property name="IconToolTipIconType">None</property>
+        <property name="EnableIconToolTip">true</property>
+        <property name="IconImmediateToolTip">false</property>
+        <property name="IconAllowHtmlString">Default</property>
+      </property>
+      <property name="Name">ItemForQty</property>
+      <property name="AppearanceItemCaption" isnull="true" iskey="true">
+        <property name="ForeColor" />
+        <property name="BorderColor" />
+        <property name="BackColor" />
+        <property name="BackColor2" />
+        <property name="Font">Segoe UI, 9.75pt</property>
+        <property name="GradientMode">Horizontal</property>
+        <property name="FontSizeDelta">0</property>
+        <property name="FontStyleDelta">Regular</property>
+      </property>
+      <property name="ParentName">autoGeneratedGroup0</property>
+      <property name="TextVisible">true</property>
+      <property name="TextSize">@2,Width=80@2,Height=17</property>
+      <property name="TextToControlDistance">3</property>
+      <property name="Spacing">0, 0, 0, 0</property>
+      <property name="Padding">2, 2, 2, 2</property>
+      <property name="Location">@1,X=0@3,Y=180</property>
+      <property name="Size">@3,Width=232@2,Height=30</property>
+      <property name="ShowInCustomizationForm">true</property>
+      <property name="Text">Qty</property>
+      <property name="CustomizationFormText">Qty</property>
+      <property name="StartNewLine">false</property>
+      <property name="Visibility">Always</property>
+      <property name="TextLocation">Default</property>
+    </property>
+    <property name="Item12" isnull="true" iskey="true">
+      <property name="TypeName">LayoutControlItem</property>
+      <property name="ControlName">PICTextEdit</property>
+      <property name="AllowHtmlStringInCaption">false</property>
+      <property name="TextAlignMode">UseParentOptions</property>
+      <property name="SizeConstraintsType">Default</property>
+      <property name="Image" isnull="true" />
+      <property name="ImageIndex">-1</property>
+      <property name="ImageAlignment">MiddleLeft</property>
+      <property name="ImageToTextDistance">5</property>
+      <property name="SvgImage" isnull="true" />
+      <property name="SvgImageSize">@1,Width=0@1,Height=0</property>
+      <property name="OptionsPrint" isnull="true" iskey="true">
+        <property name="TextToControlDistance">-1</property>
+        <property name="AllowPrint">true</property>
+        <property name="AppearanceItemCaption" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+      </property>
+      <property name="MaxSize">@1,Width=0@2,Height=30</property>
+      <property name="MinSize">@3,Width=137@2,Height=30</property>
+      <property name="ControlAlignment">TopLeft</property>
+      <property name="ContentVisible">true</property>
+      <property name="HighlightFocusedItem">Default</property>
+      <property name="TrimClientAreaToControl">true</property>
+      <property name="ContentVertAlignment">Default</property>
+      <property name="ContentHorzAlignment">Default</property>
+      <property name="Enabled">true</property>
+      <property name="AllowGlyphSkinning">Default</property>
+      <property name="OptionsCustomization" isnull="true" iskey="true">
+        <property name="AllowDrag">Default</property>
+        <property name="AllowDrop">Default</property>
+      </property>
+      <property name="OptionsTableLayoutItem" isnull="true" iskey="true">
+        <property name="RowIndex">0</property>
+        <property name="RowSpan">1</property>
+        <property name="ColumnIndex">0</property>
+        <property name="ColumnSpan">1</property>
+      </property>
+      <property name="OptionsToolTip" isnull="true" iskey="true">
+        <property name="ToolTip" />
+        <property name="ToolTipTitle" />
+        <property name="ToolTipIconType">None</property>
+        <property name="ImmediateToolTip">false</property>
+        <property name="AllowHtmlString">Default</property>
+        <property name="IconToolTip" />
+        <property name="IconToolTipTitle" />
+        <property name="IconToolTipIconType">None</property>
+        <property name="EnableIconToolTip">true</property>
+        <property name="IconImmediateToolTip">false</property>
+        <property name="IconAllowHtmlString">Default</property>
+      </property>
+      <property name="Name">ItemForPIC</property>
+      <property name="AppearanceItemCaption" isnull="true" iskey="true">
+        <property name="ForeColor" />
+        <property name="BorderColor" />
+        <property name="BackColor" />
+        <property name="BackColor2" />
+        <property name="Font">Segoe UI, 9.75pt</property>
+        <property name="GradientMode">Horizontal</property>
+        <property name="FontSizeDelta">0</property>
+        <property name="FontStyleDelta">Regular</property>
+      </property>
+      <property name="ParentName">autoGeneratedGroup0</property>
+      <property name="TextVisible">true</property>
+      <property name="TextSize">@2,Width=80@2,Height=17</property>
+      <property name="TextToControlDistance">3</property>
+      <property name="Spacing">0, 0, 0, 0</property>
+      <property name="Padding">2, 2, 2, 2</property>
+      <property name="Location">@1,X=0@3,Y=210</property>
+      <property name="Size">@3,Width=232@2,Height=30</property>
+      <property name="ShowInCustomizationForm">true</property>
+      <property name="Text">PIC</property>
+      <property name="CustomizationFormText">PIC</property>
+      <property name="StartNewLine">false</property>
+      <property name="Visibility">Always</property>
+      <property name="TextLocation">Default</property>
+    </property>
+    <property name="Item13" isnull="true" iskey="true">
+      <property name="TypeName">LayoutControlItem</property>
+      <property name="ControlName">IDBeltSearchLookUpEdit</property>
+      <property name="AllowHtmlStringInCaption">false</property>
+      <property name="TextAlignMode">UseParentOptions</property>
+      <property name="SizeConstraintsType">Default</property>
+      <property name="Image" isnull="true" />
+      <property name="ImageIndex">-1</property>
+      <property name="ImageAlignment">MiddleLeft</property>
+      <property name="ImageToTextDistance">5</property>
+      <property name="SvgImage" isnull="true" />
+      <property name="SvgImageSize">@1,Width=0@1,Height=0</property>
+      <property name="OptionsPrint" isnull="true" iskey="true">
+        <property name="TextToControlDistance">-1</property>
+        <property name="AllowPrint">true</property>
+        <property name="AppearanceItemCaption" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+      </property>
+      <property name="MaxSize">@1,Width=0@2,Height=30</property>
+      <property name="MinSize">@3,Width=137@2,Height=30</property>
+      <property name="ControlAlignment">TopLeft</property>
+      <property name="ContentVisible">true</property>
+      <property name="HighlightFocusedItem">Default</property>
+      <property name="TrimClientAreaToControl">true</property>
+      <property name="ContentVertAlignment">Default</property>
+      <property name="ContentHorzAlignment">Default</property>
+      <property name="Enabled">true</property>
+      <property name="AllowGlyphSkinning">Default</property>
+      <property name="OptionsCustomization" isnull="true" iskey="true">
+        <property name="AllowDrag">Default</property>
+        <property name="AllowDrop">Default</property>
+      </property>
+      <property name="OptionsTableLayoutItem" isnull="true" iskey="true">
+        <property name="RowIndex">0</property>
+        <property name="RowSpan">1</property>
+        <property name="ColumnIndex">0</property>
+        <property name="ColumnSpan">1</property>
+      </property>
+      <property name="OptionsToolTip" isnull="true" iskey="true">
+        <property name="ToolTip" />
+        <property name="ToolTipTitle" />
+        <property name="ToolTipIconType">None</property>
+        <property name="ImmediateToolTip">false</property>
+        <property name="AllowHtmlString">Default</property>
+        <property name="IconToolTip" />
+        <property name="IconToolTipTitle" />
+        <property name="IconToolTipIconType">None</property>
+        <property name="EnableIconToolTip">true</property>
+        <property name="IconImmediateToolTip">false</property>
+        <property name="IconAllowHtmlString">Default</property>
+      </property>
+      <property name="Name">ItemForIDBelt</property>
+      <property name="AppearanceItemCaption" isnull="true" iskey="true">
+        <property name="ForeColor" />
+        <property name="BorderColor" />
+        <property name="BackColor" />
+        <property name="BackColor2" />
+        <property name="Font">Segoe UI, 9.75pt</property>
+        <property name="GradientMode">Horizontal</property>
+        <property name="FontSizeDelta">0</property>
+        <property name="FontStyleDelta">Regular</property>
+      </property>
+      <property name="ParentName">autoGeneratedGroup0</property>
+      <property name="TextVisible">true</property>
+      <property name="TextSize">@2,Width=80@2,Height=17</property>
+      <property name="TextToControlDistance">3</property>
+      <property name="Spacing">0, 0, 0, 0</property>
+      <property name="Padding">2, 2, 2, 2</property>
+      <property name="Location">@3,X=232@3,Y=210</property>
+      <property name="Size">@3,Width=233@2,Height=30</property>
+      <property name="ShowInCustomizationForm">true</property>
+      <property name="Text">Belt</property>
+      <property name="CustomizationFormText">Belt</property>
+      <property name="StartNewLine">false</property>
+      <property name="Visibility">Always</property>
+      <property name="TextLocation">Default</property>
+    </property>
+    <property name="Item14" isnull="true" iskey="true">
+      <property name="TypeName">LayoutControlItem</property>
+      <property name="ControlName">IDCategorySearchLookUpEdit</property>
+      <property name="AllowHtmlStringInCaption">false</property>
+      <property name="TextAlignMode">UseParentOptions</property>
+      <property name="SizeConstraintsType">Default</property>
+      <property name="Image" isnull="true" />
+      <property name="ImageIndex">-1</property>
+      <property name="ImageAlignment">MiddleLeft</property>
+      <property name="ImageToTextDistance">5</property>
+      <property name="SvgImage" isnull="true" />
+      <property name="SvgImageSize">@1,Width=0@1,Height=0</property>
+      <property name="OptionsPrint" isnull="true" iskey="true">
+        <property name="TextToControlDistance">-1</property>
+        <property name="AllowPrint">true</property>
+        <property name="AppearanceItemCaption" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+      </property>
+      <property name="MaxSize">@1,Width=0@2,Height=30</property>
+      <property name="MinSize">@3,Width=137@2,Height=30</property>
+      <property name="ControlAlignment">TopLeft</property>
+      <property name="ContentVisible">true</property>
+      <property name="HighlightFocusedItem">Default</property>
+      <property name="TrimClientAreaToControl">true</property>
+      <property name="ContentVertAlignment">Default</property>
+      <property name="ContentHorzAlignment">Default</property>
+      <property name="Enabled">true</property>
+      <property name="AllowGlyphSkinning">Default</property>
+      <property name="OptionsCustomization" isnull="true" iskey="true">
+        <property name="AllowDrag">Default</property>
+        <property name="AllowDrop">Default</property>
+      </property>
+      <property name="OptionsTableLayoutItem" isnull="true" iskey="true">
+        <property name="RowIndex">0</property>
+        <property name="RowSpan">1</property>
+        <property name="ColumnIndex">0</property>
+        <property name="ColumnSpan">1</property>
+      </property>
+      <property name="OptionsToolTip" isnull="true" iskey="true">
+        <property name="ToolTip" />
+        <property name="ToolTipTitle" />
+        <property name="ToolTipIconType">None</property>
+        <property name="ImmediateToolTip">false</property>
+        <property name="AllowHtmlString">Default</property>
+        <property name="IconToolTip" />
+        <property name="IconToolTipTitle" />
+        <property name="IconToolTipIconType">None</property>
+        <property name="EnableIconToolTip">true</property>
+        <property name="IconImmediateToolTip">false</property>
+        <property name="IconAllowHtmlString">Default</property>
+      </property>
+      <property name="Name">ItemForIDCategory</property>
+      <property name="AppearanceItemCaption" isnull="true" iskey="true">
+        <property name="ForeColor" />
+        <property name="BorderColor" />
+        <property name="BackColor" />
+        <property name="BackColor2" />
+        <property name="Font">Segoe UI, 9.75pt</property>
+        <property name="GradientMode">Horizontal</property>
+        <property name="FontSizeDelta">0</property>
+        <property name="FontStyleDelta">Regular</property>
+      </property>
+      <property name="ParentName">autoGeneratedGroup0</property>
+      <property name="TextVisible">true</property>
+      <property name="TextSize">@2,Width=80@2,Height=17</property>
+      <property name="TextToControlDistance">3</property>
+      <property name="Spacing">0, 0, 0, 0</property>
+      <property name="Padding">2, 2, 2, 2</property>
+      <property name="Location">@1,X=0@3,Y=240</property>
+      <property name="Size">@3,Width=465@2,Height=30</property>
+      <property name="ShowInCustomizationForm">true</property>
+      <property name="Text">Category</property>
+      <property name="CustomizationFormText">Category</property>
+      <property name="StartNewLine">false</property>
+      <property name="Visibility">Always</property>
+      <property name="TextLocation">Default</property>
+    </property>
+    <property name="Item15" isnull="true" iskey="true">
+      <property name="TypeName">LayoutControlItem</property>
+      <property name="ControlName">CabinetTextEdit</property>
+      <property name="AllowHtmlStringInCaption">false</property>
+      <property name="TextAlignMode">UseParentOptions</property>
+      <property name="SizeConstraintsType">Default</property>
+      <property name="Image" isnull="true" />
+      <property name="ImageIndex">-1</property>
+      <property name="ImageAlignment">MiddleLeft</property>
+      <property name="ImageToTextDistance">5</property>
+      <property name="SvgImage" isnull="true" />
+      <property name="SvgImageSize">@1,Width=0@1,Height=0</property>
+      <property name="OptionsPrint" isnull="true" iskey="true">
+        <property name="TextToControlDistance">-1</property>
+        <property name="AllowPrint">true</property>
+        <property name="AppearanceItemCaption" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+      </property>
+      <property name="MaxSize">@1,Width=0@2,Height=30</property>
+      <property name="MinSize">@3,Width=137@2,Height=30</property>
+      <property name="ControlAlignment">TopLeft</property>
+      <property name="ContentVisible">true</property>
+      <property name="HighlightFocusedItem">Default</property>
+      <property name="TrimClientAreaToControl">true</property>
+      <property name="ContentVertAlignment">Default</property>
+      <property name="ContentHorzAlignment">Default</property>
+      <property name="Enabled">true</property>
+      <property name="AllowGlyphSkinning">Default</property>
+      <property name="OptionsCustomization" isnull="true" iskey="true">
+        <property name="AllowDrag">Default</property>
+        <property name="AllowDrop">Default</property>
+      </property>
+      <property name="OptionsTableLayoutItem" isnull="true" iskey="true">
+        <property name="RowIndex">0</property>
+        <property name="RowSpan">1</property>
+        <property name="ColumnIndex">0</property>
+        <property name="ColumnSpan">1</property>
+      </property>
+      <property name="OptionsToolTip" isnull="true" iskey="true">
+        <property name="ToolTip" />
+        <property name="ToolTipTitle" />
+        <property name="ToolTipIconType">None</property>
+        <property name="ImmediateToolTip">false</property>
+        <property name="AllowHtmlString">Default</property>
+        <property name="IconToolTip" />
+        <property name="IconToolTipTitle" />
+        <property name="IconToolTipIconType">None</property>
+        <property name="EnableIconToolTip">true</property>
+        <property name="IconImmediateToolTip">false</property>
+        <property name="IconAllowHtmlString">Default</property>
+      </property>
+      <property name="Name">ItemForCabinet</property>
+      <property name="AppearanceItemCaption" isnull="true" iskey="true">
+        <property name="ForeColor" />
+        <property name="BorderColor" />
+        <property name="BackColor" />
+        <property name="BackColor2" />
+        <property name="Font">Segoe UI, 9.75pt</property>
+        <property name="GradientMode">Horizontal</property>
+        <property name="FontSizeDelta">0</property>
+        <property name="FontStyleDelta">Regular</property>
+      </property>
+      <property name="ParentName">autoGeneratedGroup0</property>
+      <property name="TextVisible">true</property>
+      <property name="TextSize">@2,Width=80@2,Height=17</property>
+      <property name="TextToControlDistance">3</property>
+      <property name="Spacing">0, 0, 0, 0</property>
+      <property name="Padding">2, 2, 2, 2</property>
+      <property name="Location">@1,X=0@3,Y=270</property>
+      <property name="Size">@3,Width=232@2,Height=30</property>
+      <property name="ShowInCustomizationForm">true</property>
+      <property name="Text">Cabinet</property>
+      <property name="CustomizationFormText">Cabinet</property>
+      <property name="StartNewLine">false</property>
+      <property name="Visibility">Always</property>
+      <property name="TextLocation">Default</property>
+    </property>
+    <property name="Item16" isnull="true" iskey="true">
+      <property name="TypeName">LayoutControlItem</property>
+      <property name="ControlName">RowTextEdit</property>
+      <property name="AllowHtmlStringInCaption">false</property>
+      <property name="TextAlignMode">UseParentOptions</property>
+      <property name="SizeConstraintsType">Default</property>
+      <property name="Image" isnull="true" />
+      <property name="ImageIndex">-1</property>
+      <property name="ImageAlignment">MiddleLeft</property>
+      <property name="ImageToTextDistance">5</property>
+      <property name="SvgImage" isnull="true" />
+      <property name="SvgImageSize">@1,Width=0@1,Height=0</property>
+      <property name="OptionsPrint" isnull="true" iskey="true">
+        <property name="TextToControlDistance">-1</property>
+        <property name="AllowPrint">true</property>
+        <property name="AppearanceItemCaption" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+      </property>
+      <property name="MaxSize">@1,Width=0@2,Height=30</property>
+      <property name="MinSize">@3,Width=137@2,Height=30</property>
+      <property name="ControlAlignment">TopLeft</property>
+      <property name="ContentVisible">true</property>
+      <property name="HighlightFocusedItem">Default</property>
+      <property name="TrimClientAreaToControl">true</property>
+      <property name="ContentVertAlignment">Default</property>
+      <property name="ContentHorzAlignment">Default</property>
+      <property name="Enabled">true</property>
+      <property name="AllowGlyphSkinning">Default</property>
+      <property name="OptionsCustomization" isnull="true" iskey="true">
+        <property name="AllowDrag">Default</property>
+        <property name="AllowDrop">Default</property>
+      </property>
+      <property name="OptionsTableLayoutItem" isnull="true" iskey="true">
+        <property name="RowIndex">0</property>
+        <property name="RowSpan">1</property>
+        <property name="ColumnIndex">0</property>
+        <property name="ColumnSpan">1</property>
+      </property>
+      <property name="OptionsToolTip" isnull="true" iskey="true">
+        <property name="ToolTip" />
+        <property name="ToolTipTitle" />
+        <property name="ToolTipIconType">None</property>
+        <property name="ImmediateToolTip">false</property>
+        <property name="AllowHtmlString">Default</property>
+        <property name="IconToolTip" />
+        <property name="IconToolTipTitle" />
+        <property name="IconToolTipIconType">None</property>
+        <property name="EnableIconToolTip">true</property>
+        <property name="IconImmediateToolTip">false</property>
+        <property name="IconAllowHtmlString">Default</property>
+      </property>
+      <property name="Name">ItemForRow</property>
+      <property name="AppearanceItemCaption" isnull="true" iskey="true">
+        <property name="ForeColor" />
+        <property name="BorderColor" />
+        <property name="BackColor" />
+        <property name="BackColor2" />
+        <property name="Font">Segoe UI, 9.75pt</property>
+        <property name="GradientMode">Horizontal</property>
+        <property name="FontSizeDelta">0</property>
+        <property name="FontStyleDelta">Regular</property>
+      </property>
+      <property name="ParentName">autoGeneratedGroup0</property>
+      <property name="TextVisible">true</property>
+      <property name="TextSize">@2,Width=80@2,Height=17</property>
+      <property name="TextToControlDistance">3</property>
+      <property name="Spacing">0, 0, 0, 0</property>
+      <property name="Padding">2, 2, 2, 2</property>
+      <property name="Location">@3,X=232@3,Y=270</property>
+      <property name="Size">@3,Width=233@2,Height=30</property>
+      <property name="ShowInCustomizationForm">true</property>
+      <property name="Text">Row</property>
+      <property name="CustomizationFormText">Row</property>
+      <property name="StartNewLine">false</property>
+      <property name="Visibility">Always</property>
+      <property name="TextLocation">Default</property>
+    </property>
+    <property name="Item17" isnull="true" iskey="true">
+      <property name="TypeName">LayoutControlItem</property>
+      <property name="ControlName">IDUserEntriSearchLookUpEdit</property>
+      <property name="AllowHtmlStringInCaption">false</property>
+      <property name="TextAlignMode">UseParentOptions</property>
+      <property name="SizeConstraintsType">Default</property>
+      <property name="Image" isnull="true" />
+      <property name="ImageIndex">-1</property>
+      <property name="ImageAlignment">MiddleLeft</property>
+      <property name="ImageToTextDistance">5</property>
+      <property name="SvgImage" isnull="true" />
+      <property name="SvgImageSize">@1,Width=0@1,Height=0</property>
+      <property name="OptionsPrint" isnull="true" iskey="true">
+        <property name="TextToControlDistance">-1</property>
+        <property name="AllowPrint">true</property>
+        <property name="AppearanceItemCaption" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+      </property>
+      <property name="MaxSize">@1,Width=0@2,Height=28</property>
+      <property name="MinSize">@3,Width=139@2,Height=28</property>
+      <property name="ControlAlignment">TopLeft</property>
+      <property name="ContentVisible">true</property>
+      <property name="HighlightFocusedItem">Default</property>
+      <property name="TrimClientAreaToControl">true</property>
+      <property name="ContentVertAlignment">Default</property>
+      <property name="ContentHorzAlignment">Default</property>
+      <property name="Enabled">true</property>
+      <property name="AllowGlyphSkinning">Default</property>
+      <property name="OptionsCustomization" isnull="true" iskey="true">
+        <property name="AllowDrag">Default</property>
+        <property name="AllowDrop">Default</property>
+      </property>
+      <property name="OptionsTableLayoutItem" isnull="true" iskey="true">
+        <property name="RowIndex">0</property>
+        <property name="RowSpan">1</property>
+        <property name="ColumnIndex">0</property>
+        <property name="ColumnSpan">1</property>
+      </property>
+      <property name="OptionsToolTip" isnull="true" iskey="true">
+        <property name="ToolTip" />
+        <property name="ToolTipTitle" />
+        <property name="ToolTipIconType">None</property>
+        <property name="ImmediateToolTip">false</property>
+        <property name="AllowHtmlString">Default</property>
+        <property name="IconToolTip" />
+        <property name="IconToolTipTitle" />
+        <property name="IconToolTipIconType">None</property>
+        <property name="EnableIconToolTip">true</property>
+        <property name="IconImmediateToolTip">false</property>
+        <property name="IconAllowHtmlString">Default</property>
+      </property>
+      <property name="Name">ItemForIDUserEntri</property>
+      <property name="AppearanceItemCaption" isnull="true" iskey="true">
+        <property name="ForeColor" />
+        <property name="BorderColor" />
+        <property name="BackColor" />
+        <property name="BackColor2" />
+        <property name="Font">Segoe UI, 9.75pt</property>
+        <property name="GradientMode">Horizontal</property>
+        <property name="FontSizeDelta">0</property>
+        <property name="FontStyleDelta">Regular</property>
+      </property>
+      <property name="ParentName">Customization</property>
+      <property name="TextVisible">true</property>
+      <property name="TextSize">@2,Width=80@2,Height=17</property>
+      <property name="TextToControlDistance">5</property>
+      <property name="Spacing">0, 0, 0, 0</property>
+      <property name="Padding">2, 2, 2, 2</property>
+      <property name="Location">@1,X=0@3,Y=362</property>
+      <property name="Size">@3,Width=232@2,Height=30</property>
+      <property name="ShowInCustomizationForm">true</property>
+      <property name="Text">User Entri</property>
+      <property name="CustomizationFormText">User Entri</property>
+      <property name="StartNewLine">false</property>
+      <property name="Visibility">Always</property>
+      <property name="TextLocation">Default</property>
+    </property>
+    <property name="Item18" isnull="true" iskey="true">
+      <property name="TypeName">LayoutControlItem</property>
+      <property name="ControlName">IDUserEditSearchLookUpEdit</property>
+      <property name="AllowHtmlStringInCaption">false</property>
+      <property name="TextAlignMode">UseParentOptions</property>
+      <property name="SizeConstraintsType">Default</property>
+      <property name="Image" isnull="true" />
+      <property name="ImageIndex">-1</property>
+      <property name="ImageAlignment">MiddleLeft</property>
+      <property name="ImageToTextDistance">5</property>
+      <property name="SvgImage" isnull="true" />
+      <property name="SvgImageSize">@1,Width=0@1,Height=0</property>
+      <property name="OptionsPrint" isnull="true" iskey="true">
+        <property name="TextToControlDistance">-1</property>
+        <property name="AllowPrint">true</property>
+        <property name="AppearanceItemCaption" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+      </property>
+      <property name="MaxSize">@1,Width=0@2,Height=28</property>
+      <property name="MinSize">@3,Width=139@2,Height=28</property>
+      <property name="ControlAlignment">TopLeft</property>
+      <property name="ContentVisible">true</property>
+      <property name="HighlightFocusedItem">Default</property>
+      <property name="TrimClientAreaToControl">true</property>
+      <property name="ContentVertAlignment">Default</property>
+      <property name="ContentHorzAlignment">Default</property>
+      <property name="Enabled">true</property>
+      <property name="AllowGlyphSkinning">Default</property>
+      <property name="OptionsCustomization" isnull="true" iskey="true">
+        <property name="AllowDrag">Default</property>
+        <property name="AllowDrop">Default</property>
+      </property>
+      <property name="OptionsTableLayoutItem" isnull="true" iskey="true">
+        <property name="RowIndex">0</property>
+        <property name="RowSpan">1</property>
+        <property name="ColumnIndex">0</property>
+        <property name="ColumnSpan">1</property>
+      </property>
+      <property name="OptionsToolTip" isnull="true" iskey="true">
+        <property name="ToolTip" />
+        <property name="ToolTipTitle" />
+        <property name="ToolTipIconType">None</property>
+        <property name="ImmediateToolTip">false</property>
+        <property name="AllowHtmlString">Default</property>
+        <property name="IconToolTip" />
+        <property name="IconToolTipTitle" />
+        <property name="IconToolTipIconType">None</property>
+        <property name="EnableIconToolTip">true</property>
+        <property name="IconImmediateToolTip">false</property>
+        <property name="IconAllowHtmlString">Default</property>
+      </property>
+      <property name="Name">ItemForIDUserEdit</property>
+      <property name="AppearanceItemCaption" isnull="true" iskey="true">
+        <property name="ForeColor" />
+        <property name="BorderColor" />
+        <property name="BackColor" />
+        <property name="BackColor2" />
+        <property name="Font">Segoe UI, 9.75pt</property>
+        <property name="GradientMode">Horizontal</property>
+        <property name="FontSizeDelta">0</property>
+        <property name="FontStyleDelta">Regular</property>
+      </property>
+      <property name="ParentName">Customization</property>
+      <property name="TextVisible">true</property>
+      <property name="TextSize">@2,Width=80@2,Height=17</property>
+      <property name="TextToControlDistance">5</property>
+      <property name="Spacing">0, 0, 0, 0</property>
+      <property name="Padding">2, 2, 2, 2</property>
+      <property name="Location">@1,X=0@3,Y=362</property>
+      <property name="Size">@3,Width=465@2,Height=30</property>
+      <property name="ShowInCustomizationForm">true</property>
+      <property name="Text">User Edit</property>
+      <property name="CustomizationFormText">User Edit</property>
+      <property name="StartNewLine">false</property>
+      <property name="Visibility">Always</property>
+      <property name="TextLocation">Default</property>
+    </property>
+    <property name="Item19" isnull="true" iskey="true">
+      <property name="TypeName">LayoutControlItem</property>
+      <property name="ControlName">TglEntriDateEdit</property>
+      <property name="AllowHtmlStringInCaption">false</property>
+      <property name="TextAlignMode">UseParentOptions</property>
+      <property name="SizeConstraintsType">Default</property>
+      <property name="Image" isnull="true" />
+      <property name="ImageIndex">-1</property>
+      <property name="ImageAlignment">MiddleLeft</property>
+      <property name="ImageToTextDistance">5</property>
+      <property name="SvgImage" isnull="true" />
+      <property name="SvgImageSize">@1,Width=0@1,Height=0</property>
+      <property name="OptionsPrint" isnull="true" iskey="true">
+        <property name="TextToControlDistance">-1</property>
+        <property name="AllowPrint">true</property>
+        <property name="AppearanceItemCaption" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+      </property>
+      <property name="MaxSize">@1,Width=0@2,Height=28</property>
+      <property name="MinSize">@3,Width=139@2,Height=28</property>
+      <property name="ControlAlignment">TopLeft</property>
+      <property name="ContentVisible">true</property>
+      <property name="HighlightFocusedItem">Default</property>
+      <property name="TrimClientAreaToControl">true</property>
+      <property name="ContentVertAlignment">Default</property>
+      <property name="ContentHorzAlignment">Default</property>
+      <property name="Enabled">true</property>
+      <property name="AllowGlyphSkinning">Default</property>
+      <property name="OptionsCustomization" isnull="true" iskey="true">
+        <property name="AllowDrag">Default</property>
+        <property name="AllowDrop">Default</property>
+      </property>
+      <property name="OptionsTableLayoutItem" isnull="true" iskey="true">
+        <property name="RowIndex">0</property>
+        <property name="RowSpan">1</property>
+        <property name="ColumnIndex">0</property>
+        <property name="ColumnSpan">1</property>
+      </property>
+      <property name="OptionsToolTip" isnull="true" iskey="true">
+        <property name="ToolTip" />
+        <property name="ToolTipTitle" />
+        <property name="ToolTipIconType">None</property>
+        <property name="ImmediateToolTip">false</property>
+        <property name="AllowHtmlString">Default</property>
+        <property name="IconToolTip" />
+        <property name="IconToolTipTitle" />
+        <property name="IconToolTipIconType">None</property>
+        <property name="EnableIconToolTip">true</property>
+        <property name="IconImmediateToolTip">false</property>
+        <property name="IconAllowHtmlString">Default</property>
+      </property>
+      <property name="Name">ItemForTglEntri</property>
+      <property name="AppearanceItemCaption" isnull="true" iskey="true">
+        <property name="ForeColor" />
+        <property name="BorderColor" />
+        <property name="BackColor" />
+        <property name="BackColor2" />
+        <property name="Font">Segoe UI, 9.75pt</property>
+        <property name="GradientMode">Horizontal</property>
+        <property name="FontSizeDelta">0</property>
+        <property name="FontStyleDelta">Regular</property>
+      </property>
+      <property name="ParentName">Customization</property>
+      <property name="TextVisible">true</property>
+      <property name="TextSize">@2,Width=80@2,Height=17</property>
+      <property name="TextToControlDistance">5</property>
+      <property name="Spacing">0, 0, 0, 0</property>
+      <property name="Padding">2, 2, 2, 2</property>
+      <property name="Location">@1,X=0@3,Y=392</property>
+      <property name="Size">@3,Width=232@2,Height=30</property>
+      <property name="ShowInCustomizationForm">true</property>
+      <property name="Text">Tgl Entri</property>
+      <property name="CustomizationFormText">Tgl Entri</property>
+      <property name="StartNewLine">false</property>
+      <property name="Visibility">Always</property>
+      <property name="TextLocation">Default</property>
+    </property>
+    <property name="Item20" isnull="true" iskey="true">
+      <property name="TypeName">LayoutControlItem</property>
+      <property name="ControlName">TglEditDateEdit</property>
+      <property name="AllowHtmlStringInCaption">false</property>
+      <property name="TextAlignMode">UseParentOptions</property>
+      <property name="SizeConstraintsType">Default</property>
+      <property name="Image" isnull="true" />
+      <property name="ImageIndex">-1</property>
+      <property name="ImageAlignment">MiddleLeft</property>
+      <property name="ImageToTextDistance">5</property>
+      <property name="SvgImage" isnull="true" />
+      <property name="SvgImageSize">@1,Width=0@1,Height=0</property>
+      <property name="OptionsPrint" isnull="true" iskey="true">
+        <property name="TextToControlDistance">-1</property>
+        <property name="AllowPrint">true</property>
+        <property name="AppearanceItemCaption" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+      </property>
+      <property name="MaxSize">@1,Width=0@2,Height=28</property>
+      <property name="MinSize">@3,Width=139@2,Height=28</property>
+      <property name="ControlAlignment">TopLeft</property>
+      <property name="ContentVisible">true</property>
+      <property name="HighlightFocusedItem">Default</property>
+      <property name="TrimClientAreaToControl">true</property>
+      <property name="ContentVertAlignment">Default</property>
+      <property name="ContentHorzAlignment">Default</property>
+      <property name="Enabled">true</property>
+      <property name="AllowGlyphSkinning">Default</property>
+      <property name="OptionsCustomization" isnull="true" iskey="true">
+        <property name="AllowDrag">Default</property>
+        <property name="AllowDrop">Default</property>
+      </property>
+      <property name="OptionsTableLayoutItem" isnull="true" iskey="true">
+        <property name="RowIndex">0</property>
+        <property name="RowSpan">1</property>
+        <property name="ColumnIndex">0</property>
+        <property name="ColumnSpan">1</property>
+      </property>
+      <property name="OptionsToolTip" isnull="true" iskey="true">
+        <property name="ToolTip" />
+        <property name="ToolTipTitle" />
+        <property name="ToolTipIconType">None</property>
+        <property name="ImmediateToolTip">false</property>
+        <property name="AllowHtmlString">Default</property>
+        <property name="IconToolTip" />
+        <property name="IconToolTipTitle" />
+        <property name="IconToolTipIconType">None</property>
+        <property name="EnableIconToolTip">true</property>
+        <property name="IconImmediateToolTip">false</property>
+        <property name="IconAllowHtmlString">Default</property>
+      </property>
+      <property name="Name">ItemForTglEdit</property>
+      <property name="AppearanceItemCaption" isnull="true" iskey="true">
+        <property name="ForeColor" />
+        <property name="BorderColor" />
+        <property name="BackColor" />
+        <property name="BackColor2" />
+        <property name="Font">Segoe UI, 9.75pt</property>
+        <property name="GradientMode">Horizontal</property>
+        <property name="FontSizeDelta">0</property>
+        <property name="FontStyleDelta">Regular</property>
+      </property>
+      <property name="ParentName">Customization</property>
+      <property name="TextVisible">true</property>
+      <property name="TextSize">@2,Width=80@2,Height=17</property>
+      <property name="TextToControlDistance">5</property>
+      <property name="Spacing">0, 0, 0, 0</property>
+      <property name="Padding">2, 2, 2, 2</property>
+      <property name="Location">@1,X=0@3,Y=392</property>
+      <property name="Size">@3,Width=465@2,Height=30</property>
+      <property name="ShowInCustomizationForm">true</property>
+      <property name="Text">Tgl Edit</property>
+      <property name="CustomizationFormText">Tgl Edit</property>
+      <property name="StartNewLine">false</property>
+      <property name="Visibility">Always</property>
+      <property name="TextLocation">Default</property>
+    </property>
+  </property>
+</XtraSerializer>

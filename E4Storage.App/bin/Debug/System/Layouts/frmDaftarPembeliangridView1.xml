@@ -1,0 +1,233 @@
+﻿<XtraSerializer version="1.0" application="View">
+  <property name="#LayoutVersion" />
+  <property name="#LayoutScaleFactor">@10,Width=1.16666663@10,Height=1.30769229</property>
+  <property name="OptionsView" isnull="true" iskey="true">
+    <property name="ColumnAutoWidth">false</property>
+    <property name="ShowAutoFilterRow">true</property>
+    <property name="ShowDetailButtons">false</property>
+    <property name="ShowFooter">true</property>
+    <property name="ShowGroupPanel">false</property>
+  </property>
+  <property name="ActiveFilterEnabled">true</property>
+  <property name="Columns" iskey="true" value="21">
+    <property name="Item1" isnull="true" iskey="true">
+      <property name="Name">colID</property>
+      <property name="Width">87</property>
+      <property name="MinWidth">23</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item2" isnull="true" iskey="true">
+      <property name="Name">colDocNo</property>
+      <property name="VisibleIndex">0</property>
+      <property name="Visible">true</property>
+      <property name="Width">95</property>
+      <property name="MinWidth">23</property>
+      <property name="MaxWidth">0</property>
+      <property name="Summary" iskey="true" value="1">
+        <property name="Item1" isnull="true" iskey="true">
+          <property name="Tag" isnull="true" />
+          <property name="FieldName">DocNo</property>
+          <property name="SummaryType">Count</property>
+          <property name="DisplayFormat">{0}</property>
+        </property>
+      </property>
+    </property>
+    <property name="Item3" isnull="true" iskey="true">
+      <property name="Name">colDocDate</property>
+      <property name="VisibleIndex">1</property>
+      <property name="Visible">true</property>
+      <property name="Width">127</property>
+      <property name="MinWidth">23</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item4" isnull="true" iskey="true">
+      <property name="Name">colNoReff</property>
+      <property name="VisibleIndex">2</property>
+      <property name="Visible">true</property>
+      <property name="Width">65</property>
+      <property name="MinWidth">23</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item5" isnull="true" iskey="true">
+      <property name="Name">colIDWarehouse</property>
+      <property name="VisibleIndex">3</property>
+      <property name="Visible">true</property>
+      <property name="Width">66</property>
+      <property name="MinWidth">23</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item6" isnull="true" iskey="true">
+      <property name="Name">colIDVendor</property>
+      <property name="VisibleIndex">4</property>
+      <property name="Visible">true</property>
+      <property name="Width">199</property>
+      <property name="MinWidth">23</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item7" isnull="true" iskey="true">
+      <property name="Name">colSubTotal</property>
+      <property name="VisibleIndex">5</property>
+      <property name="Visible">true</property>
+      <property name="Width">89</property>
+      <property name="MinWidth">23</property>
+      <property name="MaxWidth">0</property>
+      <property name="Summary" iskey="true" value="1">
+        <property name="Item1" isnull="true" iskey="true">
+          <property name="Tag" isnull="true" />
+          <property name="FieldName">SubTotal</property>
+          <property name="SummaryType">Sum</property>
+          <property name="DisplayFormat">{0:n2}</property>
+        </property>
+      </property>
+    </property>
+    <property name="Item8" isnull="true" iskey="true">
+      <property name="Name">colTaxType</property>
+      <property name="VisibleIndex">8</property>
+      <property name="Visible">true</property>
+      <property name="Width">76</property>
+      <property name="MinWidth">23</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item9" isnull="true" iskey="true">
+      <property name="Name">colTaxDefault</property>
+      <property name="VisibleIndex">9</property>
+      <property name="Visible">true</property>
+      <property name="Width">89</property>
+      <property name="MinWidth">23</property>
+      <property name="MaxWidth">0</property>
+      <property name="Summary" iskey="true" value="1">
+        <property name="Item1" isnull="true" iskey="true">
+          <property name="Tag" isnull="true" />
+          <property name="FieldName">TaxDefault</property>
+          <property name="SummaryType">Sum</property>
+          <property name="DisplayFormat">{0:n2}</property>
+        </property>
+      </property>
+    </property>
+    <property name="Item10" isnull="true" iskey="true">
+      <property name="Name">colTaxProsen</property>
+      <property name="VisibleIndex">10</property>
+      <property name="Visible">true</property>
+      <property name="Width">59</property>
+      <property name="MinWidth">23</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item11" isnull="true" iskey="true">
+      <property name="Name">colTax</property>
+      <property name="VisibleIndex">11</property>
+      <property name="Visible">true</property>
+      <property name="Width">79</property>
+      <property name="MinWidth">23</property>
+      <property name="MaxWidth">0</property>
+      <property name="Summary" iskey="true" value="1">
+        <property name="Item1" isnull="true" iskey="true">
+          <property name="Tag" isnull="true" />
+          <property name="FieldName">Tax</property>
+          <property name="SummaryType">Sum</property>
+          <property name="DisplayFormat">{0:n2}</property>
+        </property>
+      </property>
+    </property>
+    <property name="Item12" isnull="true" iskey="true">
+      <property name="Name">colDiscProsen</property>
+      <property name="VisibleIndex">6</property>
+      <property name="Visible">true</property>
+      <property name="Width">92</property>
+      <property name="MinWidth">23</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item13" isnull="true" iskey="true">
+      <property name="Name">colDisc</property>
+      <property name="VisibleIndex">7</property>
+      <property name="Visible">true</property>
+      <property name="Width">79</property>
+      <property name="MinWidth">23</property>
+      <property name="MaxWidth">0</property>
+      <property name="Summary" iskey="true" value="1">
+        <property name="Item1" isnull="true" iskey="true">
+          <property name="Tag" isnull="true" />
+          <property name="FieldName">Disc</property>
+          <property name="SummaryType">Sum</property>
+          <property name="DisplayFormat">{0:n2}</property>
+        </property>
+      </property>
+    </property>
+    <property name="Item14" isnull="true" iskey="true">
+      <property name="Name">colTotal</property>
+      <property name="VisibleIndex">12</property>
+      <property name="Visible">true</property>
+      <property name="Width">100</property>
+      <property name="MinWidth">23</property>
+      <property name="MaxWidth">0</property>
+      <property name="Summary" iskey="true" value="1">
+        <property name="Item1" isnull="true" iskey="true">
+          <property name="Tag" isnull="true" />
+          <property name="FieldName">Total</property>
+          <property name="SummaryType">Sum</property>
+          <property name="DisplayFormat">{0:n2}</property>
+        </property>
+      </property>
+    </property>
+    <property name="Item15" isnull="true" iskey="true">
+      <property name="Name">colNote</property>
+      <property name="VisibleIndex">13</property>
+      <property name="Visible">true</property>
+      <property name="Width">157</property>
+      <property name="MinWidth">23</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item16" isnull="true" iskey="true">
+      <property name="Name">colIDUserEntri</property>
+      <property name="VisibleIndex">14</property>
+      <property name="Visible">true</property>
+      <property name="Width">77</property>
+      <property name="MinWidth">23</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item17" isnull="true" iskey="true">
+      <property name="Name">colTglEntri</property>
+      <property name="VisibleIndex">15</property>
+      <property name="Visible">true</property>
+      <property name="Width">127</property>
+      <property name="MinWidth">23</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item18" isnull="true" iskey="true">
+      <property name="Name">colIDUserEdit</property>
+      <property name="VisibleIndex">16</property>
+      <property name="Visible">true</property>
+      <property name="Width">73</property>
+      <property name="MinWidth">23</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item19" isnull="true" iskey="true">
+      <property name="Name">colTglEdit</property>
+      <property name="VisibleIndex">17</property>
+      <property name="Visible">true</property>
+      <property name="Width">127</property>
+      <property name="MinWidth">23</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item20" isnull="true" iskey="true">
+      <property name="Name">colIDUserHapus</property>
+      <property name="VisibleIndex">18</property>
+      <property name="Visible">true</property>
+      <property name="Width">88</property>
+      <property name="MinWidth">23</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item21" isnull="true" iskey="true">
+      <property name="Name">colTglHapus</property>
+      <property name="VisibleIndex">19</property>
+      <property name="Visible">true</property>
+      <property name="Width">127</property>
+      <property name="MinWidth">23</property>
+      <property name="MaxWidth">0</property>
+    </property>
+  </property>
+  <property name="GroupSummary" iskey="true" value="0" />
+  <property name="ActiveFilterString" />
+  <property name="GroupSummarySortInfoState" />
+  <property name="FindFilterText" />
+  <property name="FindPanelVisible">false</property>
+</XtraSerializer>
