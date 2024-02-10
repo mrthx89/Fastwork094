@@ -34,6 +34,8 @@ namespace Inventory.App.Data
         public DbSet<TStockMasterData> TStockMasterDatas { get; set; }
         public DbSet<TContact> TContacts { get; set; }
         public DbSet<TWarehouse> TWarehouses { get; set; }
+        public DbSet<TPurchase> TPurchases { get; set; }
+        public DbSet<TPurchaseDtl> TPurchaseDtls { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -85,6 +87,14 @@ namespace Inventory.App.Data
                 .Property(p => p.DocNo)
                 .HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("IX_DocNo")));
 
+            modelBuilder.Entity<TPurchase>()
+                .Property(p => p.DocNo)
+                .HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("IX_DocNo") { IsUnique = true }));
+
+            modelBuilder.Entity<TPurchase>()
+                .Property(p => p.DocDate)
+                .HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("IX_DocDate")));
+
             modelBuilder.Entity<TContact>()
                 .HasIndex(p => new { p.Code, p.Vendor, p.Customer })
                 .IsUnique();
@@ -110,8 +120,8 @@ namespace Inventory.App.Data
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<TStockCard>()
-                .HasRequired(b => b.Inventor) 
-                .WithMany(a => a.StockCards) 
+                .HasRequired(b => b.Inventor)
+                .WithMany(a => a.StockCards)
                 .HasForeignKey(b => b.IDInventor)
                 .WillCascadeOnDelete(false);
 
@@ -197,6 +207,36 @@ namespace Inventory.App.Data
                 .HasRequired(b => b.Warehouse)
                 .WithMany(a => a.StockMasterDatas)
                 .HasForeignKey(b => b.IDWarehouse)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<TPurchase>()
+                .HasRequired(b => b.Warehouse)
+                .WithMany(a => a.Purchases)
+                .HasForeignKey(b => b.IDWarehouse)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<TPurchase>()
+                .HasRequired(b => b.Vendor)
+                .WithMany(a => a.Purchases)
+                .HasForeignKey(b => b.IDVendor)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<TPurchaseDtl>()
+                .HasRequired(b => b.Purchase)
+                .WithMany(a => a.PurchaseDtls)
+                .HasForeignKey(b => b.IDPurchase)
+                .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<TPurchaseDtl>()
+                .HasRequired(b => b.UOM)
+                .WithMany(a => a.PurchaseDtls)
+                .HasForeignKey(b => b.IDUOM)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<TPurchaseDtl>()
+                .HasRequired(b => b.Inventor)
+                .WithMany(a => a.PurchaseDtls)
+                .HasForeignKey(b => b.IDInventor)
                 .WillCascadeOnDelete(false);
         }
     }

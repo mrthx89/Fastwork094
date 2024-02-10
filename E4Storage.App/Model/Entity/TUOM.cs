@@ -24,5 +24,6 @@ namespace Inventory.App.Model.Entity
         public virtual ICollection<TStockCard> StockCards { get; set; }
         public virtual ICollection<TStockPengembalian> StockPengembalians { get; set; }
         public virtual ICollection<TStockMasterData> StockMasterDatas { get; set; }
+        public virtual ICollection<TPurchaseDtl> PurchaseDtls { get; set; }
     }
 }

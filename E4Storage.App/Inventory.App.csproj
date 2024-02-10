@@ -168,9 +168,19 @@
     <Compile Include="Migrations\202402061406163_MasterPendukung.designer.cs">
       <DependentUpon>202402061406163_MasterPendukung.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202402100347495_Purchase.cs" />
+    <Compile Include="Migrations\202402100347495_Purchase.designer.cs">
+      <DependentUpon>202402100347495_Purchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402100349490_Purchase1.cs" />
+    <Compile Include="Migrations\202402100349490_Purchase1.designer.cs">
+      <DependentUpon>202402100349490_Purchase1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\AppSetting.cs" />
     <Compile Include="Model\Entity\BaseTable.cs" />
+    <Compile Include="Model\Entity\TPurchase.cs" />
+    <Compile Include="Model\Entity\TPurchaseDtl.cs" />
     <Compile Include="Model\Entity\TCategory.cs" />
     <Compile Include="Model\Entity\TBelt.cs" />
     <Compile Include="Model\Entity\TWarehouse.cs" />
@@ -443,6 +453,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202402061406163_MasterPendukung.resx">
       <DependentUpon>202402061406163_MasterPendukung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402100347495_Purchase.resx">
+      <DependentUpon>202402100347495_Purchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402100349490_Purchase1.resx">
+      <DependentUpon>202402100349490_Purchase1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Dialog\dlgOptionStokMasuk.resx">
       <DependentUpon>dlgOptionStokMasuk.cs</DependentUpon>

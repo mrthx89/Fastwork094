@@ -43,5 +43,6 @@ namespace Inventory.App.Model.Entity
 
         public bool Customer { get; set; }
 
+        public virtual ICollection<TPurchase> Purchases { get; set; }
     }
 }
