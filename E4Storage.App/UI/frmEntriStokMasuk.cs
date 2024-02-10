@@ -152,7 +152,7 @@ namespace Inventory.App.UI
                     dlg.TopMost = false;
                     dlg.Show();
 
-                    var callItems = Repository.Item.getLookUpInventors(data.Tanggal, null);
+                    var callItems = Repository.Item.getLookUpInventors(data.Tanggal, Guid.Empty, null);
                     if (callItems.Item1)
                     {
                         itemLookUps = callItems.Item2;

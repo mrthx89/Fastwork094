@@ -185,7 +185,11 @@
     <Compile Include="Model\Entity\TUOM.cs" />
     <Compile Include="Model\Entity\TUser.cs" />
     <Compile Include="Model\ViewModel\BaseLookUp.cs" />
+    <Compile Include="Model\ViewModel\CustomerLookUp.cs" />
+    <Compile Include="Model\ViewModel\VendorLookUp.cs" />
     <Compile Include="Model\ViewModel\ItemLookUp.cs" />
+    <Compile Include="Model\ViewModel\CustomerMaster.cs" />
+    <Compile Include="Model\ViewModel\VendorMaster.cs" />
     <Compile Include="Model\ViewModel\WarehouseLookUp.cs" />
     <Compile Include="Model\ViewModel\WarehouseMaster.cs" />
     <Compile Include="Model\ViewModel\ItemMaster.cs" />
@@ -195,6 +199,8 @@
     <Compile Include="Model\ViewModel\StokPengembalian.cs" />
     <Compile Include="Model\ViewModel\StokKeluar.cs" />
     <Compile Include="Model\ViewModel\StokMasuk.cs" />
+    <Compile Include="Repository\Customer.cs" />
+    <Compile Include="Repository\Vendor.cs" />
     <Compile Include="Repository\Warehouse.cs" />
     <Compile Include="Repository\Item.cs" />
     <Compile Include="Repository\Report.cs" />
@@ -252,6 +258,18 @@
     <Compile Include="UI\frmChangePassword.Designer.cs">
       <DependentUpon>frmChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\frmDaftarMasterCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmDaftarMasterCustomer.Designer.cs">
+      <DependentUpon>frmDaftarMasterCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmDaftarMasterVendor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmDaftarMasterVendor.Designer.cs">
+      <DependentUpon>frmDaftarMasterVendor.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmDaftarWarehouse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +293,18 @@
     </Compile>
     <Compile Include="UI\frmDaftarBelt.Designer.cs">
       <DependentUpon>frmDaftarBelt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmEntriCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmEntriCustomer.Designer.cs">
+      <DependentUpon>frmEntriCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmEntriVendor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmEntriVendor.Designer.cs">
+      <DependentUpon>frmEntriVendor.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\frmEntriItem.cs">
       <SubType>Form</SubType>
@@ -434,6 +464,12 @@
     <EmbeddedResource Include="UI\frmChangePassword.resx">
       <DependentUpon>frmChangePassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmDaftarMasterCustomer.resx">
+      <DependentUpon>frmDaftarMasterCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmDaftarMasterVendor.resx">
+      <DependentUpon>frmDaftarMasterVendor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmDaftarWarehouse.resx">
       <DependentUpon>frmDaftarWarehouse.cs</DependentUpon>
     </EmbeddedResource>
@@ -445,6 +481,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmDaftarBelt.resx">
       <DependentUpon>frmDaftarBelt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmEntriCustomer.resx">
+      <DependentUpon>frmEntriCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmEntriVendor.resx">
+      <DependentUpon>frmEntriVendor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmEntriItem.resx">
       <DependentUpon>frmEntriItem.cs</DependentUpon>
@@ -514,12 +556,16 @@
     <None Include="Properties\DataSources\Inventory.App.Model.Entity.TUOM.datasource" />
     <None Include="Properties\DataSources\Inventory.App.Model.Entity.TUser.datasource" />
     <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.BaseLookUp.datasource" />
+    <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.CustomerLookUp.datasource" />
+    <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.CustomerMaster.datasource" />
     <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.ItemMaster.datasource" />
     <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.KartuStok.datasource" />
     <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.MutasiStok.datasource" />
     <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.StokMasterData.datasource" />
     <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.StokMasuk.datasource" />
     <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.StokPengembalian.datasource" />
+    <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.VendorLookUp.datasource" />
+    <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.VendorMaster.datasource" />
     <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.WarehouseLookUp.datasource" />
     <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.WarehouseMaster.datasource" />
     <None Include="Properties\Settings.settings">

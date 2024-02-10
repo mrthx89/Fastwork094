@@ -1,7 +1,7 @@
 ﻿
 namespace Inventory.App.UI
 {
-    partial class frmDaftarWarehouse
+    partial class frmDaftarMasterVendor
     {
         /// <summary>
         /// Required designer variable.
@@ -32,15 +32,16 @@ namespace Inventory.App.UI
             this.components = new System.ComponentModel.Container();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
-            this.mnDelete = new DevExpress.XtraBars.BarButtonItem();
-            this.mnReload = new DevExpress.XtraBars.BarButtonItem();
-            this.mnSimpan = new DevExpress.XtraBars.BarButtonItem();
+            this.mnBaru = new DevExpress.XtraBars.BarButtonItem();
+            this.mnEdit = new DevExpress.XtraBars.BarButtonItem();
+            this.mnHapus = new DevExpress.XtraBars.BarButtonItem();
+            this.mnRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.warehouseMasterBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tVendorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCode = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -52,11 +53,15 @@ namespace Inventory.App.UI
             this.colTglEntri = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIDUserEdit = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTglEdit = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colIDUserDelete = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIDUserHapus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTglHapus = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCell = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPhone = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colContactPerson = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.warehouseMasterBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tVendorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemUser)).BeginInit();
             this.SuspendLayout();
@@ -71,10 +76,11 @@ namespace Inventory.App.UI
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.mnSimpan,
-            this.mnReload,
-            this.mnDelete});
-            this.barManager1.MaxItemId = 3;
+            this.mnBaru,
+            this.mnEdit,
+            this.mnHapus,
+            this.mnRefresh});
+            this.barManager1.MaxItemId = 4;
             // 
             // bar1
             // 
@@ -83,34 +89,43 @@ namespace Inventory.App.UI
             this.bar1.DockRow = 0;
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.mnDelete),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mnReload, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mnSimpan, true)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.mnBaru),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mnEdit),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mnHapus),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mnRefresh, true)});
             this.bar1.Text = "Tools";
             // 
-            // mnDelete
+            // mnBaru
             // 
-            this.mnDelete.Caption = "&Delete [F4]";
-            this.mnDelete.Id = 2;
-            this.mnDelete.ItemShortcut = new DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.F4);
-            this.mnDelete.Name = "mnDelete";
-            this.mnDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnDelete_ItemClick);
+            this.mnBaru.Caption = "&Baru [F1]";
+            this.mnBaru.Id = 0;
+            this.mnBaru.ItemShortcut = new DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.F1);
+            this.mnBaru.Name = "mnBaru";
+            this.mnBaru.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnBaru_ItemClick);
             // 
-            // mnReload
+            // mnEdit
             // 
-            this.mnReload.Caption = "&Reload [F5]";
-            this.mnReload.Id = 1;
-            this.mnReload.ItemShortcut = new DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.F5);
-            this.mnReload.Name = "mnReload";
-            this.mnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnReload_ItemClick);
+            this.mnEdit.Caption = "&Edit [F2]";
+            this.mnEdit.Id = 1;
+            this.mnEdit.ItemShortcut = new DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.F2);
+            this.mnEdit.Name = "mnEdit";
+            this.mnEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnEdit_ItemClick);
             // 
-            // mnSimpan
+            // mnHapus
             // 
-            this.mnSimpan.Caption = "&Simpan [F6]";
-            this.mnSimpan.Id = 0;
-            this.mnSimpan.ItemShortcut = new DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.F6);
-            this.mnSimpan.Name = "mnSimpan";
-            this.mnSimpan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnSimpan_ItemClick);
+            this.mnHapus.Caption = "&Hapus [F4]";
+            this.mnHapus.Id = 2;
+            this.mnHapus.ItemShortcut = new DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.F4);
+            this.mnHapus.Name = "mnHapus";
+            this.mnHapus.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnHapus_ItemClick);
+            // 
+            // mnRefresh
+            // 
+            this.mnRefresh.Caption = "&Refresh [F5]";
+            this.mnRefresh.Id = 3;
+            this.mnRefresh.ItemShortcut = new DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.F5);
+            this.mnRefresh.Name = "mnRefresh";
+            this.mnRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnRefresh_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -118,15 +133,15 @@ namespace Inventory.App.UI
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1362, 20);
+            this.barDockControlTop.Size = new System.Drawing.Size(874, 20);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 610);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 453);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1362, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(874, 0);
             // 
             // barDockControlLeft
             // 
@@ -134,19 +149,19 @@ namespace Inventory.App.UI
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 20);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 590);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 433);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1362, 20);
+            this.barDockControlRight.Location = new System.Drawing.Point(874, 20);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 590);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 433);
             // 
             // gridControl1
             // 
-            this.gridControl1.DataSource = this.warehouseMasterBindingSource;
+            this.gridControl1.DataSource = this.tVendorBindingSource;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.Location = new System.Drawing.Point(0, 20);
             this.gridControl1.MainView = this.gridView1;
@@ -154,14 +169,14 @@ namespace Inventory.App.UI
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemUser});
-            this.gridControl1.Size = new System.Drawing.Size(1362, 590);
+            this.gridControl1.Size = new System.Drawing.Size(874, 433);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
-            // warehouseMasterBindingSource
+            // tVendorBindingSource
             // 
-            this.warehouseMasterBindingSource.DataSource = typeof(Inventory.App.Model.ViewModel.WarehouseMaster);
+            this.tVendorBindingSource.DataSource = typeof(Inventory.App.Model.ViewModel.VendorMaster);
             // 
             // gridView1
             // 
@@ -175,67 +190,62 @@ namespace Inventory.App.UI
             this.colTglEntri,
             this.colIDUserEdit,
             this.colTglEdit,
-            this.colIDUserDelete,
-            this.colTglHapus});
+            this.colIDUserHapus,
+            this.colTglHapus,
+            this.colCell,
+            this.colPhone,
+            this.colEmail,
+            this.colContactPerson});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsMenu.ShowFooterItem = true;
+            this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsView.ColumnAutoWidth = false;
-            this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.gridView1_InitNewRow);
-            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gricView1_FocusRowChanged);
-            this.gridView1.FocusedColumnChanged += new DevExpress.XtraGrid.Views.Base.FocusedColumnChangedEventHandler(this.gricView1_FocusColumnChanged);
-            this.gridView1.DataSourceChanged += new System.EventHandler(this.gridView1_DataSourceChange);
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colCode, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.gridView1.DataSourceChanged += new System.EventHandler(this.gridView1_DataSourceChanged);
             // 
             // colID
             // 
             this.colID.FieldName = "ID";
             this.colID.Name = "colID";
-            this.colID.OptionsColumn.AllowEdit = false;
-            this.colID.OptionsColumn.AllowFocus = false;
             // 
             // colCode
             // 
-            this.colCode.Caption = "Code";
             this.colCode.FieldName = "Code";
             this.colCode.Name = "colCode";
+            this.colCode.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Code", "{0}")});
             this.colCode.Visible = true;
             this.colCode.VisibleIndex = 0;
-            this.colCode.Width = 104;
+            this.colCode.Width = 76;
             // 
             // colName
             // 
-            this.colName.Caption = "Name";
             this.colName.FieldName = "Name";
-            this.colName.MinWidth = 21;
             this.colName.Name = "colName";
             this.colName.Visible = true;
             this.colName.VisibleIndex = 1;
-            this.colName.Width = 156;
+            this.colName.Width = 95;
             // 
             // colAddress
             // 
-            this.colAddress.Caption = "Address";
             this.colAddress.FieldName = "Address";
-            this.colAddress.MinWidth = 21;
             this.colAddress.Name = "colAddress";
             this.colAddress.Visible = true;
             this.colAddress.VisibleIndex = 2;
-            this.colAddress.Width = 242;
+            this.colAddress.Width = 101;
             // 
             // colActive
             // 
-            this.colActive.Caption = "Active";
             this.colActive.FieldName = "Active";
-            this.colActive.MinWidth = 21;
             this.colActive.Name = "colActive";
             this.colActive.Visible = true;
-            this.colActive.VisibleIndex = 7;
-            this.colActive.Width = 93;
+            this.colActive.VisibleIndex = 3;
+            this.colActive.Width = 68;
             // 
             // colIDUserEntri
             // 
@@ -243,11 +253,9 @@ namespace Inventory.App.UI
             this.colIDUserEntri.ColumnEdit = this.repositoryItemUser;
             this.colIDUserEntri.FieldName = "IDUserEntri";
             this.colIDUserEntri.Name = "colIDUserEntri";
-            this.colIDUserEntri.OptionsColumn.AllowEdit = false;
-            this.colIDUserEntri.OptionsColumn.AllowFocus = false;
             this.colIDUserEntri.Visible = true;
-            this.colIDUserEntri.VisibleIndex = 3;
-            this.colIDUserEntri.Width = 112;
+            this.colIDUserEntri.VisibleIndex = 4;
+            this.colIDUserEntri.Width = 88;
             // 
             // repositoryItemUser
             // 
@@ -262,11 +270,9 @@ namespace Inventory.App.UI
             this.colTglEntri.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colTglEntri.FieldName = "TglEntri";
             this.colTglEntri.Name = "colTglEntri";
-            this.colTglEntri.OptionsColumn.AllowEdit = false;
-            this.colTglEntri.OptionsColumn.AllowFocus = false;
             this.colTglEntri.Visible = true;
-            this.colTglEntri.VisibleIndex = 4;
-            this.colTglEntri.Width = 112;
+            this.colTglEntri.VisibleIndex = 5;
+            this.colTglEntri.Width = 88;
             // 
             // colIDUserEdit
             // 
@@ -274,11 +280,9 @@ namespace Inventory.App.UI
             this.colIDUserEdit.ColumnEdit = this.repositoryItemUser;
             this.colIDUserEdit.FieldName = "IDUserEdit";
             this.colIDUserEdit.Name = "colIDUserEdit";
-            this.colIDUserEdit.OptionsColumn.AllowEdit = false;
-            this.colIDUserEdit.OptionsColumn.AllowFocus = false;
             this.colIDUserEdit.Visible = true;
-            this.colIDUserEdit.VisibleIndex = 5;
-            this.colIDUserEdit.Width = 112;
+            this.colIDUserEdit.VisibleIndex = 6;
+            this.colIDUserEdit.Width = 95;
             // 
             // colTglEdit
             // 
@@ -286,57 +290,80 @@ namespace Inventory.App.UI
             this.colTglEdit.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colTglEdit.FieldName = "TglEdit";
             this.colTglEdit.Name = "colTglEdit";
-            this.colTglEdit.OptionsColumn.AllowEdit = false;
-            this.colTglEdit.OptionsColumn.AllowFocus = false;
             this.colTglEdit.Visible = true;
-            this.colTglEdit.VisibleIndex = 6;
-            this.colTglEdit.Width = 154;
+            this.colTglEdit.VisibleIndex = 7;
+            this.colTglEdit.Width = 79;
             // 
-            // colIDUserDelete
+            // colIDUserHapus
             // 
-            this.colIDUserDelete.Caption = "User Hapus";
-            this.colIDUserDelete.ColumnEdit = this.repositoryItemUser;
-            this.colIDUserDelete.FieldName = "IDUserHapus";
-            this.colIDUserDelete.MinWidth = 21;
-            this.colIDUserDelete.Name = "colIDUserDelete";
-            this.colIDUserDelete.OptionsColumn.AllowEdit = false;
-            this.colIDUserDelete.OptionsColumn.AllowFocus = false;
-            this.colIDUserDelete.Visible = true;
-            this.colIDUserDelete.VisibleIndex = 8;
-            this.colIDUserDelete.Width = 110;
+            this.colIDUserHapus.Caption = "User Hapus";
+            this.colIDUserHapus.ColumnEdit = this.repositoryItemUser;
+            this.colIDUserHapus.FieldName = "IDUserHapus";
+            this.colIDUserHapus.Name = "colIDUserHapus";
+            this.colIDUserHapus.Visible = true;
+            this.colIDUserHapus.VisibleIndex = 8;
+            this.colIDUserHapus.Width = 98;
             // 
             // colTglHapus
             // 
-            this.colTglHapus.Caption = "Tgl Hapus";
             this.colTglHapus.DisplayFormat.FormatString = "dd-MM-yyyy HH:mm:ss";
             this.colTglHapus.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colTglHapus.FieldName = "TglHapus";
-            this.colTglHapus.MinWidth = 21;
             this.colTglHapus.Name = "colTglHapus";
-            this.colTglHapus.OptionsColumn.AllowEdit = false;
-            this.colTglHapus.OptionsColumn.AllowFocus = false;
             this.colTglHapus.Visible = true;
             this.colTglHapus.VisibleIndex = 9;
-            this.colTglHapus.Width = 204;
+            this.colTglHapus.Width = 86;
             // 
-            // frmDaftarWarehouse
+            // colCell
+            // 
+            this.colCell.Caption = "Cell";
+            this.colCell.FieldName = "Cell";
+            this.colCell.Name = "colCell";
+            this.colCell.Visible = true;
+            this.colCell.VisibleIndex = 10;
+            // 
+            // colPhone
+            // 
+            this.colPhone.Caption = "Phone";
+            this.colPhone.FieldName = "Phone";
+            this.colPhone.Name = "colPhone";
+            this.colPhone.Visible = true;
+            this.colPhone.VisibleIndex = 11;
+            // 
+            // colEmail
+            // 
+            this.colEmail.Caption = "Email";
+            this.colEmail.FieldName = "Email";
+            this.colEmail.Name = "colEmail";
+            this.colEmail.Visible = true;
+            this.colEmail.VisibleIndex = 12;
+            // 
+            // colContactPerson
+            // 
+            this.colContactPerson.Caption = "Contact Person";
+            this.colContactPerson.FieldName = "ContactPerson";
+            this.colContactPerson.Name = "colContactPerson";
+            this.colContactPerson.Visible = true;
+            this.colContactPerson.VisibleIndex = 13;
+            this.colContactPerson.Width = 97;
+            // 
+            // frmDaftarMasterVendor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1362, 610);
+            this.ClientSize = new System.Drawing.Size(874, 453);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "frmDaftarWarehouse";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Daftar Warehouse";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDaftarWarehouse_FormClosing);
-            this.Load += new System.EventHandler(this.frmDaftarWarehouse_Load);
+            this.Name = "frmDaftarMasterVendor";
+            this.Text = "Daftar Master Supplier";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDaftarMasterVendor_FormCLossing);
+            this.Load += new System.EventHandler(this.frmDaftarMasterVendor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.warehouseMasterBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tVendorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemUser)).EndInit();
             this.ResumeLayout(false);
@@ -354,21 +381,26 @@ namespace Inventory.App.UI
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraBars.BarButtonItem mnSimpan;
-        private DevExpress.XtraBars.BarButtonItem mnReload;
-        private DevExpress.XtraBars.BarButtonItem mnDelete;
+        private DevExpress.XtraBars.BarButtonItem mnBaru;
+        private DevExpress.XtraBars.BarButtonItem mnEdit;
+        private DevExpress.XtraBars.BarButtonItem mnHapus;
+        private DevExpress.XtraBars.BarButtonItem mnRefresh;
+        private System.Windows.Forms.BindingSource tVendorBindingSource;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemUser;
         private DevExpress.XtraGrid.Columns.GridColumn colID;
         private DevExpress.XtraGrid.Columns.GridColumn colCode;
-        private DevExpress.XtraGrid.Columns.GridColumn colIDUserEntri;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemUser;
-        private DevExpress.XtraGrid.Columns.GridColumn colTglEntri;
-        private DevExpress.XtraGrid.Columns.GridColumn colIDUserEdit;
-        private DevExpress.XtraGrid.Columns.GridColumn colTglEdit;
-        private System.Windows.Forms.BindingSource warehouseMasterBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colName;
         private DevExpress.XtraGrid.Columns.GridColumn colAddress;
         private DevExpress.XtraGrid.Columns.GridColumn colActive;
-        private DevExpress.XtraGrid.Columns.GridColumn colIDUserDelete;
+        private DevExpress.XtraGrid.Columns.GridColumn colIDUserEntri;
+        private DevExpress.XtraGrid.Columns.GridColumn colTglEntri;
+        private DevExpress.XtraGrid.Columns.GridColumn colIDUserEdit;
+        private DevExpress.XtraGrid.Columns.GridColumn colTglEdit;
+        private DevExpress.XtraGrid.Columns.GridColumn colIDUserHapus;
         private DevExpress.XtraGrid.Columns.GridColumn colTglHapus;
+        private DevExpress.XtraGrid.Columns.GridColumn colCell;
+        private DevExpress.XtraGrid.Columns.GridColumn colPhone;
+        private DevExpress.XtraGrid.Columns.GridColumn colEmail;
+        private DevExpress.XtraGrid.Columns.GridColumn colContactPerson;
     }
 }

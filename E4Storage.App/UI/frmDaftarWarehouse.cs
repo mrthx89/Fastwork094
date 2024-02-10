@@ -92,7 +92,9 @@ namespace Inventory.App.UI
                     WarehouseMaster CurrenWarehouseMaster = (WarehouseMaster)warehouseMasterBindingSource.Current;
                     if (CurrenWarehouseMaster != null)
                     {
-                        warehouseMasterBindingSource.RemoveCurrent();
+                        CurrenWarehouseMaster.Active = false;
+                        CurrenWarehouseMaster.IDUserHapus = Utils.Constant.UserLogin.ID;
+                        CurrenWarehouseMaster.TglHapus = DateTime.Now;
                     }
                 }
             }
