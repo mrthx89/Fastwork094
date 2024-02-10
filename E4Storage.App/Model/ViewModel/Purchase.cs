@@ -17,7 +17,6 @@ namespace Inventory.App.Model.ViewModel
 
         [Required]
         public Guid ID { get; set; }
-        [Required]
         [StringLength(20)]
         public string DocNo { get; set; }
         [Required]
@@ -47,7 +46,7 @@ namespace Inventory.App.Model.ViewModel
             }
         }
         private double _TaxDefault = 0.0;
-        public double TaxDefault { get { return _TaxDefault; } set { _TaxDefault = value; } }
+        public double TaxDefault { get { return _TaxDefault; } }
         private double _TaxProsen = 0.0;
         public double TaxProsen
         {
@@ -63,10 +62,6 @@ namespace Inventory.App.Model.ViewModel
         public double Tax
         {
             get { return _Tax; }
-            set
-            {
-                _Tax = value;
-            }
         }
         [Range(0, 100)]
         public double DiscProsen { get; set; }
@@ -100,6 +95,7 @@ namespace Inventory.App.Model.ViewModel
         public int NoUrut { get; set; }
         [Required]
         public Guid IDInventor { get; set; }
+        public string Inventor { get; set; }
         [Required]
         public Guid IDUOM { get; set; }
         [Required]

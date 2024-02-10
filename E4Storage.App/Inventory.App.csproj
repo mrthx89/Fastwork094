@@ -216,6 +216,7 @@
     <Compile Include="Model\ViewModel\StokKeluar.cs" />
     <Compile Include="Model\ViewModel\StokMasuk.cs" />
     <Compile Include="Repository\Customer.cs" />
+    <Compile Include="Repository\Pembelian.cs" />
     <Compile Include="Repository\Vendor.cs" />
     <Compile Include="Repository\Warehouse.cs" />
     <Compile Include="Repository\Item.cs" />
@@ -321,6 +322,12 @@
     </Compile>
     <Compile Include="UI\frmEntriCustomer.Designer.cs">
       <DependentUpon>frmEntriCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmEntriPembelian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmEntriPembelian.Designer.cs">
+      <DependentUpon>frmEntriPembelian.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\frmEntriVendor.cs">
       <SubType>Form</SubType>
@@ -518,6 +525,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmEntriCustomer.resx">
       <DependentUpon>frmEntriCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmEntriPembelian.resx">
+      <DependentUpon>frmEntriPembelian.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmEntriVendor.resx">
       <DependentUpon>frmEntriVendor.cs</DependentUpon>

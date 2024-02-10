@@ -37,6 +37,7 @@ namespace Inventory.App.Model.Entity
         public double Total { get; set; }
         [StringLength(255)]
         public string Note { get; set; }
+        public bool Void { get; set; }
 
         public virtual TWarehouse Warehouse { get; set; }
         public virtual TContact Vendor { get; set; }

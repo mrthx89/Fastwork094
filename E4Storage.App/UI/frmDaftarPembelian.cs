@@ -50,7 +50,7 @@ namespace Inventory.App.UI
         {
             try
             {
-                var item = (ItemMaster)purchaseBindingSource.Current;
+                var item = (Purchase)purchaseBindingSource.Current;
                 if (item != null)
                 {
                     addOrEdit(item);
@@ -62,9 +62,9 @@ namespace Inventory.App.UI
             }
         }
 
-        private void addOrEdit(ItemMaster data)
+        private void addOrEdit(Purchase data)
         {
-            using (frmEntriItem frm = new frmEntriItem(data))
+            using (frmEntriPembelian frm = new frmEntriPembelian(data))
             {
                 try
                 {
@@ -88,10 +88,10 @@ namespace Inventory.App.UI
         {
             try
             {
-                var item = (ItemMaster)purchaseBindingSource.Current;
+                var item = (Purchase)purchaseBindingSource.Current;
                 if (item != null)
                 {
-                    if (MsgBoxHelper.MsgQuestionYesNo($"{this.Name}.mnHapus_ItemClick", $"Yakin ingin menghapus item {item.Desc} ini?") == DialogResult.Yes)
+                    if (MsgBoxHelper.MsgQuestionYesNo($"{this.Name}.mnHapus_ItemClick", $"Yakin ingin menghapus pembelian {item.DocNo} ini?") == DialogResult.Yes)
                     {
                         var delete = Repository.Item.deleteInventor(item.ID);
                         if (delete.Item1)
@@ -112,7 +112,7 @@ namespace Inventory.App.UI
             Constant.layoutsHelper.RestoreLayouts(this.Name, gridView1);
         }
 
-        private List<ItemMaster> data = new List<ItemMaster>();
+        private List<Purchase> data = new List<Purchase>();
         private void refreshData()
         {
             using (WaitDialogForm dlg = new WaitDialogForm("Sedang merefresh data"))
@@ -135,7 +135,7 @@ namespace Inventory.App.UI
                     repositoryItemUser.ValueMember = "ID";
                     repositoryItemUser.DisplayMember = "Nama";
 
-                    var call = Repository.Item.getInventors(null, null);
+                    var call = Repository.Pembelian.getPurchases(dateEdit1.DateTime, dateEdit2.DateTime);
                     if (call.Item1)
                     {
                         data = call.Item2;
