@@ -474,7 +474,24 @@ namespace Inventory.App.UI
 
         private void bbiPembelian_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            if (isLogin())
+            {
+                System.Windows.Forms.Form frmOld = this.MdiChildren.ToList().FirstOrDefault(o => o.GetType() == typeof(frmDaftarPembelian));
+                if (frmOld != null)
+                {
+                    frmOld.Show();
+                    frmOld.Focus();
+                }
+                else
+                {
+                    frmOld = new frmDaftarPembelian
+                    {
+                        MdiParent = this
+                    };
+                    frmOld.Show();
+                    frmOld.Focus();
+                }
+            }
         }
 
         private void bbiReturPembelian_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

@@ -280,6 +280,12 @@
     <Compile Include="UI\frmDaftarMasterCustomer.Designer.cs">
       <DependentUpon>frmDaftarMasterCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\frmDaftarPembelian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmDaftarPembelian.Designer.cs">
+      <DependentUpon>frmDaftarPembelian.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmDaftarMasterVendor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -492,6 +498,9 @@
     <EmbeddedResource Include="UI\frmDaftarMasterCustomer.resx">
       <DependentUpon>frmDaftarMasterCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmDaftarPembelian.resx">
+      <DependentUpon>frmDaftarPembelian.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmDaftarMasterVendor.resx">
       <DependentUpon>frmDaftarMasterVendor.cs</DependentUpon>
     </EmbeddedResource>
@@ -586,6 +595,8 @@
     <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.ItemMaster.datasource" />
     <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.KartuStok.datasource" />
     <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.MutasiStok.datasource" />
+    <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.Purchase.datasource" />
+    <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.PurchaseDtl.datasource" />
     <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.SaldoStok.datasource" />
     <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.StokMasterData.datasource" />
     <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.StokMasuk.datasource" />

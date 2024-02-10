@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Inventory.App.Model.ViewModel
 {
-    public class Purchase
+    public class Purchase : Entity.BaseTable
     {
         public Purchase()
         {
@@ -34,7 +34,7 @@ namespace Inventory.App.Model.ViewModel
                 return Math.Round(PurchaseDtl != null ? PurchaseDtl.Sum(o => o.Amount) : 0d, 2);
             }
         }
-        public int _TaxType = 0;
+        private int _TaxType = 0;
         [Range(0, 2)]
         public int TaxType
         {
@@ -86,11 +86,12 @@ namespace Inventory.App.Model.ViewModel
         }
         [StringLength(255)]
         public string Note { get; set; }
+        public bool Void { get; set; }
 
         public List<PurchaseDtl> PurchaseDtl { get; set; }
     }
 
-    public class PurchaseDtl
+    public class PurchaseDtl : Entity.BaseTable
     {
         [Required]
         public Guid ID { get; set; }
