@@ -53,7 +53,7 @@ namespace Inventory.App.UI
                 var item = (Purchase)purchaseBindingSource.Current;
                 if (item != null)
                 {
-                    addOrEdit(item);
+                    addOrEdit(JSONHelper.CloneObject<Purchase>(item));
                 }
             }
             catch (Exception ex)
@@ -135,6 +135,29 @@ namespace Inventory.App.UI
                     repositoryItemUser.ValueMember = "ID";
                     repositoryItemUser.DisplayMember = "Nama";
 
+                    List<BaseLookUpInt> lookUpInt = new List<BaseLookUpInt>();
+                    lookUpInt.Add(new BaseLookUpInt
+                    {
+                        ID = 0,
+                        Code = "Non BKP",
+                        Name = "Barang Non BKP"
+                    });
+                    lookUpInt.Add(new BaseLookUpInt
+                    {
+                        ID = 1,
+                        Code = "Include",
+                        Name = "Barang Include Pajak"
+                    });
+                    lookUpInt.Add(new BaseLookUpInt
+                    {
+                        ID = 2,
+                        Code = "Exclude",
+                        Name = "Barang Exclude Pajak"
+                    });
+                    repositoryItemTypePPN.DataSource = lookUpInt;
+                    repositoryItemTypePPN.ValueMember = "ID";
+                    repositoryItemTypePPN.DisplayMember = "Code";
+
                     var call = Repository.Pembelian.getPurchases(dateEdit1.DateTime, dateEdit2.DateTime);
                     if (call.Item1)
                     {
@@ -162,6 +185,11 @@ namespace Inventory.App.UI
                 e.Appearance.Font = new Font(e.Appearance.Font, FontStyle.Italic);
                 e.Appearance.Options.UseFont = true;
             }
+        }
+
+        private void mnCetakInvoice_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }

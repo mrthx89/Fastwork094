@@ -73,6 +73,7 @@ namespace Inventory.App.UI
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.mnCetakInvoice = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.purchaseBindingSource)).BeginInit();
@@ -102,8 +103,9 @@ namespace Inventory.App.UI
             this.mnBaru,
             this.mnEdit,
             this.mnHapus,
-            this.mnRefresh});
-            this.barManager1.MaxItemId = 4;
+            this.mnRefresh,
+            this.mnCetakInvoice});
+            this.barManager1.MaxItemId = 5;
             // 
             // bar1
             // 
@@ -115,7 +117,8 @@ namespace Inventory.App.UI
             new DevExpress.XtraBars.LinkPersistInfo(this.mnBaru),
             new DevExpress.XtraBars.LinkPersistInfo(this.mnEdit),
             new DevExpress.XtraBars.LinkPersistInfo(this.mnHapus),
-            new DevExpress.XtraBars.LinkPersistInfo(this.mnRefresh, true)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.mnRefresh, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mnCetakInvoice, true)});
             this.bar1.Text = "Tools";
             // 
             // mnBaru
@@ -559,6 +562,14 @@ namespace Inventory.App.UI
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Periode";
             // 
+            // mnCetakInvoice
+            // 
+            this.mnCetakInvoice.Caption = "&Cetak [F6]";
+            this.mnCetakInvoice.Id = 4;
+            this.mnCetakInvoice.ItemShortcut = new DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.F6);
+            this.mnCetakInvoice.Name = "mnCetakInvoice";
+            this.mnCetakInvoice.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnCetakInvoice_ItemClick);
+            // 
             // frmDaftarPembelian
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -639,5 +650,6 @@ namespace Inventory.App.UI
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.DateEdit dateEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraBars.BarButtonItem mnCetakInvoice;
     }
 }

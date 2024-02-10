@@ -102,6 +102,58 @@ namespace Inventory.App.Migrations
                 context.TTypeTransactions.Add(typeTransaction5);
             }
 
+            TTypeTransaction typeTransaction6 = new TTypeTransaction
+            {
+                ID = Utils.Constant.stokPembelian,
+                Transaksi = "Pembelian",
+                NoUrut = 5,
+                IDUserEntri = sysAdmin.ID,
+                TglEntri = DateTime.Now
+            };
+            if (context.TTypeTransactions.FirstOrDefault(o => o.ID.Equals(typeTransaction6.ID)) == null)
+            {
+                context.TTypeTransactions.Add(typeTransaction6);
+            }
+
+            TTypeTransaction typeTransaction7 = new TTypeTransaction
+            {
+                ID = Utils.Constant.stokReturPembelian,
+                Transaksi = "Retur Pembelian",
+                NoUrut = 6,
+                IDUserEntri = sysAdmin.ID,
+                TglEntri = DateTime.Now
+            };
+            if (context.TTypeTransactions.FirstOrDefault(o => o.ID.Equals(typeTransaction7.ID)) == null)
+            {
+                context.TTypeTransactions.Add(typeTransaction7);
+            }
+
+            TTypeTransaction typeTransaction9 = new TTypeTransaction
+            {
+                ID = Utils.Constant.stokPenjualan,
+                Transaksi = "Penjualan",
+                NoUrut = 8,
+                IDUserEntri = sysAdmin.ID,
+                TglEntri = DateTime.Now
+            };
+            if (context.TTypeTransactions.FirstOrDefault(o => o.ID.Equals(typeTransaction9.ID)) == null)
+            {
+                context.TTypeTransactions.Add(typeTransaction9);
+            }
+
+            TTypeTransaction typeTransaction10 = new TTypeTransaction
+            {
+                ID = Utils.Constant.stokReturPenjualan,
+                Transaksi = "Retur Penjualan",
+                NoUrut = 9,
+                IDUserEntri = sysAdmin.ID,
+                TglEntri = DateTime.Now
+            };
+            if (context.TTypeTransactions.FirstOrDefault(o => o.ID.Equals(typeTransaction10.ID)) == null)
+            {
+                context.TTypeTransactions.Add(typeTransaction10);
+            }
+
             TWarehouse warehouse = new TWarehouse
             {
                 ID = Utils.Constant.warehouse,

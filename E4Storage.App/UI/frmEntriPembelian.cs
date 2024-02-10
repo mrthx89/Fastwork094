@@ -64,6 +64,7 @@ namespace Inventory.App.UI
             gridView3.DataSourceChanged += gridView1_DataSourceChanged;
             gridView4.DataSourceChanged += gridView1_DataSourceChanged;
             gvData.DataSourceChanged += gridView1_DataSourceChanged;
+            gvGudang.DataSourceChanged += gridView1_DataSourceChanged;
             gvData.InitNewRow += gridView1_InitNewRow;
         }
 
@@ -97,27 +98,42 @@ namespace Inventory.App.UI
                     this.Validate();
 
                     dxErrorProvider1.ClearErrors();
-                    //var check1 = Repository.Vendor.checkCodeExistsVendor(data);
-                    //if (!check1.Item1)
-                    //{
-                    //    dxErrorProvider1.SetError(DocNoTextEdit, "Kode Pembelian ini sudah dipakai!");
-                    //}
+                    if (data.IDWarehouse == null || data.IDWarehouse == Guid.Empty)
+                    {
+                        dxErrorProvider1.SetError(IDWarehouseSearchLookUpEdit, "Gudang harus dipilih!");
+                    }
+                    if (data.IDVendor == null || data.IDVendor == Guid.Empty)
+                    {
+                        dxErrorProvider1.SetError(IDVendorSearchLookUpEdit, "Supplier harus dipilih!");
+                    }
+                    if (data.PurchaseDtl == null || data.PurchaseDtl.Count == 0)
+                    {
+                        dxErrorProvider1.SetError(DocNoTextEdit, "Item Barang belum ada!");
+                    }
+                    if (data.Void)
+                    {
+                        dxErrorProvider1.SetError(DocNoTextEdit, "Pembelian ini telah divoid!");
+                    }
 
-                    //if (!dxErrorProvider1.HasErrors)
-                    //{
-                    //    var save = Repository.Vendor.saveInventor(data);
-                    //    if (save.Item1)
-                    //    {
-                    //        this.data = save.Item2;
-                    //        DialogResult = DialogResult.OK;
-                    //        this.Close();
-                    //    }
-                    //}
-                    //else
-                    //{
-                    //    MsgBoxHelper.MsgWarn($"{this.Name}.mnSimpan_ItemClick", string.Join(", ", (from x in dxErrorProvider1.GetControlsWithError()
-                    //                                                                               select new { errMsg = dxErrorProvider1.GetError(x) }).Select(o => o.errMsg).ToList()));
-                    //}
+                    if (!dxErrorProvider1.HasErrors)
+                    {
+                        var save = Repository.Pembelian.savePurchases(data);
+                        if (save.Item1)
+                        {
+                            this.data = save.Item3;
+                            DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
+                        else if (!string.IsNullOrEmpty(save.Item2) && !string.IsNullOrWhiteSpace(save.Item2))
+                        {
+                            MsgBoxHelper.MsgWarn($"{this.Name}.mnSimpan_ItemClick", save.Item2);
+                        }
+                    }
+                    else
+                    {
+                        MsgBoxHelper.MsgWarn($"{this.Name}.mnSimpan_ItemClick", string.Join(", ", (from x in dxErrorProvider1.GetControlsWithError()
+                                                                                                   select new { errMsg = dxErrorProvider1.GetError(x) }).Select(o => o.errMsg).ToList()));
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -134,6 +150,7 @@ namespace Inventory.App.UI
             Constant.layoutsHelper.SaveLayouts(this.Name, gridView3);
             Constant.layoutsHelper.SaveLayouts(this.Name, gridView4);
             Constant.layoutsHelper.SaveLayouts(this.Name, gvData);
+            Constant.layoutsHelper.SaveLayouts(this.Name, gvGudang);
         }
 
         private List<ItemLookUp> listItem = new List<ItemLookUp>();
@@ -222,6 +239,7 @@ namespace Inventory.App.UI
 
         private void HitungTotal()
         {
+            dataLayoutControl1.Validate();
             this.Validate();
 
             if (data != null && data.PurchaseDtl != null)
@@ -245,6 +263,8 @@ namespace Inventory.App.UI
             }
             SubTotalTextEdit.EditValue = data.SubTotal;
             DiscTextEdit.EditValue = data.Disc;
+            //double.TryParse(TaxProsenTextEdit.EditValue.ToString(), out double taxProsen);
+            //data.TaxProsen = taxProsen;
             TaxDefaultTextEdit.EditValue = data.TaxDefault;
             TaxTextEdit.EditValue = data.Tax;
             TotalTextEdit.EditValue = data.Total;
@@ -261,7 +281,7 @@ namespace Inventory.App.UI
                 if (barang != null)
                 {
                     currentItem.IDUOM = barang.IDUOM;
-                    currentItem.Inventor = barang.Desc;
+                    currentItem.Desc = barang.Desc;
                 }
                 else
                 {
@@ -295,7 +315,7 @@ namespace Inventory.App.UI
                 if (barang != null)
                 {
                     currentItem.IDUOM = barang.IDUOM;
-                    currentItem.Inventor = barang.Desc;
+                    currentItem.Desc = barang.Desc;
                 }
 
                 HitungTotal();
@@ -320,6 +340,16 @@ namespace Inventory.App.UI
         private void IDWarehouseSearchLookUpEdit_EditValueChanged(object sender, EventArgs e)
         {
             refreshLookUp();
+        }
+
+        private void DiscProsenTextEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            HitungTotal();
+        }
+
+        private void DiscTextEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            HitungTotal();
         }
     }
 }

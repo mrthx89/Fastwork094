@@ -48,7 +48,7 @@ namespace Inventory.App.UI
             this.colNoUrut = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIDInventor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemItem = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.colInventor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDesc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIDUOM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemSatuan = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colQty = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -77,7 +77,7 @@ namespace Inventory.App.UI
             this.DocDateDateEdit = new DevExpress.XtraEditors.DateEdit();
             this.NoReffTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.IDWarehouseSearchLookUpEdit = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gvGudang = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.IDVendorSearchLookUpEdit = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.SubTotalTextEdit = new DevExpress.XtraEditors.TextEdit();
@@ -147,7 +147,7 @@ namespace Inventory.App.UI
             ((System.ComponentModel.ISupportInitialize)(this.DocDateDateEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NoReffTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDWarehouseSearchLookUpEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvGudang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDVendorSearchLookUpEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubTotalTextEdit.Properties)).BeginInit();
@@ -237,7 +237,7 @@ namespace Inventory.App.UI
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1049, 20);
+            this.barDockControlTop.Size = new System.Drawing.Size(1181, 20);
             // 
             // barDockControlBottom
             // 
@@ -245,7 +245,7 @@ namespace Inventory.App.UI
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 632);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1049, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1181, 0);
             // 
             // barDockControlLeft
             // 
@@ -259,7 +259,7 @@ namespace Inventory.App.UI
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1049, 20);
+            this.barDockControlRight.Location = new System.Drawing.Point(1181, 20);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 612);
             // 
@@ -292,7 +292,7 @@ namespace Inventory.App.UI
             this.dataLayoutControl1.Name = "dataLayoutControl1";
             this.dataLayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1098, 361, 650, 400);
             this.dataLayoutControl1.Root = this.Root;
-            this.dataLayoutControl1.Size = new System.Drawing.Size(1049, 612);
+            this.dataLayoutControl1.Size = new System.Drawing.Size(1181, 612);
             this.dataLayoutControl1.TabIndex = 4;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
             // 
@@ -308,7 +308,7 @@ namespace Inventory.App.UI
             this.repositoryItemSatuan,
             this.repositoryItemNumber,
             this.repositoryItemQty});
-            this.gridControl1.Size = new System.Drawing.Size(1025, 282);
+            this.gridControl1.Size = new System.Drawing.Size(1157, 282);
             this.gridControl1.TabIndex = 41;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvData});
@@ -329,7 +329,7 @@ namespace Inventory.App.UI
             this.colIDPurchase,
             this.colNoUrut,
             this.colIDInventor,
-            this.colInventor,
+            this.colDesc,
             this.colIDUOM,
             this.colQty,
             this.colUnitPrice,
@@ -402,16 +402,16 @@ namespace Inventory.App.UI
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Saldo", "Saldo", 20, DevExpress.Utils.FormatType.Numeric, "n0", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.repositoryItemItem.Name = "repositoryItemItem";
             // 
-            // colInventor
+            // colDesc
             // 
-            this.colInventor.Caption = "Nama Barang";
-            this.colInventor.FieldName = "Inventor";
-            this.colInventor.Name = "colInventor";
-            this.colInventor.OptionsColumn.AllowEdit = false;
-            this.colInventor.OptionsColumn.AllowFocus = false;
-            this.colInventor.Visible = true;
-            this.colInventor.VisibleIndex = 2;
-            this.colInventor.Width = 260;
+            this.colDesc.Caption = "Nama Barang";
+            this.colDesc.FieldName = "Desc";
+            this.colDesc.Name = "colDesc";
+            this.colDesc.OptionsColumn.AllowEdit = false;
+            this.colDesc.OptionsColumn.AllowFocus = false;
+            this.colDesc.Visible = true;
+            this.colDesc.VisibleIndex = 2;
+            this.colDesc.Width = 260;
             // 
             // colIDUOM
             // 
@@ -814,31 +814,31 @@ namespace Inventory.App.UI
             // 
             this.IDWarehouseSearchLookUpEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.PurchaseMasterBindingSource, "IDWarehouse", true));
             this.IDWarehouseSearchLookUpEdit.EnterMoveNextControl = true;
-            this.IDWarehouseSearchLookUpEdit.Location = new System.Drawing.Point(815, 93);
+            this.IDWarehouseSearchLookUpEdit.Location = new System.Drawing.Point(947, 93);
             this.IDWarehouseSearchLookUpEdit.MenuManager = this.barManager1;
             this.IDWarehouseSearchLookUpEdit.Name = "IDWarehouseSearchLookUpEdit";
             this.IDWarehouseSearchLookUpEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.IDWarehouseSearchLookUpEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.IDWarehouseSearchLookUpEdit.Properties.NullText = "";
-            this.IDWarehouseSearchLookUpEdit.Properties.PopupView = this.searchLookUpEdit1View;
+            this.IDWarehouseSearchLookUpEdit.Properties.PopupView = this.gvGudang;
             this.IDWarehouseSearchLookUpEdit.Size = new System.Drawing.Size(210, 20);
             this.IDWarehouseSearchLookUpEdit.StyleController = this.dataLayoutControl1;
             this.IDWarehouseSearchLookUpEdit.TabIndex = 30;
             this.IDWarehouseSearchLookUpEdit.EditValueChanged += new System.EventHandler(this.IDWarehouseSearchLookUpEdit_EditValueChanged);
             // 
-            // searchLookUpEdit1View
+            // gvGudang
             // 
-            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
-            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            this.gvGudang.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gvGudang.Name = "gvGudang";
+            this.gvGudang.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gvGudang.OptionsView.ShowGroupPanel = false;
             // 
             // IDVendorSearchLookUpEdit
             // 
             this.IDVendorSearchLookUpEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.PurchaseMasterBindingSource, "IDVendor", true));
             this.IDVendorSearchLookUpEdit.EnterMoveNextControl = true;
-            this.IDVendorSearchLookUpEdit.Location = new System.Drawing.Point(815, 45);
+            this.IDVendorSearchLookUpEdit.Location = new System.Drawing.Point(947, 45);
             this.IDVendorSearchLookUpEdit.MenuManager = this.barManager1;
             this.IDVendorSearchLookUpEdit.Name = "IDVendorSearchLookUpEdit";
             this.IDVendorSearchLookUpEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
@@ -862,7 +862,7 @@ namespace Inventory.App.UI
             this.SubTotalTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.PurchaseMasterBindingSource, "SubTotal", true));
             this.SubTotalTextEdit.EditValue = 0D;
             this.SubTotalTextEdit.EnterMoveNextControl = true;
-            this.SubTotalTextEdit.Location = new System.Drawing.Point(815, 427);
+            this.SubTotalTextEdit.Location = new System.Drawing.Point(947, 427);
             this.SubTotalTextEdit.MenuManager = this.barManager1;
             this.SubTotalTextEdit.Name = "SubTotalTextEdit";
             this.SubTotalTextEdit.Properties.Appearance.Options.UseTextOptions = true;
@@ -879,7 +879,7 @@ namespace Inventory.App.UI
             // 
             this.TaxTypeComboBoxEdit.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", this.PurchaseMasterBindingSource, "TaxType", true));
             this.TaxTypeComboBoxEdit.EnterMoveNextControl = true;
-            this.TaxTypeComboBoxEdit.Location = new System.Drawing.Point(815, 69);
+            this.TaxTypeComboBoxEdit.Location = new System.Drawing.Point(947, 69);
             this.TaxTypeComboBoxEdit.MenuManager = this.barManager1;
             this.TaxTypeComboBoxEdit.Name = "TaxTypeComboBoxEdit";
             this.TaxTypeComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -899,7 +899,7 @@ namespace Inventory.App.UI
             this.TaxDefaultTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.PurchaseMasterBindingSource, "TaxDefault", true));
             this.TaxDefaultTextEdit.EditValue = 0D;
             this.TaxDefaultTextEdit.EnterMoveNextControl = true;
-            this.TaxDefaultTextEdit.Location = new System.Drawing.Point(815, 475);
+            this.TaxDefaultTextEdit.Location = new System.Drawing.Point(947, 475);
             this.TaxDefaultTextEdit.MenuManager = this.barManager1;
             this.TaxDefaultTextEdit.Name = "TaxDefaultTextEdit";
             this.TaxDefaultTextEdit.Properties.Appearance.Options.UseTextOptions = true;
@@ -917,7 +917,7 @@ namespace Inventory.App.UI
             this.TaxProsenTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.PurchaseMasterBindingSource, "TaxProsen", true));
             this.TaxProsenTextEdit.EditValue = 0D;
             this.TaxProsenTextEdit.EnterMoveNextControl = true;
-            this.TaxProsenTextEdit.Location = new System.Drawing.Point(975, 69);
+            this.TaxProsenTextEdit.Location = new System.Drawing.Point(1107, 69);
             this.TaxProsenTextEdit.MenuManager = this.barManager1;
             this.TaxProsenTextEdit.Name = "TaxProsenTextEdit";
             this.TaxProsenTextEdit.Properties.Appearance.Options.UseTextOptions = true;
@@ -935,7 +935,7 @@ namespace Inventory.App.UI
             this.TaxTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.PurchaseMasterBindingSource, "Tax", true));
             this.TaxTextEdit.EditValue = 0D;
             this.TaxTextEdit.EnterMoveNextControl = true;
-            this.TaxTextEdit.Location = new System.Drawing.Point(950, 475);
+            this.TaxTextEdit.Location = new System.Drawing.Point(1082, 475);
             this.TaxTextEdit.MenuManager = this.barManager1;
             this.TaxTextEdit.Name = "TaxTextEdit";
             this.TaxTextEdit.Properties.Appearance.Options.UseTextOptions = true;
@@ -953,7 +953,7 @@ namespace Inventory.App.UI
             this.DiscProsenTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.PurchaseMasterBindingSource, "DiscProsen", true));
             this.DiscProsenTextEdit.EditValue = 0D;
             this.DiscProsenTextEdit.EnterMoveNextControl = true;
-            this.DiscProsenTextEdit.Location = new System.Drawing.Point(815, 451);
+            this.DiscProsenTextEdit.Location = new System.Drawing.Point(947, 451);
             this.DiscProsenTextEdit.MenuManager = this.barManager1;
             this.DiscProsenTextEdit.Name = "DiscProsenTextEdit";
             this.DiscProsenTextEdit.Properties.Appearance.Options.UseTextOptions = true;
@@ -964,13 +964,14 @@ namespace Inventory.App.UI
             this.DiscProsenTextEdit.Size = new System.Drawing.Size(73, 20);
             this.DiscProsenTextEdit.StyleController = this.dataLayoutControl1;
             this.DiscProsenTextEdit.TabIndex = 37;
+            this.DiscProsenTextEdit.EditValueChanged += new System.EventHandler(this.DiscProsenTextEdit_EditValueChanged);
             // 
             // DiscTextEdit
             // 
             this.DiscTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.PurchaseMasterBindingSource, "Disc", true));
             this.DiscTextEdit.EditValue = 0D;
             this.DiscTextEdit.EnterMoveNextControl = true;
-            this.DiscTextEdit.Location = new System.Drawing.Point(950, 451);
+            this.DiscTextEdit.Location = new System.Drawing.Point(1082, 451);
             this.DiscTextEdit.MenuManager = this.barManager1;
             this.DiscTextEdit.Name = "DiscTextEdit";
             this.DiscTextEdit.Properties.Appearance.Options.UseTextOptions = true;
@@ -982,13 +983,14 @@ namespace Inventory.App.UI
             this.DiscTextEdit.Size = new System.Drawing.Size(75, 20);
             this.DiscTextEdit.StyleController = this.dataLayoutControl1;
             this.DiscTextEdit.TabIndex = 38;
+            this.DiscTextEdit.EditValueChanged += new System.EventHandler(this.DiscTextEdit_EditValueChanged);
             // 
             // TotalTextEdit
             // 
             this.TotalTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.PurchaseMasterBindingSource, "Total", true));
             this.TotalTextEdit.EditValue = 0D;
             this.TotalTextEdit.EnterMoveNextControl = true;
-            this.TotalTextEdit.Location = new System.Drawing.Point(815, 499);
+            this.TotalTextEdit.Location = new System.Drawing.Point(947, 499);
             this.TotalTextEdit.MenuManager = this.barManager1;
             this.TotalTextEdit.Name = "TotalTextEdit";
             this.TotalTextEdit.Properties.Appearance.Options.UseTextOptions = true;
@@ -1004,7 +1006,7 @@ namespace Inventory.App.UI
             // NoteMemoEdit
             // 
             this.NoteMemoEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.PurchaseMasterBindingSource, "Note", true));
-            this.NoteMemoEdit.Location = new System.Drawing.Point(815, 523);
+            this.NoteMemoEdit.Location = new System.Drawing.Point(947, 523);
             this.NoteMemoEdit.MenuManager = this.barManager1;
             this.NoteMemoEdit.Name = "NoteMemoEdit";
             this.NoteMemoEdit.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -1019,7 +1021,7 @@ namespace Inventory.App.UI
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(1049, 612);
+            this.Root.Size = new System.Drawing.Size(1181, 612);
             this.Root.TextVisible = false;
             // 
             // layoutControlGroup1
@@ -1036,7 +1038,7 @@ namespace Inventory.App.UI
             this.emptySpaceItem2});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "autoGeneratedGroup0";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1029, 592);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1161, 592);
             // 
             // layoutControlGroup3
             // 
@@ -1157,7 +1159,7 @@ namespace Inventory.App.UI
             this.ItemForIDWarehouse,
             this.ItemForTaxProsen,
             this.ItemForIDVendor});
-            this.layoutControlGroup4.Location = new System.Drawing.Point(733, 0);
+            this.layoutControlGroup4.Location = new System.Drawing.Point(865, 0);
             this.layoutControlGroup4.Name = "layoutControlGroup4";
             this.layoutControlGroup4.Size = new System.Drawing.Size(296, 117);
             this.layoutControlGroup4.Text = "Supplier";
@@ -1211,7 +1213,7 @@ namespace Inventory.App.UI
             this.ItemForTax,
             this.ItemForNote,
             this.ItemForSubTotal});
-            this.layoutControlGroup5.Location = new System.Drawing.Point(733, 403);
+            this.layoutControlGroup5.Location = new System.Drawing.Point(865, 403);
             this.layoutControlGroup5.Name = "layoutControlGroup5";
             this.layoutControlGroup5.Size = new System.Drawing.Size(296, 189);
             this.layoutControlGroup5.Text = "Nilai";
@@ -1289,7 +1291,7 @@ namespace Inventory.App.UI
             this.layoutControlItem1.Control = this.gridControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 117);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1029, 286);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1161, 286);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -1298,7 +1300,7 @@ namespace Inventory.App.UI
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(256, 0);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(477, 117);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(609, 117);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem2
@@ -1306,7 +1308,7 @@ namespace Inventory.App.UI
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(296, 403);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(437, 189);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(569, 189);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // dxErrorProvider1
@@ -1317,7 +1319,7 @@ namespace Inventory.App.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1049, 632);
+            this.ClientSize = new System.Drawing.Size(1181, 632);
             this.Controls.Add(this.dataLayoutControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -1356,7 +1358,7 @@ namespace Inventory.App.UI
             ((System.ComponentModel.ISupportInitialize)(this.DocDateDateEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NoReffTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDWarehouseSearchLookUpEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvGudang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDVendorSearchLookUpEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubTotalTextEdit.Properties)).EndInit();
@@ -1430,7 +1432,7 @@ namespace Inventory.App.UI
         private DevExpress.XtraEditors.DateEdit DocDateDateEdit;
         private DevExpress.XtraEditors.TextEdit NoReffTextEdit;
         private DevExpress.XtraEditors.SearchLookUpEdit IDWarehouseSearchLookUpEdit;
-        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvGudang;
         private DevExpress.XtraEditors.SearchLookUpEdit IDVendorSearchLookUpEdit;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private DevExpress.XtraEditors.TextEdit SubTotalTextEdit;
@@ -1489,7 +1491,7 @@ namespace Inventory.App.UI
         private DevExpress.XtraGrid.Columns.GridColumn colDisc1Prosen;
         private DevExpress.XtraGrid.Columns.GridColumn colDisc1;
         private DevExpress.XtraGrid.Columns.GridColumn colNote;
-        private DevExpress.XtraGrid.Columns.GridColumn colInventor;
+        private DevExpress.XtraGrid.Columns.GridColumn colDesc;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemSatuan;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemQty;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemNumber;

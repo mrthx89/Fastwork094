@@ -37,6 +37,7 @@ namespace Inventory.App.UI
                     ID = Guid.NewGuid(),
                     IDInventor = Guid.Empty,
                     IDUOM = Guid.Empty,
+                    IDWarehouse = Guid.Empty,
                     IDUserEdit = Guid.Empty,
                     IDUserEntri = Constant.UserLogin.ID,
                     IDUserHapus = Guid.Empty,
@@ -60,6 +61,7 @@ namespace Inventory.App.UI
             refreshLookUp();
             stokMasukBindingSource.DataSource = data;
             dataLayoutControl1.Refresh();
+            gvGudang.DataSourceChanged += gv1_DataSourceChanged;
         }
 
         private void mnSimpan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -78,6 +80,10 @@ namespace Inventory.App.UI
                     if (data.IDInventor == Guid.Empty || string.IsNullOrEmpty(data.NamaBarang))
                     {
                         dxErrorProvider1.SetError(IDInventorSearchLookUpEdit, "Kode Barang harus diisi!");
+                    }
+                    if (data.IDWarehouse == Guid.Empty || string.IsNullOrEmpty(IDWarehouseSearchLookUpEdit.Text))
+                    {
+                        dxErrorProvider1.SetError(IDWarehouseSearchLookUpEdit, "Gudang harus diisi!");
                     }
 
                     if (data.Qty <= 0)
@@ -152,7 +158,7 @@ namespace Inventory.App.UI
                     dlg.TopMost = false;
                     dlg.Show();
 
-                    var callItems = Repository.Item.getLookUpInventors(data.Tanggal, Guid.Empty, null);
+                    var callItems = Repository.Item.getLookUpInventors(data.Tanggal, data.IDWarehouse, null);
                     if (callItems.Item1)
                     {
                         itemLookUps = callItems.Item2;
@@ -177,6 +183,19 @@ namespace Inventory.App.UI
                     }
                     IDUOMSearchLookUpEdit.Properties.ValueMember = "ID";
                     IDUOMSearchLookUpEdit.Properties.DisplayMember = "Satuan";
+
+                    var callWarehouse = Repository.Warehouse.getLookUpWarehouses(null);
+                    if (callWarehouse.Item1)
+                    {
+                        IDWarehouseSearchLookUpEdit.Properties.DataSource = (from x in callWarehouse.Item2
+                                                                             select new { x.ID, x.Code, x.Name }).ToList();
+                    }
+                    else
+                    {
+                        IDWarehouseSearchLookUpEdit.Properties.DataSource = null;
+                    }
+                    IDWarehouseSearchLookUpEdit.Properties.ValueMember = "ID";
+                    IDWarehouseSearchLookUpEdit.Properties.DisplayMember = "Code";
 
                     var callUser = Repository.User.getLookUp();
                     if (callUser.Item1)
@@ -237,6 +256,7 @@ namespace Inventory.App.UI
             Constant.layoutsHelper.SaveLayouts(this.Name, dataLayoutControl1);
             Constant.layoutsHelper.SaveLayouts(this.Name, gvBelt);
             Constant.layoutsHelper.SaveLayouts(this.Name, gvCategory);
+            Constant.layoutsHelper.SaveLayouts(this.Name, gvGudang);
         }
 
         private void gv1_DataSourceChanged(object sender, EventArgs e)
@@ -312,6 +332,11 @@ namespace Inventory.App.UI
                     }
                 }
             }
+        }
+
+        private void IDWarehouseSearchLookUpEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            refreshLookUp();
         }
     }
 }

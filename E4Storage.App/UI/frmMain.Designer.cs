@@ -50,6 +50,8 @@ namespace Inventory.App.UI
             this.bbiMasterCustomer = new DevExpress.XtraBars.BarButtonItem();
             this.bbiMasterGudang = new DevExpress.XtraBars.BarButtonItem();
             this.bbiPembelian = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiReturPembelian = new DevExpress.XtraBars.BarButtonItem();
+            this.bbcEditReport = new DevExpress.XtraBars.BarCheckItem();
             this.imageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -61,7 +63,6 @@ namespace Inventory.App.UI
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.bbiReturPembelian = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionSmall)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionLarge)).BeginInit();
@@ -92,10 +93,11 @@ namespace Inventory.App.UI
             this.bbiMasterCustomer,
             this.bbiMasterGudang,
             this.bbiPembelian,
-            this.bbiReturPembelian});
+            this.bbiReturPembelian,
+            this.bbcEditReport});
             this.ribbonControl1.LargeImages = this.imageCollectionLarge;
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 19;
+            this.ribbonControl1.MaxItemId = 20;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsTouch.ShowTouchUISelectorInQAT = true;
             this.ribbonControl1.OptionsTouch.ShowTouchUISelectorVisibilityItemInQATMenu = true;
@@ -264,6 +266,22 @@ namespace Inventory.App.UI
             this.bbiPembelian.Name = "bbiPembelian";
             this.bbiPembelian.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiPembelian_ItemClick);
             // 
+            // bbiReturPembelian
+            // 
+            this.bbiReturPembelian.Caption = "Retur Pembelian";
+            this.bbiReturPembelian.Id = 18;
+            this.bbiReturPembelian.ImageOptions.LargeImage = global::Inventory.App.Properties.Resources._008_return;
+            this.bbiReturPembelian.Name = "bbiReturPembelian";
+            this.bbiReturPembelian.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiReturPembelian_ItemClick);
+            // 
+            // bbcEditReport
+            // 
+            this.bbcEditReport.Caption = "&Edit Report";
+            this.bbcEditReport.Id = 19;
+            this.bbcEditReport.ImageOptions.Image = global::Inventory.App.Properties.Resources.printarea_32x32;
+            this.bbcEditReport.Name = "bbcEditReport";
+            this.bbcEditReport.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.bbcEditReport_CheckedChanged);
+            // 
             // imageCollectionLarge
             // 
             this.imageCollectionLarge.ImageSize = new System.Drawing.Size(32, 32);
@@ -311,6 +329,7 @@ namespace Inventory.App.UI
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.bbiSetting);
+            this.ribbonPageGroup3.ItemLinks.Add(this.bbcEditReport);
             this.ribbonPageGroup3.ItemLinks.Add(this.bbiLoginOut, true);
             this.ribbonPageGroup3.ItemLinks.Add(this.bbiManagementUser, true);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
@@ -364,14 +383,6 @@ namespace Inventory.App.UI
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
-            // 
-            // bbiReturPembelian
-            // 
-            this.bbiReturPembelian.Caption = "Retur Pembelian";
-            this.bbiReturPembelian.Id = 18;
-            this.bbiReturPembelian.ImageOptions.LargeImage = global::Inventory.App.Properties.Resources._008_return;
-            this.bbiReturPembelian.Name = "bbiReturPembelian";
-            this.bbiReturPembelian.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiReturPembelian_ItemClick);
             // 
             // frmMain
             // 
@@ -430,6 +441,7 @@ namespace Inventory.App.UI
         private DevExpress.XtraBars.BarButtonItem bbiMasterGudang;
         private DevExpress.XtraBars.BarButtonItem bbiPembelian;
         private DevExpress.XtraBars.BarButtonItem bbiReturPembelian;
+        private DevExpress.XtraBars.BarCheckItem bbcEditReport;
     }
 }
 

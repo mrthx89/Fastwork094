@@ -18,6 +18,7 @@ namespace Inventory.App.Utils
         public static TUser UserLogin = null;
         public static LayoutsHelper layoutsHelper = new LayoutsHelper(Path.Combine(Environment.CurrentDirectory, "System", "Layouts"));
         public static IMapper mapper = new AutoMapperConfig().Configure(); // Buat instance mapper
+        public static bool EditReport = false;
 
         public enum TypeTransaction
         {
@@ -33,7 +34,11 @@ namespace Inventory.App.Utils
         public static Guid stokMasterDataType = Guid.Parse("991D2F92-C02D-4A2A-8A5F-F19E3DAD08C5");
         public static Guid stokOutType = Guid.Parse("6652E843-6C01-4CD0-9F9C-5111565D7844");
         public static Guid stokSaldoAwal = Guid.Parse("D6022513-AFD4-4A67-9F47-594E43D5F220");
-        
+        public static Guid stokPembelian = Guid.Parse("7c51a7c6-2b13-4c4a-9e01-9bc5e4158d5f");
+        public static Guid stokReturPembelian = Guid.Parse("5e9d58b1-492f-4d13-912c-20f2cc88c031");
+        public static Guid stokPenjualan = Guid.Parse("ea1f6c54-6f13-4a71-98cb-f2f3f54de7b9");
+        public static Guid stokReturPenjualan = Guid.Parse("60a9be41-40e2-42f4-9a5e-7c2ebec7a377");
+
         //IDWarehouse
         public static Guid warehouse = Guid.Parse("53EC3BB6-9249-4840-8BAB-EA8A30BFCAD1");
     }

@@ -15,6 +15,12 @@ namespace Inventory.App.Utils
         {
             var config = new MapperConfiguration(cfg =>
             {
+                cfg.CreateMap<TPurchaseDtl, PurchaseDtl>();
+                cfg.CreateMap<PurchaseDtl, TPurchaseDtl>();
+
+                cfg.CreateMap<TPurchase, Purchase>();
+                cfg.CreateMap<Purchase, TPurchase>();
+
                 cfg.CreateMap<TContact, VendorMaster>();
                 cfg.CreateMap<VendorMaster, TContact>();
 

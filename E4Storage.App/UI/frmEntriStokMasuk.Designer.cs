@@ -87,6 +87,9 @@ namespace Inventory.App.UI
             this.ItemForCabinet = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForRow = new DevExpress.XtraLayout.LayoutControlItem();
             this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
+            this.IDWarehouseSearchLookUpEdit = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gvGudang = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ItemForIDWarehouse = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
@@ -139,6 +142,9 @@ namespace Inventory.App.UI
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCabinet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IDWarehouseSearchLookUpEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvGudang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForIDWarehouse)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -224,6 +230,7 @@ namespace Inventory.App.UI
             this.dataLayoutControl1.Controls.Add(this.RowTextEdit);
             this.dataLayoutControl1.Controls.Add(this.IDBeltSearchLookUpEdit);
             this.dataLayoutControl1.Controls.Add(this.PICTextEdit);
+            this.dataLayoutControl1.Controls.Add(this.IDWarehouseSearchLookUpEdit);
             this.dataLayoutControl1.DataSource = this.stokMasukBindingSource;
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataLayoutControl1.Location = new System.Drawing.Point(0, 20);
@@ -286,7 +293,7 @@ namespace Inventory.App.UI
             // 
             this.IDInventorSearchLookUpEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.stokMasukBindingSource, "IDInventor", true));
             this.IDInventorSearchLookUpEdit.EnterMoveNextControl = true;
-            this.IDInventorSearchLookUpEdit.Location = new System.Drawing.Point(79, 108);
+            this.IDInventorSearchLookUpEdit.Location = new System.Drawing.Point(79, 132);
             this.IDInventorSearchLookUpEdit.MenuManager = this.barManager1;
             this.IDInventorSearchLookUpEdit.Name = "IDInventorSearchLookUpEdit";
             this.IDInventorSearchLookUpEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
@@ -341,7 +348,7 @@ namespace Inventory.App.UI
             // 
             this.IDUOMSearchLookUpEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.stokMasukBindingSource, "IDUOM", true));
             this.IDUOMSearchLookUpEdit.EnterMoveNextControl = true;
-            this.IDUOMSearchLookUpEdit.Location = new System.Drawing.Point(79, 156);
+            this.IDUOMSearchLookUpEdit.Location = new System.Drawing.Point(79, 180);
             this.IDUOMSearchLookUpEdit.MenuManager = this.barManager1;
             this.IDUOMSearchLookUpEdit.Name = "IDUOMSearchLookUpEdit";
             this.IDUOMSearchLookUpEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
@@ -452,10 +459,10 @@ namespace Inventory.App.UI
             // KeteranganMemoEdit
             // 
             this.KeteranganMemoEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.stokMasukBindingSource, "Keterangan", true));
-            this.KeteranganMemoEdit.Location = new System.Drawing.Point(79, 276);
+            this.KeteranganMemoEdit.Location = new System.Drawing.Point(79, 300);
             this.KeteranganMemoEdit.MenuManager = this.barManager1;
             this.KeteranganMemoEdit.Name = "KeteranganMemoEdit";
-            this.KeteranganMemoEdit.Size = new System.Drawing.Size(328, 67);
+            this.KeteranganMemoEdit.Size = new System.Drawing.Size(328, 43);
             this.KeteranganMemoEdit.StyleController = this.dataLayoutControl1;
             this.KeteranganMemoEdit.TabIndex = 16;
             // 
@@ -463,7 +470,7 @@ namespace Inventory.App.UI
             // 
             this.NamaBarangTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.stokMasukBindingSource, "NamaBarang", true));
             this.NamaBarangTextEdit.EnterMoveNextControl = true;
-            this.NamaBarangTextEdit.Location = new System.Drawing.Point(79, 132);
+            this.NamaBarangTextEdit.Location = new System.Drawing.Point(79, 156);
             this.NamaBarangTextEdit.MenuManager = this.barManager1;
             this.NamaBarangTextEdit.Name = "NamaBarangTextEdit";
             this.NamaBarangTextEdit.Properties.ReadOnly = true;
@@ -475,7 +482,7 @@ namespace Inventory.App.UI
             // 
             this.QtyCalcEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.stokMasukBindingSource, "Qty", true));
             this.QtyCalcEdit.EnterMoveNextControl = true;
-            this.QtyCalcEdit.Location = new System.Drawing.Point(79, 180);
+            this.QtyCalcEdit.Location = new System.Drawing.Point(79, 204);
             this.QtyCalcEdit.MenuManager = this.barManager1;
             this.QtyCalcEdit.Name = "QtyCalcEdit";
             this.QtyCalcEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
@@ -504,7 +511,7 @@ namespace Inventory.App.UI
             // 
             this.IDCategorySearchLookUpEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.stokMasukBindingSource, "IDCategory", true));
             this.IDCategorySearchLookUpEdit.EnterMoveNextControl = true;
-            this.IDCategorySearchLookUpEdit.Location = new System.Drawing.Point(79, 228);
+            this.IDCategorySearchLookUpEdit.Location = new System.Drawing.Point(79, 252);
             this.IDCategorySearchLookUpEdit.MenuManager = this.barManager1;
             this.IDCategorySearchLookUpEdit.Name = "IDCategorySearchLookUpEdit";
             this.IDCategorySearchLookUpEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -532,7 +539,7 @@ namespace Inventory.App.UI
             this.CabinetTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.stokMasukBindingSource, "Cabinet", true));
             this.CabinetTextEdit.EditValue = ((short)(0));
             this.CabinetTextEdit.EnterMoveNextControl = true;
-            this.CabinetTextEdit.Location = new System.Drawing.Point(79, 252);
+            this.CabinetTextEdit.Location = new System.Drawing.Point(79, 276);
             this.CabinetTextEdit.MenuManager = this.barManager1;
             this.CabinetTextEdit.Name = "CabinetTextEdit";
             this.CabinetTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -549,7 +556,7 @@ namespace Inventory.App.UI
             // 
             this.RowTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.stokMasukBindingSource, "Row", true));
             this.RowTextEdit.EnterMoveNextControl = true;
-            this.RowTextEdit.Location = new System.Drawing.Point(278, 252);
+            this.RowTextEdit.Location = new System.Drawing.Point(278, 276);
             this.RowTextEdit.MenuManager = this.barManager1;
             this.RowTextEdit.Name = "RowTextEdit";
             this.RowTextEdit.Size = new System.Drawing.Size(129, 20);
@@ -560,7 +567,7 @@ namespace Inventory.App.UI
             // 
             this.IDBeltSearchLookUpEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.stokMasukBindingSource, "IDBelt", true));
             this.IDBeltSearchLookUpEdit.EnterMoveNextControl = true;
-            this.IDBeltSearchLookUpEdit.Location = new System.Drawing.Point(278, 204);
+            this.IDBeltSearchLookUpEdit.Location = new System.Drawing.Point(278, 228);
             this.IDBeltSearchLookUpEdit.MenuManager = this.barManager1;
             this.IDBeltSearchLookUpEdit.Name = "IDBeltSearchLookUpEdit";
             this.IDBeltSearchLookUpEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -587,7 +594,7 @@ namespace Inventory.App.UI
             // 
             this.PICTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.stokMasukBindingSource, "PIC", true));
             this.PICTextEdit.EnterMoveNextControl = true;
-            this.PICTextEdit.Location = new System.Drawing.Point(79, 204);
+            this.PICTextEdit.Location = new System.Drawing.Point(79, 228);
             this.PICTextEdit.MenuManager = this.barManager1;
             this.PICTextEdit.Name = "PICTextEdit";
             this.PICTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
@@ -627,7 +634,8 @@ namespace Inventory.App.UI
             this.ItemForIDBelt,
             this.ItemForIDCategory,
             this.ItemForCabinet,
-            this.ItemForRow});
+            this.ItemForRow,
+            this.ItemForIDWarehouse});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "autoGeneratedGroup0";
             this.layoutControlGroup1.Size = new System.Drawing.Size(399, 383);
@@ -662,7 +670,7 @@ namespace Inventory.App.UI
             // ItemForIDInventor
             // 
             this.ItemForIDInventor.Control = this.IDInventorSearchLookUpEdit;
-            this.ItemForIDInventor.Location = new System.Drawing.Point(0, 96);
+            this.ItemForIDInventor.Location = new System.Drawing.Point(0, 120);
             this.ItemForIDInventor.Name = "ItemForIDInventor";
             this.ItemForIDInventor.Size = new System.Drawing.Size(399, 24);
             this.ItemForIDInventor.Text = "Item";
@@ -671,7 +679,7 @@ namespace Inventory.App.UI
             // ItemForIDUOM
             // 
             this.ItemForIDUOM.Control = this.IDUOMSearchLookUpEdit;
-            this.ItemForIDUOM.Location = new System.Drawing.Point(0, 144);
+            this.ItemForIDUOM.Location = new System.Drawing.Point(0, 168);
             this.ItemForIDUOM.Name = "ItemForIDUOM";
             this.ItemForIDUOM.Size = new System.Drawing.Size(399, 24);
             this.ItemForIDUOM.Text = "Satuan";
@@ -680,7 +688,7 @@ namespace Inventory.App.UI
             // ItemForQty
             // 
             this.ItemForQty.Control = this.QtyCalcEdit;
-            this.ItemForQty.Location = new System.Drawing.Point(0, 168);
+            this.ItemForQty.Location = new System.Drawing.Point(0, 192);
             this.ItemForQty.Name = "ItemForQty";
             this.ItemForQty.Size = new System.Drawing.Size(399, 24);
             this.ItemForQty.Text = "Qty";
@@ -689,9 +697,9 @@ namespace Inventory.App.UI
             // ItemForKeterangan
             // 
             this.ItemForKeterangan.Control = this.KeteranganMemoEdit;
-            this.ItemForKeterangan.Location = new System.Drawing.Point(0, 264);
+            this.ItemForKeterangan.Location = new System.Drawing.Point(0, 288);
             this.ItemForKeterangan.Name = "ItemForKeterangan";
-            this.ItemForKeterangan.Size = new System.Drawing.Size(399, 71);
+            this.ItemForKeterangan.Size = new System.Drawing.Size(399, 47);
             this.ItemForKeterangan.Text = "Keterangan";
             this.ItemForKeterangan.TextSize = new System.Drawing.Size(64, 13);
             // 
@@ -734,7 +742,7 @@ namespace Inventory.App.UI
             // ItemForNamaBarang
             // 
             this.ItemForNamaBarang.Control = this.NamaBarangTextEdit;
-            this.ItemForNamaBarang.Location = new System.Drawing.Point(0, 120);
+            this.ItemForNamaBarang.Location = new System.Drawing.Point(0, 144);
             this.ItemForNamaBarang.Name = "ItemForNamaBarang";
             this.ItemForNamaBarang.Size = new System.Drawing.Size(399, 24);
             this.ItemForNamaBarang.Text = "Nama Barang";
@@ -752,7 +760,7 @@ namespace Inventory.App.UI
             // ItemForPIC
             // 
             this.ItemForPIC.Control = this.PICTextEdit;
-            this.ItemForPIC.Location = new System.Drawing.Point(0, 192);
+            this.ItemForPIC.Location = new System.Drawing.Point(0, 216);
             this.ItemForPIC.Name = "ItemForPIC";
             this.ItemForPIC.Size = new System.Drawing.Size(199, 24);
             this.ItemForPIC.Text = "PIC";
@@ -761,7 +769,7 @@ namespace Inventory.App.UI
             // ItemForIDBelt
             // 
             this.ItemForIDBelt.Control = this.IDBeltSearchLookUpEdit;
-            this.ItemForIDBelt.Location = new System.Drawing.Point(199, 192);
+            this.ItemForIDBelt.Location = new System.Drawing.Point(199, 216);
             this.ItemForIDBelt.Name = "ItemForIDBelt";
             this.ItemForIDBelt.Size = new System.Drawing.Size(200, 24);
             this.ItemForIDBelt.Text = "Belt";
@@ -770,7 +778,7 @@ namespace Inventory.App.UI
             // ItemForIDCategory
             // 
             this.ItemForIDCategory.Control = this.IDCategorySearchLookUpEdit;
-            this.ItemForIDCategory.Location = new System.Drawing.Point(0, 216);
+            this.ItemForIDCategory.Location = new System.Drawing.Point(0, 240);
             this.ItemForIDCategory.Name = "ItemForIDCategory";
             this.ItemForIDCategory.Size = new System.Drawing.Size(399, 24);
             this.ItemForIDCategory.Text = "Category";
@@ -779,7 +787,7 @@ namespace Inventory.App.UI
             // ItemForCabinet
             // 
             this.ItemForCabinet.Control = this.CabinetTextEdit;
-            this.ItemForCabinet.Location = new System.Drawing.Point(0, 240);
+            this.ItemForCabinet.Location = new System.Drawing.Point(0, 264);
             this.ItemForCabinet.Name = "ItemForCabinet";
             this.ItemForCabinet.Size = new System.Drawing.Size(199, 24);
             this.ItemForCabinet.Text = "Cabinet";
@@ -788,7 +796,7 @@ namespace Inventory.App.UI
             // ItemForRow
             // 
             this.ItemForRow.Control = this.RowTextEdit;
-            this.ItemForRow.Location = new System.Drawing.Point(199, 240);
+            this.ItemForRow.Location = new System.Drawing.Point(199, 264);
             this.ItemForRow.Name = "ItemForRow";
             this.ItemForRow.Size = new System.Drawing.Size(200, 24);
             this.ItemForRow.Text = "Row";
@@ -797,6 +805,38 @@ namespace Inventory.App.UI
             // dxErrorProvider1
             // 
             this.dxErrorProvider1.ContainerControl = this;
+            // 
+            // IDWarehouseSearchLookUpEdit
+            // 
+            this.IDWarehouseSearchLookUpEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.stokMasukBindingSource, "IDWarehouse", true));
+            this.IDWarehouseSearchLookUpEdit.Location = new System.Drawing.Point(79, 108);
+            this.IDWarehouseSearchLookUpEdit.MenuManager = this.barManager1;
+            this.IDWarehouseSearchLookUpEdit.Name = "IDWarehouseSearchLookUpEdit";
+            this.IDWarehouseSearchLookUpEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.IDWarehouseSearchLookUpEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.IDWarehouseSearchLookUpEdit.Properties.NullText = "";
+            this.IDWarehouseSearchLookUpEdit.Properties.PopupView = this.gvGudang;
+            this.IDWarehouseSearchLookUpEdit.Size = new System.Drawing.Size(328, 20);
+            this.IDWarehouseSearchLookUpEdit.StyleController = this.dataLayoutControl1;
+            this.IDWarehouseSearchLookUpEdit.TabIndex = 25;
+            this.IDWarehouseSearchLookUpEdit.EditValueChanged += new System.EventHandler(this.IDWarehouseSearchLookUpEdit_EditValueChanged);
+            // 
+            // gvGudang
+            // 
+            this.gvGudang.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gvGudang.Name = "gvGudang";
+            this.gvGudang.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gvGudang.OptionsView.ShowGroupPanel = false;
+            // 
+            // ItemForIDWarehouse
+            // 
+            this.ItemForIDWarehouse.Control = this.IDWarehouseSearchLookUpEdit;
+            this.ItemForIDWarehouse.Location = new System.Drawing.Point(0, 96);
+            this.ItemForIDWarehouse.Name = "ItemForIDWarehouse";
+            this.ItemForIDWarehouse.Size = new System.Drawing.Size(399, 24);
+            this.ItemForIDWarehouse.Text = "Gudang";
+            this.ItemForIDWarehouse.TextSize = new System.Drawing.Size(64, 13);
             // 
             // frmEntriStokMasuk
             // 
@@ -865,6 +905,9 @@ namespace Inventory.App.UI
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCabinet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForRow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IDWarehouseSearchLookUpEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvGudang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForIDWarehouse)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -929,5 +972,8 @@ namespace Inventory.App.UI
         private DevExpress.XtraEditors.TextEdit PICTextEdit;
         private DevExpress.XtraLayout.LayoutControlItem ItemForIDBelt;
         private DevExpress.XtraLayout.LayoutControlItem ItemForPIC;
+        private DevExpress.XtraEditors.SearchLookUpEdit IDWarehouseSearchLookUpEdit;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvGudang;
+        private DevExpress.XtraLayout.LayoutControlItem ItemForIDWarehouse;
     }
 }

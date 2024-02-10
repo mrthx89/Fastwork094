@@ -19,6 +19,8 @@ namespace Inventory.App.Model.ViewModel
         [Required]
         public Guid IDInventor { get; set; }
         [Required]
+        public Guid IDWarehouse { get; set; }
+        [Required]
         public Guid IDUOM { get; set; }
         [Required]
         [Range(0, float.MaxValue, ErrorMessage = "Qty yang diinputkan salah")]

@@ -498,5 +498,10 @@ namespace Inventory.App.UI
         {
 
         }
+
+        private void bbcEditReport_CheckedChanged(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Constant.EditReport = bbcEditReport.Checked;
+        }
     }
 }

@@ -33,35 +33,23 @@ namespace Inventory.App.Model.ViewModel
                 return Math.Round(PurchaseDtl != null ? PurchaseDtl.Sum(o => o.Amount) : 0d, 2);
             }
         }
-        private int _TaxType = 0;
         [Range(0, 2)]
-        public int TaxType
+        public int TaxType { get; set; }
+        public double TaxDefault
         {
-            get { return _TaxType; }
-            set
+            get
             {
-                _TaxType = value;
-                _TaxDefault = Math.Round(TaxType == 1 ? (SubTotal - Disc) / (1d + (_TaxProsen / 100d)) : (SubTotal - Disc), 2);
-                _Tax = Math.Round(TaxType == 0 ? 0d : TaxType == 1 ? (SubTotal - Disc) - _TaxDefault : _TaxDefault * (TaxProsen / 100d), 2);
+                return Math.Round(TaxType == 1 ? (SubTotal - Disc) / (1d + (TaxProsen / 100d)) : (SubTotal - Disc), 2);
             }
         }
-        private double _TaxDefault = 0.0;
-        public double TaxDefault { get { return _TaxDefault; } }
-        private double _TaxProsen = 0.0;
-        public double TaxProsen
-        {
-            get { return _TaxProsen; }
-            set
-            {
-                _TaxProsen = value;
-                _TaxDefault = Math.Round(TaxType == 1 ? (SubTotal - Disc) / (1d + (_TaxProsen / 100d)) : (SubTotal - Disc), 2);
-                _Tax = Math.Round(TaxType == 0 ? 0d : TaxType == 1 ? (SubTotal - Disc) - _TaxDefault : _TaxDefault * (TaxProsen / 100d), 2);
-            }
-        }
+        public double TaxProsen { get; set; }
         private double _Tax = 0.0;
         public double Tax
         {
-            get { return _Tax; }
+            get
+            {
+                return Math.Round(TaxType == 0 ? 0d : TaxType == 1 ? (SubTotal - Disc) - TaxDefault : TaxDefault * (TaxProsen / 100d), 2);
+            }
         }
         [Range(0, 100)]
         public double DiscProsen { get; set; }
@@ -76,7 +64,7 @@ namespace Inventory.App.Model.ViewModel
         {
             get
             {
-                return Math.Round((SubTotal - Disc) + (_TaxType == 2 ? _Tax : 0d), 2);
+                return Math.Round((SubTotal - Disc) + (TaxType == 2 ? Tax : 0d), 2);
             }
         }
         [StringLength(255)]
@@ -95,7 +83,7 @@ namespace Inventory.App.Model.ViewModel
         public int NoUrut { get; set; }
         [Required]
         public Guid IDInventor { get; set; }
-        public string Inventor { get; set; }
+        public string Desc { get; set; }
         [Required]
         public Guid IDUOM { get; set; }
         [Required]
