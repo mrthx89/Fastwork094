@@ -182,7 +182,7 @@ namespace Inventory.App.UI
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1094, 20);
+            this.barDockControlTop.Size = new System.Drawing.Size(1407, 20);
             // 
             // barDockControlBottom
             // 
@@ -190,7 +190,7 @@ namespace Inventory.App.UI
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 583);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1094, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1407, 0);
             // 
             // barDockControlLeft
             // 
@@ -204,7 +204,7 @@ namespace Inventory.App.UI
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1094, 20);
+            this.barDockControlRight.Location = new System.Drawing.Point(1407, 20);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 563);
             // 
@@ -230,7 +230,7 @@ namespace Inventory.App.UI
             this.repositoryItemBelt,
             this.repositoryItemType,
             this.repositoryItemCategory});
-            this.gridControl1.Size = new System.Drawing.Size(1094, 527);
+            this.gridControl1.Size = new System.Drawing.Size(1407, 527);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -511,7 +511,7 @@ namespace Inventory.App.UI
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 20);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1094, 36);
+            this.panelControl1.Size = new System.Drawing.Size(1407, 36);
             this.panelControl1.TabIndex = 0;
             // 
             // dateEdit2
@@ -568,7 +568,7 @@ namespace Inventory.App.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1094, 583);
+            this.ClientSize = new System.Drawing.Size(1407, 583);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);

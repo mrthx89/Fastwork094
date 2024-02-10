@@ -176,6 +176,10 @@
     <Compile Include="Migrations\202402100349490_Purchase1.designer.cs">
       <DependentUpon>202402100349490_Purchase1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202402100441204_StrukturJoin.cs" />
+    <Compile Include="Migrations\202402100441204_StrukturJoin.designer.cs">
+      <DependentUpon>202402100441204_StrukturJoin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\AppSetting.cs" />
     <Compile Include="Model\Entity\BaseTable.cs" />
@@ -196,6 +200,7 @@
     <Compile Include="Model\Entity\TUser.cs" />
     <Compile Include="Model\ViewModel\BaseLookUp.cs" />
     <Compile Include="Model\ViewModel\CustomerLookUp.cs" />
+    <Compile Include="Model\ViewModel\Purchase.cs" />
     <Compile Include="Model\ViewModel\SaldoStok.cs" />
     <Compile Include="Model\ViewModel\VendorLookUp.cs" />
     <Compile Include="Model\ViewModel\ItemLookUp.cs" />
@@ -459,6 +464,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202402100349490_Purchase1.resx">
       <DependentUpon>202402100349490_Purchase1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402100441204_StrukturJoin.resx">
+      <DependentUpon>202402100441204_StrukturJoin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Dialog\dlgOptionStokMasuk.resx">
       <DependentUpon>dlgOptionStokMasuk.cs</DependentUpon>

@@ -20,5 +20,9 @@ namespace Inventory.App.Model.Entity
         public string Category { get; set; }
 
         public virtual ICollection<TStockOut> StockOuts { get; set; }
+        public virtual ICollection<TStockIn> StockIns { get; set; }
+        //public virtual ICollection<TStockCard> StockCards { get; set; }
+        public virtual ICollection<TStockMasterData> StockMasterDatas { get; set; }
+        public virtual ICollection<TStockPengembalian> StockPengembalians { get; set; }
     }
 }

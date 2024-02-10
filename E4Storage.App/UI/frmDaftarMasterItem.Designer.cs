@@ -137,15 +137,15 @@ namespace Inventory.App.UI
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(874, 20);
+            this.barDockControlTop.Size = new System.Drawing.Size(1139, 20);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 453);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 543);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(874, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1139, 0);
             // 
             // barDockControlLeft
             // 
@@ -153,15 +153,15 @@ namespace Inventory.App.UI
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 20);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 433);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 523);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(874, 20);
+            this.barDockControlRight.Location = new System.Drawing.Point(1139, 20);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 433);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 523);
             // 
             // gridControl1
             // 
@@ -174,7 +174,7 @@ namespace Inventory.App.UI
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemUser,
             this.repositoryItemUOM});
-            this.gridControl1.Size = new System.Drawing.Size(874, 433);
+            this.gridControl1.Size = new System.Drawing.Size(1139, 523);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -211,7 +211,6 @@ namespace Inventory.App.UI
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.DataSourceChanged += new System.EventHandler(this.gridView1_DataSourceChanged);
-            this.gridView1.RowStyle += this.gridView1_RowStyle;
             // 
             // colID
             // 
@@ -382,7 +381,7 @@ namespace Inventory.App.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 453);
+            this.ClientSize = new System.Drawing.Size(1139, 543);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);

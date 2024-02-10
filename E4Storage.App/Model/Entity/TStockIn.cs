@@ -50,5 +50,7 @@ namespace Inventory.App.Model.Entity
         public virtual TInventor Inventor { get; set; }
         public virtual TUOM UOM { get; set; }
         public virtual TWarehouse Warehouse { get; set; }
+        public virtual TCategory Category { get; set; }
+        public virtual TBelt Belt { get; set; }
     }
 }

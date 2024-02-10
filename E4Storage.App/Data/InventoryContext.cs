@@ -238,6 +238,66 @@ namespace Inventory.App.Data
                 .WithMany(a => a.PurchaseDtls)
                 .HasForeignKey(b => b.IDInventor)
                 .WillCascadeOnDelete(false);
+
+            //modelBuilder.Entity<TStockCard>()
+            //    .HasRequired(b => b.Category)
+            //    .WithMany(a => a.StockCards)
+            //    .HasForeignKey(b => b.IDCategory)
+            //    .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<TStockIn>()
+                .HasRequired(b => b.Category)
+                .WithMany(a => a.StockIns)
+                .HasForeignKey(b => b.IDCategory)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<TStockMasterData>()
+                .HasRequired(b => b.Category)
+                .WithMany(a => a.StockMasterDatas)
+                .HasForeignKey(b => b.IDCategory)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<TStockOut>()
+                .HasRequired(b => b.Category)
+                .WithMany(a => a.StockOuts)
+                .HasForeignKey(b => b.IDCategory)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<TStockPengembalian>()
+                .HasRequired(b => b.Category)
+                .WithMany(a => a.StockPengembalians)
+                .HasForeignKey(b => b.IDCategory)
+                .WillCascadeOnDelete(false);
+
+            //modelBuilder.Entity<TStockCard>()
+            //    .HasRequired(b => b.Belt)
+            //    .WithMany(a => a.StockCards)
+            //    .HasForeignKey(b => b.IDBelt)
+            //    .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<TStockIn>()
+                .HasRequired(b => b.Belt)
+                .WithMany(a => a.StockIns)
+                .HasForeignKey(b => b.IDBelt)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<TStockMasterData>()
+                .HasRequired(b => b.Belt)
+                .WithMany(a => a.StockMasterDatas)
+                .HasForeignKey(b => b.IDBelt)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<TStockOut>()
+                .HasRequired(b => b.Belt)
+                .WithMany(a => a.StockOuts)
+                .HasForeignKey(b => b.IDBelt)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<TStockPengembalian>()
+                .HasRequired(b => b.Belt)
+                .WithMany(a => a.StockPengembalians)
+                .HasForeignKey(b => b.IDBelt)
+                .WillCascadeOnDelete(false);
         }
     }
 }
