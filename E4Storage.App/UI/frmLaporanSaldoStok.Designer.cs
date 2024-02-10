@@ -63,6 +63,8 @@ namespace Inventory.App.UI
             this.colSaldo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQtyMin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQtyMax = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIDWarehouse = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colWarehouse = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -183,7 +185,7 @@ namespace Inventory.App.UI
             // 
             // tInventorBindingSource
             // 
-            this.tInventorBindingSource.DataSource = typeof(Inventory.App.Model.ViewModel.ItemMaster);
+            this.tInventorBindingSource.DataSource = typeof(Inventory.App.Model.ViewModel.SaldoStok);
             // 
             // gridControl1
             // 
@@ -220,7 +222,9 @@ namespace Inventory.App.UI
             this.colTglHapus,
             this.colSaldo,
             this.colQtyMin,
-            this.colQtyMax});
+            this.colQtyMax,
+            this.colIDWarehouse,
+            this.colWarehouse});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -229,7 +233,6 @@ namespace Inventory.App.UI
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.DataSourceChanged += new System.EventHandler(this.gridView1_DataSourceChange);
-            this.gridView1.RowStyle += this.gridView1_RowStyle;
             // 
             // colID
             // 
@@ -368,7 +371,7 @@ namespace Inventory.App.UI
             this.colSaldo.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Saldo", "{0:n0}")});
             this.colSaldo.Visible = true;
-            this.colSaldo.VisibleIndex = 9;
+            this.colSaldo.VisibleIndex = 10;
             // 
             // colQtyMin
             // 
@@ -382,7 +385,7 @@ namespace Inventory.App.UI
             this.colQtyMin.FieldName = "QtyMin";
             this.colQtyMin.Name = "colQtyMin";
             this.colQtyMin.Visible = true;
-            this.colQtyMin.VisibleIndex = 10;
+            this.colQtyMin.VisibleIndex = 11;
             // 
             // colQtyMax
             // 
@@ -396,7 +399,21 @@ namespace Inventory.App.UI
             this.colQtyMax.FieldName = "QtyMax";
             this.colQtyMax.Name = "colQtyMax";
             this.colQtyMax.Visible = true;
-            this.colQtyMax.VisibleIndex = 11;
+            this.colQtyMax.VisibleIndex = 12;
+            // 
+            // colIDWarehouse
+            // 
+            this.colIDWarehouse.FieldName = "IDWarehouse";
+            this.colIDWarehouse.Name = "colIDWarehouse";
+            // 
+            // colWarehouse
+            // 
+            this.colWarehouse.Caption = "Gudang";
+            this.colWarehouse.FieldName = "Warehouse";
+            this.colWarehouse.Name = "colWarehouse";
+            this.colWarehouse.Visible = true;
+            this.colWarehouse.VisibleIndex = 9;
+            this.colWarehouse.Width = 100;
             // 
             // frmLaporanSaldoStok
             // 
@@ -464,5 +481,7 @@ namespace Inventory.App.UI
         private DevExpress.XtraGrid.Columns.GridColumn colSaldo;
         private DevExpress.XtraGrid.Columns.GridColumn colQtyMin;
         private DevExpress.XtraGrid.Columns.GridColumn colQtyMax;
+        private DevExpress.XtraGrid.Columns.GridColumn colIDWarehouse;
+        private DevExpress.XtraGrid.Columns.GridColumn colWarehouse;
     }
 }

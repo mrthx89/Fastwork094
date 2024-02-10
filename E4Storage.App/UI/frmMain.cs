@@ -59,6 +59,8 @@ namespace Inventory.App.UI
                 bbiLaporanMutasiStok.Enabled = false;
                 bbiListBarangKeluar.Enabled = false;
                 bbiListBarangMasuk.Enabled = false;
+                bbiPembelian.Enabled = false;
+                bbiReturPembelian.Enabled = false;
 
                 foreach (var item in this.MdiChildren)
                 {
@@ -87,6 +89,8 @@ namespace Inventory.App.UI
                 bbiLaporanMutasiStok.Enabled = Constant.UserLogin.IsAdmin;
                 bbiListBarangKeluar.Enabled = true;
                 bbiListBarangMasuk.Enabled = true;
+                bbiPembelian.Enabled = true;
+                bbiReturPembelian.Enabled = true;
 
                 //Dashboard
                 if (Utils.Constant.UserLogin.IsAdmin)
@@ -466,6 +470,16 @@ namespace Inventory.App.UI
                     frmOld.Focus();
                 }
             }
+        }
+
+        private void bbiPembelian_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void bbiReturPembelian_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }

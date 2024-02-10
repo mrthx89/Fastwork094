@@ -50,31 +50,28 @@ namespace Inventory.App.UI
             this.colQtyMasuk = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQtyKeluar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSaldoAkhir = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemUser = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.repositoryItemBelt = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.repositoryItemType = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.colQtyMin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colQtyMax = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.colQtyMin = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colQtyMax = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIDWarehouse = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemWarehouse = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MutasiStokBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemInventor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemUOM)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemUser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemBelt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemWarehouse)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -157,11 +154,9 @@ namespace Inventory.App.UI
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemUser,
             this.repositoryItemUOM,
             this.repositoryItemInventor,
-            this.repositoryItemBelt,
-            this.repositoryItemType});
+            this.repositoryItemWarehouse});
             this.gridControl1.Size = new System.Drawing.Size(1094, 527);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -175,6 +170,7 @@ namespace Inventory.App.UI
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colIDInventor,
+            this.colIDWarehouse,
             this.colNamaBarang,
             this.colIDUOM,
             this.colSaldoAwal,
@@ -193,7 +189,6 @@ namespace Inventory.App.UI
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.DataSourceChanged += new System.EventHandler(this.gridView1_DataSourceChange);
-            this.gridView1.RowStyle += this.gridView1_RowStyle;
             // 
             // colIDInventor
             // 
@@ -202,7 +197,7 @@ namespace Inventory.App.UI
             this.colIDInventor.FieldName = "IDInventor";
             this.colIDInventor.Name = "colIDInventor";
             this.colIDInventor.Visible = true;
-            this.colIDInventor.VisibleIndex = 0;
+            this.colIDInventor.VisibleIndex = 1;
             this.colIDInventor.Width = 101;
             // 
             // repositoryItemInventor
@@ -217,7 +212,7 @@ namespace Inventory.App.UI
             this.colNamaBarang.FieldName = "NamaBarang";
             this.colNamaBarang.Name = "colNamaBarang";
             this.colNamaBarang.Visible = true;
-            this.colNamaBarang.VisibleIndex = 1;
+            this.colNamaBarang.VisibleIndex = 2;
             this.colNamaBarang.Width = 155;
             // 
             // colIDUOM
@@ -227,7 +222,7 @@ namespace Inventory.App.UI
             this.colIDUOM.FieldName = "IDUOM";
             this.colIDUOM.Name = "colIDUOM";
             this.colIDUOM.Visible = true;
-            this.colIDUOM.VisibleIndex = 2;
+            this.colIDUOM.VisibleIndex = 3;
             // 
             // repositoryItemUOM
             // 
@@ -250,7 +245,7 @@ namespace Inventory.App.UI
             this.colSaldoAwal.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SaldoAwal", "{0:n0}")});
             this.colSaldoAwal.Visible = true;
-            this.colSaldoAwal.VisibleIndex = 3;
+            this.colSaldoAwal.VisibleIndex = 4;
             this.colSaldoAwal.Width = 97;
             // 
             // colQtyMasuk
@@ -267,7 +262,7 @@ namespace Inventory.App.UI
             this.colQtyMasuk.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "QtyMasuk", "{0:n0}")});
             this.colQtyMasuk.Visible = true;
-            this.colQtyMasuk.VisibleIndex = 4;
+            this.colQtyMasuk.VisibleIndex = 5;
             this.colQtyMasuk.Width = 88;
             // 
             // colQtyKeluar
@@ -284,7 +279,7 @@ namespace Inventory.App.UI
             this.colQtyKeluar.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "QtyKeluar", "{0:n0}")});
             this.colQtyKeluar.Visible = true;
-            this.colQtyKeluar.VisibleIndex = 5;
+            this.colQtyKeluar.VisibleIndex = 6;
             this.colQtyKeluar.Width = 84;
             // 
             // colSaldoAkhir
@@ -301,29 +296,32 @@ namespace Inventory.App.UI
             this.colSaldoAkhir.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SaldoAkhir", "{0:n0}")});
             this.colSaldoAkhir.Visible = true;
-            this.colSaldoAkhir.VisibleIndex = 6;
+            this.colSaldoAkhir.VisibleIndex = 7;
             this.colSaldoAkhir.Width = 99;
             // 
-            // repositoryItemUser
+            // colQtyMin
             // 
-            this.repositoryItemUser.AutoHeight = false;
-            this.repositoryItemUser.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemUser.Name = "repositoryItemUser";
+            this.colQtyMin.AppearanceCell.Options.UseTextOptions = true;
+            this.colQtyMin.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.colQtyMin.AppearanceHeader.Options.UseTextOptions = true;
+            this.colQtyMin.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.colQtyMin.Caption = "Qty Min";
+            this.colQtyMin.DisplayFormat.FormatString = "n0";
+            this.colQtyMin.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colQtyMin.FieldName = "QtyMin";
+            this.colQtyMin.Name = "colQtyMin";
             // 
-            // repositoryItemBelt
+            // colQtyMax
             // 
-            this.repositoryItemBelt.AutoHeight = false;
-            this.repositoryItemBelt.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemBelt.Name = "repositoryItemBelt";
-            // 
-            // repositoryItemType
-            // 
-            this.repositoryItemType.AutoHeight = false;
-            this.repositoryItemType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemType.Name = "repositoryItemType";
+            this.colQtyMax.AppearanceCell.Options.UseTextOptions = true;
+            this.colQtyMax.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.colQtyMax.AppearanceHeader.Options.UseTextOptions = true;
+            this.colQtyMax.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.colQtyMax.Caption = "Qty Max";
+            this.colQtyMax.DisplayFormat.FormatString = "n0";
+            this.colQtyMax.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colQtyMax.FieldName = "QtyMax";
+            this.colQtyMax.Name = "colQtyMax";
             // 
             // panelControl1
             // 
@@ -387,29 +385,22 @@ namespace Inventory.App.UI
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Periode";
             // 
-            // colQtyMin
+            // colIDWarehouse
             // 
-            this.colQtyMin.AppearanceCell.Options.UseTextOptions = true;
-            this.colQtyMin.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colQtyMin.AppearanceHeader.Options.UseTextOptions = true;
-            this.colQtyMin.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colQtyMin.Caption = "Qty Min";
-            this.colQtyMin.DisplayFormat.FormatString = "n0";
-            this.colQtyMin.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colQtyMin.FieldName = "QtyMin";
-            this.colQtyMin.Name = "colQtyMin";
+            this.colIDWarehouse.Caption = "Gudang";
+            this.colIDWarehouse.ColumnEdit = this.repositoryItemWarehouse;
+            this.colIDWarehouse.FieldName = "IDWarehouse";
+            this.colIDWarehouse.Name = "colIDWarehouse";
+            this.colIDWarehouse.Visible = true;
+            this.colIDWarehouse.VisibleIndex = 0;
+            this.colIDWarehouse.Width = 99;
             // 
-            // colQtyMax
+            // repositoryItemWarehouse
             // 
-            this.colQtyMax.AppearanceCell.Options.UseTextOptions = true;
-            this.colQtyMax.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colQtyMax.AppearanceHeader.Options.UseTextOptions = true;
-            this.colQtyMax.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colQtyMax.Caption = "Qty Max";
-            this.colQtyMax.DisplayFormat.FormatString = "n0";
-            this.colQtyMax.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colQtyMax.FieldName = "QtyMax";
-            this.colQtyMax.Name = "colQtyMax";
+            this.repositoryItemWarehouse.AutoHeight = false;
+            this.repositoryItemWarehouse.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemWarehouse.Name = "repositoryItemWarehouse";
             // 
             // frmLaporanMutasiStok
             // 
@@ -432,9 +423,6 @@ namespace Inventory.App.UI
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemInventor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemUOM)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemUser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemBelt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -442,6 +430,7 @@ namespace Inventory.App.UI
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemWarehouse)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -459,7 +448,6 @@ namespace Inventory.App.UI
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraBars.BarButtonItem mnSimpan;
         private DevExpress.XtraBars.BarButtonItem mnReload;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemUser;
         private System.Windows.Forms.BindingSource MutasiStokBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colIDInventor;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemInventor;
@@ -472,12 +460,12 @@ namespace Inventory.App.UI
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.DateEdit dateEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemBelt;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemType;
         private DevExpress.XtraGrid.Columns.GridColumn colQtyMasuk;
         private DevExpress.XtraGrid.Columns.GridColumn colQtyKeluar;
         private DevExpress.XtraGrid.Columns.GridColumn colSaldoAkhir;
         private DevExpress.XtraGrid.Columns.GridColumn colQtyMin;
         private DevExpress.XtraGrid.Columns.GridColumn colQtyMax;
+        private DevExpress.XtraGrid.Columns.GridColumn colIDWarehouse;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemWarehouse;
     }
 }

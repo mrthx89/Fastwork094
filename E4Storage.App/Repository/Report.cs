@@ -25,27 +25,30 @@ namespace Inventory.App.Repository
                 {
                     var dataSaldo = from k in context.TStockCards
                                     where DbFunctions.TruncateTime(k.Tanggal) < tglDari.Date
-                                    group k by new { k.IDInventor } into grp
-                                    select new { grp.Key.IDInventor, SaldoAwal = grp.Sum(o => o.QtyMasuk - o.QtyKeluar) };
+                                    group k by new { k.IDWarehouse, k.IDInventor } into grp
+                                    select new { grp.Key.IDWarehouse, grp.Key.IDInventor, SaldoAwal = grp.Sum(o => o.QtyMasuk - o.QtyKeluar) };
 
                     var dataMutasi = from k in context.TStockCards
                                      where DbFunctions.TruncateTime(k.Tanggal) >= tglDari.Date && DbFunctions.TruncateTime(k.Tanggal) <= tglSampai.Date
-                                     group k by new { k.IDInventor } into grp
+                                     group k by new { k.IDWarehouse, k.IDInventor } into grp
                                      select new
                                      {
                                          grp.Key.IDInventor,
+                                         grp.Key.IDWarehouse,
                                          QtyMasuk = grp.Sum(o => o.QtyMasuk),
                                          QtyKeluar = grp.Sum(o => o.QtyKeluar)
                                      };
 
                     var datas = from i in context.TInventors
-                                from s in dataSaldo.Where(o => o.IDInventor == i.ID).DefaultIfEmpty()
-                                from m in dataMutasi.Where(o => o.IDInventor == i.ID).DefaultIfEmpty()
+                                from w in context.TWarehouses
+                                from s in dataSaldo.Where(o => o.IDInventor == i.ID && o.IDWarehouse == w.ID).DefaultIfEmpty()
+                                from m in dataMutasi.Where(o => o.IDInventor == i.ID && o.IDWarehouse == w.ID).DefaultIfEmpty()
                                 select new Model.ViewModel.MutasiStok
                                 {
                                     IDInventor = i.ID,
                                     IDUOM = i.IDUOM,
                                     NamaBarang = i.Desc,
+                                    IDWarehouse = w.ID,
                                     SaldoAwal = (s != null ? s.SaldoAwal : 0),
                                     QtyMasuk = (m != null ? m.QtyMasuk : 0),
                                     QtyKeluar = (m != null ? m.QtyKeluar : 0),
@@ -63,14 +66,14 @@ namespace Inventory.App.Repository
             return hasil;
         }
 
-        public static Tuple<bool, List<Model.ViewModel.KartuStok>> getKartuStoks(Guid IDInventor, DateTime tglDari, DateTime tglSampai)
+        public static Tuple<bool, List<Model.ViewModel.KartuStok>> getKartuStoks(Guid IDInventor, Guid IDWarehouse, DateTime tglDari, DateTime tglSampai)
         {
             Tuple<bool, List<Model.ViewModel.KartuStok>> hasil = new Tuple<bool, List<Model.ViewModel.KartuStok>>(false, new List<Model.ViewModel.KartuStok>());
             using (Data.InventoryContext context = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
-                    var dataSaldo = from k in context.TStockCards
+                    var dataSaldo = from k in context.TStockCards.Where(o => IDWarehouse == Guid.Empty || o.IDWarehouse == IDWarehouse)
                                     from i in context.TInventors.Where(o => o.ID == k.IDInventor).DefaultIfEmpty()
                                     where k.IDInventor == IDInventor && DbFunctions.TruncateTime(k.Tanggal) < tglDari.Date
                                     group k by new { k.IDInventor, i.IDUOM, i.Desc } into grp
@@ -82,7 +85,7 @@ namespace Inventory.App.Repository
                                         SaldoAwal = grp.Sum(o => o.QtyMasuk - o.QtyKeluar)
                                     };
 
-                    List<Model.ViewModel.KartuStok> dataKartu = (from k in context.TStockCards
+                    List<Model.ViewModel.KartuStok> dataKartu = (from k in context.TStockCards.Where(o => IDWarehouse == Guid.Empty || o.IDWarehouse == IDWarehouse)
                                                                  from i in context.TInventors.Where(o => o.ID == k.IDInventor).DefaultIfEmpty()
                                                                  from t in context.TTypeTransactions.Where(o => o.ID == k.IDType).DefaultIfEmpty()
                                                                  where k.IDInventor == IDInventor && DbFunctions.TruncateTime(k.Tanggal) >= tglDari.Date && DbFunctions.TruncateTime(k.Tanggal) <= tglSampai.Date
@@ -92,6 +95,7 @@ namespace Inventory.App.Repository
                                                                      ID = k.ID,
                                                                      DocNo = k.DocNo,
                                                                      IDBelt = k.IDBelt,
+                                                                     IDWarehouse = k.IDWarehouse,
                                                                      IDInventor = k.IDInventor,
                                                                      IDTransaksi = k.IDTransaksi,
                                                                      IDTransaksiD = k.IDTransaksiD,
@@ -121,6 +125,7 @@ namespace Inventory.App.Repository
                                          ID = Guid.NewGuid(),
                                          DocNo = "Saldo Awal",
                                          IDBelt = Guid.Empty,
+                                         IDWarehouse = IDWarehouse,
                                          IDInventor = grp.Key.IDInventor,
                                          IDTransaksi = Guid.Empty,
                                          IDTransaksiD = Guid.Empty,
@@ -150,6 +155,7 @@ namespace Inventory.App.Repository
                                                ID = Guid.NewGuid(),
                                                DocNo = "Saldo Awal",
                                                IDBelt = Guid.Empty,
+                                               IDWarehouse = IDWarehouse,
                                                IDInventor = i.ID,
                                                IDTransaksi = Guid.Empty,
                                                IDTransaksiD = Guid.Empty,
@@ -186,6 +192,72 @@ namespace Inventory.App.Repository
                 catch (Exception ex)
                 {
                     MsgBoxHelper.MsgError($"{Name}.getKartuStoks", ex);
+                }
+            }
+            return hasil;
+        }
+
+        public static Tuple<bool, List<SaldoStok>> getSaldoStoks(Dictionary<string, dynamic> filter, DateTime? SaldoPerTanggal)
+        {
+            Tuple<bool, List<SaldoStok>> hasil = new Tuple<bool, List<SaldoStok>>(false, null);
+            using (Data.InventoryContext context = new Data.InventoryContext(Constant.appSetting.KoneksiString))
+            {
+                try
+                {
+                    var data = context.TInventors.AsQueryable();
+                    if (filter != null && filter.Count >= 1)
+                    {
+                        foreach (var item in filter)
+                        {
+                            if (item.Key.Equals("PLU"))
+                            {
+                                string a = (string)item.Value;
+                                data = data.Where(o => o.PLU.Contains(a));
+                            }
+                            else if (item.Key.Equals("DESC"))
+                            {
+                                string a = (string)item.Value;
+                                data = data.Where(o => o.Desc.Contains(a));
+                            }
+                        }
+                    }
+                    var saldoQuery = from stockCard in context.TStockCards
+                                     join item in data on stockCard.IDInventor equals item.ID
+                                     join gudang in context.TWarehouses on stockCard.IDWarehouse equals gudang.ID
+                                     where stockCard.Tanggal <= (SaldoPerTanggal ?? DateTime.MaxValue)
+                                     group stockCard by new { stockCard.IDInventor, stockCard.IDWarehouse, gudang.Code } into grouped
+                                     select new
+                                     {
+                                         IDInventor = grouped.Key.IDInventor,
+                                         IDWarehouse = grouped.Key.IDWarehouse,
+                                         Warehouse = grouped.Key.Code,
+                                         Saldo = grouped.Sum(t => t.QtyMasuk - t.QtyKeluar)
+                                     };
+                    var items = (from item in data
+                                 from saldo in saldoQuery
+                                 select new SaldoStok
+                                 {
+                                     ID = item.ID,
+                                     Desc = item.Desc,
+                                     IDUOM = item.IDUOM,
+                                     IDUserEdit = item.IDUserEdit,
+                                     IDUserEntri = item.IDUserEntri,
+                                     IDUserHapus = item.IDUserHapus,
+                                     PLU = item.PLU,
+                                     Saldo = (saldo != null ? saldo.Saldo : 0),
+                                     TglEdit = item.TglEdit,
+                                     TglEntri = item.TglEntri,
+                                     TglHapus = item.TglHapus,
+                                     QtyMax = item.QtyMax,
+                                     QtyMin = item.QtyMin,
+                                     IDWarehouse = saldo.IDWarehouse,
+                                     Warehouse = saldo.Warehouse
+                                 }).ToList();
+                    hasil = new Tuple<bool, List<SaldoStok>>(true, items);
+                }
+                catch (Exception ex)
+                {
+                    MsgBoxHelper.MsgError($"{Name}.getSaldoStoks", ex);
                 }
             }
             return hasil;

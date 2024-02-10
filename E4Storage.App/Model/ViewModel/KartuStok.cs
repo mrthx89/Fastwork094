@@ -13,6 +13,7 @@ namespace Inventory.App.Model.ViewModel
         public Guid ID { get; set; }
         public DateTime Tanggal { get; set; }
         public string DocNo { get; set; }
+        public Guid IDWarehouse { get; set; }
         public Guid IDInventor { get; set; }
         public Guid IDUOM { get; set; }
         public Guid IDTransaksi { get; set; }

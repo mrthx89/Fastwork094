@@ -44,6 +44,8 @@ namespace Inventory.App.UI
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTanggal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDocNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIDWarehouse = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemWarehouse = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colIDInventor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemInventor = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colIDUOM = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -68,6 +70,9 @@ namespace Inventory.App.UI
             this.colIDUserHapus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTglHapus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.txtGudang = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.IDInventorSearchLookUpEdit = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -79,14 +84,15 @@ namespace Inventory.App.UI
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.lbSaldoAwal = new DevExpress.XtraEditors.LabelControl();
-            this.lbQtyMasuk = new DevExpress.XtraEditors.LabelControl();
-            this.lbQtyKeluar = new DevExpress.XtraEditors.LabelControl();
             this.lbSaldoAkhir = new DevExpress.XtraEditors.LabelControl();
+            this.lbQtyKeluar = new DevExpress.XtraEditors.LabelControl();
+            this.lbQtyMasuk = new DevExpress.XtraEditors.LabelControl();
+            this.lbSaldoAwal = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.KartuStokBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemWarehouse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemInventor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemUOM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemType)).BeginInit();
@@ -94,6 +100,8 @@ namespace Inventory.App.UI
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGudang.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDInventorSearchLookUpEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).BeginInit();
@@ -142,7 +150,7 @@ namespace Inventory.App.UI
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1094, 20);
+            this.barDockControlTop.Size = new System.Drawing.Size(1459, 20);
             // 
             // barDockControlBottom
             // 
@@ -150,7 +158,7 @@ namespace Inventory.App.UI
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 583);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1094, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1459, 0);
             // 
             // barDockControlLeft
             // 
@@ -164,7 +172,7 @@ namespace Inventory.App.UI
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1094, 20);
+            this.barDockControlRight.Location = new System.Drawing.Point(1459, 20);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 563);
             // 
@@ -188,8 +196,9 @@ namespace Inventory.App.UI
             this.repositoryItemUOM,
             this.repositoryItemInventor,
             this.repositoryItemBelt,
-            this.repositoryItemType});
-            this.gridControl1.Size = new System.Drawing.Size(1094, 485);
+            this.repositoryItemType,
+            this.repositoryItemWarehouse});
+            this.gridControl1.Size = new System.Drawing.Size(1459, 485);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -204,6 +213,7 @@ namespace Inventory.App.UI
             this.colID,
             this.colTanggal,
             this.colDocNo,
+            this.colIDWarehouse,
             this.colIDInventor,
             this.colIDUOM,
             this.colIDTransaksi,
@@ -259,6 +269,22 @@ namespace Inventory.App.UI
             this.colDocNo.VisibleIndex = 2;
             this.colDocNo.Width = 118;
             // 
+            // colIDWarehouse
+            // 
+            this.colIDWarehouse.Caption = "Gudang";
+            this.colIDWarehouse.ColumnEdit = this.repositoryItemWarehouse;
+            this.colIDWarehouse.FieldName = "IDWarehouse";
+            this.colIDWarehouse.Name = "colIDWarehouse";
+            this.colIDWarehouse.Visible = true;
+            this.colIDWarehouse.VisibleIndex = 3;
+            // 
+            // repositoryItemWarehouse
+            // 
+            this.repositoryItemWarehouse.AutoHeight = false;
+            this.repositoryItemWarehouse.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemWarehouse.Name = "repositoryItemWarehouse";
+            // 
             // colIDInventor
             // 
             this.colIDInventor.Caption = "Kode Barang";
@@ -266,7 +292,7 @@ namespace Inventory.App.UI
             this.colIDInventor.FieldName = "IDInventor";
             this.colIDInventor.Name = "colIDInventor";
             this.colIDInventor.Visible = true;
-            this.colIDInventor.VisibleIndex = 3;
+            this.colIDInventor.VisibleIndex = 4;
             this.colIDInventor.Width = 84;
             // 
             // repositoryItemInventor
@@ -283,7 +309,7 @@ namespace Inventory.App.UI
             this.colIDUOM.FieldName = "IDUOM";
             this.colIDUOM.Name = "colIDUOM";
             this.colIDUOM.Visible = true;
-            this.colIDUOM.VisibleIndex = 5;
+            this.colIDUOM.VisibleIndex = 6;
             this.colIDUOM.Width = 66;
             // 
             // repositoryItemUOM
@@ -334,7 +360,7 @@ namespace Inventory.App.UI
             this.colQtyMasuk.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "QtyMasuk", "{0:n0}")});
             this.colQtyMasuk.Visible = true;
-            this.colQtyMasuk.VisibleIndex = 9;
+            this.colQtyMasuk.VisibleIndex = 10;
             // 
             // colQtyKeluar
             // 
@@ -350,7 +376,7 @@ namespace Inventory.App.UI
             this.colQtyKeluar.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "QtyKeluar", "{0:n0}")});
             this.colQtyKeluar.Visible = true;
-            this.colQtyKeluar.VisibleIndex = 10;
+            this.colQtyKeluar.VisibleIndex = 11;
             // 
             // colIDBelt
             // 
@@ -359,7 +385,7 @@ namespace Inventory.App.UI
             this.colIDBelt.FieldName = "IDBelt";
             this.colIDBelt.Name = "colIDBelt";
             this.colIDBelt.Visible = true;
-            this.colIDBelt.VisibleIndex = 6;
+            this.colIDBelt.VisibleIndex = 7;
             // 
             // repositoryItemBelt
             // 
@@ -373,14 +399,14 @@ namespace Inventory.App.UI
             this.colPIC.FieldName = "PIC";
             this.colPIC.Name = "colPIC";
             this.colPIC.Visible = true;
-            this.colPIC.VisibleIndex = 7;
+            this.colPIC.VisibleIndex = 8;
             // 
             // colNamaBarang
             // 
             this.colNamaBarang.FieldName = "NamaBarang";
             this.colNamaBarang.Name = "colNamaBarang";
             this.colNamaBarang.Visible = true;
-            this.colNamaBarang.VisibleIndex = 4;
+            this.colNamaBarang.VisibleIndex = 5;
             this.colNamaBarang.Width = 204;
             // 
             // colSaldoAwal
@@ -395,7 +421,7 @@ namespace Inventory.App.UI
             this.colSaldoAwal.FieldName = "SaldoAwal";
             this.colSaldoAwal.Name = "colSaldoAwal";
             this.colSaldoAwal.Visible = true;
-            this.colSaldoAwal.VisibleIndex = 8;
+            this.colSaldoAwal.VisibleIndex = 9;
             // 
             // colSaldoAkhir
             // 
@@ -410,7 +436,7 @@ namespace Inventory.App.UI
             this.colSaldoAkhir.Name = "colSaldoAkhir";
             this.colSaldoAkhir.OptionsColumn.ReadOnly = true;
             this.colSaldoAkhir.Visible = true;
-            this.colSaldoAkhir.VisibleIndex = 11;
+            this.colSaldoAkhir.VisibleIndex = 12;
             this.colSaldoAkhir.Width = 76;
             // 
             // colIDUserEntri
@@ -420,7 +446,7 @@ namespace Inventory.App.UI
             this.colIDUserEntri.FieldName = "IDUserEntri";
             this.colIDUserEntri.Name = "colIDUserEntri";
             this.colIDUserEntri.Visible = true;
-            this.colIDUserEntri.VisibleIndex = 12;
+            this.colIDUserEntri.VisibleIndex = 13;
             // 
             // repositoryItemUser
             // 
@@ -436,7 +462,7 @@ namespace Inventory.App.UI
             this.colTglEntri.FieldName = "TglEntri";
             this.colTglEntri.Name = "colTglEntri";
             this.colTglEntri.Visible = true;
-            this.colTglEntri.VisibleIndex = 13;
+            this.colTglEntri.VisibleIndex = 14;
             this.colTglEntri.Width = 90;
             // 
             // colIDUserEdit
@@ -446,7 +472,7 @@ namespace Inventory.App.UI
             this.colIDUserEdit.FieldName = "IDUserEdit";
             this.colIDUserEdit.Name = "colIDUserEdit";
             this.colIDUserEdit.Visible = true;
-            this.colIDUserEdit.VisibleIndex = 14;
+            this.colIDUserEdit.VisibleIndex = 15;
             this.colIDUserEdit.Width = 76;
             // 
             // colTglEdit
@@ -456,7 +482,7 @@ namespace Inventory.App.UI
             this.colTglEdit.FieldName = "TglEdit";
             this.colTglEdit.Name = "colTglEdit";
             this.colTglEdit.Visible = true;
-            this.colTglEdit.VisibleIndex = 15;
+            this.colTglEdit.VisibleIndex = 16;
             this.colTglEdit.Width = 94;
             // 
             // colIDUserHapus
@@ -475,6 +501,8 @@ namespace Inventory.App.UI
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.labelControl4);
+            this.panelControl1.Controls.Add(this.txtGudang);
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.IDInventorSearchLookUpEdit);
             this.panelControl1.Controls.Add(this.dateEdit2);
@@ -484,8 +512,37 @@ namespace Inventory.App.UI
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 20);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1094, 36);
+            this.panelControl1.Size = new System.Drawing.Size(1459, 36);
             this.panelControl1.TabIndex = 0;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(672, 12);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(37, 13);
+            this.labelControl4.TabIndex = 14;
+            this.labelControl4.Text = "Gudang";
+            // 
+            // txtGudang
+            // 
+            this.txtGudang.EnterMoveNextControl = true;
+            this.txtGudang.Location = new System.Drawing.Point(715, 9);
+            this.txtGudang.Name = "txtGudang";
+            this.txtGudang.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.txtGudang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtGudang.Properties.NullText = "";
+            this.txtGudang.Properties.PopupView = this.gridView2;
+            this.txtGudang.Size = new System.Drawing.Size(227, 20);
+            this.txtGudang.TabIndex = 13;
+            // 
+            // gridView2
+            // 
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.gridView2.DataSourceChanged += new System.EventHandler(this.gv1_DataSourceChange);
             // 
             // labelControl3
             // 
@@ -498,7 +555,7 @@ namespace Inventory.App.UI
             // IDInventorSearchLookUpEdit
             // 
             this.IDInventorSearchLookUpEdit.EnterMoveNextControl = true;
-            this.IDInventorSearchLookUpEdit.Location = new System.Drawing.Point(397, 9);
+            this.IDInventorSearchLookUpEdit.Location = new System.Drawing.Point(386, 9);
             this.IDInventorSearchLookUpEdit.Name = "IDInventorSearchLookUpEdit";
             this.IDInventorSearchLookUpEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.IDInventorSearchLookUpEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -605,58 +662,58 @@ namespace Inventory.App.UI
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl2.Location = new System.Drawing.Point(0, 541);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1094, 42);
+            this.panelControl2.Size = new System.Drawing.Size(1459, 42);
             this.panelControl2.TabIndex = 6;
-            // 
-            // lbSaldoAwal
-            // 
-            this.lbSaldoAwal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbSaldoAwal.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSaldoAwal.Appearance.Options.UseFont = true;
-            this.lbSaldoAwal.Location = new System.Drawing.Point(364, 13);
-            this.lbSaldoAwal.Name = "lbSaldoAwal";
-            this.lbSaldoAwal.Size = new System.Drawing.Size(98, 16);
-            this.lbSaldoAwal.TabIndex = 2;
-            this.lbSaldoAwal.Text = "Stok Awal : 0.0";
-            // 
-            // lbQtyMasuk
-            // 
-            this.lbQtyMasuk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbQtyMasuk.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbQtyMasuk.Appearance.Options.UseFont = true;
-            this.lbQtyMasuk.Location = new System.Drawing.Point(564, 13);
-            this.lbQtyMasuk.Name = "lbQtyMasuk";
-            this.lbQtyMasuk.Size = new System.Drawing.Size(107, 16);
-            this.lbQtyMasuk.TabIndex = 3;
-            this.lbQtyMasuk.Text = "Stok Masuk : 0.0";
-            // 
-            // lbQtyKeluar
-            // 
-            this.lbQtyKeluar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbQtyKeluar.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbQtyKeluar.Appearance.Options.UseFont = true;
-            this.lbQtyKeluar.Location = new System.Drawing.Point(773, 13);
-            this.lbQtyKeluar.Name = "lbQtyKeluar";
-            this.lbQtyKeluar.Size = new System.Drawing.Size(107, 16);
-            this.lbQtyKeluar.TabIndex = 4;
-            this.lbQtyKeluar.Text = "Stok Keluar : 0.0";
             // 
             // lbSaldoAkhir
             // 
             this.lbSaldoAkhir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbSaldoAkhir.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSaldoAkhir.Appearance.Options.UseFont = true;
-            this.lbSaldoAkhir.Location = new System.Drawing.Point(982, 13);
+            this.lbSaldoAkhir.Location = new System.Drawing.Point(1347, 13);
             this.lbSaldoAkhir.Name = "lbSaldoAkhir";
             this.lbSaldoAkhir.Size = new System.Drawing.Size(100, 16);
             this.lbSaldoAkhir.TabIndex = 5;
             this.lbSaldoAkhir.Text = "Stok Akhir : 0.0";
             // 
+            // lbQtyKeluar
+            // 
+            this.lbQtyKeluar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbQtyKeluar.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQtyKeluar.Appearance.Options.UseFont = true;
+            this.lbQtyKeluar.Location = new System.Drawing.Point(1138, 13);
+            this.lbQtyKeluar.Name = "lbQtyKeluar";
+            this.lbQtyKeluar.Size = new System.Drawing.Size(107, 16);
+            this.lbQtyKeluar.TabIndex = 4;
+            this.lbQtyKeluar.Text = "Stok Keluar : 0.0";
+            // 
+            // lbQtyMasuk
+            // 
+            this.lbQtyMasuk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbQtyMasuk.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQtyMasuk.Appearance.Options.UseFont = true;
+            this.lbQtyMasuk.Location = new System.Drawing.Point(929, 13);
+            this.lbQtyMasuk.Name = "lbQtyMasuk";
+            this.lbQtyMasuk.Size = new System.Drawing.Size(107, 16);
+            this.lbQtyMasuk.TabIndex = 3;
+            this.lbQtyMasuk.Text = "Stok Masuk : 0.0";
+            // 
+            // lbSaldoAwal
+            // 
+            this.lbSaldoAwal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbSaldoAwal.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSaldoAwal.Appearance.Options.UseFont = true;
+            this.lbSaldoAwal.Location = new System.Drawing.Point(729, 13);
+            this.lbSaldoAwal.Name = "lbSaldoAwal";
+            this.lbSaldoAwal.Size = new System.Drawing.Size(98, 16);
+            this.lbSaldoAwal.TabIndex = 2;
+            this.lbSaldoAwal.Text = "Stok Awal : 0.0";
+            // 
             // frmLaporanKartuStok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1094, 583);
+            this.ClientSize = new System.Drawing.Size(1459, 583);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
@@ -672,6 +729,7 @@ namespace Inventory.App.UI
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.KartuStokBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemWarehouse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemInventor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemUOM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemType)).EndInit();
@@ -680,6 +738,8 @@ namespace Inventory.App.UI
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGudang.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDInventorSearchLookUpEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).EndInit();
@@ -749,5 +809,10 @@ namespace Inventory.App.UI
         private DevExpress.XtraEditors.LabelControl lbQtyKeluar;
         private DevExpress.XtraEditors.LabelControl lbQtyMasuk;
         private DevExpress.XtraEditors.LabelControl lbSaldoAwal;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.SearchLookUpEdit txtGudang;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn colIDWarehouse;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemWarehouse;
     }
 }

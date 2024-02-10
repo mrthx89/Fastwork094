@@ -186,6 +186,7 @@
     <Compile Include="Model\Entity\TUser.cs" />
     <Compile Include="Model\ViewModel\BaseLookUp.cs" />
     <Compile Include="Model\ViewModel\CustomerLookUp.cs" />
+    <Compile Include="Model\ViewModel\SaldoStok.cs" />
     <Compile Include="Model\ViewModel\VendorLookUp.cs" />
     <Compile Include="Model\ViewModel\ItemLookUp.cs" />
     <Compile Include="Model\ViewModel\CustomerMaster.cs" />
@@ -561,6 +562,7 @@
     <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.ItemMaster.datasource" />
     <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.KartuStok.datasource" />
     <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.MutasiStok.datasource" />
+    <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.SaldoStok.datasource" />
     <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.StokMasterData.datasource" />
     <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.StokMasuk.datasource" />
     <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.StokPengembalian.datasource" />
@@ -670,6 +672,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="inventory.ico" />
+    <None Include="Resources\inventory1.png" />
     <None Include="Resources\salesman.png" />
     <None Include="Resources\businessman.png" />
     <None Include="Resources\inventory.png" />

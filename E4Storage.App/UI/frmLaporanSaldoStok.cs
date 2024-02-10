@@ -33,7 +33,7 @@ namespace Inventory.App.UI
                     dlg.Show();
                     dlg.Focus();
 
-                    var dataGet = Repository.Item.getInventors(null, dateEdit1.DateTime);
+                    var dataGet = Repository.Report.getSaldoStoks(null, dateEdit1.DateTime);
                     if (dataGet.Item1)
                     {
                         data = dataGet.Item2;
@@ -48,7 +48,7 @@ namespace Inventory.App.UI
             }
         }
 
-        private List<ItemMaster> data = null;
+        private List<SaldoStok> data = null;
         private dynamic lookupUser = null;
         private dynamic lookupUOM = null;
         private void frmLaporanSaldoStok_Load(object sender, EventArgs e)

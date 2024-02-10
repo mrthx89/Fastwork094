@@ -10,6 +10,7 @@ namespace Inventory.App.Model.ViewModel
     public class MutasiStok
     {
         public Guid IDInventor { get; set; }
+        public Guid IDWarehouse { get; set; }
         public string NamaBarang { get; set; }
         public Guid IDUOM { get; set; }
         public float SaldoAwal { get; set; }

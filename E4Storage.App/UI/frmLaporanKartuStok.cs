@@ -32,9 +32,11 @@ namespace Inventory.App.UI
                     dlg.TopMost = false;
                     dlg.Show();
                     dlg.Focus();
-                    Guid IDInventor;
-                    Guid.TryParse((IDInventorSearchLookUpEdit.EditValue ?? "").ToString(), out IDInventor);
-                    var dataGet = Repository.Report.getKartuStoks(IDInventor, dateEdit1.DateTime, dateEdit2.DateTime);
+                    
+                    Guid.TryParse((IDInventorSearchLookUpEdit.EditValue ?? Guid.Empty).ToString(), out Guid IDInventor);
+                    Guid.TryParse((txtGudang.EditValue ?? Guid.Empty).ToString(), out Guid IDWarehouse);
+
+                    var dataGet = Repository.Report.getKartuStoks(IDInventor, IDWarehouse, dateEdit1.DateTime, dateEdit2.DateTime);
                     if (dataGet.Item1)
                     {
                         data = dataGet.Item2;
@@ -66,6 +68,7 @@ namespace Inventory.App.UI
         private dynamic lookupUOM = null;
         private dynamic lookupBelt = null;
         private dynamic lookupType = null;
+        private dynamic lookupWarehouse = null;
         private void refreshLookUp()
         {
             var lookUp = Repository.User.getLookUp();
@@ -115,6 +118,19 @@ namespace Inventory.App.UI
             repositoryItemType.DataSource = lookupType;
             repositoryItemType.ValueMember = "ID";
             repositoryItemType.DisplayMember = "Transaksi";
+
+            var lookUpWarehouse = Repository.Warehouse.getLookUpWarehouses(null);
+            if (lookUpWarehouse.Item1)
+            {
+                lookupWarehouse = lookUpWarehouse.Item2;
+            }
+            repositoryItemWarehouse.DataSource = lookupWarehouse;
+            repositoryItemWarehouse.ValueMember = "ID";
+            repositoryItemWarehouse.DisplayMember = "Code";
+
+            txtGudang.Properties.DataSource = lookupWarehouse;
+            txtGudang.Properties.ValueMember = "ID";
+            txtGudang.Properties.DisplayMember = "Code";
         }
         private void frmLaporanKartuStok_Load(object sender, EventArgs e)
         {
@@ -138,6 +154,7 @@ namespace Inventory.App.UI
         {
             Constant.layoutsHelper.SaveLayouts(this.Name, gridView1);
             Constant.layoutsHelper.SaveLayouts(this.Name, searchLookUpEdit1View);
+            Constant.layoutsHelper.SaveLayouts(this.Name, gridView2);
         }
 
         private void IDInventorSearchLookUpEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)

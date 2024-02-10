@@ -48,6 +48,8 @@ namespace Inventory.App.UI
             this.bbiLaporanMutasiStok = new DevExpress.XtraBars.BarButtonItem();
             this.bbiMasterSupplier = new DevExpress.XtraBars.BarButtonItem();
             this.bbiMasterCustomer = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiMasterGudang = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiPembelian = new DevExpress.XtraBars.BarButtonItem();
             this.imageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -59,7 +61,7 @@ namespace Inventory.App.UI
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.bbiMasterGudang = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiReturPembelian = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionSmall)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionLarge)).BeginInit();
@@ -88,11 +90,12 @@ namespace Inventory.App.UI
             this.bbiLaporanMutasiStok,
             this.bbiMasterSupplier,
             this.bbiMasterCustomer,
-            this.bbiMasterGudang});
+            this.bbiMasterGudang,
+            this.bbiPembelian,
+            this.bbiReturPembelian});
             this.ribbonControl1.LargeImages = this.imageCollectionLarge;
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ribbonControl1.MaxItemId = 17;
+            this.ribbonControl1.MaxItemId = 19;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsTouch.ShowTouchUISelectorInQAT = true;
             this.ribbonControl1.OptionsTouch.ShowTouchUISelectorVisibilityItemInQATMenu = true;
@@ -101,7 +104,7 @@ namespace Inventory.App.UI
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
-            this.ribbonControl1.Size = new System.Drawing.Size(1337, 193);
+            this.ribbonControl1.Size = new System.Drawing.Size(1085, 158);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // imageCollectionSmall
@@ -167,7 +170,7 @@ namespace Inventory.App.UI
             // 
             // bbiStokMasuk
             // 
-            this.bbiStokMasuk.Caption = "Stok Masuk";
+            this.bbiStokMasuk.Caption = "Penyesuaian Stok Masuk";
             this.bbiStokMasuk.Id = 6;
             this.bbiStokMasuk.ImageOptions.LargeImageIndex = 5;
             this.bbiStokMasuk.Name = "bbiStokMasuk";
@@ -175,7 +178,7 @@ namespace Inventory.App.UI
             // 
             // bbiStokKeluar
             // 
-            this.bbiStokKeluar.Caption = "Stok Keluar";
+            this.bbiStokKeluar.Caption = "Penyesuaian Stok Keluar";
             this.bbiStokKeluar.Id = 7;
             this.bbiStokKeluar.ImageOptions.LargeImageIndex = 6;
             this.bbiStokKeluar.Name = "bbiStokKeluar";
@@ -244,6 +247,22 @@ namespace Inventory.App.UI
             this.bbiMasterCustomer.ImageOptions.LargeImage = global::Inventory.App.Properties.Resources.salesman;
             this.bbiMasterCustomer.Name = "bbiMasterCustomer";
             this.bbiMasterCustomer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiMasterCustomer_ItemClick);
+            // 
+            // bbiMasterGudang
+            // 
+            this.bbiMasterGudang.Caption = "Gudang";
+            this.bbiMasterGudang.Id = 16;
+            this.bbiMasterGudang.ImageOptions.LargeImage = global::Inventory.App.Properties.Resources._007_stock;
+            this.bbiMasterGudang.Name = "bbiMasterGudang";
+            this.bbiMasterGudang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiMasterGudang_ItemClick);
+            // 
+            // bbiPembelian
+            // 
+            this.bbiPembelian.Caption = "Pembelian";
+            this.bbiPembelian.Id = 17;
+            this.bbiPembelian.ImageOptions.LargeImage = global::Inventory.App.Properties.Resources.inventory1;
+            this.bbiPembelian.Name = "bbiPembelian";
+            this.bbiPembelian.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiPembelian_ItemClick);
             // 
             // imageCollectionLarge
             // 
@@ -317,7 +336,9 @@ namespace Inventory.App.UI
             // 
             // ribbonPageGroup1
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.bbiStokMasuk);
+            this.ribbonPageGroup1.ItemLinks.Add(this.bbiPembelian);
+            this.ribbonPageGroup1.ItemLinks.Add(this.bbiReturPembelian);
+            this.ribbonPageGroup1.ItemLinks.Add(this.bbiStokMasuk, true);
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiStokKeluar);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Transaksi";
@@ -335,34 +356,32 @@ namespace Inventory.App.UI
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.barStatusUser);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 779);
-            this.ribbonStatusBar1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 658);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1337, 30);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1085, 24);
             // 
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
-            // bbiMasterGudang
+            // bbiReturPembelian
             // 
-            this.bbiMasterGudang.Caption = "Gudang";
-            this.bbiMasterGudang.Id = 16;
-            this.bbiMasterGudang.ImageOptions.LargeImage = global::Inventory.App.Properties.Resources._007_stock;
-            this.bbiMasterGudang.Name = "bbiMasterGudang";
-            this.bbiMasterGudang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiMasterGudang_ItemClick);
+            this.bbiReturPembelian.Caption = "Retur Pembelian";
+            this.bbiReturPembelian.Id = 18;
+            this.bbiReturPembelian.ImageOptions.LargeImage = global::Inventory.App.Properties.Resources._008_return;
+            this.bbiReturPembelian.Name = "bbiReturPembelian";
+            this.bbiReturPembelian.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiReturPembelian_ItemClick);
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1337, 809);
+            this.ClientSize = new System.Drawing.Size(1085, 682);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.IconOptions.Image = global::Inventory.App.Properties.Resources.inventory;
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmMain";
             this.Ribbon = this.ribbonControl1;
             this.StatusBar = this.ribbonStatusBar1;
@@ -409,6 +428,8 @@ namespace Inventory.App.UI
         private DevExpress.XtraBars.BarButtonItem bbiMasterSupplier;
         private DevExpress.XtraBars.BarButtonItem bbiMasterCustomer;
         private DevExpress.XtraBars.BarButtonItem bbiMasterGudang;
+        private DevExpress.XtraBars.BarButtonItem bbiPembelian;
+        private DevExpress.XtraBars.BarButtonItem bbiReturPembelian;
     }
 }
 

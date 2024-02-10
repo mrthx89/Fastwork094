@@ -49,24 +49,22 @@ namespace Inventory.App.UI
         }
 
         private List<MutasiStok> data = null;
-        private dynamic lookupUser = null;
         private dynamic lookupItem = null;
         private dynamic lookupUOM = null;
-        private dynamic lookupBelt = null;
-        private dynamic lookupType = null;
+        private dynamic lookupWarehouse = null;
         private void frmLaporanMutasiStok_Load(object sender, EventArgs e)
         {
             dateEdit1.DateTime = DateTime.Now.AddDays(-30);
             dateEdit2.DateTime = dateEdit1.DateTime.AddDays(30);
 
-            var lookUp = Repository.User.getLookUp();
+            var lookUp = Repository.Warehouse.getLookUpWarehouses(null);
             if (lookUp.Item1)
             {
-                lookupUser = lookUp.Item2;
+                lookupWarehouse = lookUp.Item2;
             }
-            repositoryItemUser.DataSource = lookupUser;
-            repositoryItemUser.ValueMember = "ID";
-            repositoryItemUser.DisplayMember = "Nama";
+            repositoryItemWarehouse.DataSource = lookupWarehouse;
+            repositoryItemWarehouse.ValueMember = "ID";
+            repositoryItemWarehouse.DisplayMember = "Code";
 
             var lookUpItem = Repository.Item.getLookUpInventors(DateTime.Now, Guid.Empty, null);
             if (lookUpItem.Item1)
@@ -85,24 +83,6 @@ namespace Inventory.App.UI
             repositoryItemUOM.DataSource = lookupUOM;
             repositoryItemUOM.ValueMember = "ID";
             repositoryItemUOM.DisplayMember = "Satuan";
-
-            var lookUpBelt = Repository.Item.getBelts();
-            if (lookUpBelt.Item1)
-            {
-                lookupBelt = lookUpBelt.Item2;
-            }
-            repositoryItemBelt.DataSource = lookupBelt;
-            repositoryItemBelt.ValueMember = "ID";
-            repositoryItemBelt.DisplayMember = "Belt";
-
-            var lookUpType = Repository.Item.getTypes();
-            if (lookUpType.Item1)
-            {
-                lookupType = lookUpType.Item2;
-            }
-            repositoryItemType.DataSource = lookupType;
-            repositoryItemType.ValueMember = "ID";
-            repositoryItemType.DisplayMember = "Transaksi";
 
             mnReload.PerformClick();
         }
