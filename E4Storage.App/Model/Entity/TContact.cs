@@ -43,6 +43,10 @@ namespace Inventory.App.Model.Entity
 
         public bool Customer { get; set; }
 
+        [StringLength(50)]
+        public string NPWP { get; set; }
+
         public virtual ICollection<TPurchase> Purchases { get; set; }
+        public virtual ICollection<TDO> DOs { get; set; }
     }
 }

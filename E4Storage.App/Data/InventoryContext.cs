@@ -95,6 +95,14 @@ namespace Inventory.App.Data
                 .Property(p => p.DocDate)
                 .HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("IX_DocDate")));
 
+            modelBuilder.Entity<TDO>()
+                .Property(p => p.DocNo)
+                .HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("IX_DocNo") { IsUnique = true }));
+
+            modelBuilder.Entity<TDO>()
+                .Property(p => p.DocDate)
+                .HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("IX_DocDate")));
+
             modelBuilder.Entity<TContact>()
                 .HasIndex(p => new { p.Code, p.Vendor, p.Customer })
                 .IsUnique();
@@ -236,6 +244,36 @@ namespace Inventory.App.Data
             modelBuilder.Entity<TPurchaseDtl>()
                 .HasRequired(b => b.Inventor)
                 .WithMany(a => a.PurchaseDtls)
+                .HasForeignKey(b => b.IDInventor)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<TDO>()
+                .HasRequired(b => b.Warehouse)
+                .WithMany(a => a.DOs)
+                .HasForeignKey(b => b.IDWarehouse)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<TDO>()
+                .HasRequired(b => b.Customer)
+                .WithMany(a => a.DOs)
+                .HasForeignKey(b => b.IDCustomer)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<TDODtl>()
+                .HasRequired(b => b.DO)
+                .WithMany(a => a.DODtls)
+                .HasForeignKey(b => b.IDDO)
+                .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<TDODtl>()
+                .HasRequired(b => b.UOM)
+                .WithMany(a => a.DODtls)
+                .HasForeignKey(b => b.IDUOM)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<TDODtl>()
+                .HasRequired(b => b.Inventor)
+                .WithMany(a => a.DODtls)
                 .HasForeignKey(b => b.IDInventor)
                 .WillCascadeOnDelete(false);
 

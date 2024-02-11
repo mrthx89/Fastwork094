@@ -25,6 +25,8 @@ namespace Inventory.App.Model.Entity
         [Required]
         [StringLength(100)]
         public string Password { get; set; }
+        public bool IsSuperAdmin { get; set; }
         public bool IsAdmin { get; set; }
+        public bool IsGudang { get; set; }
     }
 }

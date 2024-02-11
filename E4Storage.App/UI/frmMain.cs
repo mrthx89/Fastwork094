@@ -76,21 +76,21 @@ namespace Inventory.App.UI
                 bbiSetting.Enabled = false;
                 bbiLoginOut.Caption = "Logout";
                 bbiLoginOut.LargeImageIndex = 2;
-                bbiManagementUser.Enabled = Constant.UserLogin.IsAdmin;
+                bbiManagementUser.Enabled = Constant.UserLogin.IsSuperAdmin;
 
-                bbiMasterItem.Enabled = Constant.UserLogin.IsAdmin;
-                bbiMasterSupplier.Enabled = Constant.UserLogin.IsAdmin;
-                bbiMasterCustomer.Enabled = Constant.UserLogin.IsAdmin;
-                bbiMasterGudang.Enabled = Constant.UserLogin.IsAdmin;
+                bbiMasterItem.Enabled = Constant.UserLogin.IsSuperAdmin || Constant.UserLogin.IsAdmin;
+                bbiMasterSupplier.Enabled = Constant.UserLogin.IsSuperAdmin || Constant.UserLogin.IsAdmin;
+                bbiMasterCustomer.Enabled = Constant.UserLogin.IsSuperAdmin || Constant.UserLogin.IsAdmin;
+                bbiMasterGudang.Enabled = Constant.UserLogin.IsSuperAdmin || Constant.UserLogin.IsAdmin;
                 bbiStokKeluar.Enabled = true;
                 bbiStokMasuk.Enabled = true;
-                bbiLaporanSaldoStok.Enabled = Constant.UserLogin.IsAdmin;
-                bbiLaporanKartuStok.Enabled = Constant.UserLogin.IsAdmin;
-                bbiLaporanMutasiStok.Enabled = Constant.UserLogin.IsAdmin;
+                bbiLaporanSaldoStok.Enabled = Constant.UserLogin.IsSuperAdmin || Constant.UserLogin.IsAdmin || Constant.UserLogin.IsGudang;
+                bbiLaporanKartuStok.Enabled = Constant.UserLogin.IsSuperAdmin || Constant.UserLogin.IsAdmin || Constant.UserLogin.IsGudang;
+                bbiLaporanMutasiStok.Enabled = Constant.UserLogin.IsSuperAdmin || Constant.UserLogin.IsAdmin || Constant.UserLogin.IsGudang;
                 bbiListBarangKeluar.Enabled = true;
                 bbiListBarangMasuk.Enabled = true;
-                bbiPembelian.Enabled = true;
-                bbiReturPembelian.Enabled = true;
+                bbiPembelian.Enabled = Constant.UserLogin.IsSuperAdmin || Constant.UserLogin.IsAdmin;
+                bbiReturPembelian.Enabled = Constant.UserLogin.IsSuperAdmin || Constant.UserLogin.IsAdmin;
 
                 //Dashboard
                 if (Utils.Constant.UserLogin.IsAdmin)

@@ -35,5 +35,6 @@ namespace Inventory.App.Model.Entity
         public virtual ICollection<TStockPengembalian> StockPengembalians { get; set; }
         public virtual ICollection<TStockMasterData> StockMasterDatas { get; set; }
         public virtual ICollection<TPurchaseDtl> PurchaseDtls { get; set; }
+        public virtual ICollection<TDODtl> DODtls { get; set; }
     }
 }
