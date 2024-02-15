@@ -87,7 +87,8 @@ namespace Inventory.App.Repository
                                      Cell = Customer.Cell,
                                      ContactPerson = Customer.ContactPerson,
                                      Email = Customer.Email,
-                                     Phone = Customer.Phone
+                                     Phone = Customer.Phone,
+                                     NPWP = Customer.NPWP
                                  }).ToList();
                     hasil = new Tuple<bool, List<CustomerMaster>>(true, datas);
                 }

@@ -36,6 +36,8 @@ namespace Inventory.App.Data
         public DbSet<TWarehouse> TWarehouses { get; set; }
         public DbSet<TPurchase> TPurchases { get; set; }
         public DbSet<TPurchaseDtl> TPurchaseDtls { get; set; }
+        public DbSet<TDO> TDOs { get; set; }
+        public DbSet<TDODtl> TDODtls { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

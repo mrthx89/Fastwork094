@@ -14,11 +14,11 @@ namespace Inventory.App.Repository
         public static Tuple<bool, TUser> getLogin(string UserID, string Pwd)
         {
             Tuple<bool, TUser> hasil = new Tuple<bool, TUser>(false, null);
-            using (Data.InventoryContext E4StorageContext = new Data.InventoryContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext InventoryContext = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
-                    var user = E4StorageContext.TUsers.FirstOrDefault(o => o.UserID.Equals(UserID));
+                    var user = InventoryContext.TUsers.FirstOrDefault(o => o.UserID.Equals(UserID));
                     if (user != null && user.Password.Equals(Utils.GetHash(Pwd)))
                     {
                         hasil = new Tuple<bool, TUser>(true, user);
@@ -40,11 +40,11 @@ namespace Inventory.App.Repository
         public static Tuple<bool, List<TUser>> getUsers()
         {
             Tuple<bool, List<TUser>> hasil = new Tuple<bool, List<TUser>>(false, null);
-            using (Data.InventoryContext E4StorageContext = new Data.InventoryContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext InventoryContext = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
-                    var user = E4StorageContext.TUsers.ToList();
+                    var user = InventoryContext.TUsers.ToList();
                     hasil = new Tuple<bool, List<TUser>>(true, user);
                 }
                 catch (Exception ex)
@@ -58,11 +58,11 @@ namespace Inventory.App.Repository
         public static Tuple<bool, dynamic> getLookUp()
         {
             Tuple<bool, dynamic> hasil = new Tuple<bool, dynamic>(false, null);
-            using (Data.InventoryContext E4StorageContext = new Data.InventoryContext(Constant.appSetting.KoneksiString))
+            using (Data.InventoryContext InventoryContext = new Data.InventoryContext(Constant.appSetting.KoneksiString))
             {
                 try
                 {
-                    var user = (from x in E4StorageContext.TUsers
+                    var user = (from x in InventoryContext.TUsers
                                 select new { x.ID, x.Nama, x.UserID }).ToList();
                     hasil = new Tuple<bool, dynamic>(true, user);
                 }

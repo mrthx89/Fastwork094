@@ -17,7 +17,7 @@
     <property name="UseDefaultLookAndFeel">true</property>
     <property name="UseWindowsXPTheme">false</property>
   </property>
-  <property name="Items" iskey="true" value="19">
+  <property name="Items" iskey="true" value="20">
     <property name="Item1" isnull="true" iskey="true">
       <property name="TypeName">LayoutGroup</property>
       <property name="TabbedGroupParentName" />
@@ -70,7 +70,7 @@
         <property name="RowDefinitions" iskey="true" value="0" />
         <property name="ColumnDefinitions" iskey="true" value="0" />
       </property>
-      <property name="Size">@3,Width=405@3,Height=318</property>
+      <property name="Size">@3,Width=472@3,Height=427</property>
       <property name="ExpandButtonVisible">false</property>
       <property name="ExpandButtonMode">Normal</property>
       <property name="HeaderButtonsLocation">Default</property>
@@ -237,7 +237,7 @@
         <property name="RowDefinitions" iskey="true" value="0" />
         <property name="ColumnDefinitions" iskey="true" value="0" />
       </property>
-      <property name="Size">@3,Width=385@3,Height=298</property>
+      <property name="Size">@3,Width=448@3,Height=401</property>
       <property name="ExpandButtonVisible">false</property>
       <property name="ExpandButtonMode">Normal</property>
       <property name="HeaderButtonsLocation">Default</property>
@@ -452,7 +452,7 @@
       <property name="Spacing">2, 2, 2, 2</property>
       <property name="Padding">9, 9, 9, 9</property>
       <property name="Location">@1,X=0@1,Y=0</property>
-      <property name="Size">@3,Width=385@3,Height=298</property>
+      <property name="Size">@3,Width=448@3,Height=401</property>
       <property name="ShowInCustomizationForm">true</property>
       <property name="Text">tabbedControlGroup1</property>
       <property name="CustomizationFormText">tabbedControlGroup1</property>
@@ -511,7 +511,7 @@
         <property name="RowDefinitions" iskey="true" value="0" />
         <property name="ColumnDefinitions" iskey="true" value="0" />
       </property>
-      <property name="Size">@3,Width=361@3,Height=247</property>
+      <property name="Size">@3,Width=422@3,Height=342</property>
       <property name="ExpandButtonVisible">false</property>
       <property name="ExpandButtonMode">Normal</property>
       <property name="HeaderButtonsLocation">Default</property>
@@ -652,8 +652,8 @@
           <property name="FontStyleDelta">Regular</property>
         </property>
       </property>
-      <property name="MaxSize">@1,Width=0@2,Height=28</property>
-      <property name="MinSize">@3,Width=145@2,Height=28</property>
+      <property name="MaxSize">@1,Width=0@2,Height=30</property>
+      <property name="MinSize">@3,Width=145@2,Height=30</property>
       <property name="ControlAlignment">TopLeft</property>
       <property name="ContentVisible">true</property>
       <property name="HighlightFocusedItem">Default</property>
@@ -703,7 +703,7 @@
       <property name="Spacing">0, 0, 0, 0</property>
       <property name="Padding">2, 2, 2, 2</property>
       <property name="Location">@1,X=0@1,Y=0</property>
-      <property name="Size">@3,Width=361@2,Height=28</property>
+      <property name="Size">@3,Width=422@2,Height=30</property>
       <property name="ShowInCustomizationForm">true</property>
       <property name="Text">Code</property>
       <property name="CustomizationFormText">Code</property>
@@ -737,8 +737,8 @@
           <property name="FontStyleDelta">Regular</property>
         </property>
       </property>
-      <property name="MaxSize">@1,Width=0@2,Height=28</property>
-      <property name="MinSize">@3,Width=145@2,Height=28</property>
+      <property name="MaxSize">@1,Width=0@2,Height=30</property>
+      <property name="MinSize">@3,Width=145@2,Height=30</property>
       <property name="ControlAlignment">TopLeft</property>
       <property name="ContentVisible">true</property>
       <property name="HighlightFocusedItem">Default</property>
@@ -787,8 +787,8 @@
       <property name="TextToControlDistance">3</property>
       <property name="Spacing">0, 0, 0, 0</property>
       <property name="Padding">2, 2, 2, 2</property>
-      <property name="Location">@1,X=0@2,Y=28</property>
-      <property name="Size">@3,Width=361@2,Height=28</property>
+      <property name="Location">@1,X=0@2,Y=30</property>
+      <property name="Size">@3,Width=422@2,Height=30</property>
       <property name="ShowInCustomizationForm">true</property>
       <property name="Text">Name</property>
       <property name="CustomizationFormText">Name</property>
@@ -823,7 +823,7 @@
         </property>
       </property>
       <property name="MaxSize">@1,Width=0@1,Height=0</property>
-      <property name="MinSize">@3,Width=105@2,Height=24</property>
+      <property name="MinSize">@3,Width=105@2,Height=26</property>
       <property name="ControlAlignment">TopLeft</property>
       <property name="ContentVisible">true</property>
       <property name="HighlightFocusedItem">Default</property>
@@ -872,8 +872,8 @@
       <property name="TextToControlDistance">3</property>
       <property name="Spacing">0, 0, 0, 0</property>
       <property name="Padding">2, 2, 2, 2</property>
-      <property name="Location">@1,X=0@2,Y=56</property>
-      <property name="Size">@3,Width=361@2,Height=44</property>
+      <property name="Location">@1,X=0@2,Y=90</property>
+      <property name="Size">@3,Width=422@3,Height=105</property>
       <property name="ShowInCustomizationForm">true</property>
       <property name="Text">Address</property>
       <property name="CustomizationFormText">Address</property>
@@ -907,8 +907,8 @@
           <property name="FontStyleDelta">Regular</property>
         </property>
       </property>
-      <property name="MaxSize">@1,Width=0@2,Height=28</property>
-      <property name="MinSize">@3,Width=145@2,Height=28</property>
+      <property name="MaxSize">@1,Width=0@2,Height=30</property>
+      <property name="MinSize">@3,Width=145@2,Height=30</property>
       <property name="ControlAlignment">TopLeft</property>
       <property name="ContentVisible">true</property>
       <property name="HighlightFocusedItem">Default</property>
@@ -957,8 +957,8 @@
       <property name="TextToControlDistance">3</property>
       <property name="Spacing">0, 0, 0, 0</property>
       <property name="Padding">2, 2, 2, 2</property>
-      <property name="Location">@1,X=0@3,Y=100</property>
-      <property name="Size">@3,Width=361@2,Height=28</property>
+      <property name="Location">@1,X=0@3,Y=195</property>
+      <property name="Size">@3,Width=422@2,Height=30</property>
       <property name="ShowInCustomizationForm">true</property>
       <property name="Text">Phone</property>
       <property name="CustomizationFormText">Phone</property>
@@ -992,8 +992,8 @@
           <property name="FontStyleDelta">Regular</property>
         </property>
       </property>
-      <property name="MaxSize">@1,Width=0@2,Height=28</property>
-      <property name="MinSize">@3,Width=145@2,Height=28</property>
+      <property name="MaxSize">@1,Width=0@2,Height=30</property>
+      <property name="MinSize">@3,Width=145@2,Height=30</property>
       <property name="ControlAlignment">TopLeft</property>
       <property name="ContentVisible">true</property>
       <property name="HighlightFocusedItem">Default</property>
@@ -1042,8 +1042,8 @@
       <property name="TextToControlDistance">3</property>
       <property name="Spacing">0, 0, 0, 0</property>
       <property name="Padding">2, 2, 2, 2</property>
-      <property name="Location">@1,X=0@3,Y=128</property>
-      <property name="Size">@3,Width=361@2,Height=28</property>
+      <property name="Location">@1,X=0@3,Y=225</property>
+      <property name="Size">@3,Width=422@2,Height=30</property>
       <property name="ShowInCustomizationForm">true</property>
       <property name="Text">Email</property>
       <property name="CustomizationFormText">Email</property>
@@ -1077,8 +1077,8 @@
           <property name="FontStyleDelta">Regular</property>
         </property>
       </property>
-      <property name="MaxSize">@1,Width=0@2,Height=28</property>
-      <property name="MinSize">@3,Width=145@2,Height=28</property>
+      <property name="MaxSize">@1,Width=0@2,Height=30</property>
+      <property name="MinSize">@3,Width=145@2,Height=30</property>
       <property name="ControlAlignment">TopLeft</property>
       <property name="ContentVisible">true</property>
       <property name="HighlightFocusedItem">Default</property>
@@ -1127,8 +1127,8 @@
       <property name="TextToControlDistance">3</property>
       <property name="Spacing">0, 0, 0, 0</property>
       <property name="Padding">2, 2, 2, 2</property>
-      <property name="Location">@1,X=0@3,Y=156</property>
-      <property name="Size">@3,Width=361@2,Height=28</property>
+      <property name="Location">@1,X=0@3,Y=255</property>
+      <property name="Size">@3,Width=422@2,Height=30</property>
       <property name="ShowInCustomizationForm">true</property>
       <property name="Text">Cell</property>
       <property name="CustomizationFormText">Cell</property>
@@ -1162,8 +1162,8 @@
           <property name="FontStyleDelta">Regular</property>
         </property>
       </property>
-      <property name="MaxSize">@1,Width=0@2,Height=28</property>
-      <property name="MinSize">@3,Width=145@2,Height=28</property>
+      <property name="MaxSize">@1,Width=0@2,Height=30</property>
+      <property name="MinSize">@3,Width=145@2,Height=30</property>
       <property name="ControlAlignment">TopLeft</property>
       <property name="ContentVisible">true</property>
       <property name="HighlightFocusedItem">Default</property>
@@ -1212,8 +1212,8 @@
       <property name="TextToControlDistance">3</property>
       <property name="Spacing">0, 0, 0, 0</property>
       <property name="Padding">2, 2, 2, 2</property>
-      <property name="Location">@1,X=0@3,Y=184</property>
-      <property name="Size">@3,Width=361@2,Height=28</property>
+      <property name="Location">@1,X=0@3,Y=285</property>
+      <property name="Size">@3,Width=422@2,Height=30</property>
       <property name="ShowInCustomizationForm">true</property>
       <property name="Text">Contact Person</property>
       <property name="CustomizationFormText">Contact Person</property>
@@ -1247,8 +1247,8 @@
           <property name="FontStyleDelta">Regular</property>
         </property>
       </property>
-      <property name="MaxSize">@1,Width=0@2,Height=25</property>
-      <property name="MinSize">@2,Width=60@2,Height=25</property>
+      <property name="MaxSize">@1,Width=0@2,Height=27</property>
+      <property name="MinSize">@2,Width=60@2,Height=27</property>
       <property name="ControlAlignment">TopLeft</property>
       <property name="ContentVisible">true</property>
       <property name="HighlightFocusedItem">Default</property>
@@ -1297,8 +1297,8 @@
       <property name="TextToControlDistance">0</property>
       <property name="Spacing">0, 0, 0, 0</property>
       <property name="Padding">2, 2, 2, 2</property>
-      <property name="Location">@1,X=0@3,Y=212</property>
-      <property name="Size">@3,Width=361@2,Height=35</property>
+      <property name="Location">@1,X=0@3,Y=315</property>
+      <property name="Size">@3,Width=422@2,Height=27</property>
       <property name="ShowInCustomizationForm">true</property>
       <property name="Text">Active</property>
       <property name="CustomizationFormText">Active</property>
@@ -1307,6 +1307,91 @@
       <property name="TextLocation">Default</property>
     </property>
     <property name="Item13" isnull="true" iskey="true">
+      <property name="TypeName">LayoutControlItem</property>
+      <property name="ControlName">NPWPTextEdit</property>
+      <property name="AllowHtmlStringInCaption">false</property>
+      <property name="TextAlignMode">UseParentOptions</property>
+      <property name="SizeConstraintsType">Default</property>
+      <property name="Image" isnull="true" />
+      <property name="ImageIndex">-1</property>
+      <property name="ImageAlignment">MiddleLeft</property>
+      <property name="ImageToTextDistance">5</property>
+      <property name="SvgImage" isnull="true" />
+      <property name="SvgImageSize">@1,Width=0@1,Height=0</property>
+      <property name="OptionsPrint" isnull="true" iskey="true">
+        <property name="TextToControlDistance">-1</property>
+        <property name="AllowPrint">true</property>
+        <property name="AppearanceItemCaption" isnull="true" iskey="true">
+          <property name="ForeColor" />
+          <property name="BorderColor" />
+          <property name="BackColor" />
+          <property name="BackColor2" />
+          <property name="Font">Segoe UI, 9.75pt</property>
+          <property name="GradientMode">Horizontal</property>
+          <property name="FontSizeDelta">0</property>
+          <property name="FontStyleDelta">Regular</property>
+        </property>
+      </property>
+      <property name="MaxSize">@1,Width=0@2,Height=30</property>
+      <property name="MinSize">@3,Width=145@2,Height=30</property>
+      <property name="ControlAlignment">TopLeft</property>
+      <property name="ContentVisible">true</property>
+      <property name="HighlightFocusedItem">Default</property>
+      <property name="TrimClientAreaToControl">true</property>
+      <property name="ContentVertAlignment">Default</property>
+      <property name="ContentHorzAlignment">Default</property>
+      <property name="Enabled">true</property>
+      <property name="AllowGlyphSkinning">Default</property>
+      <property name="OptionsCustomization" isnull="true" iskey="true">
+        <property name="AllowDrag">Default</property>
+        <property name="AllowDrop">Default</property>
+      </property>
+      <property name="OptionsTableLayoutItem" isnull="true" iskey="true">
+        <property name="RowIndex">0</property>
+        <property name="RowSpan">1</property>
+        <property name="ColumnIndex">0</property>
+        <property name="ColumnSpan">1</property>
+      </property>
+      <property name="OptionsToolTip" isnull="true" iskey="true">
+        <property name="ToolTip" />
+        <property name="ToolTipTitle" />
+        <property name="ToolTipIconType">None</property>
+        <property name="ImmediateToolTip">false</property>
+        <property name="AllowHtmlString">Default</property>
+        <property name="IconToolTip" />
+        <property name="IconToolTipTitle" />
+        <property name="IconToolTipIconType">None</property>
+        <property name="EnableIconToolTip">true</property>
+        <property name="IconImmediateToolTip">false</property>
+        <property name="IconAllowHtmlString">Default</property>
+      </property>
+      <property name="Name">ItemForNPWP</property>
+      <property name="AppearanceItemCaption" isnull="true" iskey="true">
+        <property name="ForeColor" />
+        <property name="BorderColor" />
+        <property name="BackColor" />
+        <property name="BackColor2" />
+        <property name="Font">Segoe UI, 9.75pt</property>
+        <property name="GradientMode">Horizontal</property>
+        <property name="FontSizeDelta">0</property>
+        <property name="FontStyleDelta">Regular</property>
+      </property>
+      <property name="ParentName">layoutControlGroup2</property>
+      <property name="TextVisible">true</property>
+      <property name="TextSize">@2,Width=88@2,Height=17</property>
+      <property name="TextToControlDistance">3</property>
+      <property name="Spacing">0, 0, 0, 0</property>
+      <property name="Padding">2, 2, 2, 2</property>
+      <property name="Location">@1,X=0@2,Y=60</property>
+      <property name="Size">@3,Width=422@2,Height=30</property>
+      <property name="ShowInCustomizationForm">true</property>
+      <property name="Text">NPWP</property>
+      <property name="CustomizationFormText">NPWP</property>
+      <property name="StartNewLine">false</property>
+      <property name="Visibility">Always</property>
+      <property name="TextLocation">Default</property>
+    </property>
+    <property name="Item14" isnull="true" iskey="true">
       <property name="TypeName">LayoutGroup</property>
       <property name="TabbedGroupParentName">tabbedControlGroup1</property>
       <property name="GroupBordersVisible">true</property>
@@ -1358,7 +1443,7 @@
         <property name="RowDefinitions" iskey="true" value="0" />
         <property name="ColumnDefinitions" iskey="true" value="0" />
       </property>
-      <property name="Size">@3,Width=361@3,Height=247</property>
+      <property name="Size">@3,Width=422@3,Height=342</property>
       <property name="ExpandButtonVisible">false</property>
       <property name="ExpandButtonMode">Normal</property>
       <property name="HeaderButtonsLocation">Default</property>
@@ -1473,7 +1558,7 @@
       <property name="StartNewLine">false</property>
       <property name="Visibility">Always</property>
     </property>
-    <property name="Item14" isnull="true" iskey="true">
+    <property name="Item15" isnull="true" iskey="true">
       <property name="TypeName">LayoutControlItem</property>
       <property name="ControlName">IDUserEntriSearchLookUpEdit</property>
       <property name="AllowHtmlStringInCaption">false</property>
@@ -1499,8 +1584,8 @@
           <property name="FontStyleDelta">Regular</property>
         </property>
       </property>
-      <property name="MaxSize">@1,Width=0@2,Height=28</property>
-      <property name="MinSize">@3,Width=145@2,Height=28</property>
+      <property name="MaxSize">@1,Width=0@2,Height=30</property>
+      <property name="MinSize">@3,Width=145@2,Height=30</property>
       <property name="ControlAlignment">TopLeft</property>
       <property name="ContentVisible">true</property>
       <property name="HighlightFocusedItem">Default</property>
@@ -1550,7 +1635,7 @@
       <property name="Spacing">0, 0, 0, 0</property>
       <property name="Padding">2, 2, 2, 2</property>
       <property name="Location">@1,X=0@1,Y=0</property>
-      <property name="Size">@3,Width=361@2,Height=28</property>
+      <property name="Size">@3,Width=422@2,Height=30</property>
       <property name="ShowInCustomizationForm">true</property>
       <property name="Text">User Entri</property>
       <property name="CustomizationFormText">User Entri</property>
@@ -1558,7 +1643,7 @@
       <property name="Visibility">Always</property>
       <property name="TextLocation">Default</property>
     </property>
-    <property name="Item15" isnull="true" iskey="true">
+    <property name="Item16" isnull="true" iskey="true">
       <property name="TypeName">LayoutControlItem</property>
       <property name="ControlName">TglEntriDateEdit</property>
       <property name="AllowHtmlStringInCaption">false</property>
@@ -1584,8 +1669,8 @@
           <property name="FontStyleDelta">Regular</property>
         </property>
       </property>
-      <property name="MaxSize">@1,Width=0@2,Height=28</property>
-      <property name="MinSize">@3,Width=145@2,Height=28</property>
+      <property name="MaxSize">@1,Width=0@2,Height=30</property>
+      <property name="MinSize">@3,Width=145@2,Height=30</property>
       <property name="ControlAlignment">TopLeft</property>
       <property name="ContentVisible">true</property>
       <property name="HighlightFocusedItem">Default</property>
@@ -1634,8 +1719,8 @@
       <property name="TextToControlDistance">3</property>
       <property name="Spacing">0, 0, 0, 0</property>
       <property name="Padding">2, 2, 2, 2</property>
-      <property name="Location">@1,X=0@2,Y=28</property>
-      <property name="Size">@3,Width=361@2,Height=28</property>
+      <property name="Location">@1,X=0@2,Y=30</property>
+      <property name="Size">@3,Width=422@2,Height=30</property>
       <property name="ShowInCustomizationForm">true</property>
       <property name="Text">Tgl Entri</property>
       <property name="CustomizationFormText">Tgl Entri</property>
@@ -1643,7 +1728,7 @@
       <property name="Visibility">Always</property>
       <property name="TextLocation">Default</property>
     </property>
-    <property name="Item16" isnull="true" iskey="true">
+    <property name="Item17" isnull="true" iskey="true">
       <property name="TypeName">LayoutControlItem</property>
       <property name="ControlName">IDUserEditSearchLookUpEdit</property>
       <property name="AllowHtmlStringInCaption">false</property>
@@ -1669,8 +1754,8 @@
           <property name="FontStyleDelta">Regular</property>
         </property>
       </property>
-      <property name="MaxSize">@1,Width=0@2,Height=28</property>
-      <property name="MinSize">@3,Width=145@2,Height=28</property>
+      <property name="MaxSize">@1,Width=0@2,Height=30</property>
+      <property name="MinSize">@3,Width=145@2,Height=30</property>
       <property name="ControlAlignment">TopLeft</property>
       <property name="ContentVisible">true</property>
       <property name="HighlightFocusedItem">Default</property>
@@ -1719,8 +1804,8 @@
       <property name="TextToControlDistance">3</property>
       <property name="Spacing">0, 0, 0, 0</property>
       <property name="Padding">2, 2, 2, 2</property>
-      <property name="Location">@1,X=0@2,Y=56</property>
-      <property name="Size">@3,Width=361@2,Height=28</property>
+      <property name="Location">@1,X=0@2,Y=60</property>
+      <property name="Size">@3,Width=422@2,Height=30</property>
       <property name="ShowInCustomizationForm">true</property>
       <property name="Text">User Edit</property>
       <property name="CustomizationFormText">User Edit</property>
@@ -1728,7 +1813,7 @@
       <property name="Visibility">Always</property>
       <property name="TextLocation">Default</property>
     </property>
-    <property name="Item17" isnull="true" iskey="true">
+    <property name="Item18" isnull="true" iskey="true">
       <property name="TypeName">LayoutControlItem</property>
       <property name="ControlName">TglEditDateEdit</property>
       <property name="AllowHtmlStringInCaption">false</property>
@@ -1754,8 +1839,8 @@
           <property name="FontStyleDelta">Regular</property>
         </property>
       </property>
-      <property name="MaxSize">@1,Width=0@2,Height=28</property>
-      <property name="MinSize">@3,Width=145@2,Height=28</property>
+      <property name="MaxSize">@1,Width=0@2,Height=30</property>
+      <property name="MinSize">@3,Width=145@2,Height=30</property>
       <property name="ControlAlignment">TopLeft</property>
       <property name="ContentVisible">true</property>
       <property name="HighlightFocusedItem">Default</property>
@@ -1804,8 +1889,8 @@
       <property name="TextToControlDistance">3</property>
       <property name="Spacing">0, 0, 0, 0</property>
       <property name="Padding">2, 2, 2, 2</property>
-      <property name="Location">@1,X=0@2,Y=84</property>
-      <property name="Size">@3,Width=361@2,Height=28</property>
+      <property name="Location">@1,X=0@2,Y=90</property>
+      <property name="Size">@3,Width=422@2,Height=30</property>
       <property name="ShowInCustomizationForm">true</property>
       <property name="Text">Tgl Edit</property>
       <property name="CustomizationFormText">Tgl Edit</property>
@@ -1813,7 +1898,7 @@
       <property name="Visibility">Always</property>
       <property name="TextLocation">Default</property>
     </property>
-    <property name="Item18" isnull="true" iskey="true">
+    <property name="Item19" isnull="true" iskey="true">
       <property name="TypeName">LayoutControlItem</property>
       <property name="ControlName">IDUserHapusSearchLookUpEdit</property>
       <property name="AllowHtmlStringInCaption">false</property>
@@ -1839,8 +1924,8 @@
           <property name="FontStyleDelta">Regular</property>
         </property>
       </property>
-      <property name="MaxSize">@1,Width=0@2,Height=28</property>
-      <property name="MinSize">@3,Width=145@2,Height=28</property>
+      <property name="MaxSize">@1,Width=0@2,Height=30</property>
+      <property name="MinSize">@3,Width=145@2,Height=30</property>
       <property name="ControlAlignment">TopLeft</property>
       <property name="ContentVisible">true</property>
       <property name="HighlightFocusedItem">Default</property>
@@ -1889,8 +1974,8 @@
       <property name="TextToControlDistance">3</property>
       <property name="Spacing">0, 0, 0, 0</property>
       <property name="Padding">2, 2, 2, 2</property>
-      <property name="Location">@1,X=0@3,Y=112</property>
-      <property name="Size">@3,Width=361@2,Height=28</property>
+      <property name="Location">@1,X=0@3,Y=120</property>
+      <property name="Size">@3,Width=422@2,Height=30</property>
       <property name="ShowInCustomizationForm">true</property>
       <property name="Text">User Hapus</property>
       <property name="CustomizationFormText">User Hapus</property>
@@ -1898,7 +1983,7 @@
       <property name="Visibility">Always</property>
       <property name="TextLocation">Default</property>
     </property>
-    <property name="Item19" isnull="true" iskey="true">
+    <property name="Item20" isnull="true" iskey="true">
       <property name="TypeName">LayoutControlItem</property>
       <property name="ControlName">TglHapusDateEdit</property>
       <property name="AllowHtmlStringInCaption">false</property>
@@ -1924,8 +2009,8 @@
           <property name="FontStyleDelta">Regular</property>
         </property>
       </property>
-      <property name="MaxSize">@1,Width=0@2,Height=28</property>
-      <property name="MinSize">@3,Width=145@2,Height=28</property>
+      <property name="MaxSize">@1,Width=0@2,Height=30</property>
+      <property name="MinSize">@3,Width=145@2,Height=30</property>
       <property name="ControlAlignment">TopLeft</property>
       <property name="ContentVisible">true</property>
       <property name="HighlightFocusedItem">Default</property>
@@ -1974,8 +2059,8 @@
       <property name="TextToControlDistance">3</property>
       <property name="Spacing">0, 0, 0, 0</property>
       <property name="Padding">2, 2, 2, 2</property>
-      <property name="Location">@1,X=0@3,Y=140</property>
-      <property name="Size">@3,Width=361@3,Height=107</property>
+      <property name="Location">@1,X=0@3,Y=150</property>
+      <property name="Size">@3,Width=422@3,Height=192</property>
       <property name="ShowInCustomizationForm">true</property>
       <property name="Text">Tgl Hapus</property>
       <property name="CustomizationFormText">Tgl Hapus</property>

@@ -113,7 +113,7 @@ namespace Inventory.App.UI
             repositoryItemUser.ValueMember = "ID";
             repositoryItemUser.DisplayMember = "Nama";
 
-            var lookUpItem = Repository.Item.getLookUpInventors(DateTime.Now, Guid.Empty, null);
+            var lookUpItem = Repository.Item.getLookUpInventors(DateTime.Now, Guid.Empty, Guid.Empty, null);
             if (lookUpItem.Item1)
             {
                 lookupItem = lookUpItem.Item2;

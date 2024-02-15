@@ -36,6 +36,9 @@ namespace Inventory.App.Model.ViewModel
         [StringLength(50)]
         public string ContactPerson { get; set; }
 
+        [StringLength(50)]
+        public string NPWP { get; set; }
+
         public bool Active { get; set; }
 
     }

@@ -285,7 +285,11 @@ namespace Inventory.App.Repository
             return hasil;
         }
 
-        public static Tuple<bool, List<ItemLookUp>> getLookUpInventors(DateTime Tanggal, Guid IDGudang, Dictionary<string, dynamic> filter)
+        public static Tuple<bool, List<ItemLookUp>> getLookUpInventors(
+            DateTime Tanggal,
+            Guid IDGudang,
+            Guid IDTransaksiExclude,
+            Dictionary<string, dynamic> filter)
         {
             Tuple<bool, List<ItemLookUp>> hasil = new Tuple<bool, List<ItemLookUp>>(false, null);
             using (Data.InventoryContext context = new Data.InventoryContext(Constant.appSetting.KoneksiString))
@@ -309,7 +313,8 @@ namespace Inventory.App.Repository
                             }
                         }
                     }
-                    var saldoQuery = from stockCard in context.TStockCards.Where(o => o.Tanggal <= Tanggal && (IDGudang == Guid.Empty || o.IDWarehouse == IDGudang))
+                    var saldoQuery = from stockCard in context.TStockCards.Where(o => o.Tanggal <= Tanggal && (IDGudang == Guid.Empty || o.IDWarehouse == IDGudang) && 
+                                     (IDTransaksiExclude == Guid.Empty || o.IDTransaksi != IDTransaksiExclude))
                                      join item in data on stockCard.IDInventor equals item.ID
                                      group stockCard by stockCard.IDInventor into grouped
                                      select new

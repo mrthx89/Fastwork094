@@ -43,7 +43,6 @@ namespace Inventory.App.Model.ViewModel
             }
         }
         public double TaxProsen { get; set; }
-        private double _Tax = 0.0;
         public double Tax
         {
             get
@@ -89,6 +88,8 @@ namespace Inventory.App.Model.ViewModel
         [Required]
         [Range(0, 999999999)]
         public double Qty { get; set; }
+        [Range(0, 999999999)]
+        public double QtyVoid { get; set; }
         [Required]
         [Range(0, 999999999)]
         public double UnitPrice { get; set; }
@@ -105,6 +106,7 @@ namespace Inventory.App.Model.ViewModel
         public double TaxProsen { get; set; }
         public double Tax { get; set; }
         public double Amount { get { return Math.Round((Qty * UnitPrice) - Disc, 2); } }
+        public double AmountVoid { get; set; }
         [Range(0, 100)]
         public double Disc1Prosen { get; set; }
         public double Disc1 { get; set; }

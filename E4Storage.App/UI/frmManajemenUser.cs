@@ -22,7 +22,7 @@ namespace Inventory.App.UI
             InitializeComponent();
         }
 
-        private Guid notDeleted = Guid.Parse("EC82D19B-14AD-41E6-90BE-ED2B17855BF3");
+        private Guid notDeleted = Constant.sysAdmin;
 
         private void mnSimpan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

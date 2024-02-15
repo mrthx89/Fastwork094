@@ -59,6 +59,7 @@ namespace Inventory.App.UI
             this.colPhone = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colContactPerson = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNPWP = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tCustomerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -195,7 +196,8 @@ namespace Inventory.App.UI
             this.colCell,
             this.colPhone,
             this.colEmail,
-            this.colContactPerson});
+            this.colContactPerson,
+            this.colNPWP});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -346,6 +348,14 @@ namespace Inventory.App.UI
             this.colContactPerson.VisibleIndex = 13;
             this.colContactPerson.Width = 97;
             // 
+            // colNPWP
+            // 
+            this.colNPWP.Caption = "NPWP";
+            this.colNPWP.FieldName = "NPWP";
+            this.colNPWP.Name = "colNPWP";
+            this.colNPWP.Visible = true;
+            this.colNPWP.VisibleIndex = 14;
+            // 
             // frmDaftarMasterCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -401,5 +411,6 @@ namespace Inventory.App.UI
         private DevExpress.XtraGrid.Columns.GridColumn colPhone;
         private DevExpress.XtraGrid.Columns.GridColumn colEmail;
         private DevExpress.XtraGrid.Columns.GridColumn colContactPerson;
+        private DevExpress.XtraGrid.Columns.GridColumn colNPWP;
     }
 }

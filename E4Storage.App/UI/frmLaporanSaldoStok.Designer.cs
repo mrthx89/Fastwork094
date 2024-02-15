@@ -232,6 +232,7 @@ namespace Inventory.App.UI
             this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gridView1_RowStyle);
             this.gridView1.DataSourceChanged += new System.EventHandler(this.gridView1_DataSourceChange);
             // 
             // colID

@@ -43,6 +43,8 @@ namespace Inventory.App.UI
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colIDInventor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemInventor = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.colIDWarehouse = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemWarehouse = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colNamaBarang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIDUOM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemUOM = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -57,13 +59,12 @@ namespace Inventory.App.UI
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.colIDWarehouse = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemWarehouse = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MutasiStokBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemInventor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemWarehouse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemUOM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -71,7 +72,6 @@ namespace Inventory.App.UI
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemWarehouse)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -188,6 +188,7 @@ namespace Inventory.App.UI
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gridView1_RowStyle);
             this.gridView1.DataSourceChanged += new System.EventHandler(this.gridView1_DataSourceChange);
             // 
             // colIDInventor
@@ -206,6 +207,23 @@ namespace Inventory.App.UI
             this.repositoryItemInventor.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemInventor.Name = "repositoryItemInventor";
+            // 
+            // colIDWarehouse
+            // 
+            this.colIDWarehouse.Caption = "Gudang";
+            this.colIDWarehouse.ColumnEdit = this.repositoryItemWarehouse;
+            this.colIDWarehouse.FieldName = "IDWarehouse";
+            this.colIDWarehouse.Name = "colIDWarehouse";
+            this.colIDWarehouse.Visible = true;
+            this.colIDWarehouse.VisibleIndex = 0;
+            this.colIDWarehouse.Width = 99;
+            // 
+            // repositoryItemWarehouse
+            // 
+            this.repositoryItemWarehouse.AutoHeight = false;
+            this.repositoryItemWarehouse.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemWarehouse.Name = "repositoryItemWarehouse";
             // 
             // colNamaBarang
             // 
@@ -385,23 +403,6 @@ namespace Inventory.App.UI
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Periode";
             // 
-            // colIDWarehouse
-            // 
-            this.colIDWarehouse.Caption = "Gudang";
-            this.colIDWarehouse.ColumnEdit = this.repositoryItemWarehouse;
-            this.colIDWarehouse.FieldName = "IDWarehouse";
-            this.colIDWarehouse.Name = "colIDWarehouse";
-            this.colIDWarehouse.Visible = true;
-            this.colIDWarehouse.VisibleIndex = 0;
-            this.colIDWarehouse.Width = 99;
-            // 
-            // repositoryItemWarehouse
-            // 
-            this.repositoryItemWarehouse.AutoHeight = false;
-            this.repositoryItemWarehouse.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemWarehouse.Name = "repositoryItemWarehouse";
-            // 
             // frmLaporanMutasiStok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -422,6 +423,7 @@ namespace Inventory.App.UI
             ((System.ComponentModel.ISupportInitialize)(this.MutasiStokBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemInventor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemWarehouse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemUOM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
@@ -430,7 +432,6 @@ namespace Inventory.App.UI
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemWarehouse)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

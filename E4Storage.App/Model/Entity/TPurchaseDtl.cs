@@ -25,6 +25,8 @@ namespace Inventory.App.Model.Entity
         [Required]
         [Range(0, 999999999)]
         public double Qty { get; set; }
+        [Range(0, 999999999)]
+        public double QtyVoid { get; set; }
         [Required]
         [Range(0, 999999999)]
         public double UnitPrice { get; set; }
@@ -35,6 +37,7 @@ namespace Inventory.App.Model.Entity
         public double TaxProsen { get; set; }
         public double Tax { get; set; }
         public double Amount { get; set; }
+        public double AmountVoid { get; set; }
         [Range(0, 100)]
         public double Disc1Prosen { get; set; }
         public double Disc1 { get; set; }

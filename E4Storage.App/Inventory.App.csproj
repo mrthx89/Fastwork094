@@ -196,6 +196,10 @@
     <Compile Include="Migrations\202402111000255_Manifest.designer.cs">
       <DependentUpon>202402111000255_Manifest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202402111119482_VoidItem.cs" />
+    <Compile Include="Migrations\202402111119482_VoidItem.designer.cs">
+      <DependentUpon>202402111119482_VoidItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\AppSetting.cs" />
     <Compile Include="Model\Entity\BaseTable.cs" />
@@ -221,6 +225,7 @@
     <Compile Include="Model\ViewModel\CustomerLookUp.cs" />
     <Compile Include="Model\ViewModel\Purchase.cs" />
     <Compile Include="Model\ViewModel\SaldoStok.cs" />
+    <Compile Include="Model\ViewModel\DO.cs" />
     <Compile Include="Model\ViewModel\VendorLookUp.cs" />
     <Compile Include="Model\ViewModel\ItemLookUp.cs" />
     <Compile Include="Model\ViewModel\CustomerMaster.cs" />
@@ -235,6 +240,7 @@
     <Compile Include="Model\ViewModel\StokKeluar.cs" />
     <Compile Include="Model\ViewModel\StokMasuk.cs" />
     <Compile Include="Repository\Customer.cs" />
+    <Compile Include="Repository\PengirimanBarang.cs" />
     <Compile Include="Repository\Pembelian.cs" />
     <Compile Include="Repository\Vendor.cs" />
     <Compile Include="Repository\Warehouse.cs" />
@@ -300,6 +306,12 @@
     <Compile Include="UI\frmDaftarMasterCustomer.Designer.cs">
       <DependentUpon>frmDaftarMasterCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\frmDaftarPengirimanBarang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmDaftarPengirimanBarang.Designer.cs">
+      <DependentUpon>frmDaftarPengirimanBarang.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmDaftarPembelian.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -341,6 +353,12 @@
     </Compile>
     <Compile Include="UI\frmEntriCustomer.Designer.cs">
       <DependentUpon>frmEntriCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmEntriPengirimanBarang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmEntriPengirimanBarang.Designer.cs">
+      <DependentUpon>frmEntriPengirimanBarang.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\frmEntriPembelian.cs">
       <SubType>Form</SubType>
@@ -503,6 +521,9 @@
     <EmbeddedResource Include="Migrations\202402111000255_Manifest.resx">
       <DependentUpon>202402111000255_Manifest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402111119482_VoidItem.resx">
+      <DependentUpon>202402111119482_VoidItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Dialog\dlgOptionStokMasuk.resx">
       <DependentUpon>dlgOptionStokMasuk.cs</DependentUpon>
     </EmbeddedResource>
@@ -527,6 +548,9 @@
     <EmbeddedResource Include="UI\frmDaftarMasterCustomer.resx">
       <DependentUpon>frmDaftarMasterCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmDaftarPengirimanBarang.resx">
+      <DependentUpon>frmDaftarPengirimanBarang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmDaftarPembelian.resx">
       <DependentUpon>frmDaftarPembelian.cs</DependentUpon>
     </EmbeddedResource>
@@ -547,6 +571,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmEntriCustomer.resx">
       <DependentUpon>frmEntriCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmEntriPengirimanBarang.resx">
+      <DependentUpon>frmEntriPengirimanBarang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmEntriPembelian.resx">
       <DependentUpon>frmEntriPembelian.cs</DependentUpon>
@@ -624,6 +651,8 @@
     <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.BaseLookUp.datasource" />
     <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.CustomerLookUp.datasource" />
     <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.CustomerMaster.datasource" />
+    <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.DO.datasource" />
+    <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.DODtl.datasource" />
     <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.ItemMaster.datasource" />
     <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.KartuStok.datasource" />
     <None Include="Properties\DataSources\Inventory.App.Model.ViewModel.MutasiStok.datasource" />

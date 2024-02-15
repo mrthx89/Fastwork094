@@ -1,6 +1,7 @@
 namespace Inventory.App.Migrations
 {
     using Inventory.App.Model.Entity;
+    using Inventory.App.Utils;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -22,11 +23,13 @@ namespace Inventory.App.Migrations
             //  to avoid creating duplicate seed data.
 
             TUser sysAdmin = new TUser {
-                ID = Guid.Parse("EC82D19B-14AD-41E6-90BE-ED2B17855BF3"),
-                IDUserEntri = Guid.Parse("EC82D19B-14AD-41E6-90BE-ED2B17855BF3"),
+                ID = Constant.sysAdmin,
+                IDUserEntri = Constant.sysAdmin,
                 IDUserEdit = Guid.Empty,
                 IDUserHapus = Guid.Empty,
                 IsAdmin = true,
+                IsGudang = true,
+                IsSuperAdmin = true,
                 Nama = "Admin",
                 Password = Repository.Utils.GetHash("SysAdmin".ToUpper()),
                 TglEntri = DateTime.Now,
@@ -152,6 +155,19 @@ namespace Inventory.App.Migrations
             if (context.TTypeTransactions.FirstOrDefault(o => o.ID.Equals(typeTransaction10.ID)) == null)
             {
                 context.TTypeTransactions.Add(typeTransaction10);
+            }
+
+            TTypeTransaction typeTransaction11 = new TTypeTransaction
+            {
+                ID = Utils.Constant.stokManifest,
+                Transaksi = "Pengiriman Barang",
+                NoUrut = 10,
+                IDUserEntri = sysAdmin.ID,
+                TglEntri = DateTime.Now
+            };
+            if (context.TTypeTransactions.FirstOrDefault(o => o.ID.Equals(typeTransaction11.ID)) == null)
+            {
+                context.TTypeTransactions.Add(typeTransaction11);
             }
 
             TWarehouse warehouse = new TWarehouse

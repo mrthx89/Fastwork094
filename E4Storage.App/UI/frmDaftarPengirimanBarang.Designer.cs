@@ -1,7 +1,7 @@
 ﻿
 namespace Inventory.App.UI
 {
-    partial class frmDaftarPembelian
+    partial class frmDaftarPengirimanBarang
     {
         /// <summary>
         /// Required designer variable.
@@ -42,7 +42,7 @@ namespace Inventory.App.UI
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.purchaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDocNo = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -50,17 +50,8 @@ namespace Inventory.App.UI
             this.colNoReff = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIDWarehouse = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGudang = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.colIDVendor = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemSupplier = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.colSubTotal = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTaxType = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemTypePPN = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.colTaxDefault = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTaxProsen = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTax = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDiscProsen = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDisc = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTotal = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIDCustomer = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCustomer = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colNote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIDUserEntri = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemUser = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -74,13 +65,20 @@ namespace Inventory.App.UI
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.colConditionDelivery = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colContainerNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFinish = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPlant = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSalesOrderNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSealNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colVehicleNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colVoid = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.purchaseBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGudang)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSupplier)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTypePPN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -195,7 +193,7 @@ namespace Inventory.App.UI
             // 
             // gridControl1
             // 
-            this.gridControl1.DataSource = this.purchaseBindingSource;
+            this.gridControl1.DataSource = this.DOBindingSource;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.Location = new System.Drawing.Point(0, 56);
             this.gridControl1.MainView = this.gridView1;
@@ -204,16 +202,15 @@ namespace Inventory.App.UI
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemUser,
             this.repositoryItemGudang,
-            this.repositoryItemSupplier,
-            this.repositoryItemTypePPN});
+            this.repositoryItemCustomer});
             this.gridControl1.Size = new System.Drawing.Size(1102, 618);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
-            // purchaseBindingSource
+            // DOBindingSource
             // 
-            this.purchaseBindingSource.DataSource = typeof(Inventory.App.Model.ViewModel.Purchase);
+            this.DOBindingSource.DataSource = typeof(Inventory.App.Model.ViewModel.DO);
             // 
             // gridView1
             // 
@@ -223,22 +220,22 @@ namespace Inventory.App.UI
             this.colDocDate,
             this.colNoReff,
             this.colIDWarehouse,
-            this.colIDVendor,
-            this.colSubTotal,
-            this.colTaxType,
-            this.colTaxDefault,
-            this.colTaxProsen,
-            this.colTax,
-            this.colDiscProsen,
-            this.colDisc,
-            this.colTotal,
+            this.colIDCustomer,
             this.colNote,
             this.colIDUserEntri,
             this.colTglEntri,
             this.colIDUserEdit,
             this.colTglEdit,
             this.colIDUserHapus,
-            this.colTglHapus});
+            this.colTglHapus,
+            this.colConditionDelivery,
+            this.colContainerNo,
+            this.colFinish,
+            this.colPlant,
+            this.colSalesOrderNo,
+            this.colSealNo,
+            this.colVehicleNo,
+            this.colVoid});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -299,153 +296,28 @@ namespace Inventory.App.UI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemGudang.Name = "repositoryItemGudang";
             // 
-            // colIDVendor
+            // colIDCustomer
             // 
-            this.colIDVendor.Caption = "Supplier";
-            this.colIDVendor.ColumnEdit = this.repositoryItemSupplier;
-            this.colIDVendor.FieldName = "IDVendor";
-            this.colIDVendor.Name = "colIDVendor";
-            this.colIDVendor.Visible = true;
-            this.colIDVendor.VisibleIndex = 4;
+            this.colIDCustomer.Caption = "Customer";
+            this.colIDCustomer.ColumnEdit = this.repositoryItemCustomer;
+            this.colIDCustomer.FieldName = "IDCustomer";
+            this.colIDCustomer.Name = "colIDCustomer";
+            this.colIDCustomer.Visible = true;
+            this.colIDCustomer.VisibleIndex = 4;
             // 
-            // repositoryItemSupplier
+            // repositoryItemCustomer
             // 
-            this.repositoryItemSupplier.AutoHeight = false;
-            this.repositoryItemSupplier.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.repositoryItemCustomer.AutoHeight = false;
+            this.repositoryItemCustomer.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemSupplier.Name = "repositoryItemSupplier";
-            // 
-            // colSubTotal
-            // 
-            this.colSubTotal.AppearanceCell.Options.UseTextOptions = true;
-            this.colSubTotal.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colSubTotal.AppearanceHeader.Options.UseTextOptions = true;
-            this.colSubTotal.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colSubTotal.DisplayFormat.FormatString = "n2";
-            this.colSubTotal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colSubTotal.FieldName = "SubTotal";
-            this.colSubTotal.Name = "colSubTotal";
-            this.colSubTotal.OptionsColumn.ReadOnly = true;
-            this.colSubTotal.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SubTotal", "{0:n2}")});
-            this.colSubTotal.Visible = true;
-            this.colSubTotal.VisibleIndex = 5;
-            // 
-            // colTaxType
-            // 
-            this.colTaxType.Caption = "Type PPN";
-            this.colTaxType.ColumnEdit = this.repositoryItemTypePPN;
-            this.colTaxType.FieldName = "TaxType";
-            this.colTaxType.Name = "colTaxType";
-            this.colTaxType.Visible = true;
-            this.colTaxType.VisibleIndex = 8;
-            // 
-            // repositoryItemTypePPN
-            // 
-            this.repositoryItemTypePPN.AutoHeight = false;
-            this.repositoryItemTypePPN.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemTypePPN.Name = "repositoryItemTypePPN";
-            // 
-            // colTaxDefault
-            // 
-            this.colTaxDefault.AppearanceCell.Options.UseTextOptions = true;
-            this.colTaxDefault.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colTaxDefault.AppearanceHeader.Options.UseTextOptions = true;
-            this.colTaxDefault.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colTaxDefault.Caption = "DPP";
-            this.colTaxDefault.DisplayFormat.FormatString = "n2";
-            this.colTaxDefault.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colTaxDefault.FieldName = "TaxDefault";
-            this.colTaxDefault.Name = "colTaxDefault";
-            this.colTaxDefault.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TaxDefault", "{0:n2}")});
-            this.colTaxDefault.Visible = true;
-            this.colTaxDefault.VisibleIndex = 9;
-            // 
-            // colTaxProsen
-            // 
-            this.colTaxProsen.AppearanceCell.Options.UseTextOptions = true;
-            this.colTaxProsen.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colTaxProsen.AppearanceHeader.Options.UseTextOptions = true;
-            this.colTaxProsen.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colTaxProsen.Caption = "% PPN";
-            this.colTaxProsen.DisplayFormat.FormatString = "n0";
-            this.colTaxProsen.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colTaxProsen.FieldName = "TaxProsen";
-            this.colTaxProsen.Name = "colTaxProsen";
-            this.colTaxProsen.Visible = true;
-            this.colTaxProsen.VisibleIndex = 10;
-            // 
-            // colTax
-            // 
-            this.colTax.AppearanceCell.Options.UseTextOptions = true;
-            this.colTax.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colTax.AppearanceHeader.Options.UseTextOptions = true;
-            this.colTax.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colTax.Caption = "PPN";
-            this.colTax.DisplayFormat.FormatString = "n2";
-            this.colTax.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colTax.FieldName = "Tax";
-            this.colTax.Name = "colTax";
-            this.colTax.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Tax", "{0:n2}")});
-            this.colTax.Visible = true;
-            this.colTax.VisibleIndex = 11;
-            // 
-            // colDiscProsen
-            // 
-            this.colDiscProsen.AppearanceCell.Options.UseTextOptions = true;
-            this.colDiscProsen.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colDiscProsen.AppearanceHeader.Options.UseTextOptions = true;
-            this.colDiscProsen.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colDiscProsen.Caption = "Disc % Nota";
-            this.colDiscProsen.DisplayFormat.FormatString = "n2";
-            this.colDiscProsen.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colDiscProsen.FieldName = "DiscProsen";
-            this.colDiscProsen.Name = "colDiscProsen";
-            this.colDiscProsen.Visible = true;
-            this.colDiscProsen.VisibleIndex = 6;
-            // 
-            // colDisc
-            // 
-            this.colDisc.AppearanceCell.Options.UseTextOptions = true;
-            this.colDisc.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colDisc.AppearanceHeader.Options.UseTextOptions = true;
-            this.colDisc.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colDisc.Caption = "Disc Nota";
-            this.colDisc.DisplayFormat.FormatString = "n2";
-            this.colDisc.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colDisc.FieldName = "Disc";
-            this.colDisc.Name = "colDisc";
-            this.colDisc.OptionsColumn.ReadOnly = true;
-            this.colDisc.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Disc", "{0:n2}")});
-            this.colDisc.Visible = true;
-            this.colDisc.VisibleIndex = 7;
-            // 
-            // colTotal
-            // 
-            this.colTotal.AppearanceCell.Options.UseTextOptions = true;
-            this.colTotal.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colTotal.AppearanceHeader.Options.UseTextOptions = true;
-            this.colTotal.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colTotal.DisplayFormat.FormatString = "n2";
-            this.colTotal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colTotal.FieldName = "Total";
-            this.colTotal.Name = "colTotal";
-            this.colTotal.OptionsColumn.ReadOnly = true;
-            this.colTotal.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Total", "{0:n2}")});
-            this.colTotal.Visible = true;
-            this.colTotal.VisibleIndex = 12;
+            this.repositoryItemCustomer.Name = "repositoryItemCustomer";
             // 
             // colNote
             // 
             this.colNote.FieldName = "Note";
             this.colNote.Name = "colNote";
             this.colNote.Visible = true;
-            this.colNote.VisibleIndex = 13;
+            this.colNote.VisibleIndex = 5;
             this.colNote.Width = 116;
             // 
             // colIDUserEntri
@@ -455,7 +327,7 @@ namespace Inventory.App.UI
             this.colIDUserEntri.FieldName = "IDUserEntri";
             this.colIDUserEntri.Name = "colIDUserEntri";
             this.colIDUserEntri.Visible = true;
-            this.colIDUserEntri.VisibleIndex = 14;
+            this.colIDUserEntri.VisibleIndex = 6;
             // 
             // repositoryItemUser
             // 
@@ -471,7 +343,7 @@ namespace Inventory.App.UI
             this.colTglEntri.FieldName = "TglEntri";
             this.colTglEntri.Name = "colTglEntri";
             this.colTglEntri.Visible = true;
-            this.colTglEntri.VisibleIndex = 15;
+            this.colTglEntri.VisibleIndex = 7;
             // 
             // colIDUserEdit
             // 
@@ -480,7 +352,7 @@ namespace Inventory.App.UI
             this.colIDUserEdit.FieldName = "IDUserEdit";
             this.colIDUserEdit.Name = "colIDUserEdit";
             this.colIDUserEdit.Visible = true;
-            this.colIDUserEdit.VisibleIndex = 16;
+            this.colIDUserEdit.VisibleIndex = 8;
             // 
             // colTglEdit
             // 
@@ -489,7 +361,7 @@ namespace Inventory.App.UI
             this.colTglEdit.FieldName = "TglEdit";
             this.colTglEdit.Name = "colTglEdit";
             this.colTglEdit.Visible = true;
-            this.colTglEdit.VisibleIndex = 17;
+            this.colTglEdit.VisibleIndex = 9;
             // 
             // colIDUserHapus
             // 
@@ -498,7 +370,7 @@ namespace Inventory.App.UI
             this.colIDUserHapus.FieldName = "IDUserHapus";
             this.colIDUserHapus.Name = "colIDUserHapus";
             this.colIDUserHapus.Visible = true;
-            this.colIDUserHapus.VisibleIndex = 18;
+            this.colIDUserHapus.VisibleIndex = 10;
             // 
             // colTglHapus
             // 
@@ -507,7 +379,7 @@ namespace Inventory.App.UI
             this.colTglHapus.FieldName = "TglHapus";
             this.colTglHapus.Name = "colTglHapus";
             this.colTglHapus.Visible = true;
-            this.colTglHapus.VisibleIndex = 19;
+            this.colTglHapus.VisibleIndex = 11;
             // 
             // panelControl1
             // 
@@ -571,7 +443,65 @@ namespace Inventory.App.UI
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Periode";
             // 
-            // frmDaftarPembelian
+            // colConditionDelivery
+            // 
+            this.colConditionDelivery.FieldName = "ConditionDelivery";
+            this.colConditionDelivery.Name = "colConditionDelivery";
+            this.colConditionDelivery.Visible = true;
+            this.colConditionDelivery.VisibleIndex = 12;
+            this.colConditionDelivery.Width = 110;
+            // 
+            // colContainerNo
+            // 
+            this.colContainerNo.FieldName = "ContainerNo";
+            this.colContainerNo.Name = "colContainerNo";
+            this.colContainerNo.Visible = true;
+            this.colContainerNo.VisibleIndex = 13;
+            // 
+            // colFinish
+            // 
+            this.colFinish.FieldName = "Finish";
+            this.colFinish.Name = "colFinish";
+            this.colFinish.Visible = true;
+            this.colFinish.VisibleIndex = 14;
+            // 
+            // colPlant
+            // 
+            this.colPlant.FieldName = "Plant";
+            this.colPlant.Name = "colPlant";
+            this.colPlant.Visible = true;
+            this.colPlant.VisibleIndex = 15;
+            // 
+            // colSalesOrderNo
+            // 
+            this.colSalesOrderNo.FieldName = "SalesOrderNo";
+            this.colSalesOrderNo.Name = "colSalesOrderNo";
+            this.colSalesOrderNo.Visible = true;
+            this.colSalesOrderNo.VisibleIndex = 16;
+            this.colSalesOrderNo.Width = 95;
+            // 
+            // colSealNo
+            // 
+            this.colSealNo.FieldName = "SealNo";
+            this.colSealNo.Name = "colSealNo";
+            this.colSealNo.Visible = true;
+            this.colSealNo.VisibleIndex = 17;
+            // 
+            // colVehicleNo
+            // 
+            this.colVehicleNo.FieldName = "VehicleNo";
+            this.colVehicleNo.Name = "colVehicleNo";
+            this.colVehicleNo.Visible = true;
+            this.colVehicleNo.VisibleIndex = 18;
+            // 
+            // colVoid
+            // 
+            this.colVoid.FieldName = "Void";
+            this.colVoid.Name = "colVoid";
+            this.colVoid.Visible = true;
+            this.colVoid.VisibleIndex = 19;
+            // 
+            // frmDaftarPengirimanBarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -582,17 +512,16 @@ namespace Inventory.App.UI
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "frmDaftarPembelian";
-            this.Text = "Daftar Pembelian";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDaftarPembelian_FormCLossing);
-            this.Load += new System.EventHandler(this.frmDaftarPembelian_Load);
+            this.Name = "frmDaftarPengirimanBarang";
+            this.Text = "Daftar Pengiriman Barang";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDaftarPengirimanBarang_FormCLossing);
+            this.Load += new System.EventHandler(this.frmDaftarPengirimanBarang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.purchaseBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGudang)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSupplier)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTypePPN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
@@ -622,23 +551,14 @@ namespace Inventory.App.UI
         private DevExpress.XtraBars.BarButtonItem mnRefresh;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemGudang;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemUser;
-        private System.Windows.Forms.BindingSource purchaseBindingSource;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemSupplier;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemTypePPN;
+        private System.Windows.Forms.BindingSource DOBindingSource;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemCustomer;
         private DevExpress.XtraGrid.Columns.GridColumn colID;
         private DevExpress.XtraGrid.Columns.GridColumn colDocNo;
         private DevExpress.XtraGrid.Columns.GridColumn colDocDate;
         private DevExpress.XtraGrid.Columns.GridColumn colNoReff;
         private DevExpress.XtraGrid.Columns.GridColumn colIDWarehouse;
-        private DevExpress.XtraGrid.Columns.GridColumn colIDVendor;
-        private DevExpress.XtraGrid.Columns.GridColumn colSubTotal;
-        private DevExpress.XtraGrid.Columns.GridColumn colTaxType;
-        private DevExpress.XtraGrid.Columns.GridColumn colTaxDefault;
-        private DevExpress.XtraGrid.Columns.GridColumn colTaxProsen;
-        private DevExpress.XtraGrid.Columns.GridColumn colTax;
-        private DevExpress.XtraGrid.Columns.GridColumn colDiscProsen;
-        private DevExpress.XtraGrid.Columns.GridColumn colDisc;
-        private DevExpress.XtraGrid.Columns.GridColumn colTotal;
+        private DevExpress.XtraGrid.Columns.GridColumn colIDCustomer;
         private DevExpress.XtraGrid.Columns.GridColumn colNote;
         private DevExpress.XtraGrid.Columns.GridColumn colIDUserEntri;
         private DevExpress.XtraGrid.Columns.GridColumn colTglEntri;
@@ -652,5 +572,13 @@ namespace Inventory.App.UI
         private DevExpress.XtraEditors.DateEdit dateEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraBars.BarButtonItem mnCetakInvoice;
+        private DevExpress.XtraGrid.Columns.GridColumn colConditionDelivery;
+        private DevExpress.XtraGrid.Columns.GridColumn colContainerNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colFinish;
+        private DevExpress.XtraGrid.Columns.GridColumn colPlant;
+        private DevExpress.XtraGrid.Columns.GridColumn colSalesOrderNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colSealNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colVehicleNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colVoid;
     }
 }

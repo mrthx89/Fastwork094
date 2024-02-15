@@ -59,7 +59,7 @@ namespace Inventory.App.Helper
                 return default(T);
             }
         }
-        public static T CloneObject<T>(object Obj)
+        public static T CloneObject<T>(T Obj)
         {
             try
             {

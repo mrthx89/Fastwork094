@@ -55,6 +55,8 @@ namespace Inventory.App.UI
             this.colTglEdit = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIDUserHapus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTglHapus = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIsGudang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIsSuperAdmin = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tUserBindingSource)).BeginInit();
@@ -174,6 +176,8 @@ namespace Inventory.App.UI
             this.colNama,
             this.colPassword,
             this.colIsAdmin,
+            this.colIsGudang,
+            this.colIsSuperAdmin,
             this.colIDUserEntri,
             this.colTglEntri,
             this.colIDUserEdit,
@@ -256,7 +260,7 @@ namespace Inventory.App.UI
             this.colIDUserEntri.OptionsColumn.AllowEdit = false;
             this.colIDUserEntri.OptionsColumn.AllowFocus = false;
             this.colIDUserEntri.Visible = true;
-            this.colIDUserEntri.VisibleIndex = 4;
+            this.colIDUserEntri.VisibleIndex = 6;
             this.colIDUserEntri.Width = 135;
             // 
             // repositoryItemUser
@@ -275,7 +279,7 @@ namespace Inventory.App.UI
             this.colTglEntri.OptionsColumn.AllowEdit = false;
             this.colTglEntri.OptionsColumn.AllowFocus = false;
             this.colTglEntri.Visible = true;
-            this.colTglEntri.VisibleIndex = 5;
+            this.colTglEntri.VisibleIndex = 7;
             this.colTglEntri.Width = 159;
             // 
             // colIDUserEdit
@@ -287,7 +291,7 @@ namespace Inventory.App.UI
             this.colIDUserEdit.OptionsColumn.AllowEdit = false;
             this.colIDUserEdit.OptionsColumn.AllowFocus = false;
             this.colIDUserEdit.Visible = true;
-            this.colIDUserEdit.VisibleIndex = 6;
+            this.colIDUserEdit.VisibleIndex = 8;
             this.colIDUserEdit.Width = 108;
             // 
             // colTglEdit
@@ -299,7 +303,7 @@ namespace Inventory.App.UI
             this.colTglEdit.OptionsColumn.AllowEdit = false;
             this.colTglEdit.OptionsColumn.AllowFocus = false;
             this.colTglEdit.Visible = true;
-            this.colTglEdit.VisibleIndex = 7;
+            this.colTglEdit.VisibleIndex = 9;
             this.colTglEdit.Width = 144;
             // 
             // colIDUserHapus
@@ -319,6 +323,22 @@ namespace Inventory.App.UI
             this.colTglHapus.Name = "colTglHapus";
             this.colTglHapus.OptionsColumn.AllowEdit = false;
             this.colTglHapus.OptionsColumn.AllowFocus = false;
+            // 
+            // colIsGudang
+            // 
+            this.colIsGudang.Caption = "Gudang";
+            this.colIsGudang.FieldName = "IsGudang";
+            this.colIsGudang.Name = "colIsGudang";
+            this.colIsGudang.Visible = true;
+            this.colIsGudang.VisibleIndex = 4;
+            // 
+            // colIsSuperAdmin
+            // 
+            this.colIsSuperAdmin.Caption = "Super Admin";
+            this.colIsSuperAdmin.FieldName = "IsSuperAdmin";
+            this.colIsSuperAdmin.Name = "colIsSuperAdmin";
+            this.colIsSuperAdmin.Visible = true;
+            this.colIsSuperAdmin.VisibleIndex = 5;
             // 
             // frmManajemenUser
             // 
@@ -372,5 +392,7 @@ namespace Inventory.App.UI
         private DevExpress.XtraGrid.Columns.GridColumn colTglHapus;
         private DevExpress.XtraGrid.Columns.GridColumn colID;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemPassword;
+        private DevExpress.XtraGrid.Columns.GridColumn colIsGudang;
+        private DevExpress.XtraGrid.Columns.GridColumn colIsSuperAdmin;
     }
 }

@@ -61,6 +61,7 @@ namespace Inventory.App.UI
                 bbiListBarangMasuk.Enabled = false;
                 bbiPembelian.Enabled = false;
                 bbiReturPembelian.Enabled = false;
+                bbiPengirimanBarang.Enabled = false;
 
                 foreach (var item in this.MdiChildren)
                 {
@@ -91,6 +92,7 @@ namespace Inventory.App.UI
                 bbiListBarangMasuk.Enabled = true;
                 bbiPembelian.Enabled = Constant.UserLogin.IsSuperAdmin || Constant.UserLogin.IsAdmin;
                 bbiReturPembelian.Enabled = Constant.UserLogin.IsSuperAdmin || Constant.UserLogin.IsAdmin;
+                bbiPengirimanBarang.Enabled = Constant.UserLogin.IsSuperAdmin || Constant.UserLogin.IsGudang;
 
                 //Dashboard
                 if (Utils.Constant.UserLogin.IsAdmin)
@@ -128,7 +130,7 @@ namespace Inventory.App.UI
 
                         // Simpan perubahan ke konfigurasi
                         Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                        config.ConnectionStrings.ConnectionStrings["E4Storage"].ConnectionString = Constant.appSetting.KoneksiString;
+                        config.ConnectionStrings.ConnectionStrings["Inventory"].ConnectionString = Constant.appSetting.KoneksiString;
                         config.Save(ConfigurationSaveMode.Modified);
                         ConfigurationManager.RefreshSection("connectionStrings");
 
@@ -502,6 +504,28 @@ namespace Inventory.App.UI
         private void bbcEditReport_CheckedChanged(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Constant.EditReport = bbcEditReport.Checked;
+        }
+
+        private void bbiPengirimanBarang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (isLogin())
+            {
+                System.Windows.Forms.Form frmOld = this.MdiChildren.ToList().FirstOrDefault(o => o.GetType() == typeof(frmDaftarPengirimanBarang));
+                if (frmOld != null)
+                {
+                    frmOld.Show();
+                    frmOld.Focus();
+                }
+                else
+                {
+                    frmOld = new frmDaftarPengirimanBarang
+                    {
+                        MdiParent = this
+                    };
+                    frmOld.Show();
+                    frmOld.Focus();
+                }
+            }
         }
     }
 }

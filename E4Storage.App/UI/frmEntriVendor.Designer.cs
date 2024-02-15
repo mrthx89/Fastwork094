@@ -55,16 +55,9 @@ namespace Inventory.App.UI
             this.IDUserHapusSearchLookUpEdit = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.TglHapusDateEdit = new DevExpress.XtraEditors.DateEdit();
+            this.AddressMemoEdit = new DevExpress.XtraEditors.MemoEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.ItemForIDUserEntri = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForTglEntri = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForIDUserEdit = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForTglEdit = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForActive = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForIDUserHapus = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForTglHapus = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
             this.tabbedControlGroup1 = new DevExpress.XtraLayout.TabbedControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.ItemForCode = new DevExpress.XtraLayout.LayoutControlItem();
@@ -74,8 +67,17 @@ namespace Inventory.App.UI
             this.ItemForEmail = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForCell = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForContactPerson = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForActive = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.AddressMemoEdit = new DevExpress.XtraEditors.MemoEdit();
+            this.ItemForIDUserEntri = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForTglEntri = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForIDUserEdit = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForTglEdit = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForIDUserHapus = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForTglHapus = new DevExpress.XtraLayout.LayoutControlItem();
+            this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
+            this.NPWPTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.ItemForNPWP = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
@@ -99,16 +101,9 @@ namespace Inventory.App.UI
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TglHapusDateEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TglHapusDateEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddressMemoEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForIDUserEntri)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForTglEntri)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForIDUserEdit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForTglEdit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForActive)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForIDUserHapus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForTglHapus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCode)).BeginInit();
@@ -118,8 +113,17 @@ namespace Inventory.App.UI
             ((System.ComponentModel.ISupportInitialize)(this.ItemForEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCell)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForContactPerson)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForActive)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AddressMemoEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForIDUserEntri)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForTglEntri)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForIDUserEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForTglEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForIDUserHapus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForTglHapus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NPWPTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForNPWP)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -165,7 +169,7 @@ namespace Inventory.App.UI
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 331);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 347);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(405, 0);
             // 
@@ -175,7 +179,7 @@ namespace Inventory.App.UI
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 20);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 311);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 327);
             // 
             // barDockControlRight
             // 
@@ -183,7 +187,7 @@ namespace Inventory.App.UI
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(405, 20);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 311);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 327);
             // 
             // dataLayoutControl1
             // 
@@ -201,12 +205,13 @@ namespace Inventory.App.UI
             this.dataLayoutControl1.Controls.Add(this.IDUserHapusSearchLookUpEdit);
             this.dataLayoutControl1.Controls.Add(this.TglHapusDateEdit);
             this.dataLayoutControl1.Controls.Add(this.AddressMemoEdit);
+            this.dataLayoutControl1.Controls.Add(this.NPWPTextEdit);
             this.dataLayoutControl1.DataSource = this.vendorMasterBindingSource;
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataLayoutControl1.Location = new System.Drawing.Point(0, 20);
             this.dataLayoutControl1.Name = "dataLayoutControl1";
             this.dataLayoutControl1.Root = this.Root;
-            this.dataLayoutControl1.Size = new System.Drawing.Size(405, 311);
+            this.dataLayoutControl1.Size = new System.Drawing.Size(405, 327);
             this.dataLayoutControl1.TabIndex = 4;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
             // 
@@ -333,7 +338,7 @@ namespace Inventory.App.UI
             // 
             this.PhoneTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vendorMasterBindingSource, "Phone", true));
             this.PhoneTextEdit.EnterMoveNextControl = true;
-            this.PhoneTextEdit.Location = new System.Drawing.Point(101, 171);
+            this.PhoneTextEdit.Location = new System.Drawing.Point(101, 163);
             this.PhoneTextEdit.MenuManager = this.barManager1;
             this.PhoneTextEdit.Name = "PhoneTextEdit";
             this.PhoneTextEdit.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -345,7 +350,7 @@ namespace Inventory.App.UI
             // 
             this.EmailTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vendorMasterBindingSource, "Email", true));
             this.EmailTextEdit.EnterMoveNextControl = true;
-            this.EmailTextEdit.Location = new System.Drawing.Point(101, 195);
+            this.EmailTextEdit.Location = new System.Drawing.Point(101, 187);
             this.EmailTextEdit.MenuManager = this.barManager1;
             this.EmailTextEdit.Name = "EmailTextEdit";
             this.EmailTextEdit.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
@@ -361,7 +366,7 @@ namespace Inventory.App.UI
             // 
             this.CellTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vendorMasterBindingSource, "Cell", true));
             this.CellTextEdit.EnterMoveNextControl = true;
-            this.CellTextEdit.Location = new System.Drawing.Point(101, 219);
+            this.CellTextEdit.Location = new System.Drawing.Point(101, 211);
             this.CellTextEdit.MenuManager = this.barManager1;
             this.CellTextEdit.Name = "CellTextEdit";
             this.CellTextEdit.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -373,7 +378,7 @@ namespace Inventory.App.UI
             // 
             this.ContactPersonTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vendorMasterBindingSource, "ContactPerson", true));
             this.ContactPersonTextEdit.EnterMoveNextControl = true;
-            this.ContactPersonTextEdit.Location = new System.Drawing.Point(101, 243);
+            this.ContactPersonTextEdit.Location = new System.Drawing.Point(101, 235);
             this.ContactPersonTextEdit.MenuManager = this.barManager1;
             this.ContactPersonTextEdit.Name = "ContactPersonTextEdit";
             this.ContactPersonTextEdit.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -384,7 +389,7 @@ namespace Inventory.App.UI
             // ActiveCheckEdit
             // 
             this.ActiveCheckEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vendorMasterBindingSource, "Active", true));
-            this.ActiveCheckEdit.Location = new System.Drawing.Point(24, 267);
+            this.ActiveCheckEdit.Location = new System.Drawing.Point(24, 283);
             this.ActiveCheckEdit.MenuManager = this.barManager1;
             this.ActiveCheckEdit.Name = "ActiveCheckEdit";
             this.ActiveCheckEdit.Properties.Caption = "Active";
@@ -436,6 +441,17 @@ namespace Inventory.App.UI
             this.TglHapusDateEdit.StyleController = this.dataLayoutControl1;
             this.TglHapusDateEdit.TabIndex = 25;
             // 
+            // AddressMemoEdit
+            // 
+            this.AddressMemoEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vendorMasterBindingSource, "Address", true));
+            this.AddressMemoEdit.Location = new System.Drawing.Point(101, 95);
+            this.AddressMemoEdit.MenuManager = this.barManager1;
+            this.AddressMemoEdit.Name = "AddressMemoEdit";
+            this.AddressMemoEdit.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.AddressMemoEdit.Size = new System.Drawing.Size(280, 64);
+            this.AddressMemoEdit.StyleController = this.dataLayoutControl1;
+            this.AddressMemoEdit.TabIndex = 26;
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -443,7 +459,7 @@ namespace Inventory.App.UI
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(405, 311);
+            this.Root.Size = new System.Drawing.Size(405, 327);
             this.Root.TextVisible = false;
             // 
             // layoutControlGroup1
@@ -454,7 +470,121 @@ namespace Inventory.App.UI
             this.tabbedControlGroup1});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "autoGeneratedGroup0";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(385, 291);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(385, 307);
+            // 
+            // tabbedControlGroup1
+            // 
+            this.tabbedControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.tabbedControlGroup1.Name = "tabbedControlGroup1";
+            this.tabbedControlGroup1.SelectedTabPage = this.layoutControlGroup2;
+            this.tabbedControlGroup1.Size = new System.Drawing.Size(385, 307);
+            this.tabbedControlGroup1.TabPages.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlGroup2,
+            this.layoutControlGroup3});
+            // 
+            // layoutControlGroup2
+            // 
+            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.ItemForCode,
+            this.ItemForName,
+            this.ItemForAddress,
+            this.ItemForPhone,
+            this.ItemForEmail,
+            this.ItemForCell,
+            this.ItemForContactPerson,
+            this.ItemForActive,
+            this.ItemForNPWP});
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup2.Name = "layoutControlGroup2";
+            this.layoutControlGroup2.Size = new System.Drawing.Size(361, 260);
+            this.layoutControlGroup2.Text = "Informasi Umum";
+            // 
+            // ItemForCode
+            // 
+            this.ItemForCode.Control = this.CodeTextEdit;
+            this.ItemForCode.Location = new System.Drawing.Point(0, 0);
+            this.ItemForCode.Name = "ItemForCode";
+            this.ItemForCode.Size = new System.Drawing.Size(361, 24);
+            this.ItemForCode.Text = "Code";
+            this.ItemForCode.TextSize = new System.Drawing.Size(74, 13);
+            // 
+            // ItemForName
+            // 
+            this.ItemForName.Control = this.NameTextEdit;
+            this.ItemForName.Location = new System.Drawing.Point(0, 24);
+            this.ItemForName.Name = "ItemForName";
+            this.ItemForName.Size = new System.Drawing.Size(361, 24);
+            this.ItemForName.Text = "Name";
+            this.ItemForName.TextSize = new System.Drawing.Size(74, 13);
+            // 
+            // ItemForAddress
+            // 
+            this.ItemForAddress.Control = this.AddressMemoEdit;
+            this.ItemForAddress.Location = new System.Drawing.Point(0, 48);
+            this.ItemForAddress.Name = "ItemForAddress";
+            this.ItemForAddress.Size = new System.Drawing.Size(361, 68);
+            this.ItemForAddress.Text = "Address";
+            this.ItemForAddress.TextSize = new System.Drawing.Size(74, 13);
+            // 
+            // ItemForPhone
+            // 
+            this.ItemForPhone.Control = this.PhoneTextEdit;
+            this.ItemForPhone.Location = new System.Drawing.Point(0, 116);
+            this.ItemForPhone.Name = "ItemForPhone";
+            this.ItemForPhone.Size = new System.Drawing.Size(361, 24);
+            this.ItemForPhone.Text = "Phone";
+            this.ItemForPhone.TextSize = new System.Drawing.Size(74, 13);
+            // 
+            // ItemForEmail
+            // 
+            this.ItemForEmail.Control = this.EmailTextEdit;
+            this.ItemForEmail.Location = new System.Drawing.Point(0, 140);
+            this.ItemForEmail.Name = "ItemForEmail";
+            this.ItemForEmail.Size = new System.Drawing.Size(361, 24);
+            this.ItemForEmail.Text = "Email";
+            this.ItemForEmail.TextSize = new System.Drawing.Size(74, 13);
+            // 
+            // ItemForCell
+            // 
+            this.ItemForCell.Control = this.CellTextEdit;
+            this.ItemForCell.Location = new System.Drawing.Point(0, 164);
+            this.ItemForCell.Name = "ItemForCell";
+            this.ItemForCell.Size = new System.Drawing.Size(361, 24);
+            this.ItemForCell.Text = "Cell";
+            this.ItemForCell.TextSize = new System.Drawing.Size(74, 13);
+            // 
+            // ItemForContactPerson
+            // 
+            this.ItemForContactPerson.Control = this.ContactPersonTextEdit;
+            this.ItemForContactPerson.Location = new System.Drawing.Point(0, 188);
+            this.ItemForContactPerson.Name = "ItemForContactPerson";
+            this.ItemForContactPerson.Size = new System.Drawing.Size(361, 24);
+            this.ItemForContactPerson.Text = "Contact Person";
+            this.ItemForContactPerson.TextSize = new System.Drawing.Size(74, 13);
+            // 
+            // ItemForActive
+            // 
+            this.ItemForActive.Control = this.ActiveCheckEdit;
+            this.ItemForActive.Location = new System.Drawing.Point(0, 236);
+            this.ItemForActive.Name = "ItemForActive";
+            this.ItemForActive.Size = new System.Drawing.Size(361, 24);
+            this.ItemForActive.Text = "Active";
+            this.ItemForActive.TextSize = new System.Drawing.Size(0, 0);
+            this.ItemForActive.TextVisible = false;
+            // 
+            // layoutControlGroup3
+            // 
+            this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.ItemForIDUserEntri,
+            this.ItemForTglEntri,
+            this.ItemForIDUserEdit,
+            this.ItemForTglEdit,
+            this.ItemForIDUserHapus,
+            this.ItemForTglHapus});
+            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup3.Name = "layoutControlGroup3";
+            this.layoutControlGroup3.Size = new System.Drawing.Size(361, 260);
+            this.layoutControlGroup3.Text = "Log Data";
             // 
             // ItemForIDUserEntri
             // 
@@ -492,16 +622,6 @@ namespace Inventory.App.UI
             this.ItemForTglEdit.Text = "Tgl Edit";
             this.ItemForTglEdit.TextSize = new System.Drawing.Size(74, 13);
             // 
-            // ItemForActive
-            // 
-            this.ItemForActive.Control = this.ActiveCheckEdit;
-            this.ItemForActive.Location = new System.Drawing.Point(0, 220);
-            this.ItemForActive.Name = "ItemForActive";
-            this.ItemForActive.Size = new System.Drawing.Size(361, 24);
-            this.ItemForActive.Text = "Active";
-            this.ItemForActive.TextSize = new System.Drawing.Size(0, 0);
-            this.ItemForActive.TextVisible = false;
-            // 
             // ItemForIDUserHapus
             // 
             this.ItemForIDUserHapus.Control = this.IDUserHapusSearchLookUpEdit;
@@ -516,7 +636,7 @@ namespace Inventory.App.UI
             this.ItemForTglHapus.Control = this.TglHapusDateEdit;
             this.ItemForTglHapus.Location = new System.Drawing.Point(0, 120);
             this.ItemForTglHapus.Name = "ItemForTglHapus";
-            this.ItemForTglHapus.Size = new System.Drawing.Size(361, 124);
+            this.ItemForTglHapus.Size = new System.Drawing.Size(361, 140);
             this.ItemForTglHapus.Text = "Tgl Hapus";
             this.ItemForTglHapus.TextSize = new System.Drawing.Size(74, 13);
             // 
@@ -524,125 +644,30 @@ namespace Inventory.App.UI
             // 
             this.dxErrorProvider1.ContainerControl = this;
             // 
-            // tabbedControlGroup1
+            // NPWPTextEdit
             // 
-            this.tabbedControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.tabbedControlGroup1.Name = "tabbedControlGroup1";
-            this.tabbedControlGroup1.SelectedTabPage = this.layoutControlGroup2;
-            this.tabbedControlGroup1.Size = new System.Drawing.Size(385, 291);
-            this.tabbedControlGroup1.TabPages.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlGroup2,
-            this.layoutControlGroup3});
+            this.NPWPTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vendorMasterBindingSource, "NPWP", true));
+            this.NPWPTextEdit.Location = new System.Drawing.Point(101, 259);
+            this.NPWPTextEdit.MenuManager = this.barManager1;
+            this.NPWPTextEdit.Name = "NPWPTextEdit";
+            this.NPWPTextEdit.Size = new System.Drawing.Size(280, 20);
+            this.NPWPTextEdit.StyleController = this.dataLayoutControl1;
+            this.NPWPTextEdit.TabIndex = 27;
             // 
-            // layoutControlGroup2
+            // ItemForNPWP
             // 
-            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.ItemForCode,
-            this.ItemForName,
-            this.ItemForAddress,
-            this.ItemForPhone,
-            this.ItemForEmail,
-            this.ItemForCell,
-            this.ItemForContactPerson,
-            this.ItemForActive});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(361, 244);
-            this.layoutControlGroup2.Text = "Informasi Umum";
-            // 
-            // ItemForCode
-            // 
-            this.ItemForCode.Control = this.CodeTextEdit;
-            this.ItemForCode.Location = new System.Drawing.Point(0, 0);
-            this.ItemForCode.Name = "ItemForCode";
-            this.ItemForCode.Size = new System.Drawing.Size(361, 24);
-            this.ItemForCode.Text = "Code";
-            this.ItemForCode.TextSize = new System.Drawing.Size(74, 13);
-            // 
-            // ItemForName
-            // 
-            this.ItemForName.Control = this.NameTextEdit;
-            this.ItemForName.Location = new System.Drawing.Point(0, 24);
-            this.ItemForName.Name = "ItemForName";
-            this.ItemForName.Size = new System.Drawing.Size(361, 24);
-            this.ItemForName.Text = "Name";
-            this.ItemForName.TextSize = new System.Drawing.Size(74, 13);
-            // 
-            // ItemForAddress
-            // 
-            this.ItemForAddress.Control = this.AddressMemoEdit;
-            this.ItemForAddress.Location = new System.Drawing.Point(0, 48);
-            this.ItemForAddress.Name = "ItemForAddress";
-            this.ItemForAddress.Size = new System.Drawing.Size(361, 76);
-            this.ItemForAddress.Text = "Address";
-            this.ItemForAddress.TextSize = new System.Drawing.Size(74, 13);
-            // 
-            // ItemForPhone
-            // 
-            this.ItemForPhone.Control = this.PhoneTextEdit;
-            this.ItemForPhone.Location = new System.Drawing.Point(0, 124);
-            this.ItemForPhone.Name = "ItemForPhone";
-            this.ItemForPhone.Size = new System.Drawing.Size(361, 24);
-            this.ItemForPhone.Text = "Phone";
-            this.ItemForPhone.TextSize = new System.Drawing.Size(74, 13);
-            // 
-            // ItemForEmail
-            // 
-            this.ItemForEmail.Control = this.EmailTextEdit;
-            this.ItemForEmail.Location = new System.Drawing.Point(0, 148);
-            this.ItemForEmail.Name = "ItemForEmail";
-            this.ItemForEmail.Size = new System.Drawing.Size(361, 24);
-            this.ItemForEmail.Text = "Email";
-            this.ItemForEmail.TextSize = new System.Drawing.Size(74, 13);
-            // 
-            // ItemForCell
-            // 
-            this.ItemForCell.Control = this.CellTextEdit;
-            this.ItemForCell.Location = new System.Drawing.Point(0, 172);
-            this.ItemForCell.Name = "ItemForCell";
-            this.ItemForCell.Size = new System.Drawing.Size(361, 24);
-            this.ItemForCell.Text = "Cell";
-            this.ItemForCell.TextSize = new System.Drawing.Size(74, 13);
-            // 
-            // ItemForContactPerson
-            // 
-            this.ItemForContactPerson.Control = this.ContactPersonTextEdit;
-            this.ItemForContactPerson.Location = new System.Drawing.Point(0, 196);
-            this.ItemForContactPerson.Name = "ItemForContactPerson";
-            this.ItemForContactPerson.Size = new System.Drawing.Size(361, 24);
-            this.ItemForContactPerson.Text = "Contact Person";
-            this.ItemForContactPerson.TextSize = new System.Drawing.Size(74, 13);
-            // 
-            // layoutControlGroup3
-            // 
-            this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.ItemForIDUserEntri,
-            this.ItemForTglEntri,
-            this.ItemForIDUserEdit,
-            this.ItemForTglEdit,
-            this.ItemForIDUserHapus,
-            this.ItemForTglHapus});
-            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(361, 244);
-            this.layoutControlGroup3.Text = "Log Data";
-            // 
-            // AddressMemoEdit
-            // 
-            this.AddressMemoEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.vendorMasterBindingSource, "Address", true));
-            this.AddressMemoEdit.Location = new System.Drawing.Point(101, 95);
-            this.AddressMemoEdit.MenuManager = this.barManager1;
-            this.AddressMemoEdit.Name = "AddressMemoEdit";
-            this.AddressMemoEdit.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.AddressMemoEdit.Size = new System.Drawing.Size(280, 72);
-            this.AddressMemoEdit.StyleController = this.dataLayoutControl1;
-            this.AddressMemoEdit.TabIndex = 26;
+            this.ItemForNPWP.Control = this.NPWPTextEdit;
+            this.ItemForNPWP.Location = new System.Drawing.Point(0, 212);
+            this.ItemForNPWP.Name = "ItemForNPWP";
+            this.ItemForNPWP.Size = new System.Drawing.Size(361, 24);
+            this.ItemForNPWP.Text = "NPWP";
+            this.ItemForNPWP.TextSize = new System.Drawing.Size(74, 13);
             // 
             // frmEntriVendor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(405, 331);
+            this.ClientSize = new System.Drawing.Size(405, 347);
             this.Controls.Add(this.dataLayoutControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -676,16 +701,9 @@ namespace Inventory.App.UI
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TglHapusDateEdit.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TglHapusDateEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddressMemoEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForIDUserEntri)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForTglEntri)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForIDUserEdit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForTglEdit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForActive)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForIDUserHapus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForTglHapus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCode)).EndInit();
@@ -695,8 +713,17 @@ namespace Inventory.App.UI
             ((System.ComponentModel.ISupportInitialize)(this.ItemForEmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCell)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForContactPerson)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForActive)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AddressMemoEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForIDUserEntri)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForTglEntri)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForIDUserEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForTglEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForIDUserHapus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForTglHapus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NPWPTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForNPWP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -750,5 +777,7 @@ namespace Inventory.App.UI
         private DevExpress.XtraLayout.LayoutControlItem ItemForContactPerson;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
         private DevExpress.XtraEditors.MemoEdit AddressMemoEdit;
+        private DevExpress.XtraEditors.TextEdit NPWPTextEdit;
+        private DevExpress.XtraLayout.LayoutControlItem ItemForNPWP;
     }
 }

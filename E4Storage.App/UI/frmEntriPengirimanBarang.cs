@@ -18,35 +18,39 @@ using DevExpress.XtraGrid.Views.Grid;
 
 namespace Inventory.App.UI
 {
-    public partial class frmEntriPembelian : DevExpress.XtraEditors.XtraForm
+    public partial class frmEntriPengirimanBarang : DevExpress.XtraEditors.XtraForm
     {
-        public Purchase data;
-        public frmEntriPembelian(Purchase data)
+        public DO data;
+        public frmEntriPengirimanBarang(DO data)
         {
             InitializeComponent();
             this.data = data;
         }
 
-        private void frmEntriPembelian_Load(object sender, EventArgs e)
+        private void frmEntriPengirimanBarang_Load(object sender, EventArgs e)
         {
             Constant.layoutsHelper.RestoreLayouts(this.Name, dataLayoutControl1);
             refreshLookUp();
             if (data == null)
             {
                 //Create Baru
-                data = new Purchase
+                data = new DO
                 {
                     ID = Guid.NewGuid(),
                     DocNo = "",
                     DocDate = DateTime.Now,
-                    IDVendor = Guid.Empty,
-                    DiscProsen = 0d,
+                    IDCustomer = Guid.Empty,
                     IDWarehouse = Guid.Empty,
                     NoReff = "",
                     Note = "",
-                    PurchaseDtl = new List<PurchaseDtl>(),
-                    TaxProsen = 11,
-                    TaxType = 0,
+                    ConditionDelivery = "",
+                    ContainerNo = "",
+                    Finish = false,
+                    Plant = "",
+                    SalesOrderNo = "",
+                    SealNo = "",
+                    VehicleNo = "",
+                    DODtl = new List<DODtl>(),
                     Void = false,
                     IDUserEdit = Guid.Empty,
                     IDUserEntri = Constant.UserLogin.ID,
@@ -56,7 +60,7 @@ namespace Inventory.App.UI
                     TglHapus = DateTime.Parse("1900-01-01")
                 };
             }
-            PurchaseMasterBindingSource.DataSource = data;
+            DOMasterBindingSource.DataSource = data;
             dataLayoutControl1.Refresh();
 
             gridView1.DataSourceChanged += gridView1_DataSourceChanged;
@@ -68,20 +72,20 @@ namespace Inventory.App.UI
             gvData.InitNewRow += gridView1_InitNewRow;
 
             //Kalau Sudah Void Maka diKunci
-            mnSimpan.Enabled = !data.Void;
-            mnDelete.Enabled = !data.Void;
-            gvData.OptionsBehavior.Editable = !data.Void;
-            gvData.OptionsView.NewItemRowPosition = data.Void ? NewItemRowPosition.None : NewItemRowPosition.Bottom;
+            mnSimpan.Enabled = !data.Void && !data.Finish;
+            mnDelete.Enabled = !data.Void && !data.Finish;
+            gvData.OptionsBehavior.Editable = !data.Void && !data.Finish;
+            gvData.OptionsView.NewItemRowPosition = data.Void || data.Finish ? NewItemRowPosition.None : NewItemRowPosition.Bottom;
         }
 
         private void gridView1_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
         {
             try
             {
-                int NoUrut = data.PurchaseDtl.Max(o => o.NoUrut);
+                int NoUrut = data.DODtl.Max(o => o.NoUrut);
                 gridView1.SetRowCellValue(e.RowHandle, colNoUrut, NoUrut + 1);
                 gridView1.SetRowCellValue(e.RowHandle, colID, Guid.NewGuid());
-                gridView1.SetRowCellValue(e.RowHandle, colIDPurchase, data.ID);
+                gridView1.SetRowCellValue(e.RowHandle, colIDDO, data.ID);
                 gridView1.SetRowCellValue(e.RowHandle, colIDInventor, Guid.Empty);
                 gridView1.SetRowCellValue(e.RowHandle, colIDUOM, Guid.Empty);
             }
@@ -108,22 +112,22 @@ namespace Inventory.App.UI
                     {
                         dxErrorProvider1.SetError(IDWarehouseSearchLookUpEdit, "Gudang harus dipilih!");
                     }
-                    if (data.IDVendor == null || data.IDVendor == Guid.Empty)
+                    if (data.IDCustomer == null || data.IDCustomer == Guid.Empty)
                     {
-                        dxErrorProvider1.SetError(IDVendorSearchLookUpEdit, "Supplier harus dipilih!");
+                        dxErrorProvider1.SetError(IDCustomerSearchLookUpEdit, "Customer harus dipilih!");
                     }
-                    if (data.PurchaseDtl == null || data.PurchaseDtl.Count == 0)
+                    if (data.DODtl == null || data.DODtl.Count == 0)
                     {
                         dxErrorProvider1.SetError(DocNoTextEdit, "Item Barang belum ada!");
                     }
                     if (data.Void)
                     {
-                        dxErrorProvider1.SetError(DocNoTextEdit, "Pembelian ini telah divoid!");
+                        dxErrorProvider1.SetError(DocNoTextEdit, "PengirimanBarang ini telah divoid!");
                     }
 
                     if (!dxErrorProvider1.HasErrors)
                     {
-                        var save = Repository.Pembelian.savePurchases(data);
+                        var save = Repository.PengirimanBarang.saveDOs(data);
                         if (save.Item1)
                         {
                             this.data = save.Item3;
@@ -148,7 +152,7 @@ namespace Inventory.App.UI
             }
         }
 
-        private void frmEntriPembelian_FormClosing(object sender, FormClosingEventArgs e)
+        private void frmEntriPengirimanBarang_FormClosing(object sender, FormClosingEventArgs e)
         {
             Constant.layoutsHelper.SaveLayouts(this.Name, dataLayoutControl1);
             Constant.layoutsHelper.SaveLayouts(this.Name, gridView1);
@@ -215,11 +219,11 @@ namespace Inventory.App.UI
                     repositoryItemSatuan.ValueMember = "ID";
                     repositoryItemSatuan.DisplayMember = "Satuan";
 
-                    var callVendor = Repository.Vendor.getLookUpVendors(null);
-                    IDVendorSearchLookUpEdit.Properties.DataSource = (from x in callVendor.Item2
-                                                                      select new { x.ID, Supplier = x.Code + " - " + x.Name, x.Address }).ToList();
-                    IDVendorSearchLookUpEdit.Properties.ValueMember = "ID";
-                    IDVendorSearchLookUpEdit.Properties.DisplayMember = "Supplier";
+                    var callCustomer = Repository.Customer.getLookUpCustomers(null);
+                    IDCustomerSearchLookUpEdit.Properties.DataSource = (from x in callCustomer.Item2
+                                                                        select new { x.ID, Customer = x.Code + " - " + x.Name, x.Address }).ToList();
+                    IDCustomerSearchLookUpEdit.Properties.ValueMember = "ID";
+                    IDCustomerSearchLookUpEdit.Properties.DisplayMember = "Customer";
 
                     var callWarehouse = Repository.Warehouse.getLookUpWarehouses(null);
                     IDWarehouseSearchLookUpEdit.Properties.DataSource = callWarehouse.Item2;
@@ -249,33 +253,6 @@ namespace Inventory.App.UI
             dataLayoutControl1.Validate();
             this.Validate();
 
-            if (data != null && data.PurchaseDtl != null)
-            {
-                foreach (var item in data.PurchaseDtl)
-                {
-                    item.Disc1Prosen = data.DiscProsen;
-                    if (data.SubTotal == 0)
-                    {
-                        item.Disc1 = Math.Round(item.Amount * (item.Disc1Prosen / 100d), 2);
-                    }
-                    else
-                    {
-                        item.Disc1 = Math.Round((item.Amount / data.SubTotal) * (data.DiscProsen / 100d), 2);
-                    }
-                    item.TaxProsen = data.TaxProsen;
-                    item.TaxDefault = 0d;//Math.Round(data.TaxType == 1 ? (data.SubTotal - data.Disc) / (1d + (data.TaxProsen / 100d)) : (SubTotal - Disc), 2);
-                    item.Tax = 0d;
-                    Application.DoEvents();
-                }
-            }
-            SubTotalTextEdit.EditValue = data.SubTotal;
-            DiscTextEdit.EditValue = data.Disc;
-            //double.TryParse(TaxProsenTextEdit.EditValue.ToString(), out double taxProsen);
-            //data.TaxProsen = taxProsen;
-            TaxDefaultTextEdit.EditValue = data.TaxDefault;
-            TaxTextEdit.EditValue = data.Tax;
-            TotalTextEdit.EditValue = data.Total;
-
             dataLayoutControl1.Refresh();
         }
 
@@ -283,12 +260,19 @@ namespace Inventory.App.UI
         {
             if (e.Valid)
             {
-                PurchaseDtl currentItem = (purchaseDtlBindingSource.Current as PurchaseDtl);
+                DODtl currentItem = (DODtlBindingSource.Current as DODtl);
                 ItemLookUp barang = listItem.FirstOrDefault(o => o.ID == currentItem.IDInventor);
                 if (barang != null)
                 {
                     currentItem.IDUOM = barang.IDUOM;
                     currentItem.Desc = barang.Desc;
+                    var grp = data.DODtl.Where(o => o.IDInventor == currentItem.IDInventor).Sum(o => o.Qty);
+
+                    if (currentItem.Qty > barang.Saldo || grp > barang.Saldo)
+                    {
+                        e.Valid = false;
+                        e.ErrorText = "Saldo Barang tidak mencukupi!";
+                    }
                 }
                 else
                 {
@@ -304,10 +288,10 @@ namespace Inventory.App.UI
         {
             if (e.Valid)
             {
-                PurchaseDtl currentItem = (purchaseDtlBindingSource.Current as PurchaseDtl);
+                DODtl currentItem = (DODtlBindingSource.Current as DODtl);
                 if (currentItem.NoUrut == 0)
                 {
-                    currentItem.NoUrut = data.PurchaseDtl.Max(o => o.NoUrut) + 1;
+                    currentItem.NoUrut = data.DODtl.Max(o => o.NoUrut) + 1;
                 }
                 Guid IDInventor = Guid.Empty;
                 if (gvData.FocusedColumn == colIDInventor)

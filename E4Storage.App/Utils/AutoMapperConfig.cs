@@ -15,6 +15,12 @@ namespace Inventory.App.Utils
         {
             var config = new MapperConfiguration(cfg =>
             {
+                cfg.CreateMap<TDODtl, DODtl>();
+                cfg.CreateMap<DODtl, TDODtl>();
+
+                cfg.CreateMap<TDO, DO>();
+                cfg.CreateMap<DO, TDO>();
+
                 cfg.CreateMap<TPurchaseDtl, PurchaseDtl>();
                 cfg.CreateMap<PurchaseDtl, TPurchaseDtl>();
 

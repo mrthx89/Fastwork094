@@ -67,11 +67,13 @@ namespace Inventory.App.Repository
                                                         TglHapus = x.TglHapus,
                                                         Note = x.Note,
                                                         Qty = x.Qty,
+                                                        QtyVoid = x.QtyVoid,
                                                         TaxDefault = x.TaxDefault,
                                                         TaxProsen = x.TaxProsen,
                                                         UnitPrice = x.UnitPrice,
                                                         Tax = x.Tax,
-                                                        Desc = i.Desc
+                                                        Desc = i.Desc,
+                                                        AmountVoid = x.AmountVoid
                                                     }).ToList()
                                  }).ToList();
                     hasil = new Tuple<bool, List<Purchase>>(true, items);
@@ -294,6 +296,117 @@ namespace Inventory.App.Repository
                             hasil = new Tuple<bool, string, DataSet>(false, ex.Message, null);
                         }
                     }
+                }
+            }
+            return hasil;
+        }
+
+        public static Tuple<bool, string, Purchase> deletePurchases(Purchase data)
+        {
+            bool saveHeader = false;
+            Tuple<bool, string, Purchase> hasil = new Tuple<bool, string, Purchase>(false, "", null);
+            using (Data.InventoryContext context = new Data.InventoryContext(Constant.appSetting.KoneksiString))
+            {
+                try
+                {
+                    int iLoc = 0;
+                    //Kosongi dulu Detailnya
+                    foreach (var item in data.PurchaseDtl.OrderBy(o => o.NoUrut))
+                    {
+                        iLoc++;
+                        item.ID = (item.ID == Guid.Empty ? Guid.NewGuid() : item.ID);
+                        item.IDPurchase = data.ID;
+                        item.NoUrut = iLoc;
+                        item.Disc1Prosen = 0d;
+                        item.Disc1 = 0d;
+                        item.TaxDefault = 0d;
+                        item.TaxProsen = 0d;
+                        item.Tax = 0d;
+                    }
+                    iLoc = 0;
+                    foreach (var item in data.PurchaseDtl.OrderBy(o => o.Amount))
+                    {
+                        iLoc++;
+                        item.Disc1Prosen = data.DiscProsen;
+                        item.Disc1 = Math.Round(item.Amount * (item.Disc1Prosen / 100d), 2);
+                        if (iLoc >= data.PurchaseDtl.Count)
+                        {
+                            //Addjustment
+                            item.Disc1 += data.Disc - data.PurchaseDtl.Sum(o => o.Disc1);
+                        }
+                        item.TaxProsen = data.TaxProsen;
+                        item.TaxDefault = Math.Round(data.TaxType == 1 ? (item.Amount - item.Disc1) / (1d + (item.TaxProsen / 100d)) : (item.Amount - item.Disc1), 2);
+                        if (iLoc >= data.PurchaseDtl.Count)
+                        {
+                            //Addjustment
+                            item.TaxDefault += data.TaxDefault - data.PurchaseDtl.Sum(o => o.TaxDefault);
+                        }
+                        item.Tax = Math.Round(data.TaxType == 0 ? 0d : data.TaxType == 1 ? (item.Amount - item.Disc1) - item.TaxDefault : item.TaxDefault * (item.TaxProsen / 100d), 2);
+                        if (iLoc >= data.PurchaseDtl.Count)
+                        {
+                            //Addjustment
+                            item.Tax += data.Tax - data.PurchaseDtl.Sum(o => o.Tax);
+                        }
+                    }
+
+                    var dataExist = context.TPurchases.FirstOrDefault(o => o.ID == data.ID);
+                    if (dataExist != null)
+                    {
+                        //Edit
+                        if (dataExist.Void)
+                        {
+                            hasil = new Tuple<bool, string, Purchase>(false, "Data telah divoid!", null);
+                            saveHeader = false;
+                        }
+                        else
+                        {
+                            iLoc = 0;
+                            foreach (var item in data.PurchaseDtl.OrderBy(o => o.Amount))
+                            {
+                                iLoc++;
+                                item.QtyVoid = item.Qty;
+                                item.AmountVoid = item.Amount;
+                                item.Qty = 0;
+                                
+                                item.Disc1Prosen = data.DiscProsen;
+                                item.Disc1 = Math.Round(item.Amount * (item.Disc1Prosen / 100d), 2);
+                            }
+                            data.Void = true;
+
+                            data.IDUserHapus = Constant.UserLogin.ID;
+                            data.TglHapus = DateTime.Now;
+
+                            context.Entry(dataExist).CurrentValues.SetValues(Constant.mapper.Map<Model.ViewModel.Purchase, TPurchase>(data));
+                            saveHeader = true;
+                        }
+                    }
+                    else
+                    {
+                        hasil = new Tuple<bool, string, Purchase>(false, "Data tidak ditemukan!", data);
+                        saveHeader = false;
+                    }
+
+                    if (saveHeader)
+                    {
+                        //Remove Kartu Stok
+                        context.TStockCards.RemoveRange(context.TStockCards.Where(o => o.IDTransaksi == data.ID && o.IDType == Constant.stokPembelian));
+                        //Remove Detail
+                        context.TPurchaseDtls.RemoveRange(context.TPurchaseDtls.Where(o => o.IDPurchase == data.ID));
+
+                        foreach (var item in data.PurchaseDtl.OrderBy(o => o.NoUrut))
+                        {
+                            TPurchaseDtl detil = Constant.mapper.Map<Model.ViewModel.PurchaseDtl, TPurchaseDtl>(item);
+                            //Insert Detail
+                            context.TPurchaseDtls.Add(detil);
+                        }
+
+                        context.SaveChanges();
+                        hasil = new Tuple<bool, string, Purchase>(true, "", data);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MsgBoxHelper.MsgError($"{Name}.getPurchases", ex);
                 }
             }
             return hasil;

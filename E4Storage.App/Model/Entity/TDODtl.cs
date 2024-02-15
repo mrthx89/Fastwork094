@@ -25,6 +25,8 @@ namespace Inventory.App.Model.Entity
         [Required]
         [Range(0, 999999999)]
         public double Qty { get; set; }
+        [Range(0, 999999999)]
+        public double QtyVoid { get; set; }
         [StringLength(255)]
         public string Note { get; set; }
         public bool Finish { get; set; }

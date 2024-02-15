@@ -49,7 +49,8 @@ namespace Inventory.App.UI
                     Cell = "",
                     ContactPerson = "",
                     Email = "",
-                    Phone = ""
+                    Phone = "",
+                    NPWP = ""
                 };
             }
             vendorMasterBindingSource.DataSource = data;

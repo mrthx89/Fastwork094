@@ -17,9 +17,9 @@ using Inventory.App.Model.Entity;
 
 namespace Inventory.App.UI
 {
-    public partial class frmDaftarPembelian : DevExpress.XtraEditors.XtraForm
+    public partial class frmDaftarPengirimanBarang : DevExpress.XtraEditors.XtraForm
     {
-        public frmDaftarPembelian()
+        public frmDaftarPengirimanBarang()
         {
             InitializeComponent();
         }
@@ -29,14 +29,14 @@ namespace Inventory.App.UI
             refreshData();
         }
 
-        private void frmDaftarPembelian_Load(object sender, EventArgs e)
+        private void frmDaftarPengirimanBarang_Load(object sender, EventArgs e)
         {
             this.dateEdit1.DateTime = DateTime.Now.Date.AddDays(-30);
             this.dateEdit2.DateTime = DateTime.Now.Date;
             mnRefresh.PerformClick();
         }
 
-        private void frmDaftarPembelian_FormCLossing(object sender, FormClosingEventArgs e)
+        private void frmDaftarPengirimanBarang_FormCLossing(object sender, FormClosingEventArgs e)
         {
             Constant.layoutsHelper.SaveLayouts(this.Name, gridView1);
         }
@@ -50,7 +50,7 @@ namespace Inventory.App.UI
         {
             try
             {
-                var item = (Purchase)purchaseBindingSource.Current;
+                var item = (DO)DOBindingSource.Current;
                 if (item != null)
                 {
                     addOrEdit(JSONHelper.CloneObject(item));
@@ -62,9 +62,9 @@ namespace Inventory.App.UI
             }
         }
 
-        private void addOrEdit(Purchase data)
+        private void addOrEdit(DO data)
         {
-            using (frmEntriPembelian frm = new frmEntriPembelian(data))
+            using (frmEntriPengirimanBarang frm = new frmEntriPengirimanBarang(data))
             {
                 try
                 {
@@ -88,12 +88,12 @@ namespace Inventory.App.UI
         {
             try
             {
-                var item = (Purchase)purchaseBindingSource.Current;
+                var item = (DO)DOBindingSource.Current;
                 if (item != null)
                 {
-                    if (MsgBoxHelper.MsgQuestionYesNo($"{this.Name}.mnHapus_ItemClick", $"Yakin ingin menghapus pembelian {item.DocNo} ini?") == DialogResult.Yes)
+                    if (MsgBoxHelper.MsgQuestionYesNo($"{this.Name}.mnHapus_ItemClick", $"Yakin ingin menghapus PengirimanBarang {item.DocNo} ini?") == DialogResult.Yes)
                     {
-                        var delete = Repository.Pembelian.deletePurchases(JSONHelper.CloneObject(item));
+                        var delete = Repository.PengirimanBarang.deleteDOs(JSONHelper.CloneObject(item));
                         if (delete.Item1)
                         {
                             mnRefresh.PerformClick();
@@ -112,7 +112,7 @@ namespace Inventory.App.UI
             Constant.layoutsHelper.RestoreLayouts(this.Name, gridView1);
         }
 
-        private List<Purchase> data = new List<Purchase>();
+        private List<DO> data = new List<DO>();
         private void refreshData()
         {
             using (WaitDialogForm dlg = new WaitDialogForm("Sedang merefresh data"))
@@ -124,46 +124,23 @@ namespace Inventory.App.UI
                     repositoryItemGudang.ValueMember = "ID";
                     repositoryItemGudang.DisplayMember = "Code";
 
-                    var callSupplier = Repository.Vendor.getLookUpVendors(null);
-                    repositoryItemSupplier.DataSource = (from x in (callSupplier.Item1 ? callSupplier.Item2 : new List<VendorLookUp>())
-                                                         select new { x.ID, Supplier = x.Code + " - " + x.Name }).ToList();
-                    repositoryItemSupplier.ValueMember = "ID";
-                    repositoryItemSupplier.DisplayMember = "Supplier";
+                    var callCustomer = Repository.Customer.getLookUpCustomers(null);
+                    repositoryItemCustomer.DataSource = (from x in (callCustomer.Item1 ? callCustomer.Item2 : new List<CustomerLookUp>())
+                                                         select new { x.ID, Customer = x.Code + " - " + x.Name }).ToList();
+                    repositoryItemCustomer.ValueMember = "ID";
+                    repositoryItemCustomer.DisplayMember = "Customer";
 
                     var callUser = Repository.User.getLookUp();
                     repositoryItemUser.DataSource = (callUser.Item1 ? callUser.Item2 : null);
                     repositoryItemUser.ValueMember = "ID";
                     repositoryItemUser.DisplayMember = "Nama";
 
-                    List<BaseLookUpInt> lookUpInt = new List<BaseLookUpInt>();
-                    lookUpInt.Add(new BaseLookUpInt
-                    {
-                        ID = 0,
-                        Code = "Non BKP",
-                        Name = "Barang Non BKP"
-                    });
-                    lookUpInt.Add(new BaseLookUpInt
-                    {
-                        ID = 1,
-                        Code = "Include",
-                        Name = "Barang Include Pajak"
-                    });
-                    lookUpInt.Add(new BaseLookUpInt
-                    {
-                        ID = 2,
-                        Code = "Exclude",
-                        Name = "Barang Exclude Pajak"
-                    });
-                    repositoryItemTypePPN.DataSource = lookUpInt;
-                    repositoryItemTypePPN.ValueMember = "ID";
-                    repositoryItemTypePPN.DisplayMember = "Code";
-
-                    var call = Repository.Pembelian.getPurchases(dateEdit1.DateTime, dateEdit2.DateTime);
+                    var call = Repository.PengirimanBarang.getDOs(dateEdit1.DateTime, dateEdit2.DateTime);
                     if (call.Item1)
                     {
                         data = call.Item2;
                     }
-                    purchaseBindingSource.DataSource = data;
+                    DOBindingSource.DataSource = data;
                     gridControl1.RefreshDataSource();
                 }
                 catch (Exception ex)
@@ -176,7 +153,7 @@ namespace Inventory.App.UI
         private void gridView1_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
         {
             // Access the underlying data object for the current row
-            Purchase rowData = gridView1.GetRow(e.RowHandle) as Purchase;
+            DO rowData = gridView1.GetRow(e.RowHandle) as DO;
             // Check the condition based on your requirements
             if (rowData != null && rowData.Void)
             {
@@ -191,10 +168,10 @@ namespace Inventory.App.UI
         {
             try
             {
-                var item = (Purchase)purchaseBindingSource.Current;
+                var item = (DO)DOBindingSource.Current;
                 if (item != null)
                 {
-                    printData(JSONHelper.CloneObject<Purchase>(item));
+                    printData(JSONHelper.CloneObject<DO>(item));
                 }
             }
             catch (Exception ex)
@@ -203,15 +180,15 @@ namespace Inventory.App.UI
             }
         }
 
-        private void printData(Purchase data)
+        private void printData(DO data)
         {
-            var print = Repository.Pembelian.getPrintData(data);
+            var print = Repository.PengirimanBarang.getPrintData(data);
             if (print.Item1)
             {
                 ReportHelper.ReportHandler(Utils.Constant.EditReport ? ReportHelper.StatusCetak.Edit : ReportHelper.StatusCetak.Preview, 
                     print.Item3, 
-                    "FakturPembelian.repx", 
-                    "Cetak Faktur Pembelian", 
+                    "FakturPengirimanBarang.repx", 
+                    "Cetak Faktur PengirimanBarang", 
                     new List<ReportHelper.Parameter>());
             }
             else

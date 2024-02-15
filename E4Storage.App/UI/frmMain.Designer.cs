@@ -63,6 +63,7 @@ namespace Inventory.App.UI
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.bbiPengirimanBarang = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionSmall)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionLarge)).BeginInit();
@@ -94,10 +95,11 @@ namespace Inventory.App.UI
             this.bbiMasterGudang,
             this.bbiPembelian,
             this.bbiReturPembelian,
-            this.bbcEditReport});
+            this.bbcEditReport,
+            this.bbiPengirimanBarang});
             this.ribbonControl1.LargeImages = this.imageCollectionLarge;
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 20;
+            this.ribbonControl1.MaxItemId = 21;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsTouch.ShowTouchUISelectorInQAT = true;
             this.ribbonControl1.OptionsTouch.ShowTouchUISelectorVisibilityItemInQATMenu = true;
@@ -106,7 +108,7 @@ namespace Inventory.App.UI
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
-            this.ribbonControl1.Size = new System.Drawing.Size(1085, 158);
+            this.ribbonControl1.Size = new System.Drawing.Size(1228, 158);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // imageCollectionSmall
@@ -357,6 +359,7 @@ namespace Inventory.App.UI
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiPembelian);
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiReturPembelian);
+            this.ribbonPageGroup1.ItemLinks.Add(this.bbiPengirimanBarang, true);
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiStokMasuk, true);
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiStokKeluar);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
@@ -378,17 +381,25 @@ namespace Inventory.App.UI
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 658);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1085, 24);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1228, 24);
             // 
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
+            // bbiPengirimanBarang
+            // 
+            this.bbiPengirimanBarang.Caption = "Pengiriman";
+            this.bbiPengirimanBarang.Id = 20;
+            this.bbiPengirimanBarang.ImageOptions.LargeImage = global::Inventory.App.Properties.Resources._004_distribution;
+            this.bbiPengirimanBarang.Name = "bbiPengirimanBarang";
+            this.bbiPengirimanBarang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiPengirimanBarang_ItemClick);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1085, 682);
+            this.ClientSize = new System.Drawing.Size(1228, 682);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.IconOptions.Image = global::Inventory.App.Properties.Resources.inventory;
@@ -396,7 +407,7 @@ namespace Inventory.App.UI
             this.Name = "frmMain";
             this.Ribbon = this.ribbonControl1;
             this.StatusBar = this.ribbonStatusBar1;
-            this.Text = "E4 Storage";
+            this.Text = "Inventory System";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
@@ -442,6 +453,7 @@ namespace Inventory.App.UI
         private DevExpress.XtraBars.BarButtonItem bbiPembelian;
         private DevExpress.XtraBars.BarButtonItem bbiReturPembelian;
         private DevExpress.XtraBars.BarCheckItem bbcEditReport;
+        private DevExpress.XtraBars.BarButtonItem bbiPengirimanBarang;
     }
 }
 
