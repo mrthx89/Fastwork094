@@ -44,7 +44,7 @@
       <property name="Name">colNoReff</property>
       <property name="VisibleIndex">2</property>
       <property name="Visible">true</property>
-      <property name="Width">65</property>
+      <property name="Width">71</property>
       <property name="MinWidth">23</property>
       <property name="MaxWidth">0</property>
     </property>

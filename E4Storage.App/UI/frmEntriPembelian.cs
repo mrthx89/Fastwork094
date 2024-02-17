@@ -196,7 +196,7 @@ namespace Inventory.App.UI
                     }
                     var callItem = Repository.Item.getLookUpInventors(DocDateDateEdit.EditValue == null ? DateTime.Parse("1900-01-01") : DocDateDateEdit.DateTime,
                                                                       IDWarehouse,
-                                                                      data.ID,
+                                                                      (data != null ? data.ID : Guid.Empty),
                                                                       null);
                     if (callItem.Item1)
                     {

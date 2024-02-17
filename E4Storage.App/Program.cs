@@ -43,7 +43,6 @@ namespace Inventory.App
                 if ((Constant.appSetting == null))
                     Constant.appSetting = new Model.AppSetting
                     {
-                        KoneksiString = ConfigurationManager.ConnectionStrings["Inventory"].ConnectionString,
                         Theme = "Office 2016 Colorful"
                     };
 

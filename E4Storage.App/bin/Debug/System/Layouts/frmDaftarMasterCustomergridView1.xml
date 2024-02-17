@@ -35,7 +35,7 @@
       <property name="Name">colName</property>
       <property name="VisibleIndex">1</property>
       <property name="Visible">true</property>
-      <property name="Width">120</property>
+      <property name="Width">111</property>
       <property name="MinWidth">23</property>
       <property name="MaxWidth">0</property>
     </property>
@@ -75,7 +75,7 @@
       <property name="Name">colIDUserEdit</property>
       <property name="VisibleIndex">6</property>
       <property name="Visible">true</property>
-      <property name="Width">73</property>
+      <property name="Width">111</property>
       <property name="MinWidth">23</property>
       <property name="MaxWidth">0</property>
     </property>
@@ -139,7 +139,7 @@
       <property name="Name">colNPWP</property>
       <property name="VisibleIndex">14</property>
       <property name="Visible">true</property>
-      <property name="Width">121</property>
+      <property name="Width">87</property>
       <property name="MinWidth">23</property>
       <property name="MaxWidth">0</property>
     </property>

@@ -26,21 +26,8 @@ namespace Inventory.App.UI
         {
             this.Validate();
 
-            using (Data.InventoryContext context = new Data.InventoryContext(AppSetting.KoneksiString))
-            {
-                try
-                {
-                    context.Database.Connection.Open();
-                    Inventory.App.Helper.MsgBoxHelper.MsgInfo($"{this.Name}.mnSimpan_ItemClick", "Koneksi terhubung!");
-
-                    DialogResult = DialogResult.OK;
-                    this.Close();
-                }
-                catch (Exception ex)
-                {
-                    Inventory.App.Helper.MsgBoxHelper.MsgError($"{this.Name}.mnSimpan_ItemClick", ex);
-                }
-            }
+            DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void frmSetting_Load(object sender, EventArgs e)
