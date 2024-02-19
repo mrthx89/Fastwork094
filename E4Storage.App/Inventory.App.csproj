@@ -200,9 +200,15 @@
     <Compile Include="Migrations\202402111119482_VoidItem.designer.cs">
       <DependentUpon>202402111119482_VoidItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202402191351515_IV.cs" />
+    <Compile Include="Migrations\202402191351515_IV.designer.cs">
+      <DependentUpon>202402191351515_IV.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\AppSetting.cs" />
     <Compile Include="Model\Entity\BaseTable.cs" />
+    <Compile Include="Model\Entity\TIVDtl.cs" />
+    <Compile Include="Model\Entity\TIV.cs" />
     <Compile Include="Model\Entity\TDODtl.cs" />
     <Compile Include="Model\Entity\TDO.cs" />
     <Compile Include="Model\Entity\TPurchase.cs" />
@@ -523,6 +529,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202402111119482_VoidItem.resx">
       <DependentUpon>202402111119482_VoidItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402191351515_IV.resx">
+      <DependentUpon>202402191351515_IV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Dialog\dlgOptionStokMasuk.resx">
       <DependentUpon>dlgOptionStokMasuk.cs</DependentUpon>

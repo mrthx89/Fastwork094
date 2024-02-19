@@ -48,5 +48,6 @@ namespace Inventory.App.Model.Entity
 
         public virtual ICollection<TPurchase> Purchases { get; set; }
         public virtual ICollection<TDO> DOs { get; set; }
+        public virtual ICollection<TIV> IVs { get; set; }
     }
 }

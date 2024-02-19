@@ -38,6 +38,8 @@ namespace Inventory.App.Data
         public DbSet<TPurchaseDtl> TPurchaseDtls { get; set; }
         public DbSet<TDO> TDOs { get; set; }
         public DbSet<TDODtl> TDODtls { get; set; }
+        public DbSet<TIV> TIVs { get; set; }
+        public DbSet<TIVDtl> TIVDtls { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -102,6 +104,14 @@ namespace Inventory.App.Data
                 .HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("IX_DocNo") { IsUnique = true }));
 
             modelBuilder.Entity<TDO>()
+                .Property(p => p.DocDate)
+                .HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("IX_DocDate")));
+
+            modelBuilder.Entity<TIV>()
+                .Property(p => p.DocNo)
+                .HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("IX_DocNo") { IsUnique = true }));
+
+            modelBuilder.Entity<TIV>()
                 .Property(p => p.DocDate)
                 .HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("IX_DocDate")));
 
@@ -337,6 +347,36 @@ namespace Inventory.App.Data
                 .HasRequired(b => b.Belt)
                 .WithMany(a => a.StockPengembalians)
                 .HasForeignKey(b => b.IDBelt)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<TIV>()
+                .HasRequired(b => b.Customer)
+                .WithMany(a => a.IVs)
+                .HasForeignKey(b => b.IDCustomer)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<TIVDtl>()
+                .HasRequired(b => b.IV)
+                .WithMany(a => a.IVDtls)
+                .HasForeignKey(b => b.IDIV)
+                .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<TIVDtl>()
+                .HasRequired(b => b.UOM)
+                .WithMany(a => a.IVDtls)
+                .HasForeignKey(b => b.IDUOM)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<TIVDtl>()
+                .HasRequired(b => b.Inventor)
+                .WithMany(a => a.IVDtls)
+                .HasForeignKey(b => b.IDInventor)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<TIVDtl>()
+                .HasOptional(b => b.DODtl)
+                .WithMany(a => a.IVDtls)
+                .HasForeignKey(b => b.IDDODtl)
                 .WillCascadeOnDelete(false);
         }
     }
